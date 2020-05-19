@@ -29,7 +29,7 @@
     float: right;
     text-align: right;
 }
- 
+
 .menus>div
 {
     display: inline-block;
@@ -58,7 +58,7 @@
 /*Barra de pesquisa---------------------------------------------------------------------*/
 .pesquisar
 {
-    
+
     border: 1px solid rgba(0,0,0,0.2);
     height: 30px;
     background-color:  rgba(0,0,0,0.2);
@@ -70,7 +70,7 @@
 {
     cursor: pointer;
 }
-.search-btn 
+.search-btn
 {
     color:white;
     float: right;
@@ -168,7 +168,7 @@ body
     -moz-box-shadow: 0 0 3px #ccc;
     -webkit-box-shadow: 0 0 3px #ccc;
     box-shadow: 0 0 3px #ccc;
-    
+
 }
 .post_body
 {
@@ -191,7 +191,7 @@ body
 {
     width: 50px;
     height: 50px;
-    
+
 }
 
 .post-img
@@ -200,18 +200,18 @@ body
     padding-left: 10px;
     padding-right: 20px;
     height: 49px;
-    
+
 }
 .post-img:hover
 {
     background-color: #EBECF0;
     transition-delay: all 0.3s;
     cursor: pointer;
-    
+
 }
 .buttons
 {
-    
+
 }
 
 .post_btn_text
@@ -222,7 +222,7 @@ body
     height: 34px;
     color:#808080;
     border-top: 1px solid gray;
-    
+
 
 }
 
@@ -325,7 +325,7 @@ body
 .social_info
 {
     display: flex;
-    
+
 }
 
 .social_btn_post
@@ -349,7 +349,7 @@ body
     display: flex;
     border-top: 1px solid gray;
     border-width: 90%;
-    
+
 }
 
 .social_btn_filho
@@ -362,7 +362,7 @@ body
     border-left: 1px solid gray;
     padding-left: 85px;
     padding-right: 85px;
-    
+
 }
 
 .social_btn_filho:hover
@@ -381,15 +381,91 @@ body
     background: rgb(0,0,0);
     background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
 }
-
-
-
-
-
-
-
 /*FIM PUBLICAR POST------------------------------------------------------------------------*/
 
+/*CSS REGISTO--------------------------------------------------- */
+body
+{
+    background-image: url("../Imagens/background.jpg");
+    background-color: antiquewhite;
+}
+.Logo img
+{
+    height: 40px;
+    width:5%;
+    margin-left: 1%;
+    margin-top:30px;
+}
+
+.pai
+{
+    width: 30%;
+    /margin-top:20px;/
+    margin-left:35%;
+    margin-right: 35%;
+    display: flex;
+    /padding-top: 3%;/
+    padding-bottom:1.5%;
+    background-color:white;
+    border-radius: 5px;
+    border:0.3px solid black;
+}
+
+.filho
+{
+    display:grid;
+    color:white;
+    width: 100%;
+
+}
+
+.filho input
+{
+    margin-bottom:40px;
+    height: 30px;
+    width: 200px;
+    border:none;
+    outline:none;
+    background-color: lightgreen;
+    color:white;
+}
+.filho input::placeholder
+{
+    /padding-left: 20px;/
+    text-align: center;
+}
+
+.borders
+{
+
+    border: 1px solid rgba(0,0,0,0.2);
+    height: 30px;
+    background-color: lightgreen;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom:20px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.border1
+{
+    margin-top:20px;
+}
+
+.titulo
+{
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-family: 'Oswald', sans-serif;
+    padding-top:25px;
+    padding-bottom:25px;
+    font-size:20px;
+
+}
 
 
 
