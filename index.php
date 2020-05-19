@@ -17,8 +17,6 @@ require_once 'functions/functions.php';
     include 'includes/loginform.php';
 
     ?>
-
-
-
+    <!-- teste -->
   </body>
 </html>
