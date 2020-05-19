@@ -3,13 +3,14 @@ Como empresa/banda/galeria podemos requesitar empregados, fazer propostas,
 partilhar noticias, posts e imagens/videos
 
 Como artistas, podemos dar upload dos nossos trabalhos para uma galeria, sejam
-imagens, musicas ou videos. 
+imagens, musicas ou videos.
 
 nav bar: - Logo
 	 - Home, onde tao os posts
-	 - Gallerys, onde estão as nossas galerias, com os nossos trabalhos e 
+	 - Gallerys, onde estão as nossas galerias, com os nossos trabalhos e
 	   experiencias
 	 - Network, pessoas conectadas
 	 - Mensagens, sistema de chat
 	 - Notificações, todas as notificações
 	 - Barra de pesquisa e utilizadores
+	 - asd
