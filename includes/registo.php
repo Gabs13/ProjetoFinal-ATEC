@@ -7,7 +7,11 @@
           <div class="borders"><input type="password" placeholder="Password"></div>
           <div class="borders"><input type="text" placeholder="Confirmar Password"></div>
           <div class="borders"><input type="number" placeholder="Telemovel"></div>
-          <div class="borders"><input type="checkbox" placeholder="Género"></div>
+          <div class="regcheck">
+            <input type="checkbox"> <label>Masculino</label>
+            <input type="checkbox"> <label>Feminino</label>
+            <input type="checkbox"> <label>Coisas</label>
+          </div>
           <div class="borders"><input type="email" placeholder="E-mail"></div>
           <div class="borders"><input type="date" placeholder="Data de Nascimento"></div>
           <div>
