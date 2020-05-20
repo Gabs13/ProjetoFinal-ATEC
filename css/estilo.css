@@ -400,11 +400,11 @@ body
 .pai
 {
     width: 30%;
-    /margin-top:20px;/
+    margin-top:20px;
     margin-left:35%;
     margin-right: 35%;
     display: flex;
-    /padding-top: 3%;/
+    padding-top: 3%;
     padding-bottom:1.5%;
     background-color:white;
     border-radius: 5px;
@@ -431,7 +431,7 @@ body
 }
 .filho input::placeholder
 {
-    /padding-left: 20px;/
+    padding-left: 20px;
     text-align: center;
 }
 
