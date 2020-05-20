@@ -6,15 +6,19 @@ require_once 'functions/functions.php';
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Tecrus</title>
+    <title>ArtIN</title>
+
     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <script src="scrips.js"></script>
   </head>
   <body>
 
     <?php
 
-    include 'includes/loginform.php';
+    include 'includes/header.php';
 
     ?>
     <!-- teste -->
