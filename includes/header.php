@@ -16,5 +16,6 @@
         <div class="mensagens"><img src="Imagens/Icones/19500212261553239369.svg"><div>Mensagens</div></div>
         <div class="notificacoes"><img src="Imagens/Icones/13252117381571183079.svg"><div>Notificações</div></div>
         <div class="perfil"><img src="Imagens/Icones/13041701241579605654.svg"><div>Perfil</div></div>
+        
     </div>
 </nav>
