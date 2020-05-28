@@ -1,7 +1,10 @@
 /* Geral -------------------------------------------------------------------- */
 
 *{margin:0; padding: 0;}
+
 .limpa{clear: both;}
+
+body {background-color: white;}
 
 /* Fim Geral ---------------------------------------------------------------- */
 
@@ -161,13 +164,6 @@
 
 /*fim navbar-------------------------------------------------------------------------------------------*/
 
-/*BODY---------------------*/
-body
-{
-    padding: 0%;
-    margin:0%;
-    background-color: #F5FFFA;
-}
 /*PUBLICAR POST---------------------------------------------------------------------------*/
 .post
 {
@@ -396,10 +392,6 @@ body
 /*FIM PUBLICAR POST------------------------------------------------------------------------*/
 
 /*CSS REGISTO--------------------------------------------------- */
-body
-{
-    background-color: antiquewhite;
-}
 .Logo img
 {
     height: 40px;
@@ -503,4 +495,280 @@ body
 /*FIM BODY---------------------------------------------------------------------------------*/
 
 
+/* GALERIA ---------------------------------------------------------------------------------*/
 
+.galery_container
+{
+    width: 90%;
+    height: 500px;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 50px;
+    border-radius: 8px;
+    display: flex;
+}
+
+.galery_title
+{
+    text-align: center;
+    padding-top:30px;
+    font-size: 4em;
+    font-family: 'Cinzel', serif;
+}
+
+.collection_container_item
+{
+    width: 12em;
+    height: 18em;
+    margin-right: 5%;
+}
+
+.collection_container_item:hover .collection_container_social
+{
+    visibility: visible;
+    height: 2em;
+    transition: 0.3;
+}
+
+.collection_container_item img
+{
+    width:50px;
+    height: 100%;
+}
+
+
+.collection_container_name
+{
+    background-image: url("../Imagens/quadro1.jpg");
+    background-color: none;
+    width: 100%;
+    height: 100%;
+    border:1px solid gray;
+    border-radius: 8px;
+    background-size: 100% 100%;
+}
+
+.collection_container_name:hover
+{
+    cursor: pointer;
+}
+
+
+.collection_container_info_bot
+{
+    padding-top: 105%;
+    display: flex;
+}
+
+.collection_container_name_info
+{
+    margin-right: 12%;
+    margin-left: 7%;
+    visibility: hidden;
+    background-color: rgba(255,255,255,0.8);
+    padding: 5px;
+    border-radius: 8px;
+    width: auto;
+}
+
+.collection_container_name_info:hover
+{
+    background-color: white;
+}
+
+
+.collection_container_name_info2
+{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 3%;
+    visibility: hidden;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.text_gallery
+{
+    width: 100%;
+    height: 98%;
+    border-radius: 8px;
+    padding-top: 5px;
+}
+
+/*hover do nome, tipo de arte e nome da galeria*/
+.text_gallery:hover .collection_container_name_info
+{
+    visibility: visible;
+    transition :0.3s;
+    cursor: pointer;
+
+}
+
+
+.text_gallery:hover
+{
+    background-color: rgba(0,0,0,0.2);
+    transition :0.3s;
+}
+
+/*SOCIAL BUTTONS-----------------*/
+
+.collection_container_info_bot img
+{
+    height: 20px;
+    width: 20px;
+}
+
+.collection_container_social
+{
+    display: flex;
+    padding-top: 3%;
+    box-shadow: 2px 2px lightslategray;
+    padding-left: 8px;
+    height: 0em;
+    border-radius: 8px;
+    margin-top: 5px;
+    visibility: hidden;
+}
+
+.collection_container_social:hover
+{
+
+}
+
+.collection_social_btn
+{
+    margin-right: 29%;
+    padding-top:4px;
+    font-family: 'Cinzel', serif;
+    font-size:13px;
+}
+
+
+/*MODAL DISPLAY DE IMAGENS DA GALERIA*/
+.modalGallery
+{
+    display:none;
+    position:fixed;
+    z-index: 1;/*Ficar por cima dos elementos no eixo Z*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+
+.modal_content
+{
+    margin: 5% auto;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: rgba(0,0,0,0.7);
+    /*padding-top: 20px;
+    padding-bottom: 20px;*/
+    border-radius:8px;
+    display: flex;
+}
+
+.close
+{
+    color:#aaa;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 0.7em;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  /*cursor: pointer;*/
+}
+
+.modal_esquerda{
+  height: 35em;
+  width: 30em;
+}
+
+.modal_esquerda img{
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.modal_direita{
+  width: 25em;
+  padding-left: 1em;
+  padding-top: 1em;
+}
+
+.arrow_2
+{
+    background-image: url('../Imagens/icons8-double-right-50.png');
+    top: 50vh;
+    transform: translateY(-50%);
+    content: "";
+    right: 1.2em;
+    display: block;
+    position: fixed;
+    bottom: auto;
+    width: 3em;
+    height: 3em;
+    -webkit-filter: drop-shadow(-2px 0px 1px rgba(0,0,0,.5));
+    -moz-filter: drop-shadow(0px 1px 2px rgba(0,0,0,.5));
+    -ms-filter: drop-shadow(0 1px 2px rgba(0,0,0,.5));
+    -o-filter: drop-shadow(0 1px 2px rgba(0,0,0,.5));
+    filter: drop-shadow(0px 1px 2px rgba(0,0,0,.5));
+}
+
+.arrow_2:hover
+{
+
+    background-image: url('../Imagens/rigth_arrow_white.png');
+    height: 3em;
+    width: 3em;
+    transition: 0.3s;
+}
+
+.arrow_1
+{
+    background-image: url('../Imagens/icons8-double-left-50.png');
+    top: 50vh;
+    transform: translateY(-50%);
+    content: "";
+    left: 1.2em;
+    display: block;
+    position: fixed;
+    bottom: auto;
+    width: 3em;
+    height: 3em;
+    -webkit-filter: drop-shadow(-2px 0px 1px rgba(0,0,0,.5));
+    -moz-filter: drop-shadow(0px 1px 2px rgba(0,0,0,.5));
+    -ms-filter: drop-shadow(0 1px 2px rgba(0,0,0,.5));
+    -o-filter: drop-shadow(0 1px 2px rgba(0,0,0,.5));
+    filter: drop-shadow(0px 1px 2px rgba(0,0,0,.5));
+}
+.arrow_1:hover
+{
+    height: 3em;
+    width: 3em;
+    background-image: url('../Imagens/left_arrow_white.png');
+    transition: 0.3s;
+}
+
+.autor_modal_user{
+  display: flex;
+  align-items: baseline;
+}
+
+.autor_modal_user_img{
+  float: left;
+}
+
+.autor_modal_user_nome{
+  float:left;
+}
