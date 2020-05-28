@@ -2,45 +2,52 @@
 <body>
     <div class="galery_title">GALERIAS</div>
 
+        <!--MODAL SLIDER DE IMAGENS-->
+        <div class="modalGallery" id="modal">
+
+<div class="arrow_1"></div>
+
+<div class="modal_content">
+
+    <div class="modal_esquerda">
+      <img src="Imagens/quadro2.jpg">
+    </div>
+    <div class="modal_direita">
+      <div class="autor_modal_user">
+        <div class="autor_modal_user_img">
+          <img src="">
+        </div>
+        <div class="autor_modal_user_nome" id="modal_username">
+          Fabio Santos
+        </div>
+      </div>
+      <hr class="modal_comentarios_separador"></hr>
+      <div class="modal_direita_comentarios">
+          
+      </div>
+      <div class="autor_modal_info">
+        Like
+        Partilhar
+      </div>
+
+    </div>
+
+    <div class="close" id="close" >&times;</div>
+
+</div>
+
+<div class="arrow_2"></div>
+
+</div>
+<!--FINAL DA MODAL-->
+
+
     <!--CRIACAO DE UM POST NA GALERIA-->
     <div class="galery_container"><!--INICIO DA GALERIA-->
 
         <div class="collection_container_item">
             <div class="collection_container_name" id="galerydisplay">
-                <!--MODAL SLIDER DE IMAGENS-->
-                <div class="modalGallery" id="modal">
-
-                  <div class="arrow_1"></div>
-
-                  <div class="modal_content">
-
-                      <div class="modal_esquerda">
-                        <img src="Imagens/quadro2.jpg">
-                      </div>
-                      <div class="modal_direita">
-                        <div class="autor_modal_user">
-                          <div class="autor_modal_user_img">
-                            <img src="">
-                          </div>
-                          <div class="autor_modal_user_nome">
-                            Fabio Santos
-                          </div>
-                        </div>
-                        <div class="autor_modal_info">
-                          Like
-                          Partilhar
-                        </div>
-
-                      </div>
-
-                      <div class="close" id="close" >&times;</div>
-
-                  </div>
-
-                  <div class="arrow_2"></div>
-
-                </div>
-                <!--FINAL DA MODAL-->
+            
                 <div class="text_gallery">
                     <div class="collection_container_name_info2 collection_container_name_info">Fábio Santos</div>
                     <div class="collection_container_info_bot">

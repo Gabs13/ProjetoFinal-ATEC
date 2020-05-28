@@ -666,7 +666,7 @@ body {background-color: white;}
     margin: 5% auto;
     margin-left: 25%;
     margin-right: 25%;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(255,255,255);
     /*padding-top: 20px;
     padding-bottom: 20px;*/
     border-radius:8px;
@@ -678,7 +678,8 @@ body {background-color: white;}
     color:#aaa;
     font-size: 40px;
     font-weight: bold;
-    margin-left: 0.7em;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
 }
 
 .close:hover,
@@ -689,7 +690,7 @@ body {background-color: white;}
 }
 
 .modal_esquerda{
-  height: 35em;
+  height: 25em;
   width: 30em;
 }
 
@@ -770,5 +771,22 @@ body {background-color: white;}
 }
 
 .autor_modal_user_nome{
+    padding-bottom: 2%;
   float:left;
+}
+
+/*Modal direita, parte dos comentarios*/
+
+.modal_direita_comentarios
+{
+    width: 100%;
+    height: 80%;
+    background-color: white;
+    margin-top: 1%;
+    border-radius: 8px;
+}
+
+.modal_comentarios_separador
+{
+    border-top: 1px solid #EBECF0;
 }
