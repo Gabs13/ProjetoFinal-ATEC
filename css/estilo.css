@@ -429,7 +429,9 @@ body {background-color: white;}
 {
     margin-bottom:40px;
     height: 30px;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
     border:none;
     outline:none;
     background-color: lightgreen;
@@ -441,16 +443,29 @@ body {background-color: white;}
     text-align: center;
 }
 
-.filho input[type='checkbox']
+.filho input[type='submit']
+{
+  width: 70%;
+  height: 2.3em;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.filho input[type='radio']
 {
   width: 1em;
   height: auto;
-  margin-bottom:1em;
+  margin-left: 0.3em;
+  margin-right: 0%;
 }
 
 .regcheck
 {
+  width: 100%;
   text-align: center;
+  display: inline;
+  float: left;
+  height: 2.2em;
 }
 
 .borders
@@ -463,12 +478,6 @@ body {background-color: white;}
     margin-bottom:20px;
     margin-left: 25%;
     margin-right: 25%;
-}
-
-.regcheck
-{
-  display:inline;
-  float: left;
 }
 
 .border1
@@ -809,7 +818,7 @@ body {background-color: white;}
     color: black;
     font-size: 10px;
     outline: none;
-    
+
 }
 
 /*Botões de like e partilhar comentario na modal da galeria*/
@@ -836,7 +845,3 @@ body {background-color: white;}
     width: 1.6em;
     transition: 0.6s;
 }
-
-
-
-
