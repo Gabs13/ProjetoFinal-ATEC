@@ -18,16 +18,34 @@
           <img src="">
         </div>
         <div class="autor_modal_user_nome" id="modal_username">
-          Fabio Santos
+          <?php 
+              include 'connections/conn.php';
+
+              $result = mysqli_query($conn, "SELECT user_nome from user where user_id=1");
+
+              if($user_dados = mysqli_fetch_array($result))
+              {
+                  echo '<div>'.$user_dados["user_nome"].'</div>';                     
+              }
+              
+              
+
+              include 'connections/deconn.php';
+            ?>
         </div>
       </div>
       <hr class="modal_comentarios_separador"></hr>
       <div class="modal_direita_comentarios">
           
       </div>
+      <hr class="modal_comentarios_separador"></hr>
       <div class="autor_modal_info">
-        Like
-        Partilhar
+        <div class="autor_modal_info_btn"><a><img src=".//Imagens/Icones/icons8-love-24.png"></a></div>
+        <div class="autor_modal_info_btn2 autor_modal_info_btn"><a><img src=".//Imagens/Icones/icons8-share-24.png"></a></div>
+      </div>
+      <div>
+        <input type="text" class="modal_user_comentario" placeholder="Adicione um comentário...">
+        <div><a><img src=".//Imagens/Icones/icons8-email-send-16.png"></a></div>
       </div>
 
     </div>

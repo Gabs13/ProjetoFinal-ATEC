@@ -680,13 +680,14 @@ body {background-color: white;}
     font-weight: bold;
     margin-left: 0.3em;
     margin-right: 0.3em;
+    height: 5%;
 }
 
 .close:hover,
 .close:focus {
   color: black;
   text-decoration: none;
-  /*cursor: pointer;*/
+  cursor: pointer;
 }
 
 .modal_esquerda{
@@ -780,13 +781,62 @@ body {background-color: white;}
 .modal_direita_comentarios
 {
     width: 100%;
-    height: 80%;
+    height: 65%;
     background-color: white;
     margin-top: 1%;
     border-radius: 8px;
 }
 
+.autor_modal_info
+{
+    padding-top: 5%;
+    display: flex;
+    padding-bottom: 5%;
+    height: 5%;
+}
+
+
 .modal_comentarios_separador
 {
     border-top: 1px solid #EBECF0;
 }
+
+.modal_user_comentario
+{
+    width: 100%;
+    height:4em;
+    border:none;
+    color: black;
+    font-size: 10px;
+    outline: none;
+    
+}
+
+/*Botões de like e partilhar comentario na modal da galeria*/
+.autor_modal_info_btn2
+{
+    padding-left: 5%;
+}
+
+.autor_modal_info_btn
+{
+    height: 100%;
+    width: 9%;
+}
+
+.autor_modal_info_btn:hover
+{
+    cursor: pointer;
+
+}
+
+.autor_modal_info_btn img:hover
+{
+    height: 1.6em;
+    width: 1.6em;
+    transition: 0.6s;
+}
+
+
+
+

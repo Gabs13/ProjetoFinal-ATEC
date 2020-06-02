@@ -1,7 +1,7 @@
 <?php
-		$servername="34.89.101.164";
+		$servername="localhost";
 		$username="root";
-		$password="nunosilva";
+		$password="";
 
 		//Criar Ligação
 
@@ -13,7 +13,7 @@
 			die("Erro de Ligação: ".mysqli_connect_error());
 		}
 		else {
-			echo "Conetado com sucesso!";
+			//echo "Conetado com sucesso!";
 		}
 
 		mysqli_select_db($conn,"teste");
