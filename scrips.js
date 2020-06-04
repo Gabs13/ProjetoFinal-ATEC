@@ -3,13 +3,21 @@ $(document).ready(function()
     var uuu = document.getElementById('galerydisplay');
     var span = document.getElementById('close');
     var modal = document.getElementById('modal');
-
+    
+    var comentariobottom = document.getElementById('comentario_bottom');
     //segunda modal
     var galeria2 = document.getElementById('galerydisplay2');
 
   function postCreate()
   {
 
+  }
+
+
+  comentariobottom.onclick = function()
+  {
+    document.getElementById('modal_user_sendbtn').style.display="block";
+    document.getElementById('modal_user_sendbtn').style.transition= "1s";
   }
 
   /*display de imagens da galeria1-----------------------------------*/

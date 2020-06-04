@@ -36,6 +36,24 @@
       </div>
       <hr class="modal_comentarios_separador"></hr>
       <div class="modal_direita_comentarios">
+       
+      <div class="modal_comment_main">
+          <div class="modal_comentario_userimg"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+          <div class="modal_total_buttons">
+            <div class="modal_comentario_total">
+              <div class="modal_comentario_username">Amigo do Armando</div>
+                <div class="modal_comentario_texto">
+                  Muito giro amigo Armando.
+                </div>  
+            </div>
+            <div class="modal_comentario_buttons">
+                <div><a><img src="Imagens/Icones/icons8-love-24.png"></a></div>
+                <div><a><img src="Imagens/Icones/icons8-comments-24.png"></a></div>
+                <div><a><img src="Imagens/Icones/icons8-more-24.png"></a></div>
+                <div class="modal_comentario_buttons_likes">320 Likes</div>
+            </div>
+          </div>  
+      </div>  
           
       </div>
       <hr class="modal_comentarios_separador"></hr>
@@ -43,9 +61,9 @@
         <div class="autor_modal_info_btn"><a><img src=".//Imagens/Icones/icons8-love-24.png"></a></div>
         <div class="autor_modal_info_btn2 autor_modal_info_btn"><a><img src=".//Imagens/Icones/icons8-share-24.png"></a></div>
       </div>
-      <div>
-        <input type="text" class="modal_user_comentario" placeholder="Adicione um comentário...">
-        <div><a><img src=".//Imagens/Icones/icons8-email-send-16.png"></a></div>
+      <div class="modal_comentarios_bottom">
+        <input type="text" id="comentario_bottom" class="modal_user_comentario" placeholder="Adicione um comentário...">
+        <div id="modal_user_sendbtn"><a><img src=".//Imagens/Icones/icons8-email-send-16.png"></a></div>
       </div>
 
     </div>
