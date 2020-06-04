@@ -9,9 +9,9 @@
             <div class="borders"> <input type="password" name="regRPass" placeholder="Confirmar Password" required> </div>
             <div class="borders"> <input type="number" placeholder="Telemovel"> </div>
             <div class="regcheck">
-              <input type="radio" name="genero" value = "M"> <label>Masculino</label>
-              <input type="radio" name="genero" value = "F"> <label>Feminino</label>
-              <input type="radio" name="genero" value = "O"> <label>Outro</label>
+              <input type="radio" name="genero" value = "1" required> <label>Masculino</label>
+              <input type="radio" name="genero" value = "2"> <label>Feminino</label>
+              <input type="radio" name="genero" value = "3"> <label>Outro</label>
             </div>
             <div class="borders"> <input type="email" name="regEmail" placeholder="E-mail" required> </div>
             <div class="borders"> <input type="date" name="regData" placeholder="Data de Nascimento" required> </div>

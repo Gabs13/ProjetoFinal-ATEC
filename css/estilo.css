@@ -439,16 +439,28 @@ body {background-color: white;}
 }
 .filho input::placeholder
 {
-    padding-left: 20px;
     text-align: center;
 }
 
-.filho input[type='submit']
+.filho input:-ms-input-placeholder
 {
-  width: 70%;
-  height: 2.3em;
-  margin-left: 15%;
-  margin-right: 15%;
+    text-align: center;
+}
+
+.filho::-ms-input-placeholder
+{
+  text-align: center;
+}
+
+.filho input::-webkit-outer-spin-button, .filho input::-webkit-inner-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.filho input[type='number']
+{
+  background-color: lightgreen;
 }
 
 .filho input[type='radio']
@@ -457,6 +469,28 @@ body {background-color: white;}
   height: auto;
   margin-left: 0.3em;
   margin-right: 0%;
+}
+
+.filho input[type='date']
+{
+  text-align: center;
+  color: grey;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  position: fixed;
+  margin-left: 13.2em;
+}
+
+.filho input[type='submit']
+{
+  width: 60%;
+  height: 2.3em;
+  margin-left: 20%;
+  margin-right: 20%;
+  border-radius: 12px;
+  font-weight: bold;
+  color: black;
 }
 
 .regcheck
