@@ -909,7 +909,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     border: 1px solid #aaa;
     border-radius: 8px;
     width: 100%;
-    height: 80%;
+    height: 60%;
 
 }
 
@@ -939,15 +939,16 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .modal_comentario_userimg
 {
-    width: 25%;
+    width: 15%;
     max-height: 70px;
 }
 
 .modal_comentario_userimg img
 {
-    height: 85%;
-    width: 85%;
-    padding: 3%;
+    height: 32px;
+    width: 32px;
+    padding-top: 20%;
+    padding-left: 10%;
 }
 
 .modal_comentario_buttons
