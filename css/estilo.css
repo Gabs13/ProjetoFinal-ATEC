@@ -714,6 +714,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     padding-bottom: 20px;*/
     border-radius:8px;
     display: flex;
+    height: 36em;
 }
 
 .close
@@ -734,8 +735,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 .modal_esquerda{
-  height: 25em;
-  width: 30em;
+  height: 100%;
+  width: 60%;
 }
 
 .modal_esquerda img{
@@ -746,9 +747,10 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 .modal_direita{
-  width: 25em;
+  width: 40%;
   padding-left: 1em;
   padding-top: 1em;
+  height: 100%;
 }
 
 .arrow_2
@@ -908,7 +910,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     border-radius: 8px;
     width: 100%;
     height: 80%;
-    
+
 }
 
 .modal_comentario_username
@@ -924,7 +926,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 {
     padding: 3%;
     font-size: 0.7em;
-    
+
 }
 
 .modal_comment_main
@@ -945,7 +947,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 {
     height: 85%;
     width: 85%;
-    padding: 3%; 
+    padding: 3%;
 }
 
 .modal_comentario_buttons
@@ -978,7 +980,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 {
     width: 70%;
     max-width: 70%;
-    
+
 }
 
 .modal_comentario_buttons_likes

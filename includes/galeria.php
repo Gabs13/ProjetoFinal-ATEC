@@ -18,25 +18,12 @@
           <img src="">
         </div>
         <div class="autor_modal_user_nome" id="modal_username">
-          <?php 
-              include 'connections/conn.php';
-
-              $result = mysqli_query($conn, "SELECT user_nome from user where user_id=1");
-
-              if($user_dados = mysqli_fetch_array($result))
-              {
-                  echo '<div>'.$user_dados["user_nome"].'</div>';                     
-              }
-              
-              
-
-              include 'connections/deconn.php';
-            ?>
+          
         </div>
       </div>
       <hr class="modal_comentarios_separador"></hr>
       <div class="modal_direita_comentarios">
-       
+
       <div class="modal_comment_main">
           <div class="modal_comentario_userimg"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
           <div class="modal_total_buttons">
@@ -44,7 +31,7 @@
               <div class="modal_comentario_username">Amigo do Armando</div>
                 <div class="modal_comentario_texto">
                   Muito giro amigo Armando.
-                </div>  
+                </div>
             </div>
             <div class="modal_comentario_buttons">
                 <div><a><img src="Imagens/Icones/icons8-love-24.png"></a></div>
@@ -52,9 +39,9 @@
                 <div><a><img src="Imagens/Icones/icons8-more-24.png"></a></div>
                 <div class="modal_comentario_buttons_likes">320 Likes</div>
             </div>
-          </div>  
-      </div>  
-          
+          </div>
+      </div>
+
       </div>
       <hr class="modal_comentarios_separador"></hr>
       <div class="autor_modal_info">
@@ -83,7 +70,7 @@
 
         <div class="collection_container_item">
             <div class="collection_container_name" id="galerydisplay">
-            
+
                 <div class="text_gallery">
                     <div class="collection_container_name_info2 collection_container_name_info">Fábio Santos</div>
                     <div class="collection_container_info_bot">
