@@ -1079,7 +1079,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     height: 26px;
     width: 26px;
     padding-top: 10px;
-    
+
 }
 
 .modal_comentario_reply_content_like img
@@ -1125,7 +1125,7 @@ footer
 .footer_up ul li:first-of-type
 {
   float: left;
-  padding-left: 7%;
+  padding-left: 15%;
 }
 
 .footer_up ul li
