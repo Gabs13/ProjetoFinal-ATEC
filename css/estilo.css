@@ -997,7 +997,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
     text-align: right;
 }
 
-<<<<<<< HEAD
 /* FOOTER ----------------------------------------------- */
 
 footer
@@ -1047,96 +1046,3 @@ footer
   padding: 16px;
   text-decoration: none;
 }
-=======
-/*RESPOSTA AO COMENTARIO*/
-.modal_comentario_resposta
-{
-    height: 10%;
-    float: right;
-    width: 70%;
-    display:none;
-}
-
-.modal_comentario_resposta_texto
-{
-    border: 1px solid #aaa;
-    border-radius: 10px;
-    padding-left: 5px;
-    width: 84%;
-    outline: none;
-}
-
-.modal_comentario_resposta_imagem
-{
-    margin-right: 5%;
-    margin-top: 2%;
-}
-
-.modal_comment_main_resposta
-{
-    display:block;
-}
-
-/*RESPOSTA AO COMENTARIO PRINCIPAL*/
-.modal_comentario_reply
-{
-    display:flex;
-    width: 70%;
-    float: right;
-    height: 10%;
-    margin-bottom: 5%;
-}
-
-.modal_comentario_reply_content
-{
-    border: 1px solid #aaa;
-    border-radius: 8px;
-    width:100%;
-}
-
-.modal_comentario_reply_content_main
-{
-    width: 100%;
-    display: flex;
-}
-.modal_comentario_reply_content_texto
-{
-    width: 85%;
-    padding: 2%;
-    font-size: 0.7em;
-    font-family: 'Open Sans', sans-serif;
-}
-
-.modal_comentario_reply_content_like
-{
-    width: 15%;
-}
-
-.modal_comentario_reply_content_name
-{
-    font-size: 0.7em;
-    font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
-    padding-left: 2%;
-}
-
-.modal_comentario_reply_imagem
-{
-    width: 20%;
-}
-
-.modal_comentario_reply_imagem img
-{
-    height: 26px;
-    width: 26px;
-    padding-top: 10px;
-    
-}
-
-.modal_comentario_reply_content_like img
-{
-    height: 15px;
-    width: 15px;
-}
-
->>>>>>> 52613bab358bfe67405f88207b5e630f2ad411ef
