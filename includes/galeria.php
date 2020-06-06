@@ -28,33 +28,50 @@
                   echo '<div>'.$user_dados["user_nome"].'</div>';                     
               }
               
-              
-
               include 'connections/deconn.php';
             ?>
         </div>
       </div>
       <hr class="modal_comentarios_separador"></hr>
       <div class="modal_direita_comentarios">
-       
-      <div class="modal_comment_main">
-          <div class="modal_comentario_userimg"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-          <div class="modal_total_buttons">
-            <div class="modal_comentario_total">
-              <div class="modal_comentario_username">Amigo do Armando</div>
-                <div class="modal_comentario_texto">
-                  Muito giro amigo Armando.
-                </div>  
-            </div>
-            <div class="modal_comentario_buttons">
-                <div><a><img src="Imagens/Icones/icons8-love-24.png"></a></div>
-                <div><a><img src="Imagens/Icones/icons8-comments-24.png"></a></div>
-                <div><a><img src="Imagens/Icones/icons8-more-24.png"></a></div>
-                <div class="modal_comentario_buttons_likes">320 Likes</div>
-            </div>
-          </div>  
-      </div>    
-          
+      
+      <div class="modal_comment_main_resposta"> 
+        <div class="modal_comment_main">
+            <div class="modal_comentario_userimg"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+            <div class="modal_total_buttons">
+              <div class="modal_comentario_total">
+                <div class="modal_comentario_username">Amigo do Armando</div>
+                  <div class="modal_comentario_texto">
+                    Muito giro amigo Armando.
+                  </div>  
+              </div>
+              <div class="modal_comentario_buttons">
+                  <div><a><img src="Imagens/Icones/icons8-love-24.png"></a></div>
+                  <div id="btn_comment"><a><img src="Imagens/Icones/icons8-comments-24.png"></a></div>
+                  <div><a><img src="Imagens/Icones/icons8-more-24.png"></a></div>
+                  <div class="modal_comentario_buttons_likes">320 Likes</div>
+              </div>
+            </div> 
+        </div>    
+          <!--FIM DO COMENTÁRIO DO UTILIZADOR-->
+             <!--REPOSTA AO COMENTARIO/ONCLICK DO BOTAO COMENTARIO-->
+        <div class="modal_comentario_reply">
+              <div class="modal_comentario_reply_imagem"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+              <div class="modal_comentario_reply_content">
+                <div class="modal_comentario_reply_content_name">Tó Carocho</div>
+                <div class="modal_comentario_reply_content_main">
+                  <div class="modal_comentario_reply_content_texto">Eu era toxicodependente</div>
+                  <div class="modal_comentario_reply_content_like"><a><img src="Imagens/Icones/icons8-love-24.png"></a></div>
+                </div>
+              </div>
+        </div>     
+        <!--ADICIONAR UM COMENTARIO NA MODAL-->     
+        <div class="modal_comentario_resposta">
+            <div class="modal_comentario_resposta_imagem"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+            <input type="text" placeholder="Adicione um comentário..." class="modal_comentario_resposta_texto"> 
+        </div>
+      </div> 
+
       </div>
       <hr class="modal_comentarios_separador"></hr>
       <div class="autor_modal_info">
