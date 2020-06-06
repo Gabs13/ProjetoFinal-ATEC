@@ -402,13 +402,13 @@ body {background-color: white;}
 
 .pai
 {
-    width: 30%;
-    margin-top:20px;
-    margin-left:35%;
-    margin-right: 35%;
+    width: 25%;
+    margin-top: 20px;
+    margin-left: 37.5%;
+    margin-right: 37.5%;
     display: flex;
-    padding-bottom:1.5%;
-    background-color:white;
+    padding-bottom: 1.5%;
+    background-color: white;
     border-radius: 5px;
     border:0.3px solid black;
 }
@@ -623,7 +623,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .collection_container_name_info2
 {
     width: 50%;
-    margin-left: 25%;
+    margin-left: 22.5%;
     margin-top: 3%;
     visibility: hidden;
     text-align: center;
@@ -706,7 +706,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .modal_content
 {
-    margin: 5% auto;
+    margin: 6% auto;
     margin-left: 25%;
     margin-right: 25%;
     background-color: rgba(255,255,255);
@@ -826,7 +826,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .modal_direita_comentarios
 {
     width: 100%;
-    height: 65%;
+    height: 70%;
     background-color: white;
     border-radius: 8px;
 }
@@ -884,14 +884,19 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 #modal_user_sendbtn
 {
-    margin-top: 2.5%;
     display: none;
-
 }
 
 #modal_user_sendbtn:hover
 {
     cursor: pointer;
+}
+
+#modal_user_sendbtn i
+{
+  -ms-transform: rotate(43deg); /* IE 9 */
+  transform: rotate(43deg);
+  line-height: 27px;
 }
 
 .modal_comentarios_bottom
@@ -979,8 +984,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .modal_total_buttons
 {
-    width: 70%;
-    max-width: 70%;
+    width: 84%;
+    max-width: 84%;
 
 }
 
@@ -991,3 +996,95 @@ input[type=date]::-webkit-calendar-picker-indicator {
     width: 100%;
     text-align: right;
 }
+
+/*RESPOSTA AO COMENTARIO*/
+.modal_comentario_resposta
+{
+    height: 10%;
+    float: right;
+    width: 70%;
+    display:none;
+}
+
+.modal_comentario_resposta_texto
+{
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    padding-left: 5px;
+    width: 84%;
+    outline: none;
+}
+
+.modal_comentario_resposta_imagem
+{
+    margin-right: 5%;
+    margin-top: 2%;
+}
+
+.modal_comment_main_resposta
+{
+    display:block;
+}
+
+/*RESPOSTA AO COMENTARIO PRINCIPAL*/
+.modal_comentario_reply
+{
+    display:flex;
+    width: 70%;
+    float: right;
+    height: 10%;
+    margin-bottom: 5%;
+}
+
+.modal_comentario_reply_content
+{
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    width:100%;
+}
+
+.modal_comentario_reply_content_main
+{
+    width: 100%;
+    display: flex;
+}
+.modal_comentario_reply_content_texto
+{
+    width: 85%;
+    padding: 2%;
+    font-size: 0.7em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.modal_comentario_reply_content_like
+{
+    width: 15%;
+}
+
+.modal_comentario_reply_content_name
+{
+    font-size: 0.7em;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 2%;
+}
+
+.modal_comentario_reply_imagem
+{
+    width: 20%;
+}
+
+.modal_comentario_reply_imagem img
+{
+    height: 26px;
+    width: 26px;
+    padding-top: 10px;
+    
+}
+
+.modal_comentario_reply_content_like img
+{
+    height: 15px;
+    width: 15px;
+}
+

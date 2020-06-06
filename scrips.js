@@ -3,7 +3,7 @@ $(document).ready(function()
     var uuu = document.getElementById('galerydisplay');
     var span = document.getElementById('close');
     var modal = document.getElementById('modal');
-    
+    var btncomentario = document.getElementById('btn_comment');
     var comentariobottom = document.getElementById('comentario_bottom');
     //segunda modal
     var galeria2 = document.getElementById('galerydisplay2');
@@ -13,6 +13,18 @@ $(document).ready(function()
 
   }
 
+  btncomentario.onclick = function()
+  {
+    if(document.getElementsByClassName('modal_comentario_resposta')[0].style.display=="none")
+    {
+      document.getElementsByClassName('modal_comentario_resposta')[0].style.display="flex";
+    }
+    else
+    {
+      document.getElementsByClassName('modal_comentario_resposta')[0].style.display="none";
+    }
+    
+  }
 
   comentariobottom.onclick = function()
   {
