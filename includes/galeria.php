@@ -30,20 +30,13 @@
               {
                   echo '<div>'.$user_dados["user_nome"].'</div>';
               }
-<<<<<<< HEAD
               
-=======
-
-
-
->>>>>>> 222d7af795e16e25a9a2276292692ae00ad74429
               include 'connections/deconn.php';
             ?> -->
         </div>
       </div>
       <hr class="modal_comentarios_separador"></hr>
       <div class="modal_direita_comentarios">
-<<<<<<< HEAD
       
       <div class="modal_comment_main_resposta"> 
         <div class="modal_comment_main">
@@ -81,26 +74,6 @@
             <input type="text" placeholder="Adicione um comentário..." class="modal_comentario_resposta_texto"> 
         </div>
       </div> 
-=======
-
-      <div class="modal_comment_main">
-          <div class="modal_comentario_userimg"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-          <div class="modal_total_buttons">
-            <div class="modal_comentario_total">
-              <div class="modal_comentario_username">Amigo do Armando</div>
-                <div class="modal_comentario_texto">
-                  Muito giro amigo Armando.
-                </div>
-            </div>
-            <div class="modal_comentario_buttons">
-                <div><a><img src="Imagens/Icones/icons8-love-24.png"></a></div>
-                <div><a><img src="Imagens/Icones/icons8-comments-24.png"></a></div>
-                <div><a><img src="Imagens/Icones/icons8-more-24.png"></a></div>
-                <div class="modal_comentario_buttons_likes">320 Likes</div>
-            </div>
-          </div>
-      </div>
->>>>>>> 222d7af795e16e25a9a2276292692ae00ad74429
 
       </div>
       <hr class="modal_comentarios_separador"></hr>
