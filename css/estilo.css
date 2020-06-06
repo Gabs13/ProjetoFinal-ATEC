@@ -402,13 +402,13 @@ body {background-color: white;}
 
 .pai
 {
-    width: 30%;
-    margin-top:20px;
-    margin-left:35%;
-    margin-right: 35%;
+    width: 25%;
+    margin-top: 20px;
+    margin-left: 37.5%;
+    margin-right: 37.5%;
     display: flex;
-    padding-bottom:1.5%;
-    background-color:white;
+    padding-bottom: 1.5%;
+    background-color: white;
     border-radius: 5px;
     border:0.3px solid black;
 }
@@ -623,7 +623,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .collection_container_name_info2
 {
     width: 50%;
-    margin-left: 25%;
+    margin-left: 22.5%;
     margin-top: 3%;
     visibility: hidden;
     text-align: center;
@@ -706,7 +706,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .modal_content
 {
-    margin: 5% auto;
+    margin: 6% auto;
     margin-left: 25%;
     margin-right: 25%;
     background-color: rgba(255,255,255);
@@ -884,14 +884,19 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 #modal_user_sendbtn
 {
-    margin-top: 2.5%;
     display: none;
-
 }
 
 #modal_user_sendbtn:hover
 {
     cursor: pointer;
+}
+
+#modal_user_sendbtn i
+{
+  -ms-transform: rotate(43deg); /* IE 9 */
+  transform: rotate(43deg);
+  line-height: 27px;
 }
 
 .modal_comentarios_bottom
@@ -990,4 +995,54 @@ input[type=date]::-webkit-calendar-picker-indicator {
     font-size: 0.7em;
     width: 100%;
     text-align: right;
+}
+
+/* FOOTER ----------------------------------------------- */
+
+footer
+{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333333;
+  color: white;
+  text-align: center;
+}
+
+.footer_up
+{
+  width: 70%;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.footer_up ul
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+.footer_up ul li:first-of-type
+{
+  float: left;
+  padding-left: 7%;
+}
+
+.footer_up ul li
+{
+  float: left;
+  padding-right: 7%;
+}
+
+.footer_up li a
+{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
 }
