@@ -1082,14 +1082,17 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 }
 
-.modal_comentario_reply_content_like img
+.modal_comentario_reply_content_like
 {
     height: 15px;
     width: 15px;
+
 }
 
-
-
+.modal_comentario_reply_content_like:hover
+{
+    color:red;
+}
 
 
 
