@@ -1,10 +1,14 @@
 <div class="logar">
     <div class="login_form">
-      <h3>Login</h3>
+      <div class="login_form_title">
+        SIGN-IN
+      </div>
+      
       <form method="post">
         <input type="text" name="logmail" placeholder="Insira o seu email">
         <input type="password" name="logpass" placeholder="Insira a sua senha">
-        <input type="submit" name="bt_login" value="Entrar">
+        <!--<input type="submit" name="bt_login" value="Entrar" id="login_form_button">-->
+        <div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" class="btn btn-sm animated-button victoria-two">Login</a> </div>
       </form>
 
       <?php

@@ -15,13 +15,14 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <script src="scrips.js"></script>
   </head>
   <body>
 
     <?php
     include 'includes/header.php';
-    include 'includes/galeria.php';
+    include 'includes/loginform.php';
 
 
     include 'includes/footerPrincipal.php';
