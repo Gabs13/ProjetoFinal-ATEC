@@ -1099,7 +1099,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .login_form
 {
     display: block;
-    width: 25%;
+    width: 24%;
     margin-left: 37.5%;
     height: 20em;
     margin-top: 5%;
@@ -1144,12 +1144,30 @@ input[type=date]::-webkit-calendar-picker-indicator {
 {
     margin-top: 20%;
 }
+
+
 /*BOTAO DE LOGIN*/
-a.animated-button.victoria-two {
-    border: 2px solid #33B831;
-    
+
+.btn-login
+{
+  padding-top: -30px;
+  border: none;
+  background: none;
 }
-a.animated-button.victoria-two:after {
+
+a
+{
+  height: 10px;
+}
+
+a.animated-button.victoria-two
+{
+    border: 2px solid #33B831;
+
+}
+
+a.animated-button.victoria-two:after
+{
 	background: #33B831;
 	-moz-transform: translateX(-50%) translateY(-50%) rotate(25deg);
 	-ms-transform: translateX(-50%) translateY(-50%) rotate(25deg);
@@ -1158,7 +1176,8 @@ a.animated-button.victoria-two:after {
 }
 
 /* Global Button Styles */
-a.animated-button:link, a.animated-button:visited {
+a.animated-button:link, a.animated-button:visited
+{
 	position: relative;
 	display: block;
 	margin: 30px auto 0;
@@ -1168,8 +1187,8 @@ a.animated-button:link, a.animated-button:visited {
 	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
-    text-transform: uppercase;
-    font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
 
 	overflow: hidden;
 	letter-spacing: .08em;
@@ -1180,7 +1199,9 @@ a.animated-button:link, a.animated-button:visited {
 	-o-transition: all 1s ease;
 	transition: all 1s ease;
 }
-a.animated-button:link:after, a.animated-button:visited:after {
+
+a.animated-button:link:after, a.animated-button:visited:after
+{
 	content: "";
 	position: absolute;
 	height: 0%;
@@ -1193,14 +1214,20 @@ a.animated-button:link:after, a.animated-button:visited:after {
 	-o-transition: all 0.75s ease 0s;
 	transition: all 0.75s ease 0s;
 }
-a.animated-button:link:hover, a.animated-button:visited:hover {
+
+a.animated-button:link:hover, a.animated-button:visited:hover
+{
 	color: #FFF;
 	text-shadow: none;
 }
-a.animated-button:link:hover:after, a.animated-button:visited:hover:after {
+
+a.animated-button:link:hover:after, a.animated-button:visited:hover:after
+{
 	height: 450%;
 }
-a.animated-button:link, a.animated-button:visited {
+
+a.animated-button:link, a.animated-button:visited
+{
 	position: relative;
 	display: block;
 	margin: 30px auto 0;

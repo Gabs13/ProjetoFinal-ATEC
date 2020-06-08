@@ -30,7 +30,7 @@
   }
 
   /* Função de registo */
-  function registo($regmail, $regpass, $regpassval, $u_nome, $u_snome)
+  function registo($regEmail, $regPass, $regRPass, $regPnome, $regUnome, $regTlmv)
   {
     include 'connections/conn.php';
     if($regpass != $regpassval)
@@ -39,24 +39,27 @@
     }
     else
     {
-        $regmail = mysqli_real_escape_string($conn, $regmail);
-        $regpass = mysqli_real_escape_string($conn, $regpass);
-        $u_nome = mysqli_real_escape_string($conn, $u_nome);
-        $u_snome = mysqli_real_escape_string($conn, $u_snome);
+        $regEmail = mysqli_real_escape_string($conn, $regEmail);
+        $regPass = mysqli_real_escape_string($conn, $regPass);
+        $regNome = mysqli_real_escape_string($conn, $regNome);
+        $regUNome = mysqli_real_escape_string($conn, $regUNome);
+        $regTlmv = mysqli_real_escape_string($conn, $regTlmv);
+        $regData = mysqli_real_escape_string($conn, $regData);
+
         /* Encriptar a password */
-        $regpass = base64_encode($regpass);
+        $regPass = base64_encode($regPass);
         /* Evitar duplicados */
-        $existencia = mysqli_fetch_array(mysqli_query($conn, "SELECT logmail FROM entrar WHERE logmail = '$regmail'"));
+        $existencia = mysqli_fetch_array(mysqli_query($conn, "SELECT Email FROM Conta WHERE Email = '$regEmail'"));
 
         if(!$existencia)
         {
           /* Ainda não há este email - cria registo */
-          mysqli_query($conn, "INSERT INTO entrar (logmail, logpass, utipo) VALUES ('$regmail', '$regpass', '1')");
+          mysqli_query($conn, "INSERT INTO Conta (Email, Password, Telemovel) VALUES ('$regMail', '$regPass', $regTlmv)");
 
           /* Ultimo id criado via conn */
-          $uid = mysqli_insert_id($conn);
+          $cid = mysqli_insert_id($conn);
 
-          mysqli_query($conn, "INSERT INTO clientes (cli_uid, cli_nome, cli_sobrenome) VALUES ('$uid', '$u_nome', '$u_snome')");
+          mysqli_query($conn, "INSERT INTO Utilizadores (UtilPNome, UtilUNome, UtilDataNasc, UtilGenero, ContaID) VALUES ('$regNome', '$regUNome', '$regData', '$regGenero', '$cid')");
 
           echo '<script language = "javascript">';
           echo 'alert("Obrigado. Registo efetuado com sucesso")';
