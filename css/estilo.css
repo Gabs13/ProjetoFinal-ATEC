@@ -8,7 +8,7 @@ body {background-color: #f2f2f2;}
 
 /* Fim Geral ---------------------------------------------------------------- */
 
-/*NAVBAR--------------------------------------------------------------------- */
+/*---------------------------------------------------- NAVBAR ------------------------------------------------ */
 .nav_bar
 {
     width:100%;
@@ -70,7 +70,7 @@ body {background-color: #f2f2f2;}
     transition: width .3s;
 }
 
-/*Barra de pesquisa---------------------------------------------------------------------*/
+/*------------------------------------------- Barra de pesquisa -----------------------------------------------*/
 .pesquisar
 {
 
@@ -164,7 +164,7 @@ body {background-color: #f2f2f2;}
 
 /*fim navbar-------------------------------------------------------------------------------------------*/
 
-/*PUBLICAR POST---------------------------------------------------------------------------*/
+/*------------------------------------------ PUBLICAR POST -------------------------------------------------*/
 .post
 {
     border: 1px solid gray;
@@ -277,7 +277,7 @@ body {background-color: #f2f2f2;}
     width: 70%;
     margin-top: 50px;
 }
-/*user info post--------------------------------------*/
+/*---------------------------------------- user info post ---------------------------------------------------*/
 .user_post_info
 {
     display: flex;
@@ -391,7 +391,7 @@ body {background-color: #f2f2f2;}
 }
 /*FIM PUBLICAR POST------------------------------------------------------------------------*/
 
-/*CSS REGISTO--------------------------------------------------- */
+/*-------------------------------------------- CSS REGISTO --------------------------------------------------- */
 .Logo img
 {
     height: 40px;
@@ -538,7 +538,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 /*FIM BODY---------------------------------------------------------------------------------*/
 
 
-/* GALERIA ---------------------------------------------------------------------------------*/
+/*------------------------------------------------ GALERIA --------------------------------------------------*/
 
 .galery_container
 {
@@ -654,7 +654,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     transition :0.3s;
 }
 
-/*SOCIAL BUTTONS-----------------*/
+/*------------------------------------------- SOCIAL BUTTONS -------------------------------------------------*/
 
 .collection_container_info_bot img
 {
@@ -688,7 +688,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 
-/*MODAL DISPLAY DE IMAGENS DA GALERIA*/
+/*-------------------------------------- MODAL DISPLAY DE IMAGENS DA GALERIA ----------------------------------*/
 .modalGallery
 {
     display:none;
@@ -821,7 +821,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
   float:left;
 }
 
-/*Modal direita, parte dos comentarios*/
+/*------------------------------ Modal direita, parte dos comentarios ---------------------------------------*/
 
 .modal_direita_comentarios
 {
@@ -857,7 +857,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 }
 
-/*Botões de like e partilhar comentario na modal da galeria*/
+/*------------------------- Botões de like e partilhar comentario na modal da galeria -------------------------*/
 .autor_modal_info_btn2
 {
     padding-left: 5%;
@@ -905,7 +905,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 
-/*Modal comentario*/
+/*----------------------------------------- Modal comentario ------------------------------------------------*/
 
 .modal_comentario_total
 {
@@ -997,7 +997,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     text-align: right;
 }
 
-/*RESPOSTA AO COMENTARIO------------------------------------------------------------------*/
+/*------------------------------------- RESPOSTA AO COMENTARIO ------------------------------------------------*/
 .modal_comentario_resposta
 {
     height: 10%;
@@ -1026,7 +1026,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     display:block;
 }
 
-/*RESPOSTA AO COMENTARIO PRINCIPAL-----------------------------------------------------------*/
+/*---------------------------------- RESPOSTA AO COMENTARIO PRINCIPAL ----------------------------------------*/
 .modal_comentario_reply
 {
     display:flex;
@@ -1092,11 +1092,139 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .modal_comentario_reply_content_like i:hover
 {
     color:red;
+    cursor: pointer;
+}
+
+/*---------------------------------------- PAGINA DE LOGIN ---------------------------------------------------*/
+.login_form
+{
+    display: block;
+    width: 25%;
+    margin-left: 37.5%;
+    height: 20em;
+    margin-top: 5%;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px 1px #4e4e4e;
+
+}
+.login_form_title
+{
+    padding-bottom: 4%;
+    background-color: black;
+    color: white;
+    padding-top: 3%;
+    font-size: 1.5em;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.login_form form
+{
+    display: grid;
+    margin-top: 7%;
+    width: 69%;
+    padding-left: 16%;
+}
+
+.login_form form input
+{
+    margin-top: 2%;
+    height: 2.2em;
+    margin-bottom: 4%;
+    outline: none;
+    padding-left: 5px;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+#login_form_button
+{
+    margin-top: 20%;
+}
+/*BOTAO DE LOGIN*/
+a.animated-button.victoria-two {
+    border: 2px solid #33B831;
+    
+}
+a.animated-button.victoria-two:after {
+	background: #33B831;
+	-moz-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+	-ms-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+	-webkit-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+	transform: translateX(-50%) translateY(-50%) rotate(25deg);
+}
+
+/* Global Button Styles */
+a.animated-button:link, a.animated-button:visited {
+	position: relative;
+	display: block;
+	margin: 30px auto 0;
+	padding: 14px 15px;
+	color: #fff;
+	font-size:14px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+
+	overflow: hidden;
+	letter-spacing: .08em;
+	border-radius: 0;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+a.animated-button:link:after, a.animated-button:visited:after {
+	content: "";
+	position: absolute;
+	height: 0%;
+	left: 50%;
+	top: 50%;
+	width: 150%;
+	z-index: -1;
+	-webkit-transition: all 0.75s ease 0s;
+	-moz-transition: all 0.75s ease 0s;
+	-o-transition: all 0.75s ease 0s;
+	transition: all 0.75s ease 0s;
+}
+a.animated-button:link:hover, a.animated-button:visited:hover {
+	color: #FFF;
+	text-shadow: none;
+}
+a.animated-button:link:hover:after, a.animated-button:visited:hover:after {
+	height: 450%;
+}
+a.animated-button:link, a.animated-button:visited {
+	position: relative;
+	display: block;
+	margin: 30px auto 0;
+	padding: 14px 15px;
+	color:black;
+	font-size:14px;
+	border-radius: 0;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	letter-spacing: .08em;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
 }
 
 
 
-/* FOOTER ----------------------------------------------- */
+
+/* -------------------------------------------- FOOTER ------------------------------------------------------ */
 
 footer
 {

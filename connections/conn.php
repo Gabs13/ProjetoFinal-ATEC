@@ -12,7 +12,9 @@
 		{
 			die("Erro de Ligação: ".mysqli_connect_error());
 		}
-		else {
+		else 
+		{
+			
 		}
 
 		mysqli_select_db($conn,"Projeto");
