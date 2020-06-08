@@ -21,7 +21,7 @@
 
     <?php
     include 'includes/header.php';
-    include 'includes/loginform.php';
+    include 'includes/galeria.php';
 
 
     include 'includes/footerPrincipal.php';
