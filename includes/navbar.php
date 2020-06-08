@@ -12,11 +12,12 @@
                 <a class="buscar-btn">
                   <i class="fas fa-search"></i>
                 </a>
-               </div>
+              </div>
               <li>Perfil</li>
               <li>Network</li>
               <li>Galeria</li>
             </ul>
+            <label> Gabriel Cosme </label>
           </div>
         </div>
 

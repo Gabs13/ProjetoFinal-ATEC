@@ -4,7 +4,7 @@
 
 .limpa{clear: both;}
 
-body {background-color: #2d3235;}
+body {background-color: #f2f2f2;}
 
 /* Fim Geral ---------------------------------------------------------------- */
 
@@ -544,8 +544,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
 {
     width: 90%;
     height: 500px;
-    margin-right: 10%;
-    margin-left: 10%;
+    margin-right: 5%;
+    margin-left: 5%;
     margin-top: 50px;
     border-radius: 8px;
     display: flex;
@@ -1216,16 +1216,20 @@ footer
 
 }
 
-.menu span i:nth-child(1) {
+.menu span i:nth-child(1)
+{
   top: 40%;
 }
-.menu span i:nth-child(2) {
+.menu span i:nth-child(2)
+{
   top: 50%;
 }
-.menu span i:nth-child(3) {
+.menu span i:nth-child(3)
+{
   top: 60%;
 }
-.menu .menuContent {
+.menu .menuContent
+{
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1233,14 +1237,39 @@ footer
   right: 0px;
   text-align: center;
 }
-.menu .menuContent * {
+
+.menuContent
+{
+  display: inline;
+}
+
+.menu .menuContent *
+{
   opacity: 0;
 }
-.menu .menuContent ul li {
+
+.menuContent ul
+{
+  width: 80%;
+  float: left;
+  margin-top: 15px;
+  padding-left: 30px;
+}
+
+.menuContent label
+{
+  width: 15%;
+  float: right;
+  font-size: 20px;
+}
+
+.menu .menuContent ul li
+{
   display: inline-block;
   margin-left: 50px;
   margin-right: 50px;
   color: #2d3235;
+  font-size: 20px;
   transition: opacity 0.3s ease 0.3s;
   cursor: pointer;
   position: relative;
@@ -1271,6 +1300,11 @@ footer
   opacity: 0;
   right: 0;
   margin: auto;
+}
+
+.menuContent ul li:first-of-type
+{
+  padding-left: 25%;
 }
 
  /*butao e search bar -------------------------------------------------------------------------------*/
