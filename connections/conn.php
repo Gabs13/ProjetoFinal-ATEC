@@ -14,7 +14,7 @@
 		}
 		else 
 		{
-			echo "Conetado com sucesso!";
+			
 		}
 
 		mysqli_select_db($conn,"Projeto");
