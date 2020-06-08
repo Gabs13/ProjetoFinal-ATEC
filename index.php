@@ -20,8 +20,9 @@
   <body>
 
     <?php
-    include 'includes/header.php';
-    include 'includes/loginform.php';
+    include 'includes/navbar.php';
+
+    include 'includes/registo.php';
 
 
     include 'includes/footerPrincipal.php';
