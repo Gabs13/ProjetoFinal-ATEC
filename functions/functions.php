@@ -21,12 +21,14 @@
 
 
   /* Função de registo */
-  function registo($regMail, $regPass, $regRPass, $regNome, $regUNome, $regData)
+  function registo($regMail, $regPass, $regRPass, $regNome, $regUNome, $regTlmv, $regGenero, $regData)
   {
     include 'connections/conn.php';
     if($regPass != $regRPass)
     {
-      echo 'As senhas não correspondem';
+      echo '<script language = "javascript">';
+      echo 'alert("As senhas não correspondem!")';
+      echo '</script>';
     }
     else
     {
@@ -34,6 +36,7 @@
         $regPass = mysqli_real_escape_string($conn, $regPass);
         $regNome = mysqli_real_escape_string($conn, $regNome);
         $regUNome = mysqli_real_escape_string($conn, $regUNome);
+        $regTlmv = mysqli_real_escape_string($conn, $regTlmv);
         $regData = mysqli_real_escape_string($conn, $regData);
         /* Encriptar a password */
         $regPass = base64_encode($regPass);
@@ -44,12 +47,12 @@
         if(!$existencia)
         {
           /* Ainda não há este email - cria registo */
-          mysqli_query($conn, "INSERT INTO Conta (Email, Password) VALUES ('$regmail', '$regpass')");
+          mysqli_query($conn, "INSERT INTO Conta (Email, Password, Telemovel) VALUES ('$regMail', '$regPass', $regTlmv)");
 
           /* Ultimo id criado via conn */
-          $uid = mysqli_insert_id($conn);
+          $cid = mysqli_insert_id($conn);
 
-          mysqli_query($conn, "INSERT INTO Utilizadores (UtilPNome, UtilUNome, UtilDataNasc, ContaID) VALUES ('$regNome', '$regUNome', '$regData', '$uid')");
+          mysqli_query($conn, "INSERT INTO Utilizadores (UtilPNome, UtilUNome, UtilDataNasc, UtilGenero, ContaID) VALUES ('$regNome', '$regUNome', '$regData', '$regGenero', '$cid')");
 
           echo '<script language = "javascript">';
           echo 'alert("Obrigado. Registo efetuado com sucesso")';

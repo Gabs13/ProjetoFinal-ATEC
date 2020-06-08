@@ -14,7 +14,7 @@ body {background-color: white;}
     width:100%;
     height: 4em;
     display: inline-flex;
-    background-color: #00cc8b;
+    background-color: #2d3235;
     border-bottom: 1px solid rgba(0,0,0,0.2);
     color:white;
     font-family: 'Roboto', sans-serif;
@@ -1089,7 +1089,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 }
 
-.modal_comentario_reply_content_like:hover
+.modal_comentario_reply_content_like i:hover
 {
     color:red;
 }
