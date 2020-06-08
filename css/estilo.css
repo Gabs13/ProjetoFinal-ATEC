@@ -1148,27 +1148,11 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 /*BOTAO DE LOGIN*/
 
-.btn-login
-{
-  padding-top: -30px;
-  border: none;
-  background: none;
+a.animated-button.victoria-two {
+	border: 2px solid #D24D57;
 }
-
-a
-{
-  height: 10px;
-}
-
-a.animated-button.victoria-two
-{
-    border: 2px solid #33B831;
-
-}
-
-a.animated-button.victoria-two:after
-{
-	background: #33B831;
+a.animated-button.victoria-two:after {
+	background: #D24D57;
 	-moz-transform: translateX(-50%) translateY(-50%) rotate(25deg);
 	-ms-transform: translateX(-50%) translateY(-50%) rotate(25deg);
 	-webkit-transform: translateX(-50%) translateY(-50%) rotate(25deg);
@@ -1176,20 +1160,17 @@ a.animated-button.victoria-two:after
 }
 
 /* Global Button Styles */
-a.animated-button:link, a.animated-button:visited
-{
+a.animated-button:link, a.animated-button:visited {
 	position: relative;
 	display: block;
 	margin: 30px auto 0;
 	padding: 14px 15px;
-	color: #fff;
+	color: black;
 	font-size:14px;
 	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
-  text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
-
+	text-transform: uppercase;
 	overflow: hidden;
 	letter-spacing: .08em;
 	border-radius: 0;
@@ -1199,9 +1180,7 @@ a.animated-button:link, a.animated-button:visited
 	-o-transition: all 1s ease;
 	transition: all 1s ease;
 }
-
-a.animated-button:link:after, a.animated-button:visited:after
-{
+a.animated-button:link:after, a.animated-button:visited:after {
 	content: "";
 	position: absolute;
 	height: 0%;
@@ -1214,27 +1193,22 @@ a.animated-button:link:after, a.animated-button:visited:after
 	-o-transition: all 0.75s ease 0s;
 	transition: all 0.75s ease 0s;
 }
-
-a.animated-button:link:hover, a.animated-button:visited:hover
-{
-	color: #FFF;
+a.animated-button:link:hover, a.animated-button:visited:hover {
+	color:#fff;
 	text-shadow: none;
 }
-
-a.animated-button:link:hover:after, a.animated-button:visited:hover:after
-{
+a.animated-button:link:hover:after, a.animated-button:visited:hover:after {
 	height: 450%;
 }
-
-a.animated-button:link, a.animated-button:visited
-{
+a.animated-button:link, a.animated-button:visited {
 	position: relative;
 	display: block;
 	margin: 30px auto 0;
 	padding: 14px 15px;
-	color:black;
+	color: black;
 	font-size:14px;
-	border-radius: 0;
+    border-radius: 0;
+    font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
@@ -1247,8 +1221,6 @@ a.animated-button:link, a.animated-button:visited
 	-o-transition: all 1s ease;
 	transition: all 1s ease;
 }
-
-
 
 
 /* -------------------------------------------- FOOTER ------------------------------------------------------ */

@@ -56,3 +56,11 @@ $(document).ready(function()
   /*FINAL DO DISPLAY DA GALERIA------------------------------------------*/
 
 });//final jquery onload
+
+
+/*BOTAO DE LOGIN*/
+$(document).ready(function () {
+   $('#LoginFormB').click(function () {
+      $('#LoginFormA').click();
+   });
+ });
