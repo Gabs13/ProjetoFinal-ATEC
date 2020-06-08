@@ -12,7 +12,8 @@
 		{
 			die("Erro de Ligação: ".mysqli_connect_error());
 		}
-		else {
+		else 
+		{
 			echo "Conetado com sucesso!";
 		}
 

@@ -63,7 +63,7 @@
               <div class="modal_comentario_reply_content">
                 <div class="modal_comentario_reply_content_name">Tó Carocho</div>
                 <div class="modal_comentario_reply_content_main">
-                  <div class="modal_comentario_reply_content_texto">Eu era toxicodependente</div>
+                  <div class="modal_comentario_reply_content_texto">Eu era toxicoindependente</div>
                   <div class="modal_comentario_reply_content_like"><i class="fas fa-heart"></i></div>
                 </div>
               </div>

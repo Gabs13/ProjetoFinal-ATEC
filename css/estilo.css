@@ -8,7 +8,7 @@ body {background-color: white;}
 
 /* Fim Geral ---------------------------------------------------------------- */
 
-/*NAVBAR--------------------------------------------------------------------- */
+/*---------------------------------------------------- NAVBAR ------------------------------------------------ */
 .nav_bar
 {
     width:100%;
@@ -70,7 +70,7 @@ body {background-color: white;}
     transition: width .3s;
 }
 
-/*Barra de pesquisa---------------------------------------------------------------------*/
+/*------------------------------------------- Barra de pesquisa -----------------------------------------------*/
 .pesquisar
 {
 
@@ -164,7 +164,7 @@ body {background-color: white;}
 
 /*fim navbar-------------------------------------------------------------------------------------------*/
 
-/*PUBLICAR POST---------------------------------------------------------------------------*/
+/*------------------------------------------ PUBLICAR POST -------------------------------------------------*/
 .post
 {
     border: 1px solid gray;
@@ -277,7 +277,7 @@ body {background-color: white;}
     width: 70%;
     margin-top: 50px;
 }
-/*user info post--------------------------------------*/
+/*---------------------------------------- user info post ---------------------------------------------------*/
 .user_post_info
 {
     display: flex;
@@ -391,7 +391,7 @@ body {background-color: white;}
 }
 /*FIM PUBLICAR POST------------------------------------------------------------------------*/
 
-/*CSS REGISTO--------------------------------------------------- */
+/*-------------------------------------------- CSS REGISTO --------------------------------------------------- */
 .Logo img
 {
     height: 40px;
@@ -538,7 +538,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 /*FIM BODY---------------------------------------------------------------------------------*/
 
 
-/* GALERIA ---------------------------------------------------------------------------------*/
+/*------------------------------------------------ GALERIA --------------------------------------------------*/
 
 .galery_container
 {
@@ -654,7 +654,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     transition :0.3s;
 }
 
-/*SOCIAL BUTTONS-----------------*/
+/*------------------------------------------- SOCIAL BUTTONS -------------------------------------------------*/
 
 .collection_container_info_bot img
 {
@@ -688,7 +688,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 
-/*MODAL DISPLAY DE IMAGENS DA GALERIA*/
+/*-------------------------------------- MODAL DISPLAY DE IMAGENS DA GALERIA ----------------------------------*/
 .modalGallery
 {
     display:none;
@@ -821,7 +821,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
   float:left;
 }
 
-/*Modal direita, parte dos comentarios*/
+/*------------------------------ Modal direita, parte dos comentarios ---------------------------------------*/
 
 .modal_direita_comentarios
 {
@@ -857,7 +857,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 }
 
-/*Botões de like e partilhar comentario na modal da galeria*/
+/*------------------------- Botões de like e partilhar comentario na modal da galeria -------------------------*/
 .autor_modal_info_btn2
 {
     padding-left: 5%;
@@ -905,7 +905,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 
-/*Modal comentario*/
+/*----------------------------------------- Modal comentario ------------------------------------------------*/
 
 .modal_comentario_total
 {
@@ -997,7 +997,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     text-align: right;
 }
 
-/*RESPOSTA AO COMENTARIO------------------------------------------------------------------*/
+/*------------------------------------- RESPOSTA AO COMENTARIO ------------------------------------------------*/
 .modal_comentario_resposta
 {
     height: 10%;
@@ -1026,7 +1026,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     display:block;
 }
 
-/*RESPOSTA AO COMENTARIO PRINCIPAL-----------------------------------------------------------*/
+/*---------------------------------- RESPOSTA AO COMENTARIO PRINCIPAL ----------------------------------------*/
 .modal_comentario_reply
 {
     display:flex;
@@ -1092,11 +1092,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .modal_comentario_reply_content_like i:hover
 {
     color:red;
+    cursor: pointer;
 }
 
 
 
-/* FOOTER ----------------------------------------------- */
+
+
+/* --------------------------------------- FOOTER ----------------------------------------------- */
 
 footer
 {
