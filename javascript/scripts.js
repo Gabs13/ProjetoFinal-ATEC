@@ -21,11 +21,13 @@ $(document).ready(function()
 
     if (padtop == '50px')
     {
-      $('html, body').css('padding-top', '0px')
+      //Animação puxar body para cima
+      $('html, body').animate({paddingTop: 0}, 750);
     }
     else
     {
-      $('html, body').css('padding-top', '50px')
+      //Animação empurrar body para baixo
+      $('html, body').animate({paddingTop: 50}, 250);
     }
   }
 
@@ -50,7 +52,7 @@ $(document).ready(function()
     document.getElementById('modal_user_sendbtn').style.transition= "1s";
   }
 
-  /*Display de imagens da galeria1 -------------------------------------------*/
+  /*Display de imagens da galeria --------------------------------------------*/
   displayModalGaleria.onclick = function()
   {
       modal.style.display = "block";
@@ -73,11 +75,5 @@ $(document).ready(function()
         modal.style.display = "none";
     }
   });
-  /*FINAL DO DISPLAY DA GALERIA-----------------------------------------------*/
-
-  /*BOTAO DE LOGIN -----------------------------------------------------------*/
-  $('#LoginFormB').click(function () {
-     $('#LoginFormA').click();
-  });
-
-});//final jquery onload
+  /*FINAL DO DISPLAY DA GALERIA------------------------------------------------*/
+});

@@ -16,15 +16,28 @@
     if(!$validado)
     {
       /* Não existe user */
-      echo 'Erro: Dados Inválidados; Tente Novamente';
+      echo '<script language = "javascript">';
+      echo 'alert("Dados Inválidos")';
+      echo '</script>';
     }
     else
     {
       /* Existe user */
       /* Alocar à sessão o id e o tipo de user logado */
-      $_SESSION["uid"] = $validado["ContaID"];
+      $_SESSION["CID"] = $validado["ContaID"];
+
+      $validarUtil = mysqli_query($conn, "SELECT * FROM Utilizadores WHERE ContaID = '$_SESSION[CID]'");
+
+      $validadoUtil = mysqli_fetch_array($validarUtil);
+
+      $_SESSION["CPNome"] = $validadoUtil["UtilPNome"];
+      $_SESSION["CUNome"] = $validadoUtil["UtilUNome"];
       /* Refresh */
-      echo '<meta http-equiv="refresh" content="0;url=index.php">';
+      echo '<script language = "javascript">';
+      echo 'alert("Entrou com sucesso");';
+      echo '</script>';
+
+      echo '<meta http-equiv="refresh" content="0;url=login.php">';
     }
     include 'connections/deconn.php';
   }
