@@ -23,7 +23,7 @@
     <?php
     include 'includes/navbar.php';
 
-    include 'includes/loginform.php';
+    include 'includes/galeria.php';
 
 
     include 'includes/footerPrincipal.php';

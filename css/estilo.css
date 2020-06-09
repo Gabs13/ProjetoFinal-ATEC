@@ -542,13 +542,18 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .galery_container
 {
-    width: 90%;
-    height: 500px;
-    margin-right: 5%;
-    margin-left: 5%;
+    width: 70%;
+    height: 21em;
+    margin-right: 15%;
+    margin-left: 15%;
     margin-top: 50px;
     border-radius: 8px;
     display: flex;
+}
+
+.container_last_child
+{
+    margin-right: 0%;
 }
 
 .galery_title
@@ -561,10 +566,15 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .collection_container_item
 {
-    width: 12em;
+    width: 20%;
     height: 18em;
     margin-right: 5%;
 }
+
+.collection_container_item:last-child
+{
+    margin-right: 0;
+} 
 
 .collection_container_item:hover .collection_container_social
 {

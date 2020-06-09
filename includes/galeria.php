@@ -95,7 +95,7 @@
 <div class="arrow_2"></div>
 
 </div>
-<!--FINAL DA MODAL-->
+<!--FINAL DA MODAL---------------------------------------------------------------------------------------------->
 
 
     <!--CRIACAO DE UM POST NA GALERIA-->
@@ -110,7 +110,7 @@
                         <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-love-24.png"></div>
                         <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-comments-24.png"></div>
                         <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-share-24.png"></div>
-                </div>
+                    </div>
                 </div>
             </div>
             <div class="collection_container_social">
@@ -133,7 +133,7 @@
                         <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-love-24.png"></div>
                         <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-comments-24.png"></div>
                         <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-share-24.png"></div>
-                </div>
+                    </div>
                 </div>
             </div>
             <div class="collection_container_social">
@@ -141,7 +141,77 @@
                 <div class="collection_social_btn">Pintura</div>
 
             </div>
+          </div>
 
-    </div><!--Final do container dos posts-->
+
+          <!--CRIACAO DE UM POST NA GALERIA-->
+
+        <div class="collection_container_item">
+            <div class="collection_container_name" id="galerydisplay2">
+            <!--MODAL SLIDER DE IMAGENS-->
+
+                <div class="text_gallery">
+                    <div class="collection_container_name_info2 collection_container_name_info">Fábio Santos</div>
+                    <div class="collection_container_info_bot">
+                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-love-24.png"></div>
+                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-comments-24.png"></div>
+                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-share-24.png"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="collection_container_social">
+                <div class="collection_social_btn">"Animais"</div>
+                <div class="collection_social_btn">Pintura</div>
+
+            </div>
+          </div>
+
+
+          <!--CRIACAO DE UM POST NA GALERIA-->
+
+        <div class="collection_container_item">
+            <div class="collection_container_name" id="galerydisplay2">
+            <!--MODAL SLIDER DE IMAGENS-->
+
+                <div class="text_gallery">
+                    <div class="collection_container_name_info2 collection_container_name_info">Fábio Santos</div>
+                    <div class="collection_container_info_bot">
+                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-love-24.png"></div>
+                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-comments-24.png"></div>
+                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-share-24.png"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="collection_container_social">
+                <div class="collection_social_btn">"Animais"</div>
+                <div class="collection_social_btn">Pintura</div>
+
+            </div>
+          </div>
+
+
+          <!--CRIACAO DE UM POST NA GALERIA-->
+
+        <div class="collection_container_item container_last_child">
+            <div class="collection_container_name" id="galerydisplay2">
+            <!--MODAL SLIDER DE IMAGENS-->
+
+                <div class="text_gallery">
+                    <div class="collection_container_name_info2 collection_container_name_info">Fábio Santos</div>
+                    <div class="collection_container_info_bot">
+                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-love-24.png"></div>
+                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-comments-24.png"></div>
+                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-share-24.png"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="collection_container_social">
+                <div class="collection_social_btn">"Animais"</div>
+                <div class="collection_social_btn">Pintura</div>
+
+            </div>
+          </div> 
+
+    </div><!--Final do container1 dos posts-->
 </body>
 </html>
