@@ -1297,7 +1297,7 @@ footer
   text-align: center;
   position: absolute;
   overflow: hidden;
-  transition: all 0.2s ease;
+  transition: all 0.7s ease;
   z-index: 999;
   border-top-right-radius: 47px;
   border-bottom-right-radius: 50px;
