@@ -1,4 +1,5 @@
 /* Geral -------------------------------------------------------------------- */
+/*colors : vermelho escuro:#D24D57*/
 
 *{margin:0; padding: 0;}
 
@@ -1101,7 +1102,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .modal_comentario_reply_content_like i:hover
 {
-    color:red;
+    
+    color:#D24D57;
+    cursor: pointer;
+}
+
+.modal_comentario_buttons i:hover 
+{
+    color:#D24D57;
     cursor: pointer;
 }
 

@@ -49,9 +49,9 @@
                   </div>  
               </div>
               <div class="modal_comentario_buttons">
-                  <div><a><img src="Imagens/Icones/icons8-love-24.png"></a></div>
-                  <div id="btn_comment"><a><img src="Imagens/Icones/icons8-comments-24.png"></a></div>
-                  <div><a><img src="Imagens/Icones/icons8-more-24.png"></a></div>
+                  <div><i class="fas fa-heart"></i></div>
+                  <div id="btn_comment"><i class="fas fa-comment"></i></div>
+                  <div><i class="fas fa-ellipsis-h"></i></div>
                   <div class="modal_comentario_buttons_likes">320 Likes</div>
               </div>
             </div> 
