@@ -1,16 +1,28 @@
 $(document).ready(function()
 {
-    var uuu = document.getElementById('galerydisplay');
-    var span = document.getElementById('close');
-    var modal = document.getElementById('modal');
-    var btncomentario = document.getElementById('btn_comment');
-    var comentariobottom = document.getElementById('comentario_bottom');
-    //segunda modal
-    var galeria2 = document.getElementById('galerydisplay2');
+  var uuu = document.getElementById('galerydisplay');
+  var span = document.getElementById('close');
+  var modal = document.getElementById('modal');
+  var btncomentario = document.getElementById('btn_comment');
+  var comentariobottom = document.getElementById('comentario_bottom');
+  //segunda modal
+  var galeria2 = document.getElementById('galerydisplay2');
+  //Botão imagem user
+  var btnuser = document.getElementById('toggle');
 
-  function postCreate()
+  btnuser.onclick = function()
   {
+    var padtop;
+    padtop = $('html, body').css('padding-top');
 
+    if (padtop == '50px')
+    {
+      $('html, body').css('padding-top', '0px')
+    }
+    else
+    {
+      $('html, body').css('padding-top', '50px')
+    }
   }
 
   btncomentario.onclick = function()
@@ -23,7 +35,7 @@ $(document).ready(function()
     {
       document.getElementsByClassName('modal_comentario_resposta')[0].style.display="none";
     }
-    
+
   }
 
   comentariobottom.onclick = function()
@@ -33,7 +45,7 @@ $(document).ready(function()
   }
 
   /*display de imagens da galeria1-----------------------------------*/
-  uuu.onclick = function() 
+  uuu.onclick = function()
   {
       modal.style.display = "block";
   }
@@ -46,9 +58,9 @@ $(document).ready(function()
 
 
 
-  window.onclick = function(event) 
+  window.onclick = function(event)
   {
-    if (event.target == modal || event.target == span) 
+    if (event.target == modal || event.target == span)
     {
       modal.style.display = "none";
     }
