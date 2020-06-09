@@ -17,7 +17,7 @@
               <li>Network</li>
               <li>Galeria</li>
             </ul>
-            <label> Gabriel Cosme </label>
+            <label> <?php echo $_SESSION["CPNome"].' '.$_SESSION["CUNome"]; ?> </label>
           </div>
         </div>
 

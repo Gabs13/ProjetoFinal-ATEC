@@ -1,4 +1,5 @@
 <?php
+  session_start();
   require_once 'functions/functions.php';
 ?>
 
@@ -16,14 +17,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <script src="scrips.js"></script>
+    <script src="javascript/scriptslogin.js"></script>
   </head>
   <body>
 
     <?php
-    include 'includes/navbar.php';
-
-    include 'includes/galeria.php';
+    include 'includes/loginform.php';
 
 
     include 'includes/footerPrincipal.php';

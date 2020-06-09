@@ -575,7 +575,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .collection_container_item:last-child
 {
     margin-right: 0;
-} 
+}
 
 .collection_container_item:hover .collection_container_social
 {
@@ -1128,15 +1128,19 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 .login_form_title
 {
-    padding-bottom: 4%;
     background-color: black;
     color: white;
-    padding-top: 3%;
     font-size: 1.5em;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     font-family: 'Open Sans', sans-serif;
 
+}
+
+.login_form_title img
+{
+  width: 4em;
+  height: 2em;
 }
 
 .login_form form
@@ -1301,7 +1305,7 @@ footer
   text-align: center;
   position: absolute;
   overflow: hidden;
-  transition: all 0.2s ease;
+  transition: all 0.7s ease;
   z-index: 999;
   border-top-right-radius: 47px;
   border-bottom-right-radius: 50px;
