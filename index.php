@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require_once 'functions/functions.php';
+  require 'functions/functions.php';
 ?>
 
 <!DOCTYPE html>

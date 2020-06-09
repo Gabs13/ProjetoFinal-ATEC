@@ -703,7 +703,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 {
     display:none;
     position:fixed;
-    z-index: 1;/*Ficar por cima dos elementos no eixo Z*/
+    z-index: 2;/*Ficar por cima dos elementos no eixo Z*/
     left: 0;
     top: 0;
     width: 100%;
@@ -1298,7 +1298,7 @@ footer
   position: absolute;
   overflow: hidden;
   transition: all 0.7s ease;
-  z-index: 999;
+  z-index: 1;
   border-top-right-radius: 47px;
   border-bottom-right-radius: 50px;
   border-top-left-radius: 50px;

@@ -1,10 +1,13 @@
 <?php
-  function entrar($logMail, $logPass)
+  if(@$_POST['action'] == 'entrar')
   {
+    include 'conn.php';
+
+    $logMail = mysqli_real_escape_string($conn, $_POST['email']);
+    $logPass = mysqli_real_escape_string($conn, $_POST['password']);
     /* Encripta a pass para comparar com a pass encriptada que está na base de dados */
     $logPass = base64_encode($logPass);
 
-    include 'connections/conn.php';
 
     /* Controlo de MYSQL Injections */
     $logMail = mysqli_real_escape_string($conn, $logMail);
@@ -16,9 +19,7 @@
     if(!$validado)
     {
       /* Não existe user */
-      echo '<script language = "javascript">';
-      echo 'alert("Dados Inválidos")';
-      echo '</script>';
+      $resultado = array('erro' => '1');
     }
     else
     {
@@ -33,13 +34,12 @@
       $_SESSION["CPNome"] = $validadoUtil["UtilPNome"];
       $_SESSION["CUNome"] = $validadoUtil["UtilUNome"];
       /* Refresh */
-      echo '<script language = "javascript">';
-      echo 'alert("Entrou com sucesso");';
-      echo '</script>';
 
-      echo '<meta http-equiv="refresh" content="0;url=login.php">';
+      $resultado = array('sucesso' => '1');
     }
-    include 'connections/deconn.php';
+    include 'deconn.php';
+
+    echo json_encode($resultado);
   }
 
   /* Função de registo */
