@@ -1,12 +1,15 @@
 $(document).ready(function()
 {
-  var uuu = document.getElementById('galerydisplay');
+  //modal imagem da galeria
+  var displayModalGaleria = document.getElementById('galerydisplay');
+  //X para fechar modal
   var span = document.getElementById('close');
+  //modal da galeria
   var modal = document.getElementById('modal');
+  //botao do comentario dentro da modal
   var btncomentario = document.getElementById('btn_comment');
+  //onclick input comentario da modal
   var comentariobottom = document.getElementById('comentario_bottom');
-  //segunda modal
-  var galeria2 = document.getElementById('galerydisplay2');
   //Botão imagem user
   var btnuser = document.getElementById('toggle');
 
@@ -25,6 +28,7 @@ $(document).ready(function()
     }
   }
 
+  //CLICK BOTAO COMENTARIO MODAL
   btncomentario.onclick = function()
   {
     if(document.getElementsByClassName('modal_comentario_resposta')[0].style.display=="none")
@@ -38,6 +42,7 @@ $(document).ready(function()
 
   }
 
+  //COMENTARIO MODAL BOTTOM (APARECER A SETA DE ENVIAR)
   comentariobottom.onclick = function()
   {
     document.getElementById('modal_user_sendbtn').style.display="block";
@@ -45,19 +50,12 @@ $(document).ready(function()
   }
 
   /*display de imagens da galeria1-----------------------------------*/
-  uuu.onclick = function()
+  displayModalGaleria.onclick = function()
   {
       modal.style.display = "block";
   }
 
-  //Display de imagens da galeria2------------------------------------------
-  galeria2.onclick= function()
-  {
-    modal.style.display = "block";
-  }
-
-
-
+  //FECHAR MODAL
   window.onclick = function(event)
   {
     if (event.target == modal || event.target == span)
