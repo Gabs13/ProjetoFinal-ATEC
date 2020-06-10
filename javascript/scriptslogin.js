@@ -29,6 +29,10 @@ function login()
         var datajson = jQuery.parseJSON(result);
 
         location.href = "login.php";
+
+        console.log(datajson['sessao']);
+        console.log(datajson['nome']);
+        console.log(datajson['sobrenome']);
       }
     });
   }

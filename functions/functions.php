@@ -3,6 +3,8 @@
   {
     include 'conn.php';
 
+    session_start();
+
     $logMail = mysqli_real_escape_string($conn, $_POST['email']);
     $logPass = mysqli_real_escape_string($conn, $_POST['password']);
     /* Encripta a pass para comparar com a pass encriptada que está na base de dados */
@@ -35,11 +37,26 @@
       $_SESSION["CUNome"] = $validadoUtil["UtilUNome"];
       /* Refresh */
 
-      $resultado = array('sucesso' => '1');
+      $resultado = array('sucesso' => '1',
+                         'sessao' => $_SESSION["CID"],
+                         'nome' => $_SESSION["CPNome"],
+                         'sobrenome' => $_SESSION["CUNome"]);
+
     }
     include 'deconn.php';
 
     echo json_encode($resultado);
+  }
+
+  function destruir_sessao()
+  {
+    @session_start();
+
+    unset($_SESSION['CID']);
+    unset($_SESSION["CPNome"]);
+    unset($_SESSION["CUNome"]);
+
+    session_destroy();
   }
 
   /* Função de registo */

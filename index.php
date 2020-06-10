@@ -1,6 +1,6 @@
 <?php
-  session_start();
   require 'functions/functions.php';
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,6 @@
     <script src="javascript/scriptslogin.js"></script>
   </head>
   <body>
-
     <?php
     include 'includes/loginform.php';
 
