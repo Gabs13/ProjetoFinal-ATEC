@@ -5,5 +5,35 @@ $(document).ready(function()
     event.preventDefault();
     $("#LoginFormA").click();
   });
-
 });//final jquery onload
+
+function login()
+{
+  var email = $('#logMail').val();
+  var password = $('#logPass').val();
+
+  if (email != '' || password != '')
+  {
+
+    $.ajax({
+      type:"POST",
+      url:"functions/functions.php",
+      data: {
+        action:'entrar',
+        email:email,
+        password:password,
+      },
+
+      success:function(result)
+      {
+        var datajson = jQuery.parseJSON(result);
+
+        location.href = "login.php";
+
+        console.log(datajson['sessao']);
+        console.log(datajson['nome']);
+        console.log(datajson['sobrenome']);
+      }
+    });
+  }
+}
