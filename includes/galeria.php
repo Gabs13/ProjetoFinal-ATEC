@@ -49,9 +49,18 @@
                   </div>  
               </div>
               <div class="modal_comentario_buttons">
-                  <div><i class="fas fa-heart"></i></div>
+                  <div id="btn_like"><i class="fas fa-heart"></i></div>
                   <div id="btn_comment"><i class="fas fa-comment"></i></div>
-                  <div><i class="fas fa-ellipsis-h"></i></div>
+                  <div id="btn_options"><i id ="optionsbuttonI" class="fas fa-ellipsis-h"></i>
+                    <div class="modal_hidden_options">
+                      <div>Coiso</div>
+                      <div>Idolatrar o to</div>
+                      <div>sdcsdfsd</div>
+                      <div>Reportar</div>
+                    </div>
+                  </div>
+                  
+                  
                   <div class="modal_comentario_buttons_likes">320 Likes</div>
               </div>
             </div> 
@@ -70,8 +79,11 @@
         </div>     
         <!--ADICIONAR UM COMENTARIO NA MODAL-->     
         <div class="modal_comentario_resposta">
-            <div class="modal_comentario_resposta_imagem"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-            <input type="text" placeholder="Adicione um comentário..." class="modal_comentario_resposta_texto"> 
+          <div class="modal_comentario_resposta_imagem"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+          <div class="modal_comentario_resposta_texto">
+            <input type="text" placeholder="Adicione um comentário..." >
+            <i class="fas fa-location-arrow"></i>
+          </div> 
         </div>
       </div> 
 

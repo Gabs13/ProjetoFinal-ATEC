@@ -12,8 +12,19 @@ $(document).ready(function()
   var comentariobottom = document.getElementById('comentario_bottom');
   //Botão imagem user
   var btnuser = document.getElementById('toggle');
-
+  //botao de like modal
+  var btnLikeModal = document.getElementById('btn_like');
+  //botao de settings no comentario
+  var btnsettingsModal = document.getElementById('btn_options');
+  //index das settings
+  var indexSettings = document.getElementsByClassName('modal_hidden_options');
+  //botao das settings i
+  var settingI = document.getElementById('optionsbuttonI');
+  //botao numero de likes comentarios modal
+  
   /*Empurrar body para baixo quando se abre navbar ---------------------------*/
+
+
   btnuser.onclick = function()
   {
     var padtop;
@@ -44,7 +55,45 @@ $(document).ready(function()
     }
 
   }
+ 
+  /**/
+  settingI.onclick = function()
+  {
 
+    if(indexSettings[0].style.display=="none")
+    {
+      indexSettings[0].style.display="block";
+    }
+    else
+    {
+      indexSettings[0].style.display="none";
+    }
+
+    /*border da cena de cima com os tres pontos*/
+    if(settingI.style.border=="none")
+    {
+      settingI.style.border="1px solid gray";
+    }
+    else
+    {
+      settingI.style.border="none";
+    }
+  }
+
+
+  //MODAL 
+  btnLikeModal.onclick = function()
+  {
+    if(btnLikeModal.style.color="black")
+    {
+      btnLikeModal.style.color="#D24D57"
+    }
+    else
+    {
+      btnLikeModal.style.color="black"
+    }  
+  }
+  
   /*COMENTARIO MODAL BOTTOM (APARECER A SETA DE ENVIAR) ----------------------*/
   comentariobottom.onclick = function()
   {

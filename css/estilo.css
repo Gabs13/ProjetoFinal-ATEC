@@ -950,7 +950,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
     margin-top: 5%;
     display: flex;
     width: 100%;
-    height: 30%;
+    height: 100%;
+    max-height: 100%;
 }
 
 .modal_comentario_userimg
@@ -979,7 +980,15 @@ input[type=date]::-webkit-calendar-picker-indicator {
 {
     padding-right: 3%;
 }
-.modal_comentario_buttons>div:hover
+
+.modal_hidden_options
+{
+    padding-right: 0% !important;
+}
+
+
+
+.modal_comentario_buttons i:hover
 {
     cursor: pointer;
 }
@@ -1004,8 +1013,16 @@ input[type=date]::-webkit-calendar-picker-indicator {
 {
     float: right;
     font-size: 0.7em;
-    width: 100%;
     text-align: right;
+    margin-left: 2%;
+    width: 100%;
+    margin-left: 50%;
+}
+
+.modal_comentario_buttons_likes:hover
+{
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 /*------------------------------------- RESPOSTA AO COMENTARIO ------------------------------------------------*/
@@ -1023,7 +1040,27 @@ input[type=date]::-webkit-calendar-picker-indicator {
     border-radius: 10px;
     padding-left: 5px;
     width: 84%;
+}
+
+.modal_comentario_resposta_texto input
+{
     outline: none;
+    border:none;
+    height: 100%;
+    font-size:0.7em;
+    padding-right: 1.8em;
+}
+
+.modal_comentario_resposta_texto i:hover
+{
+    cursor: pointer;
+}
+
+
+
+.modal_comentario_resposta_texto i
+{
+    transform: rotate(43deg);
 }
 
 .modal_comentario_resposta_imagem
@@ -1035,6 +1072,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .modal_comment_main_resposta
 {
     display:block;
+    height: 30%;
 }
 
 /*---------------------------------- RESPOSTA AO COMENTARIO PRINCIPAL ----------------------------------------*/
@@ -1043,7 +1081,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     display:flex;
     width: 70%;
     float: right;
-    height: 10%;
+    height: 40%;
     margin-bottom: 5%;
 }
 
@@ -1112,6 +1150,69 @@ input[type=date]::-webkit-calendar-picker-indicator {
     color:#D24D57;
     cursor: pointer;
 }
+
+#btn_like
+{
+    color: black;
+}
+
+#btn_options
+{
+    position: relative;
+}
+
+#btn_options i
+{
+    border: none;
+    border-bottom: none;
+    margin-left: 0px;
+    padding-right: 2px;
+    padding-bottom: 5px;
+    padding-left: 2px;
+}
+
+/*hidden options comentario-------------*/
+.modal_hidden_options
+{
+    display: none;
+    z-index: 3;
+    height: 8em;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #aaa;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    padding-right: 0%;
+    position: absolute;
+    top: 20px;
+    width: 140px;
+    
+}
+
+.modal_hidden_options>div
+{
+    text-align: center;
+    width: 100%;
+    height: 19%;
+    padding-top: 5%;
+    border-top: 1px solid #DCDCDC;
+}
+
+.modal_hidden_options>div:hover
+{
+    cursor: pointer;
+    background-color: #DCDCDC;
+}
+
+.modal_hidden_options>div:last-child
+{
+    color: #D24D57;
+    background-color: #ececec;
+}
+
+
+
 
 /*---------------------------------------- PAGINA DE LOGIN ---------------------------------------------------*/
 .login_form
