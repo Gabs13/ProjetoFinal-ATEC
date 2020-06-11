@@ -1028,7 +1028,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 /*------------------------------------- RESPOSTA AO COMENTARIO ------------------------------------------------*/
 .modal_comentario_resposta
 {
-    height: 10%;
+    height: 2em;
     float: right;
     width: 70%;
     display:none;
@@ -1214,10 +1214,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .display_like_background
 {
     display: none;
-    width: 21.18%;
-    padding-left: 1em;
-    padding-top: 1em;
-    height: 52%;
+    width: 22.18%;
+    height: 53.5%;
     position: absolute;
     background-color: rgba(0,0, 0, 0.4);
     z-index: 4;
@@ -1230,24 +1228,49 @@ input[type=date]::-webkit-calendar-picker-indicator {
 {
     background-color: white;
     width: 80%;
-    height: 80%;
-    margin: 10% 10% 10% 8%;
-    border-radius: 8px;
+    height: 75%;
+    margin: 10% 10% 0% 8%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.display_post_finisher
+{
+    height: 5%;
+    width: 80%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top: 1px solid #EBECF0;
+    background-color: white;
+    margin-left: 8%;
 }
 .display_like_post span
 {
     float: right;
-    margin-right: 1em;
-    margin-top: 1em;
+    margin-right: 0.5em;
+    margin-top: 0.3em;
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+}
+.display_like_post span:hover
+{
+    cursor: pointer;
+    color: #2d3235;
 }
 
 .display_like_user
 {
     display: flex;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #EBECF0;
     width: 100%;
     height: 3em;
     background-color: white;
+}
+
+.display_like_user:hover
+{
+    cursor: pointer;
 }
 
 .display_like_user_img
@@ -1268,6 +1291,12 @@ input[type=date]::-webkit-calendar-picker-indicator {
     text-align: left;
     padding-top: 1em;
     padding-left: 0.5em;
+}
+.display_like_close_container
+{
+    width: 100%;
+    border-bottom: 1px solid #EBECF0;
+    height: 3em;
 }
 
 

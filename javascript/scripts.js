@@ -6,6 +6,8 @@ $(document).ready(function()
   var span = document.getElementById('close');
   //Modal da galeria
   var modal = document.getElementById('modal');
+  //Modal direita
+  var modalDireita = document.getElementsByClassName('modal_direita')[0];
   //Botão do comentario dentro da modal
   var btncomentario = document.getElementById('btn_comment');
   //OnClick input comentario da modal
@@ -21,7 +23,13 @@ $(document).ready(function()
   //botao das settings i
   var settingI = document.getElementById('optionsbuttonI');
   //botao numero de likes comentarios modal
-  var likenumberButton = document.getElementsByClassName('modal_comentario_buttons_likes');
+  var likenumberButton = document.getElementsByClassName('modal_comentario_buttons_likes')[0];
+  //span da modal do numero de likes
+  var spanLikes = document.getElementById('display_like_post_close');
+
+
+
+
   /*Empurrar body para baixo quando se abre navbar ---------------------------*/
 
 
@@ -82,15 +90,29 @@ $(document).ready(function()
   //carregar a modal dos gostos dos comentarios
   likenumberButton.onclick=function()
   {
-    if(document.getElementById('display_like_background').style.display=="none")
+    if(document.getElementsByClassName('display_like_background')[0].style.display=="none")
     {
-      document.getElementById('display_like_background').style.display="block";
+      document.getElementsByClassName('display_like_background')[0].style.display="block";
     }
     else
     {
-      document.getElementById('display_like_background').style.display="none";
+      document.getElementsByClassName('display_like_background')[0].style.display="none";
     }
   }
+  //fechar modal dos likes dos comentarios
+  // modalDireita.onclick = function()
+  // {
+  //   if(document.getElementsByClassName('display_like_background')[0].style.display=="block")
+  //   {
+  //     document.getElementsByClassName('display_like_background')[0].style.display="none";
+  //   } 
+  // }
+
+  spanLikes.onclick = function()
+  {
+    document.getElementsByClassName('display_like_background')[0].style.display="none";
+  }
+
 
   //MODAL 
   btnLikeModal.onclick = function()
