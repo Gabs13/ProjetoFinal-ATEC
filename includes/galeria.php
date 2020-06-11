@@ -12,6 +12,19 @@
     <div class="modal_esquerda">
       <img src="Imagens/quadro2.jpg">
     </div>
+
+    <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
+    <div class="display_like_background">
+      <div class="display_like_post">
+        <span>X</span>
+        <div class="display_like_user">
+          <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+          <div class="display_like_user_name">Armando Nunes</div>
+        </div>
+      </div>
+    </div>
+    <!--FINAL DIV DISPLAY LIKES-->
+
     <div class="modal_direita">
       <div class="autor_modal_user">
         <div class="autor_modal_user_img">
@@ -21,18 +34,7 @@
 
           <img src="" alt="">
           Armando Nunes
-          <!-- <?php
-              include 'connections/conn.php';
-
-              $result = mysqli_query($conn, "SELECT user_nome from user where user_id=1");
-
-              if($user_dados = mysqli_fetch_array($result))
-              {
-                  echo '<div>'.$user_dados["user_nome"].'</div>';
-              }
-              
-              include 'connections/deconn.php';
-            ?> -->
+          
         </div>
       </div>
       <hr class="modal_comentarios_separador"></hr>

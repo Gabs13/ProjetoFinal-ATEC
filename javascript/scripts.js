@@ -21,7 +21,7 @@ $(document).ready(function()
   //botao das settings i
   var settingI = document.getElementById('optionsbuttonI');
   //botao numero de likes comentarios modal
-  
+  var likenumberButton = document.getElementsByClassName('modal_comentario_buttons_likes');
   /*Empurrar body para baixo quando se abre navbar ---------------------------*/
 
 
@@ -79,7 +79,18 @@ $(document).ready(function()
       settingI.style.border="none";
     }
   }
-
+  //carregar a modal dos gostos dos comentarios
+  likenumberButton.onclick=function()
+  {
+    if(document.getElementById('display_like_background').style.display=="none")
+    {
+      document.getElementById('display_like_background').style.display="block";
+    }
+    else
+    {
+      document.getElementById('display_like_background').style.display="none";
+    }
+  }
 
   //MODAL 
   btnLikeModal.onclick = function()
