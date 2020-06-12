@@ -2,6 +2,7 @@ $(document).ready(function()
 {
   //Modal imagem da galeria
   var displayModalGaleria = document.getElementById('galerydisplay');
+  //var displaymodalGaleriaClass = document.getElementsByClassName('collection_container_name');
   //X para fechar modal
   var span = document.getElementById('close');
   //Modal da galeria
@@ -135,10 +136,7 @@ $(document).ready(function()
   }
 
   /*Display de imagens da galeria --------------------------------------------*/
-  displayModalGaleria.onclick = function()
-  {
-      modal.style.display = "block";
-  }
+  
 
   /*FECHAR MODAL -------------------------------------------------------------*/
   //Fechar quando se clica no 'X' ou fora do modal
@@ -159,3 +157,52 @@ $(document).ready(function()
   });
   /*FINAL DO DISPLAY DA GALERIA------------------------------------------------*/
 });
+
+//Tem que ser criado antes do html ser gerado
+function getGallery(id)
+{
+
+  $.ajax({
+    type:"POST",
+    url:"functions/teste1.php",
+    data: {
+      id: id,
+    },
+
+    success:function(result)
+    {
+      var finalResult = JSON.parse(result);
+
+      document.getElementById("modal_username_text").innerHTML= finalResult.galeria_nome;
+
+      document.getElementsByClassName("modalGallery")[0].style.display="block";
+
+      //display da modal e envias os dados pa modal por document.getelement
+    }
+  });
+  
+
+  //load de mais divs da galeria da base de dados
+  $(window).scroll(function() {
+    if($(window).scrollTop() == $(document).height() - $(window).height()) {
+           // ajax call get data from server and append to the div
+           $.ajax({
+            type:"POST",
+            url:"functions/test2.php",
+            datatype:'json; charset=utf-8',
+            data: {
+              id: id,
+            },
+        success:function(result)
+        {
+          var finalResult = JSON.parse(result);
+          console.log(finalResult);
+        }
+      });
+
+
+    }
+});
+
+
+}

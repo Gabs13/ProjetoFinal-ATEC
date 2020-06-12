@@ -37,6 +37,9 @@
     </div>
     <!--FINAL DIV DISPLAY LIKES-->
 
+
+
+
     <div class="modal_direita">
       <div class="autor_modal_user">
         <div class="autor_modal_user_img">
@@ -45,7 +48,7 @@
         <div class="autor_modal_user_nome" id="modal_username">
 
           <img src="" alt="">
-          Armando Nunes
+          <div id="modal_username_text">Armando Nunes</div>
           
         </div>
       </div>
@@ -123,107 +126,24 @@
 </div>
 <!--FINAL DA MODAL---------------------------------------------------------------------------------------------->
 
-
     <!--CRIACAO DE UM POST NA GALERIA-->
     <div class="galery_container"><!--INICIO DA GALERIA-->
-
-        <div class="collection_container_item">
-            <div class="collection_container_name" id="galerydisplay">
-
-                <div class="text_gallery">
-                    <div class="collection_container_name_info2 collection_container_name_info">Fábio Santos</div>
-                    <div class="collection_container_info_bot">
-                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-love-24.png"></div>
-                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-comments-24.png"></div>
-                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-share-24.png"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="collection_container_social">
-                <div class="collection_social_btn">"Animais"</div>
-                <div class="collection_social_btn">Pintura</div>
-
-            </div>
-        </div><!--fim da div do post-->
+    <?php
+      include 'functions/conn-test.php';
 
 
-        <!--CRIACAO DE UM POST NA GALERIA-->
-
-        <div class="collection_container_item">
-            <div class="collection_container_name" id="galerydisplay2">
-            <!--MODAL SLIDER DE IMAGENS-->
-
-                <div class="text_gallery">
-                    <div class="collection_container_name_info2 collection_container_name_info">Fábio Santos</div>
-                    <div class="collection_container_info_bot">
-                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-love-24.png"></div>
-                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-comments-24.png"></div>
-                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-share-24.png"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="collection_container_social">
-                <div class="collection_social_btn">"Animais"</div>
-                <div class="collection_social_btn">Pintura</div>
-
-            </div>
-          </div>
-
-
-          <!--CRIACAO DE UM POST NA GALERIA-->
-
-        <div class="collection_container_item">
-            <div class="collection_container_name" id="galerydisplay2">
-            <!--MODAL SLIDER DE IMAGENS-->
-
-                <div class="text_gallery">
-                    <div class="collection_container_name_info2 collection_container_name_info">Fábio Santos</div>
-                    <div class="collection_container_info_bot">
-                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-love-24.png"></div>
-                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-comments-24.png"></div>
-                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-share-24.png"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="collection_container_social">
-                <div class="collection_social_btn">"Animais"</div>
-                <div class="collection_social_btn">Pintura</div>
-
-            </div>
-          </div>
-
-
-          <!--CRIACAO DE UM POST NA GALERIA-->
-
-        <div class="collection_container_item">
-            <div class="collection_container_name" id="galerydisplay2">
-            <!--MODAL SLIDER DE IMAGENS-->
-
-                <div class="text_gallery">
-                    <div class="collection_container_name_info2 collection_container_name_info">Fábio Santos</div>
-                    <div class="collection_container_info_bot">
-                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-love-24.png"></div>
-                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-comments-24.png"></div>
-                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-share-24.png"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="collection_container_social">
-                <div class="collection_social_btn">"Animais"</div>
-                <div class="collection_social_btn">Pintura</div>
-
-            </div>
-          </div>
-
-
-          <!--CRIACAO DE UM POST NA GALERIA-->
+      $galeria = mysqli_query($connT, "SELECT * FROM `galeria`");
+      
+      while($gal = mysqli_fetch_array($galeria))
+      {
+        echo'<!--CRIACAO DE UM POST NA GALERIA-->
 
         <div class="collection_container_item container_last_child">
-            <div class="collection_container_name" id="galerydisplay2">
+            <div class="collection_container_name" onclick="getGallery('.$gal["galeria_id"].')" id="'.$gal["galeria_id"].'">
             <!--MODAL SLIDER DE IMAGENS-->
 
                 <div class="text_gallery">
-                    <div class="collection_container_name_info2 collection_container_name_info">Fábio Santos</div>
+                    <div class="collection_container_name_info2 collection_container_name_info">'.$gal["galeria_nome"].'</div>
                     <div class="collection_container_info_bot">
                         <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-love-24.png"></div>
                         <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-comments-24.png"></div>
@@ -236,8 +156,13 @@
                 <div class="collection_social_btn">Pintura</div>
 
             </div>
-          </div> 
+          </div>';
+      }
 
+      
+    ?>
+
+    
     </div><!--Final do container1 dos posts-->
 </body>
 </html>
