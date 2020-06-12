@@ -64,7 +64,7 @@ $(document).ready(function()
     }
 
   }
- 
+
   /**/
   settingI.onclick = function()
   {
@@ -106,7 +106,7 @@ $(document).ready(function()
   //   if(document.getElementsByClassName('display_like_background')[0].style.display=="block")
   //   {
   //     document.getElementsByClassName('display_like_background')[0].style.display="none";
-  //   } 
+  //   }
   // }
 
   spanLikes.onclick = function()
@@ -115,7 +115,7 @@ $(document).ready(function()
   }
 
 
-  //MODAL 
+  //MODAL
   btnLikeModal.onclick = function()
   {
     if(btnLikeModal.style.color="black")
@@ -125,9 +125,9 @@ $(document).ready(function()
     else
     {
       btnLikeModal.style.color="black"
-    }  
+    }
   }
-  
+
   /*COMENTARIO MODAL BOTTOM (APARECER A SETA DE ENVIAR) ----------------------*/
   comentariobottom.onclick = function()
   {
@@ -136,7 +136,7 @@ $(document).ready(function()
   }
 
   /*Display de imagens da galeria --------------------------------------------*/
-  
+
 
   /*FECHAR MODAL -------------------------------------------------------------*/
   //Fechar quando se clica no 'X' ou fora do modal
@@ -164,8 +164,9 @@ function getGallery(id)
 
   $.ajax({
     type:"POST",
-    url:"functions/teste1.php",
+    url:"functions/functions.php",
     data: {
+      action: "getGaleriaPHP",
       id: id,
     },
 
@@ -173,14 +174,14 @@ function getGallery(id)
     {
       var finalResult = JSON.parse(result);
 
-      document.getElementById("modal_username_text").innerHTML= finalResult.galeria_nome;
+      document.getElementById("modal_username_text").innerHTML = finalResult.UtilPNome + " " + finalResult.UtilUNome;
 
       document.getElementsByClassName("modalGallery")[0].style.display="block";
 
       //display da modal e envias os dados pa modal por document.getelement
     }
   });
-  
+
 
   //load de mais divs da galeria da base de dados
   $(window).scroll(function() {

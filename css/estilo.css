@@ -567,7 +567,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .collection_container_item
 {
-    width: 20%;
+    width: 14em;
     height: 18em;
     margin-right: 5%;
 }
@@ -1140,12 +1140,12 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .modal_comentario_reply_content_like i:hover
 {
-    
+
     color:#D24D57;
     cursor: pointer;
 }
 
-.modal_comentario_buttons i:hover 
+.modal_comentario_buttons i:hover
 {
     color:#D24D57;
     cursor: pointer;
@@ -1187,7 +1187,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     position: absolute;
     top: 20px;
     width: 140px;
-    
+
 }
 
 .modal_hidden_options>div

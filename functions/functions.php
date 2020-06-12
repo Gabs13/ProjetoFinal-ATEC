@@ -44,6 +44,66 @@
     echo json_encode($resultado);
   }
 
+  if(@$_POST['action'] == 'getGaleriaPHP')
+  {
+    include 'conn.php';
+
+    //informação da modal
+    $id = $_POST['id'];
+
+    $galeria = mysqli_query($conn, "SELECT * FROM Posts WHERE PostID = $id");
+
+    $gal = mysqli_fetch_array($galeria);
+
+    $UtilInfo = mysqli_query($conn, "SELECT * FROM Utilizadores WHERE UtilID = $gal[UtilID]");
+
+    $Info = mysqli_fetch_array($UtilInfo);
+
+    echo json_encode($Info);
+    //manda o id da galeria onlick para o php
+    //php vai buscar toda a informação do id na base de dados
+    //criar função em js para criar as divs da galeria
+
+    include 'deconn.php';
+  }
+
+  function getGaleria()
+  {
+    include 'conn.php';
+
+    $Posts = mysqli_query($conn, "SELECT * FROM Posts");
+
+    while($Post = mysqli_fetch_array($Posts))
+    {
+      $nomeUtil = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM Utilizadores WHERE UtilID = '$Post[UtilID]'"));
+
+
+      echo'<!--CRIACAO DE UM POST NA GALERIA-->
+
+      <div class="collection_container_item container_last_child">
+          <div class="collection_container_name" onclick="getGallery('.$Post["PostID"].')" id="'.$Post["PostID"].'">
+          <!--MODAL SLIDER DE IMAGENS-->
+
+              <div class="text_gallery">
+                  <div class="collection_container_name_info2 collection_container_name_info">'.$nomeUtil["UtilPNome"].' '.$nomeUtil["UtilUNome"].'</div>
+                  <div class="collection_container_info_bot">
+                      <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-love-24.png"></div>
+                      <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-comments-24.png"></div>
+                      <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-share-24.png"></div>
+                  </div>
+              </div>
+          </div>
+          <div class="collection_container_social">
+              <div class="collection_social_btn">"Animais"</div>
+              <div class="collection_social_btn">Pintura</div>
+
+          </div>
+        </div>';
+    }
+
+    include 'deconn.php';
+  }
+
   function entrarPHP($logMail, $logPass)
   {
     include 'conn.php';

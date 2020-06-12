@@ -15,7 +15,7 @@
 
     <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
     <div class="display_like_background">
-      
+
       <div class="display_like_post">
         <div class="display_like_close_container">
           <span id="display_like_post_close">&times;</span>
@@ -49,13 +49,13 @@
 
           <img src="" alt="">
           <div id="modal_username_text">Armando Nunes</div>
-          
+
         </div>
       </div>
       <hr class="modal_comentarios_separador"></hr>
       <div class="modal_direita_comentarios">
-      
-      <div class="modal_comment_main_resposta"> 
+
+      <div class="modal_comment_main_resposta">
         <div class="modal_comment_main">
             <div class="modal_comentario_userimg"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
             <div class="modal_total_buttons">
@@ -63,7 +63,7 @@
                 <div class="modal_comentario_username">Amigo do Armando</div>
                   <div class="modal_comentario_texto">
                     Muito giro amigo Armando.
-                  </div>  
+                  </div>
               </div>
               <div class="modal_comentario_buttons">
                   <div id="btn_like"><i class="fas fa-heart"></i></div>
@@ -76,12 +76,12 @@
                       <div>Reportar</div>
                     </div>
                   </div>
-                  
-                  
+
+
                   <div class="modal_comentario_buttons_likes">320 Likes</div>
               </div>
-            </div> 
-        </div>    
+            </div>
+        </div>
           <!--FIM DO COMENTÁRIO DO UTILIZADOR-->
              <!--REPOSTA AO COMENTARIO/ONCLICK DO BOTAO COMENTARIO-->
         <div class="modal_comentario_reply">
@@ -93,16 +93,16 @@
                   <div class="modal_comentario_reply_content_like"><i class="fas fa-heart"></i></div>
                 </div>
               </div>
-        </div>     
-        <!--ADICIONAR UM COMENTARIO NA MODAL-->     
+        </div>
+        <!--ADICIONAR UM COMENTARIO NA MODAL-->
         <div class="modal_comentario_resposta">
           <div class="modal_comentario_resposta_imagem"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
           <div class="modal_comentario_resposta_texto">
             <input type="text" placeholder="Adicione um comentário..." >
             <i class="fas fa-location-arrow"></i>
-          </div> 
+          </div>
         </div>
-      </div> 
+      </div>
 
       </div>
       <hr class="modal_comentarios_separador"></hr>
@@ -129,40 +129,10 @@
     <!--CRIACAO DE UM POST NA GALERIA-->
     <div class="galery_container"><!--INICIO DA GALERIA-->
     <?php
-      include 'functions/conn-test.php';
-
-
-      $galeria = mysqli_query($connT, "SELECT * FROM `galeria`");
-      
-      while($gal = mysqli_fetch_array($galeria))
-      {
-        echo'<!--CRIACAO DE UM POST NA GALERIA-->
-
-        <div class="collection_container_item container_last_child">
-            <div class="collection_container_name" onclick="getGallery('.$gal["galeria_id"].')" id="'.$gal["galeria_id"].'">
-            <!--MODAL SLIDER DE IMAGENS-->
-
-                <div class="text_gallery">
-                    <div class="collection_container_name_info2 collection_container_name_info">'.$gal["galeria_nome"].'</div>
-                    <div class="collection_container_info_bot">
-                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-love-24.png"></div>
-                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-comments-24.png"></div>
-                        <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-share-24.png"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="collection_container_social">
-                <div class="collection_social_btn">"Animais"</div>
-                <div class="collection_social_btn">Pintura</div>
-
-            </div>
-          </div>';
-      }
-
-      
+      getGaleria();
     ?>
 
-    
+
     </div><!--Final do container1 dos posts-->
 </body>
 </html>
