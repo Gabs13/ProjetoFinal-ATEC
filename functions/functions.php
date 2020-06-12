@@ -10,7 +10,6 @@
     /* Encripta a pass para comparar com a pass encriptada que está na base de dados */
     $logPass = base64_encode($logPass);
 
-
     /* Controlo de MYSQL Injections */
     $logMail = mysqli_real_escape_string($conn, $logMail);
     $logPass = mysqli_real_escape_string($conn, $logPass);
@@ -125,7 +124,6 @@
     }
     else
     {
-      session_start();
       /* Existe user */
       /* Alocar à sessão o id e o tipo de user logado */
       $_SESSION["CID"] = $validado["ContaID"];
@@ -136,7 +134,6 @@
 
       $_SESSION["CPNome"] = $validadoUtil["UtilPNome"];
       $_SESSION["CUNome"] = $validadoUtil["UtilUNome"];
-
 
       echo '<meta http-equiv="refresh" content="0;url=login.php">';
     }
