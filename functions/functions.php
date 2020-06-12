@@ -35,17 +35,52 @@
 
       $_SESSION["CPNome"] = $validadoUtil["UtilPNome"];
       $_SESSION["CUNome"] = $validadoUtil["UtilUNome"];
-      /* Refresh */
 
-      $resultado = array('sucesso' => '1',
-                         'sessao' => $_SESSION["CID"],
-                         'nome' => $_SESSION["CPNome"],
-                         'sobrenome' => $_SESSION["CUNome"]);
+      $resultado = array('sucesso' => '1');
 
     }
     include 'deconn.php';
 
     echo json_encode($resultado);
+  }
+
+  function entrarPHP($logMail, $logPass)
+  {
+    include 'conn.php';
+
+    /* Encripta a pass para comparar com a pass encriptada que está na base de dados */
+    $logPass = base64_encode($logPass);
+
+    /* Controlo de MYSQL Injections */
+    $logMail = mysqli_real_escape_string($conn, $logMail);
+    $logPass = mysqli_real_escape_string($conn, $logPass);
+    $validar = mysqli_query($conn, "SELECT * FROM Conta WHERE Email = '$logMail' AND Password = '$logPass'");
+    /* Array com resposta */
+    $validado = mysqli_fetch_array($validar);
+
+    if(!$validado)
+    {
+      /* Não existe user */
+      echo 'Dados inválidos';
+    }
+    else
+    {
+      session_start();
+      /* Existe user */
+      /* Alocar à sessão o id e o tipo de user logado */
+      $_SESSION["CID"] = $validado["ContaID"];
+
+      $validarUtil = mysqli_query($conn, "SELECT * FROM Utilizadores WHERE ContaID = '$_SESSION[CID]'");
+
+      $validadoUtil = mysqli_fetch_array($validarUtil);
+
+      $_SESSION["CPNome"] = $validadoUtil["UtilPNome"];
+      $_SESSION["CUNome"] = $validadoUtil["UtilUNome"];
+
+
+      echo '<meta http-equiv="refresh" content="0;url=login.php">';
+    }
+    include 'deconn.php';
   }
 
   function destruir_sessao()
@@ -60,9 +95,9 @@
   }
 
   /* Função de registo */
-function registo($regEmail, $regPass, $regRPass, $regPnome, $regUnome, $regTlmv, $regGenero, $regData)
+function registo($regEmail, $regPass, $regRPass, $regNome, $regUNome, $regTlmv, $regGenero, $regData)
 {
-  include 'connections/conn.php';
+  include 'conn.php';
 
   $regEmail = mysqli_real_escape_string($conn, $regEmail);
   $regPass = mysqli_real_escape_string($conn, $regPass);
@@ -81,12 +116,12 @@ function registo($regEmail, $regPass, $regRPass, $regPnome, $regUnome, $regTlmv,
       /* Encriptar a password */
       $regPass = base64_encode($regPass);
       /* Evitar duplicados */
-      $existencia = mysqli_fetch_array(mysqli_query($conn, "SELECT Email FROM Conta WHERE Email = '$regEmail'"));
+      $existencia = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM Conta WHERE Email = '$regEmail'"));
 
       if(!$existencia)
       {
         /* Ainda não há este email - cria registo */
-        mysqli_query($conn, "INSERT INTO Conta (Email, Password, Telemovel) VALUES ('$regMail', '$regPass', $regTlmv)");
+        mysqli_query($conn, "INSERT INTO Conta (Email, Password, Telemovel) VALUES ('$regEmail', '$regPass', '$regTlmv')");
 
         /* Ultimo id criado via conn */
         $cid = mysqli_insert_id($conn);
@@ -102,7 +137,7 @@ function registo($regEmail, $regPass, $regRPass, $regPnome, $regUnome, $regTlmv,
         echo 'O email indicado já se encontra registado';
       }
   }
-  include 'connections/deconn.php';
+  include 'deconn.php';
 }
 
 

@@ -23,7 +23,7 @@
           <?php
             if(isset($_POST["bt_registar"]))
             {
-              registo($_POST["regEmail"], $_POST["regPass"], $_POST["regRPass"], $_POST["regNome"], $_POST["regUNome"], $_POST["regRTlmv"], $_POST["regGenero"], $_POST["regData"]);
+              registo($_POST["regEmail"], $_POST["regPass"], $_POST["regRPass"], $_POST["regNome"], $_POST["regUNome"], $_POST["regTlmv"], $_POST["regGenero"], $_POST["regData"]);
             }
           ?>
       </div>
