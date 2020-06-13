@@ -544,12 +544,12 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .galery_container
 {
     width: 70%;
-    height: 21em;
     margin-right: 15%;
     margin-left: 15%;
     margin-top: 50px;
+    margin-bottom: 5%;
     border-radius: 8px;
-    display: flex;
+    display: inline-block;
 }
 
 .container_last_child
@@ -568,14 +568,18 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .collection_container_item
 {
     width: 14em;
-    height: 18em;
-    margin-right: 5%;
+    height: 20em;
+    margin-right: 4%;
+    margin-left: 4%;
+    margin-bottom: 4%;
+    float:left;
 }
 
 .collection_container_item:last-child
 {
     margin-right: 0;
 }
+
 
 .collection_container_item:hover .collection_container_social
 {
