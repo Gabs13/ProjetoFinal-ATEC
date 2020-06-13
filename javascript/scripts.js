@@ -9,22 +9,12 @@ $(document).ready(function()
   var modal = document.getElementById('modal');
   //Modal direita
   var modalDireita = document.getElementsByClassName('modal_direita')[0];
-  //Botão do comentario dentro da modal
-  var btncomentario = document.getElementById('btn_comment');
   //OnClick input comentario da modal
   var comentariobottom = document.getElementById('comentario_bottom');
   //Botão imagem user
   var btnuser = document.getElementById('toggle');
-  //botao de like modal
-  var btnLikeModal = document.getElementById('btn_like');
   //botao de settings no comentario
   var btnsettingsModal = document.getElementById('btn_options');
-  //index das settings
-  var indexSettings = document.getElementsByClassName('modal_hidden_options');
-  //botao das settings i
-  var settingI = document.getElementById('optionsbuttonI');
-  //botao numero de likes comentarios modal
-  var likenumberButton = document.getElementsByClassName('modal_comentario_buttons_likes')[0];
   //span da modal do numero de likes
   var spanLikes = document.getElementById('display_like_post_close');
 
@@ -51,55 +41,8 @@ $(document).ready(function()
     }
   }
 
-  /*CLICK BOTAO COMENTARIO MODAL ---------------------------------------------*/
-  btncomentario.onclick = function()
-  {
-    if(document.getElementsByClassName('modal_comentario_resposta')[0].style.display=="none")
-    {
-      document.getElementsByClassName('modal_comentario_resposta')[0].style.display="flex";
-    }
-    else
-    {
-      document.getElementsByClassName('modal_comentario_resposta')[0].style.display="none";
-    }
-
-  }
-
   /**/
-  settingI.onclick = function()
-  {
 
-    if(indexSettings[0].style.display=="none")
-    {
-      indexSettings[0].style.display="block";
-    }
-    else
-    {
-      indexSettings[0].style.display="none";
-    }
-
-    /*border da cena de cima com os tres pontos*/
-    if(settingI.style.border=="none")
-    {
-      settingI.style.border="1px solid gray";
-    }
-    else
-    {
-      settingI.style.border="none";
-    }
-  }
-  //carregar a modal dos gostos dos comentarios
-  likenumberButton.onclick=function()
-  {
-    if(document.getElementsByClassName('display_like_background')[0].style.display=="none")
-    {
-      document.getElementsByClassName('display_like_background')[0].style.display="block";
-    }
-    else
-    {
-      document.getElementsByClassName('display_like_background')[0].style.display="none";
-    }
-  }
   //fechar modal dos likes dos comentarios
   // modalDireita.onclick = function()
   // {
@@ -116,17 +59,6 @@ $(document).ready(function()
 
 
   //MODAL
-  btnLikeModal.onclick = function()
-  {
-    if(btnLikeModal.style.color="black")
-    {
-      btnLikeModal.style.color="#D24D57"
-    }
-    else
-    {
-      btnLikeModal.style.color="black"
-    }
-  }
 
   /*COMENTARIO MODAL BOTTOM (APARECER A SETA DE ENVIAR) ----------------------*/
   comentariobottom.onclick = function()
@@ -158,11 +90,11 @@ $(document).ready(function()
 
     if (e.keyCode == 27) {
         modal.style.display = "none";
-        var pos = $(window).scrollTop();
-        window.location.hash = ''; //Saber a posição atual
+        var pos = $(window).scrollTop(); //Saber a posição atual
+        window.location.hash = '';
         history.pushState('', document.title, window.location.pathname);
-        e.preventDefault(); // Dar scroll até à posição que estava
-        $(window).scrollTop(pos);
+        e.preventDefault();
+        $(window).scrollTop(pos); // Dar scroll até à posição que estava
     }
 
   });
@@ -185,11 +117,19 @@ function getGallery(id)
     {
       var finalResult = JSON.parse(result);
 
-      document.getElementById("modal_username_text").innerHTML = finalResult.User[1] + " " + finalResult.User[2];
+      document.getElementById("modal_username_text").innerHTML = finalResult.User[1] + " " + finalResult.User[2]; //Preencher primeiro e ultimo nome no Post
+
+      document.getElementById("modal_user_desc").innerHTML = finalResult.Post[1]; //Preencher descrição foto
 
       document.getElementsByClassName("modalGallery")[0].style.display="block";
 
-      parent.location.hash = "?photouser&" + finalResult.User[0];
+      $("#modal_direita_comentarios").empty();
+
+      $("#modal_direita_comentarios").load("functions/CarregarComentarios.php", {PostID: finalResult.Post[0]});
+
+      parent.location.hash = "?photouser&" + finalResult.User[0]; //Mudar a hash no url
+
+      console.log(finalResult.Post[0]);
 
       //display da modal e envias os dados pa modal por document.getelement
     }

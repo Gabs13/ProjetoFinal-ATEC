@@ -48,20 +48,21 @@
     include 'conn.php';
 
     //informação da modal
-    $id = $_POST['id'];
+    $IDPOST = $_POST['id'];
 
-    $galeria = mysqli_query($conn, "SELECT * FROM Posts WHERE PostID = $id");
+    $Galeria = mysqli_query($conn, "SELECT * FROM Posts WHERE PostID = $IDPOST");
 
-    $gal = mysqli_fetch_array($galeria);
+    $Gal = mysqli_fetch_array($Galeria);
 
-    $UtilInfo = mysqli_query($conn, "SELECT * FROM Utilizadores WHERE UtilID = $gal[UtilID]");
+    $UtilInfo = mysqli_query($conn, "SELECT * FROM Utilizadores WHERE UtilID = $Gal[UtilID]");
 
     $Info = mysqli_fetch_array($UtilInfo);
 
-    $data = array();
-    $data['Post'] = $gal;
-    $data['User'] = $Info;
-    echo json_encode($data);
+    $Data = array();
+    $Data['Post'] = $Gal;
+    $Data['User'] = $Info;
+
+    echo json_encode($Data);
 
     //manda o id da galeria onlick para o php
     //php vai buscar toda a informação do id na base de dados

@@ -47,63 +47,19 @@
         </div>
         <div class="autor_modal_user_nome" id="modal_username">
 
-          <!--<img src="" alt="">-->
+          <img src="" alt="">
           <div id="modal_username_text">Armando Nunes</div>
-          <div class="modal_user_desc">Imagem da cidade do Armando</div>
+
+          <div class="modal_user_desc" id="modal_user_desc">
+
+          </div>
 
         </div>
       </div>
       <hr class="modal_comentarios_separador"></hr>
-      <div class="modal_direita_comentarios">
-
-      <div class="modal_comment_main_resposta">
-        <div class="modal_comment_main">
-            <div class="modal_comentario_userimg"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-            <div class="modal_total_buttons">
-              <div class="modal_comentario_total">
-                <div class="modal_comentario_username">Amigo do Armando</div>
-                  <div class="modal_comentario_texto">
-                    Muito giro amigo Armando.
-                  </div>
-              </div>
-              <div class="modal_comentario_buttons">
-                  <div id="btn_like"><i class="fas fa-heart"></i></div>
-                  <div id="btn_comment"><i class="fas fa-comment"></i></div>
-                  <div id="btn_options"><i id ="optionsbuttonI" class="fas fa-ellipsis-h"></i>
-                    <div class="modal_hidden_options">
-                      <div>Coiso</div>
-                      <div>Idolatrar o to</div>
-                      <div>sdcsdfsd</div>
-                      <div>Reportar</div>
-                    </div>
-                  </div>
+      <div class="modal_direita_comentarios" id="modal_direita_comentarios">
 
 
-                  <div class="modal_comentario_buttons_likes">320 Likes</div>
-              </div>
-            </div>
-        </div>
-          <!--FIM DO COMENTÁRIO DO UTILIZADOR-->
-             <!--REPOSTA AO COMENTARIO/ONCLICK DO BOTAO COMENTARIO-->
-        <div class="modal_comentario_reply">
-              <div class="modal_comentario_reply_imagem"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-              <div class="modal_comentario_reply_content">
-                <div class="modal_comentario_reply_content_name">Tó Carocho</div>
-                <div class="modal_comentario_reply_content_main">
-                  <div class="modal_comentario_reply_content_texto">Eu era toxicoindependente</div>
-                  <div class="modal_comentario_reply_content_like"><i class="fas fa-heart"></i></div>
-                </div>
-              </div>
-        </div>
-        <!--ADICIONAR UM COMENTARIO NA MODAL-->
-        <div class="modal_comentario_resposta">
-          <div class="modal_comentario_resposta_imagem"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-          <div class="modal_comentario_resposta_texto">
-            <input type="text" placeholder="Adicione um comentário..." >
-            <i class="fas fa-location-arrow"></i>
-          </div>
-        </div>
-      </div>
 
       </div>
       <hr class="modal_comentarios_separador"></hr>
@@ -128,7 +84,7 @@
 <!--FINAL DA MODAL---------------------------------------------------------------------------------------------->
 
     <!--CRIACAO DE UM POST NA GALERIA-->
-    <div class="galery_container", id="Container_Posts"><!--INICIO DA GALERIA-->
+    <div class="galery_container" id = "galery_container"><!--INICIO DA GALERIA-->
     <?php
       getGaleria();
     ?>
