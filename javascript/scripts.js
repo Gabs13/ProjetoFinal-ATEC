@@ -183,6 +183,11 @@ function getGallery(id)
   });
 
 
+
+
+}
+
+
   //load de mais divs da galeria da base de dados
   $(window).scroll(function() {
     if($(window).scrollTop() == $(document).height() - $(window).height()) {
@@ -203,7 +208,4 @@ function getGallery(id)
 
 
     }
-});
-
-
-}
+    });

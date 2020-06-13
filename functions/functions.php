@@ -70,7 +70,7 @@
   {
     include 'conn.php';
 
-    $Posts = mysqli_query($conn, "SELECT * FROM Posts");
+    $Posts = mysqli_query($conn, "SELECT * FROM Posts LIMIT 4");
 
     while($Post = mysqli_fetch_array($Posts))
     {

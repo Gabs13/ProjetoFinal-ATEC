@@ -47,8 +47,9 @@
         </div>
         <div class="autor_modal_user_nome" id="modal_username">
 
-          <img src="" alt="">
+          <!--<img src="" alt="">-->
           <div id="modal_username_text">Armando Nunes</div>
+          <div class="modal_user_desc">Imagem da cidade do Armando</div>
 
         </div>
       </div>

@@ -821,6 +821,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .autor_modal_user{
   display: flex;
   align-items: baseline;
+  height: 3.4em;
+  width: 100%;
 }
 
 .autor_modal_user_img{
@@ -832,14 +834,24 @@ input[type=date]::-webkit-calendar-picker-indicator {
   float:left;
 }
 
+.modal_user_desc
+{
+    width: 100%;
+    height: 2em;
+    float: left;
+    font-size: 0.8em;
+
+}
+
 /*------------------------------ Modal direita, parte dos comentarios ---------------------------------------*/
 
 .modal_direita_comentarios
 {
     width: 100%;
-    height: 70%;
+    height: 65%;
     background-color: white;
     border-radius: 8px;
+    overflow-y: scroll;
 }
 
 .autor_modal_info
@@ -1055,8 +1067,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
 {
     cursor: pointer;
 }
-
-
 
 .modal_comentario_resposta_texto i
 {
