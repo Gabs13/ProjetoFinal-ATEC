@@ -145,7 +145,11 @@ $(document).ready(function()
     if (event.target == modal || event.target == span)
     {
       modal.style.display = "none";
-      parent.location.hash = "";
+      var pos = $(window).scrollTop(); //Saber a posição atual
+      window.location.hash = '';
+      history.pushState('', document.title, window.location.pathname);
+      event.preventDefault();
+      $(window).scrollTop(pos); // Dar scroll até à posição que estava
     }
   }
 
@@ -154,8 +158,13 @@ $(document).ready(function()
 
     if (e.keyCode == 27) {
         modal.style.display = "none";
-        parent.location.hash = "";
+        var pos = $(window).scrollTop();
+        window.location.hash = ''; //Saber a posição atual
+        history.pushState('', document.title, window.location.pathname);
+        e.preventDefault(); // Dar scroll até à posição que estava
+        $(window).scrollTop(pos);
     }
+
   });
   /*FINAL DO DISPLAY DA GALERIA------------------------------------------------*/
 });
@@ -185,9 +194,6 @@ function getGallery(id)
       //display da modal e envias os dados pa modal por document.getelement
     }
   });
-
-
-
 
 }
 
