@@ -844,6 +844,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     height: 2em;
     float: left;
     font-size: 0.8em;
+    padding-top: 5px;
 
 }
 
