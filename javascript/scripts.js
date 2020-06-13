@@ -190,34 +190,13 @@ function getGallery(id)
   //load de mais divs da galeria da base de dados
 }
 
-var fotoCount = 9;
+var fotoCount = 12;
 
 $(window).scroll(function() {
 
   if($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.8)
   {
-    fotoCount = fotoCount + 1;
-         // ajax call get data from server and append to the div
-         $.ajax({
-          type:"POST",
-          url:"functions/functions.php",
-          data: {
-            fotoCount: fotoCount,
-            action: "getGaleriaScroll",
-          },
-      success:function(result)
-      {
-        //console.log(result);
-        var finalResult = JSON.parse(result);
-
-        //console.log(finalResult);
-
-        if (finalResult != "")
-        {
-            $("#Container_Posts").append($(finalResult));
-        }
-
-      }
-    });
+    fotoCount = fotoCount + 4;
+    $("#Container_Posts").load("functions/CarregarGaleriaScroll.php", {fotoCount: fotoCount});
   }
 });

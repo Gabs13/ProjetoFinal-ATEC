@@ -70,57 +70,11 @@
     include 'deconn.php';
   }
 
-
-  if(@$_POST['action'] == 'getGaleriaScroll')
-  {
-    include 'conn.php';
-
-    $Limite1 = $_POST['fotoCount'];
-    $Limite2 = $Limite1 + 1;
-
-    $Posts = mysqli_query($conn, "SELECT * FROM Posts LIMIT $Limite2 OFFSET $Limite1");
-
-    $texto = "";
-
-    while($Post = mysqli_fetch_array($Posts))
-    {
-      $nomeUtil = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM Utilizadores WHERE UtilID = '$Post[UtilID]'"));
-
-
-      $texto = '<!--CRIACAO DE UM POST NA GALERIA-->
-
-      <div class="collection_container_item container_last_child">
-          <div class="collection_container_name" onclick="getGallery('.$Post["PostID"].')" id="'.$Post["PostID"].'">
-          <!--MODAL SLIDER DE IMAGENS-->
-
-              <div class="text_gallery">
-                  <div class="collection_container_name_info2 collection_container_name_info">'.$nomeUtil["UtilPNome"].' '.$nomeUtil["UtilUNome"].'</div>
-                  <div class="collection_container_info_bot">
-                      <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-love-24.png"></div>
-                      <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-comments-24.png"></div>
-                      <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-share-24.png"></div>
-                  </div>
-              </div>
-          </div>
-          <div class="collection_container_social">
-              <div class="collection_social_btn">"Animais"</div>
-              <div class="collection_social_btn">Pintura</div>
-
-          </div>
-        </div>';
-    }
-
-    include 'deconn.php';
-
-    echo json_encode($texto);
-  }
-
-
   function getGaleria()
   {
     include 'conn.php';
 
-    $Posts = mysqli_query($conn, "SELECT * FROM Posts LIMIT 10 OFFSET 0");
+    $Posts = mysqli_query($conn, "SELECT * FROM Posts LIMIT 12");
 
     while($Post = mysqli_fetch_array($Posts))
     {
