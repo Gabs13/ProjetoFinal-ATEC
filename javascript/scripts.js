@@ -145,6 +145,7 @@ $(document).ready(function()
     if (event.target == modal || event.target == span)
     {
       modal.style.display = "none";
+      parent.location.hash = "";
     }
   }
 
@@ -153,6 +154,7 @@ $(document).ready(function()
 
     if (e.keyCode == 27) {
         modal.style.display = "none";
+        parent.location.hash = "";
     }
   });
   /*FINAL DO DISPLAY DA GALERIA------------------------------------------------*/
@@ -174,9 +176,11 @@ function getGallery(id)
     {
       var finalResult = JSON.parse(result);
 
-      document.getElementById("modal_username_text").innerHTML = finalResult.UtilPNome + " " + finalResult.UtilUNome;
+      document.getElementById("modal_username_text").innerHTML = finalResult.User[1] + " " + finalResult.User[2];
 
       document.getElementsByClassName("modalGallery")[0].style.display="block";
+
+      parent.location.hash = "?photouser&" + finalResult.User[0];
 
       //display da modal e envias os dados pa modal por document.getelement
     }
@@ -188,24 +192,34 @@ function getGallery(id)
 }
 
 
-  //load de mais divs da galeria da base de dados
-  $(window).scroll(function() {
-    if($(window).scrollTop() == $(document).height() - $(window).height()) {
-           // ajax call get data from server and append to the div
-           $.ajax({
-            type:"POST",
-            url:"functions/test2.php",
-            datatype:'json; charset=utf-8',
-            data: {
-              id: id,
-            },
-        success:function(result)
+var fotoCount = 9;
+
+$(window).scroll(function() {
+
+  if($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.8)
+  {
+    fotoCount = fotoCount + 1;
+         // ajax call get data from server and append to the div
+         $.ajax({
+          type:"POST",
+          url:"functions/functions.php",
+          data: {
+            fotoCount: fotoCount,
+            action: "getGaleriaScroll",
+          },
+      success:function(result)
+      {
+        //console.log(result);
+        var finalResult = JSON.parse(result);
+
+        //console.log(finalResult);
+
+        if (finalResult != "")
         {
-          var finalResult = JSON.parse(result);
-          console.log(finalResult);
+            $("#Container_Posts").append($(finalResult));
         }
-      });
 
-
-    }
+      }
     });
+  }
+});

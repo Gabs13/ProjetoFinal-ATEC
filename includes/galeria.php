@@ -1,4 +1,4 @@
-<html>
+
 <body>
     <div class="galery_title">GALERIAS</div>
 
@@ -118,7 +118,7 @@
 
     </div>
 
-    <div class="close" id="close" >&times;</div>
+    <div class="close" id="close">&times;</div>
 
 </div>
 
@@ -128,7 +128,7 @@
 <!--FINAL DA MODAL---------------------------------------------------------------------------------------------->
 
     <!--CRIACAO DE UM POST NA GALERIA-->
-    <div class="galery_container"><!--INICIO DA GALERIA-->
+    <div class="galery_container", id="Container_Posts"><!--INICIO DA GALERIA-->
     <?php
       getGaleria();
     ?>
@@ -136,4 +136,3 @@
 
     </div><!--Final do container1 dos posts-->
 </body>
-</html>
