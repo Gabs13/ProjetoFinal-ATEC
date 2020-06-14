@@ -870,6 +870,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     display: flex;
     padding-bottom: 5%;
     height: 5%;
+    padding-left: 0.5em;
 }
 
 
@@ -887,14 +888,11 @@ input[type=date]::-webkit-calendar-picker-indicator {
     font-size: 0.9em;
     outline: none;
     margin-right: 5%;
+    padding-left: 0.5em;
 
 }
 
 /*------------------------- Botões de like e partilhar comentario na modal da galeria -------------------------*/
-.autor_modal_info_btn2
-{
-    padding-left: 5%;
-}
 
 .autor_modal_info_btn
 {
@@ -908,10 +906,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 }
 
-.autor_modal_info_btn img:hover
+.autor_modal_info_btn i
 {
-    height: 1.6em;
-    width: 1.6em;
+    color:black;
+}
+
+.autor_modal_info_btn i:hover
+{
+    color: #D24D57;
     transition: 0.6s;
 }
 
@@ -1169,6 +1171,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 {
     color:#D24D57;
     cursor: pointer;
+    transition: 0.6s;
 }
 
 #btn_like
@@ -1325,9 +1328,9 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .login_form
 {
     display: block;
-    width: 24%;
-    margin-left: 37.5%;
-    height: 20em;
+    width: 30em;
+    margin-left: 37%;
+    height: 25em;
     margin-top: 5%;
     text-align: center;
     border-radius: 16px;
@@ -1375,6 +1378,32 @@ input[type=date]::-webkit-calendar-picker-indicator {
     margin-top: 20%;
 }
 
+/*botao de registo*/
+#btn_registo
+{
+    width: 69%;
+    margin-left: 16%;
+}
+
+/*ERRO NO LOGIN*/
+.erro_login
+{
+    width: 100%;
+    height: 3em;
+    font-size: 1.2em;
+    margin-top: 5em;
+    color: red;
+}
+
+/*border das inputs*/
+#logMail
+{
+    border: 1px solid gray;
+}
+#logPass
+{
+    border: 1px solid gray;
+}
 
 /*BOTAO DE LOGIN*/
 

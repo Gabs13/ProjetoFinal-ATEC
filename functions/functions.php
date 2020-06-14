@@ -124,7 +124,11 @@
     if(!$validado)
     {
       /* Não existe user */
-      echo 'Dados inválidos';
+      echo '<script type="text/javascript" src="javascript/scriptslogin.js">
+              inputColor();
+            </script>';
+      echo '<div class="erro_login">Dados inválidos</div>';
+      
     }
     else
     {

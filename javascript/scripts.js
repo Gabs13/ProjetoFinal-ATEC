@@ -27,7 +27,8 @@ $(document).ready(function()
   var likenumberButton = document.getElementsByClassName('modal_comentario_buttons_likes')[0];
   //span da modal do numero de likes
   var spanLikes = document.getElementById('display_like_post_close');
-
+  //icon like da modal principal
+  var mainmodalLike= document.getElementById('likePostModal');
 
 
 
@@ -64,7 +65,19 @@ $(document).ready(function()
     }
 
   }
+  /*ONCLICK DO BOTAO DE LIKES NA MODAL PRINCIPAL*/
+  mainmodalLike.onclick = function()
+  {
+    if(mainmodalLike.style.color=="black")
+    {
+      mainmodalLike.style.color = "#D24D57";
+    }
+    else
+    {
+      mainmodalLike.style.color = "black";
+    }
 
+  }
   /**/
   settingI.onclick = function()
   {
@@ -108,6 +121,9 @@ $(document).ready(function()
   //     document.getElementsByClassName('display_like_background')[0].style.display="none";
   //   }
   // }
+
+  
+  
 
   spanLikes.onclick = function()
   {

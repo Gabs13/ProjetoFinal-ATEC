@@ -108,8 +108,8 @@
       </div>
       <hr class="modal_comentarios_separador"></hr>
       <div class="autor_modal_info">
-        <div class="autor_modal_info_btn"><a><img src=".//Imagens/Icones/icons8-love-24.png"></a></div>
-        <div class="autor_modal_info_btn2 autor_modal_info_btn"><a><img src=".//Imagens/Icones/icons8-share-24.png"></a></div>
+        <div class="autor_modal_info_btn"><i class="fas fa-heart" id="likePostModal"></i></div>
+        <div class="autor_modal_info_btn2 autor_modal_info_btn"><i class="fas fa-share-alt"></i></div>
       </div>
       <div class="modal_comentarios_bottom">
         <input type="text" id="comentario_bottom" class="modal_user_comentario" placeholder="Adicione um comentário...">
