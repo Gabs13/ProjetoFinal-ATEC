@@ -25,8 +25,8 @@
                     <div class="modal_comentario_buttons">
                         <div id="btn_like"><i class="fas fa-heart"></i></div>
                         <div id="btn_comment"><i class="fas fa-comment"></i></div>
-                        <div id="btn_options"><i id ="optionsbuttonI" class="fas fa-ellipsis-h"></i>
-                          <div class="modal_hidden_options">
+                        <div id="btn_options"><i id ="optionsbuttonI" class="fas fa-ellipsis-h optionsbuttonI"></i>
+                          <div class="modal_hidden_options" id="modal_hidden_options_id" style="display: none;">
                             <div>Coiso</div>
                             <div>Idolatrar o '.$detailsComment["UtilPNome"].'</div>
                             <div>sdcsdfsd</div>

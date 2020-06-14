@@ -1,14 +1,31 @@
 //Botão do comentario dentro da modal
 var btncomentario = document.getElementById('btn_comment');
 //botao das settings i
-var settingI = document.getElementById('optionsbuttonI');
+var settingI = document.getElementsByClassName('optionsbuttonI');
 //index das settings
-var indexSettings = document.getElementsByClassName('modal_hidden_options');
+//var indexSettings = document.getElementsByClassName('modal_hidden_options')[0];
+var indexSettingsID = document.getElementById('modal_hidden_options_id');
 //botao numero de likes comentarios modal
 var likenumberButton = document.getElementsByClassName('modal_comentario_buttons_likes')[0];
 //botao de like modal
 var btnLikeModal = document.getElementById('btn_like');
 
+for(var i of settingI)
+{
+  i.onclick= function(event)
+  {
+    event.preventDefault();
+    if(this.nextElementSibling.style.display =="none")
+    {
+      this.nextElementSibling.style.display ="block";
+    }
+    else
+    {
+      this.nextElementSibling.style.display ="none";
+    }
+    
+  }
+}
 
 
 
@@ -25,28 +42,6 @@ btncomentario.onclick = function()
   }
 }
 
-settingI.onclick = function()
-{
-
-  if(indexSettings[0].style.display=="none")
-  {
-    indexSettings[0].style.display="block";
-  }
-  else
-  {
-    indexSettings[0].style.display="none";
-  }
-
-  /*border da cena de cima com os tres pontos*/
-  if(settingI.style.border=="none")
-  {
-    settingI.style.border="1px solid gray";
-  }
-  else
-  {
-    settingI.style.border="none";
-  }
-}
 //carregar a modal dos gostos dos comentarios
 likenumberButton.onclick=function()
 {
