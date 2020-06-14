@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8">
     <title>ArtIN</title>
-    <link rel="icon" href="imagens/logotipo/browserIcon.png">
+    <link rel="icon" href="imagens/logotipo/browserIconCircle.png">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
