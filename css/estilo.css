@@ -1322,6 +1322,18 @@ input[type=date]::-webkit-calendar-picker-indicator {
     height: 3em;
 }
 
+/*se nao houver comentarios no post*/
+.modal_comentario_empty
+{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding-top: 50%;
+    background-color: rgba(0,0,0,0.1);
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+}
+
 
 
 /*---------------------------------------- PAGINA DE LOGIN ---------------------------------------------------*/
