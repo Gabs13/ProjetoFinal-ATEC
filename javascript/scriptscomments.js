@@ -23,11 +23,8 @@ for(var i of settingI)
     {
       this.nextElementSibling.style.display ="none";
     }
-    
   }
 }
-
-
 
 /*CLICK BOTAO COMENTARIO MODAL ---------------------------------------------*/
 btncomentario.onclick = function()
