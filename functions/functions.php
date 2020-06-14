@@ -48,26 +48,50 @@
     include 'conn.php';
 
     //informação da modal
-    $id = $_POST['id'];
+    $PostID = $_POST['id'];
 
-    $galeria = mysqli_query($conn, "SELECT * FROM Posts WHERE PostID = $id");
+    $Galeria = mysqli_query($conn, "SELECT * FROM Posts WHERE PostID = $PostID");
 
-    $gal = mysqli_fetch_array($galeria);
+    $Gal = mysqli_fetch_array($Galeria);
 
-    $UtilInfo = mysqli_query($conn, "SELECT * FROM Utilizadores WHERE UtilID = $gal[UtilID]");
+    $UtilInfo = mysqli_query($conn, "SELECT * FROM Utilizadores WHERE UtilID = $Gal[UtilID]");
 
     $Info = mysqli_fetch_array($UtilInfo);
 
-    $data = array();
-    $data['Post'] = $gal;
-    $data['User'] = $Info;
-    echo json_encode($data);
+    $Data = array();
+    $Data['Post'] = $Gal;
+    $Data['User'] = $Info;
+
+    echo json_encode($Data);
 
     //manda o id da galeria onlick para o php
     //php vai buscar toda a informação do id na base de dados
     //criar função em js para criar as divs da galeria
 
     include 'deconn.php';
+  }
+
+  if(@$_POST['action'] == 'addCommentPHP')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    $PostID = $_POST['id'];
+    $ContentComment = $_POST['comentario'];
+
+    mysqli_query($conn, "INSERT INTO Comentarios (PostID, UtilID, Mensagem) VALUES ('$PostID', '$_SESSION[UtilID]', '$ContentComment')");
+
+    $Galeria = mysqli_query($conn, "SELECT * FROM Posts WHERE PostID = $PostID");
+
+    $Gal = mysqli_fetch_array($Galeria);
+
+    $Data = array();
+    $Data['Post'] = $Gal;
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
   }
 
   function getGaleria()
@@ -140,6 +164,7 @@
 
       $validadoUtil = mysqli_fetch_array($validarUtil);
 
+      $_SESSION["UtilID"] = $validadoUtil["UtilID"];
       $_SESSION["CPNome"] = $validadoUtil["UtilPNome"];
       $_SESSION["CUNome"] = $validadoUtil["UtilUNome"];
 
@@ -152,7 +177,8 @@
   {
     @session_start();
 
-    unset($_SESSION['CID']);
+    unset($_SESSION["CID"]);
+    unset($_SESSION["UtilID"]);
     unset($_SESSION["CPNome"]);
     unset($_SESSION["CUNome"]);
 

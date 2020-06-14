@@ -1,5 +1,4 @@
 <?php
-
   include 'conn.php';
 
   $Limite1 = $_POST['fotoCount'];
