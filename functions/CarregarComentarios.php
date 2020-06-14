@@ -1,9 +1,15 @@
 <?php
   include 'conn.php';
 
+  session_start();
+
   $PostID = $_POST['PostID'];
 
   $Comments = mysqli_query($conn, "SELECT * FROM Comentarios WHERE PostID = $PostID");
+
+  $Post = mysqli_query($conn, "SELECT * FROM Posts WHERE PostID = $PostID");
+
+  $PostInfo = mysqli_fetch_array($Post);
 
   if (mysqli_num_rows($Comments) > 0)
   {
@@ -28,9 +34,12 @@
                         <div id="btn_options"><i id ="optionsbuttonI" class="fas fa-ellipsis-h optionsbuttonI"></i>
                           <div class="modal_hidden_options" id="modal_hidden_options_id" style="display: none;">
                             <div>Coiso</div>
-                            <div>Idolatrar o '.$detailsComment["UtilPNome"].'</div>
-                            <div>sdcsdfsd</div>
-                            <div>Reportar</div>
+                            <div>Idolatrar o '.$detailsComment["UtilPNome"].'</div>';
+                            if ($Comment["UtilID"] == $_SESSION["UtilID"] || $PostInfo["UtilID"] == $_SESSION["UtilID"])
+                            {
+                              echo '<div onclick="removeComment('.$Comment["ComentarioID"].');"> Remover </div>';
+                            }
+                            echo '<div>Reportar</div>
                           </div>
                         </div>
 

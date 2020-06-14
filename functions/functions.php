@@ -94,6 +94,26 @@
     echo json_encode($Data);
   }
 
+  if(@$_POST['action'] == 'removeCommentPHP')
+  {
+    include 'conn.php';
+
+    $CommentID = $_POST['id'];
+
+    $Galeria = mysqli_query($conn, "SELECT * FROM Comentarios WHERE ComentarioID = $CommentID");
+
+    $Gal = mysqli_fetch_array($Galeria);
+
+    $Data = array();
+    $Data['Post'] = $Gal;
+
+    mysqli_query($conn, "DELETE FROM Comentarios WHERE ComentarioID = $CommentID");
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
   function getGaleria()
   {
     include 'conn.php';
@@ -152,7 +172,7 @@
               inputColor();
             </script>';
       echo '<div class="erro_login">Dados inválidos</div>';
-      
+
     }
     else
     {

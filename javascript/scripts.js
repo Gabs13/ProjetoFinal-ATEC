@@ -13,17 +13,14 @@ $(document).ready(function()
   var comentariobottom = document.getElementById('comentario_bottom');
   //Botão imagem user
   var btnuser = document.getElementById('toggle');
-  //botao de settings no comentario
+  //Botão de settings no comentario
   var btnsettingsModal = document.getElementById('btn_options');
-  //span da modal do numero de likes
+  //Span da modal do numero de likes
   var spanLikes = document.getElementById('display_like_post_close');
-  //icon like da modal principal
+  //Icon like da modal principal
   var mainmodalLike= document.getElementById('likePostModal');
 
-
-
   /*Empurrar body para baixo quando se abre navbar ---------------------------*/
-
 
   btnuser.onclick = function()
   {
@@ -53,14 +50,10 @@ $(document).ready(function()
   //   }
   // }
 
-  
-  
-
   spanLikes.onclick = function()
   {
     document.getElementsByClassName('display_like_background')[0].style.display="none";
   }
-
 
   //MODAL
 
@@ -108,7 +101,6 @@ $(document).ready(function()
 //Tem que ser criado antes do html ser gerado
 function getGallery(id)
 {
-
   $.ajax({
     type:"POST",
     url:"functions/functions.php",
@@ -140,7 +132,6 @@ function getGallery(id)
       //display da modal e envias os dados pa modal por document.getelement
     }
   });
-
 }
 
 function addComment(id)
@@ -172,11 +163,32 @@ function addComment(id)
   }
 }
 
+function removeComment(id)
+{
+
+  $.ajax({
+    type: "POST",
+    url: "functions/functions.php",
+    data: {
+      action: "removeCommentPHP",
+      id: id,
+    },
+
+    success:function(result)
+    {
+      var finalResult = JSON.parse(result);
+
+      console.log(finalResult);
+
+      $("#modal_direita_comentarios").load("functions/CarregarComentarios.php", {PostID: finalResult.Post[1]});
+    }
+  });
+}
+
 var fotoCount = 12;
 
 $(window).scroll(function() {
-
-  if($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.8)
+  if($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.8) // Scrollbar a 80%
   {
     fotoCount = fotoCount + 4;
 
