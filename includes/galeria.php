@@ -69,7 +69,7 @@
       </div>
       <div class="modal_comentarios_bottom">
         <input type="text" id="comentario_bottom" class="modal_user_comentario" placeholder="Adicione um comentário...">
-        <div id="modal_user_sendbtn"> <i class="fas fa-location-arrow"></i> </div>
+        <div id="modal_user_sendbtn"> </div>
       </div>
 
     </div>
@@ -84,7 +84,7 @@
 <!--FINAL DA MODAL---------------------------------------------------------------------------------------------->
 
     <!--CRIACAO DE UM POST NA GALERIA-->
-    <div class="galery_container" id = "galery_container"><!--INICIO DA GALERIA-->
+    <div class="galery_container" id = "Container_Posts"><!--INICIO DA GALERIA-->
     <?php
       getGaleria();
     ?>

@@ -129,12 +129,43 @@ function getGallery(id)
 
       parent.location.hash = "?photouser&" + finalResult.User[0]; //Mudar a hash no url
 
+      document.getElementById("modal_user_sendbtn").innerHTML = '<i onclick="addComment('+ finalResult.Post[0] +');" class="fas fa-location-arrow"></i>'
+
       console.log(finalResult.Post[0]);
 
       //display da modal e envias os dados pa modal por document.getelement
     }
   });
 
+}
+
+function addComment(id)
+{
+  var comentario = $('#comentario_bottom').val();
+
+  if (comentario != "")
+  {
+    $.ajax({
+      type: "POST",
+      url:"functions/functions.php",
+      data: {
+        action: "addCommentPHP",
+        id: id,
+        comentario: comentario,
+      },
+
+      success:function(result)
+      {
+        console.log(result);
+
+        var finalResult = JSON.parse(result);
+
+        $("#modal_direita_comentarios").load("functions/CarregarComentarios.php", {PostID: finalResult.Post[0]});
+
+        $('#comentario_bottom').val('');
+      }
+    });
+  }
 }
 
 var fotoCount = 12;
@@ -144,6 +175,7 @@ $(window).scroll(function() {
   if($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.8)
   {
     fotoCount = fotoCount + 4;
+
     $("#Container_Posts").load("functions/CarregarGaleriaScroll.php", {fotoCount: fotoCount});
   }
 });

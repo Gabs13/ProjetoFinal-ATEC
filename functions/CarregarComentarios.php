@@ -39,8 +39,9 @@
                     </div>
               </div>
             </div>
-            <script src="javascript/scriptscomments.js"></script>';
+            </div>';
     }
+    echo '<script src="javascript/scriptscomments.js"></script>';
   }
   else
   {

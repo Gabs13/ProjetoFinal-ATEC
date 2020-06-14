@@ -1,10 +1,11 @@
 <?php
-
   include 'conn.php';
 
-  $Limite = $_POST['fotoCount'];
+  $Limite1 = $_POST['fotoCount'];
 
-  $Posts = mysqli_query($conn, "SELECT * FROM Posts LIMIT $Limite");
+  $Posts = mysqli_query($conn, "SELECT * FROM Posts LIMIT $Limite1");
+
+  $texto = "";
 
   while($Post = mysqli_fetch_array($Posts))
   {

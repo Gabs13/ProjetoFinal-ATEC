@@ -48,9 +48,9 @@
     include 'conn.php';
 
     //informação da modal
-    $IDPOST = $_POST['id'];
+    $PostID = $_POST['id'];
 
-    $Galeria = mysqli_query($conn, "SELECT * FROM Posts WHERE PostID = $IDPOST");
+    $Galeria = mysqli_query($conn, "SELECT * FROM Posts WHERE PostID = $PostID");
 
     $Gal = mysqli_fetch_array($Galeria);
 
@@ -69,6 +69,29 @@
     //criar função em js para criar as divs da galeria
 
     include 'deconn.php';
+  }
+
+  if(@$_POST['action'] == 'addCommentPHP')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    $PostID = $_POST['id'];
+    $ContentComment = $_POST['comentario'];
+
+    mysqli_query($conn, "INSERT INTO Comentarios (PostID, UtilID, Mensagem) VALUES ('$PostID', '$_SESSION[UtilID]', '$ContentComment')");
+
+    $Galeria = mysqli_query($conn, "SELECT * FROM Posts WHERE PostID = $PostID");
+
+    $Gal = mysqli_fetch_array($Galeria);
+
+    $Data = array();
+    $Data['Post'] = $Gal;
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
   }
 
   function getGaleria()
@@ -137,6 +160,7 @@
 
       $validadoUtil = mysqli_fetch_array($validarUtil);
 
+      $_SESSION["UtilID"] = $validadoUtil["UtilID"];
       $_SESSION["CPNome"] = $validadoUtil["UtilPNome"];
       $_SESSION["CUNome"] = $validadoUtil["UtilUNome"];
 
@@ -149,7 +173,8 @@
   {
     @session_start();
 
-    unset($_SESSION['CID']);
+    unset($_SESSION["CID"]);
+    unset($_SESSION["UtilID"]);
     unset($_SESSION["CPNome"]);
     unset($_SESSION["CUNome"]);
 
