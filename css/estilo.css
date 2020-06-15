@@ -958,7 +958,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .modal_comentario_username
 {
-    padding-left: 3%;
+    padding-left: 2%;
     width: 100%;
     height: 30%;
     font-size: 0.7em;
@@ -1344,13 +1344,11 @@ input[type=date]::-webkit-calendar-picker-indicator {
     height: 100%;
     width: 100%;
     text-align: center;
-    padding-top: 50%;
-    background-color: rgba(0,0,0,0.1);
+    padding-top: 90%;
     font-family: 'Poppins', sans-serif;
-    font-size: 2em;
+    color: #999999;
+    font-size: 1em;
 }
-
-
 
 /*---------------------------------------- PAGINA DE LOGIN ---------------------------------------------------*/
 .login_form

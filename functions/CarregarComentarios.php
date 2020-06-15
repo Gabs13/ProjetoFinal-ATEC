@@ -54,7 +54,7 @@
   }
   else
   {
-    echo '<div class="modal_comentario_empty">Não tem comentários...</div>';
+    echo '<p class="modal_comentario_empty">Não tem comentários.</p>';
   }
 
   include 'deconn.php';
