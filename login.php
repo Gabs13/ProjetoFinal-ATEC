@@ -34,7 +34,7 @@
     }
 
     include 'includes/navbar.php';
-    include 'includes/galeria.php';
+    include 'includes/chat.php';
 
 
     include 'includes/footerPrincipal.php';
