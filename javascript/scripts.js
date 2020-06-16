@@ -19,6 +19,24 @@ $(document).ready(function()
   var spanLikes = document.getElementById('display_like_post_close');
   //Icon like da modal principal
   var mainmodalLike= document.getElementById('likePostModal');
+  //dropdownlist button
+  var dropdownnav = document.getElementById('dropdownlistNavbar');
+  var btnDropdownlist = document.getElementsByClassName('navbar_menu_dropdown')[0];
+
+
+/*Funcao para mostrar dropdownlist nav bar*/
+dropdownnav.onclick = function()
+{
+  if(btnDropdownlist.style.display=="none")
+  {
+    btnDropdownlist.style.display="block";
+  }
+  else
+  {
+    btnDropdownlist.style.display="none";
+  }
+}
+
 
   /*Empurrar body para baixo quando se abre navbar ---------------------------*/
 

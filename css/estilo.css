@@ -8,6 +8,7 @@
 html{height: 100%;}
 body {background-color: #f2f2f2;
     height: 100%;
+    font-family: 'Work Sans', sans-serif;
 }
 
 /* Fim Geral ---------------------------------------------------------------- */
@@ -1567,13 +1568,17 @@ footer
   top: 5%;
   text-align: center;
   position: absolute;
-  overflow: hidden;
+  overflow-x: hidden;
   transition: all 0.7s ease;
   z-index: 1;
   border-top-right-radius: 47px;
   border-bottom-right-radius: 50px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
+}
+.menu::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
 }
 
 .menu.active {
@@ -1607,17 +1612,34 @@ footer
 /*DROPDOWN LIST DO PERFIL*/
 .navbar_menu_dropdown
 {
-    display: block;
+    display: none;
     width: 12em;
-    height: 16em;
     background-color: white;
     z-index: 5;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 71px;
 }
 .navbar_menu_dropdown>div
 {
 
 }
 
+.name_dropdownlist
+{
+    position: relative;
+    height: 100%;
+    width: 15%;
+    float: right;
+    font-size: 20px;
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+    
+}
 
 .menu span img
 {
@@ -1643,12 +1665,12 @@ footer
 }
 .menu .menuContent
 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  line-height: 40px;
-  right: 0px;
-  text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+    right: 0px;
+    text-align: center;
 }
 
 .menuContent
@@ -1671,9 +1693,19 @@ footer
 
 .menuContent label
 {
-  width: 15%;
-  float: right;
-  font-size: 20px;
+    padding-top: 15px;
+    font-size: 20px;
+    display: block;
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.menuContent label:hover
+{
+    cursor: pointer;
 }
 
 .menu .menuContent ul li

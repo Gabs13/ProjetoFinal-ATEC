@@ -1,11 +1,6 @@
 <html lang="pt">
   <body>
-  <div class="navbar_menu_dropdown">
-        <div>Editar perfil</div>
-        <div>Definições e Privacidade</div>
-        <div>Ajuda e Support</div>
-        <div>Logout</div>
-      </div>
+  
       <div class='menu'>
           <span class='toggle' id='toggle'>
             <img src="imagens/Utilizadores/gabriel.jpg" alt="teste" width="65" height="65">
@@ -26,7 +21,15 @@
                 <input type="submit" value="Destruir Sessão" name="Destruir">
               </form>
             </ul>
-            <label> <?php echo $_SESSION["CPNome"].' '.$_SESSION["CUNome"]; ?> </label>
+            <div class="name_dropdownlist">
+              <label id="dropdownlistNavbar"> <?php echo $_SESSION["CPNome"].' '.$_SESSION["CUNome"]; ?> </label>
+              <div class="navbar_menu_dropdown">
+                <div>Editar perfil</div>
+                <div>Definições e Privacidade</div>
+                <div>Ajuda e Support</div>
+                <div>Logout</div>
+              </div>
+            </div>
           </div>
         </div>
 
