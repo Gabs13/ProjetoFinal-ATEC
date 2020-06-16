@@ -139,6 +139,8 @@ function getGallery(id)
 
     success:function(result)
     {
+      console.log(result);
+
       var finalResult = JSON.parse(result);
 
       document.getElementById("modal_username_text").innerHTML = finalResult.User[1] + " " + finalResult.User[2]; //Preencher primeiro e ultimo nome no Post
@@ -153,9 +155,19 @@ function getGallery(id)
 
       parent.location.hash = "?photouser&" + finalResult.User[0]; //Mudar a hash no url
 
-      document.getElementById("modal_user_sendbtn").innerHTML = '<i onclick="addComment('+ finalResult.Post[0] +');" class="fas fa-location-arrow"></i>'
+      document.getElementById("modal_user_sendbtn").innerHTML = '<i onclick="addComment('+ finalResult.Post[0] +');" class="fas fa-location-arrow"></i>';
 
-      console.log(finalResult.Post[0]);
+      if(finalResult.Like == true)
+      {
+        document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost();">';
+        $("#likePostModal").css('color', '#D24D57');
+      }
+      else
+      {
+        document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost();">';
+      }
+
+
 
       //display da modal e envias os dados pa modal por document.getelement
     }

@@ -47,6 +47,8 @@
   {
     include 'conn.php';
 
+    session_start();
+
     //informação da modal
     $PostID = $_POST['id'];
 
@@ -58,9 +60,16 @@
 
     $Info = mysqli_fetch_array($UtilInfo);
 
+    $LikePosts = mysqli_query($conn, "SELECT * FROM LikesPosts WHERE UtilID = $_SESSION[UtilID] AND PostID = $PostID");
+
+    $LikePost = mysqli_num_rows($LikePosts);
+
     $Data = array();
     $Data['Post'] = $Gal;
     $Data['User'] = $Info;
+    $Data['Like'] = $LikePost;
+
+
 
     echo json_encode($Data);
 
