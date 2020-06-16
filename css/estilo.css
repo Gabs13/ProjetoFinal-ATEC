@@ -1797,7 +1797,7 @@ footer
 {
     height: 90%;
     width: calc(100% - 1px);
-    border-right: 1px solid #aaa;
+    border-right: 1px solid #f2f2f2;
 }
 
 .chat_users_display_user_img
@@ -1853,12 +1853,7 @@ footer
     position: static;
 
 }
-.chat_display_user
-{
-    width: 100%;
-    height: 92%;
-    background-color: white;
-}
+
 .chat_display_text
 {
     width: 100%;
@@ -1871,23 +1866,23 @@ footer
 {
     width: 90%;
     background-color: white;
-    border: 1px solid gray;
+    border: 1px solid #f2f2f2;
     outline: none;
     padding-left: 10px;
-    border-bottom: none;
 }
 .chat_display_text i
 {
 
     color: #fffbfb;
-    padding-left: 1.4em;
-    padding-top: 1em;
+    padding-left: 1.5em;
+    padding-top: 1.5em;
 }
 
 .chat_display_text_send
 {
     background-color: #D24D57;
     width: 69px;
+    border: 1px solid #f2f2f2;
 }
 
 .chat_display_text_msg
@@ -1898,13 +1893,20 @@ footer
     height: 100%;
 
 }
+
+.chat_display_text_msg form
+{
+    width: 100%;
+    display: flex;
+}
+
 /*user que ta a mandar mensagem*/
 .chat_display_user
 {
     height: 10%;
     width: 100%;
     background-color: white;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #f2f2f2;
 }
 
 .chat_display_user_profile
@@ -1942,7 +1944,13 @@ footer
     background-color: white;
     padding: 4%;
     overflow-x: scroll;
+    overflow-y: hidden;
 
+}
+
+.chat_display_messages::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
 }
 .chat_display_messages_display
 {
@@ -1987,9 +1995,9 @@ footer
 .chat_users_settings
 {
     height: 10%;
-    width: 100%;
+    width: calc(100% - 1px);
     background-color: white;
-    border-right: 1px solid #aaa;
+    border-right: 1px solid #f2f2f2;
 }
 
 .chat_user_settings_search
