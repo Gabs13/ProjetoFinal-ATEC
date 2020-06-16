@@ -1874,8 +1874,7 @@ footer
 {
 
     color: #fffbfb;
-    padding-left: 1.5em;
-    padding-top: 1.5em;
+    font-size: 1.7em;
 }
 
 .chat_display_text_send
@@ -1940,7 +1939,7 @@ footer
 .chat_display_messages
 {
     width: 92%;
-    height: 76%;
+    height: 75%;
     background-color: white;
     padding: 4%;
     overflow-x: scroll;

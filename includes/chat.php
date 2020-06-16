@@ -62,17 +62,9 @@
               <div class="chat_display_text_msg" >
                 <form onsubmit="return sendMessage();">
                   <input type="text" id="tb_messagem" autofocus autocomplete="off" placeholder="Escreva a sua mensagem...">
-
-                  <input type="submit" value="Enviar"/>
-                  <div class="chat_display_text_send">
-                      <i class="fas fa-paper-plane"></i>
-                  </div>
+                  <button type="submit" class="chat_display_text_send"><i class="fas fa-paper-plane"></i></button>
                 </form>
-                <form class="navbar-search">
-                    <input type="text" class="search-query" placeholder="Search here" />        
-                    <label for="mySubmit" class="btn"><i class="icon-search icon-white"></i> Search me</label>
-                    <input id="mySubmit" style="display:none" type="submit" value="Go" class="hidden" />
-                </form>
+                
               </div>
               
           </div>
