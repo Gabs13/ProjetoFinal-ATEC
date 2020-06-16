@@ -1780,8 +1780,10 @@ footer
 {
     display: flex;
     width: 70%;
-    height: 98%;
+    height: 90%;
     margin-left: 15%;
+    font-family: 'Archivo', sans-serif;
+    margin-top: 2%;
 }
 .chat_users
 {
@@ -1792,7 +1794,7 @@ footer
 }
 .chat_users_display
 {
-    height: 95%;
+    height: 93%;
     width: calc(100% - 1px);
     border-right: 1px solid #aaa;
 }
@@ -1808,7 +1810,7 @@ footer
 
 .chat_users_display_user
 {
-    padding: 4%;
+    padding: 4% 4% 4% 6%;
     height: 10%;
     width: 96%;
     display: flex;
@@ -1831,12 +1833,6 @@ footer
     width: 85%;
     font-family: 'Work Sans', sans-serif;
 }
-.chat_users_settings
-{
-    height: 5%;
-    width: 100%;
-    background-color: #aaa;
-}
 
 .chat_users_display_user_nome
 {
@@ -1851,7 +1847,7 @@ footer
 .chat_display
 {
     width: 69%;
-    height: 100%;
+    height: 95%;
     max-height: 100%;
     position: static;
 
@@ -1865,27 +1861,26 @@ footer
 .chat_display_text
 {
     width: 100%;
-    height: 5%;
-    max-height: 5%;
+    height: calc(6% - 2px);
+    max-height: 16%;
     background-color: white;
 }
 
 .chat_display_text input
 {
-    height: 2em;
     width: 90%;
-    border-radius: 8px;
-    background-color: #f2f2f2;
-    border: none;
-    padding: 5px;
-    outline: blue;
+    background-color: white;
+    border: 1px solid gray;
+    outline: none;
+    padding-left: 10px;
+    border-bottom: none;
 }
 .chat_display_text i
 {
 
     color: #fffbfb;
     padding-left: 1.4em;
-    padding-top: 0.6em;
+    padding-top: 1em;
 }
 
 .chat_display_text_send
@@ -1897,8 +1892,9 @@ footer
 .chat_display_text_msg
 {
     width: 70%;
-    background-color: #f2f2f2;
+    background-color: white;
     display: flex;
+    height: 100%;
 
 }
 /*user que ta a mandar mensagem*/
@@ -1941,7 +1937,7 @@ footer
 .chat_display_messages
 {
     width: 92%;
-    height: 75%;
+    height: 76%;
     background-color: white;
     padding: 4%;
     overflow-x: scroll;
@@ -1985,4 +1981,45 @@ footer
     height: 6em;
     width: 100%;
     margin-bottom: 2em;
+}
+/*caixa de procura de utilizadores no chat*/
+.chat_users_settings
+{
+    height: 10%;
+    width: 100%;
+    background-color: white;
+    border-right: 1px solid #aaa;
+}
+
+.chat_user_settings_search
+{
+    height: 125%;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+}
+
+.chat_user_settings_search input
+{
+    width: 83%;
+    height: 94%;
+    border: none;
+    background: #f2f2f2;
+    padding-left: 10px;
+}
+
+.chat_user_settings_search i
+{
+    width: 5%;
+    height: 100%;
+    margin-left: 10px;
+    margin-top: 5px;
+
+}
+
+.chat_user_settings_search_padding
+{
+    padding-left: 6%;
+    padding-top: 6%;
+    height: 30px;
+    width: 88%;
 }
