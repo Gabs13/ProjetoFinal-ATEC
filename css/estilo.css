@@ -961,7 +961,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     padding-left: 2%;
     width: 100%;
     height: 30%;
-    font-size: 0.7em;
+    font-size: 0.8em;
     font-weight: bold;
 }
 
@@ -1791,7 +1791,7 @@ footer
     width: 30%;
     height: 95%;
     background-color: white;
-    
+
 }
 .chat_users_display
 {
@@ -1816,11 +1816,17 @@ footer
     width: 96%;
     display: flex;
 }
+
+.chat_users_display_user:hover
+{
+  background-color: #CCC;
+}
+
 .chat_users_display_user_img img
 {
     height: 100%;
     width: 100%;
-    
+
 }
 .chat_users_display_info
 {
@@ -1861,7 +1867,7 @@ footer
     background-color: white;
 }
 
-.chat_display_text input 
+.chat_display_text input
 {
     width: 90%;
     background-color: white;
@@ -1872,7 +1878,7 @@ footer
 }
 .chat_display_text i
 {
-    
+
     color: #fffbfb;
     padding-left: 1.4em;
     padding-top: 1em;
@@ -1890,7 +1896,7 @@ footer
     background-color: white;
     display: flex;
     height: 100%;
-    
+
 }
 /*user que ta a mandar mensagem*/
 .chat_display_user
@@ -1935,6 +1941,8 @@ footer
     height: 76%;
     background-color: white;
     padding: 4%;
+    overflow-x: scroll;
+
 }
 .chat_display_messages_display
 {

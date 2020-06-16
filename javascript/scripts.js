@@ -58,7 +58,7 @@ $(document).ready(function()
   //MODAL
 
   /*COMENTARIO MODAL BOTTOM (APARECER A SETA DE ENVIAR) ----------------------*/
-  comentariobottom.onclick = function()
+  comentariobottom.onfocus = function()
   {
     document.getElementById('modal_user_sendbtn').style.display="block";
     document.getElementById('modal_user_sendbtn').style.transition= "1s";
@@ -79,6 +79,11 @@ $(document).ready(function()
       history.pushState('', document.title, window.location.pathname);
       event.preventDefault();
       $(window).scrollTop(pos); // Dar scroll até à posição que estava
+
+      document.getElementById('modal_user_sendbtn').style.display="none";
+      document.getElementById('modal_user_sendbtn').style.transition= "1s";
+
+      $('#comentario_bottom').val('');
     }
   }
 
@@ -92,6 +97,11 @@ $(document).ready(function()
         history.pushState('', document.title, window.location.pathname);
         e.preventDefault();
         $(window).scrollTop(pos); // Dar scroll até à posição que estava
+
+        document.getElementById('modal_user_sendbtn').style.display="none";
+        document.getElementById('modal_user_sendbtn').style.transition= "1s";
+
+        $('#comentario_bottom').val('');
     }
 
   });
@@ -188,7 +198,7 @@ function removeComment(id)
 var fotoCount = 12;
 
 $(window).scroll(function() {
-  if($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.8) // Scrollbar a 80%
+  if($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.9) // Scrollbar a 80%
   {
     fotoCount = fotoCount + 4;
 
