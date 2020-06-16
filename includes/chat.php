@@ -1,16 +1,10 @@
 <body>
   <div class="chat_body">
       <div class="chat_users">
-<<<<<<< HEAD
-      <div class="chat_users_settings">
-=======
-
->>>>>>> 480bb43b73df8aea9edef389b9653fe07279dd59
         <!--SEARCHBOX-->
         <div class="chat_users_settings">
             <div class="chat_user_settings_search_padding">
                 <div class="chat_user_settings_search">
-<<<<<<< HEAD
                     <input type="text" id="PesquisaNome" placeholder="Insira um Utilizador...">
                     <i class="fas fa-search"></i>
 
@@ -34,18 +28,10 @@
                           });
                       });
                     </script>
-=======
-                    <input type="text" placeholder="Insira um Utilizador...">
-                    <i class="fas fa-search"></i>
->>>>>>> 480bb43b73df8aea9edef389b9653fe07279dd59
                 </div>
             </div>
         </div>
         <!--FINAL SEARCHBOX-->
-<<<<<<< HEAD
-      </div>
-=======
->>>>>>> 480bb43b73df8aea9edef389b9653fe07279dd59
 
           <div class="chat_users_display">
               <!--MENSAGEM DE UM UTILIZADOR-->
