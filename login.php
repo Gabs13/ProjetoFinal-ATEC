@@ -22,6 +22,8 @@
 		<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
 
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
+
     <script src="javascript/scripts.js"></script>
   </head>
   <body>
@@ -35,11 +37,11 @@
         echo '<meta http-equiv="refresh" content="0;url=index.php">';
       }
 
-    //include 'includes/navbar.php';
+    include 'includes/navbar.php';
 
-    include 'includes/chat.php';
+    //include 'includes/chat.php';
 
-    //include 'includes/galeria.php';
+    include 'includes/galeria.php';
 
 
       include 'includes/footerPrincipal.php';

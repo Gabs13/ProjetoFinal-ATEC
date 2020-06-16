@@ -195,88 +195,88 @@
 
   function destruir_sessao()
   {
-    @session_start();
+      @session_start();
 
-    unset($_SESSION["CID"]);
-    unset($_SESSION["UtilID"]);
-    unset($_SESSION["CPNome"]);
-    unset($_SESSION["CUNome"]);
+      unset($_SESSION["CID"]);
+      unset($_SESSION["UtilID"]);
+      unset($_SESSION["CPNome"]);
+      unset($_SESSION["CUNome"]);
 
-    session_destroy();
-  }
+      session_destroy();
+    }
 
-  /* Função de registo */
-function registo($regEmail, $regPass, $regRPass, $regNome, $regUNome, $regTlmv, $regGenero, $regData)
-{
-  include 'conn.php';
+    /* Função de registo */
 
-  $regEmail = mysqli_real_escape_string($conn, $regEmail);
-  $regPass = mysqli_real_escape_string($conn, $regPass);
-  $regNome = mysqli_real_escape_string($conn, $regNome);
-  $regUNome = mysqli_real_escape_string($conn, $regUNome);
-  $regTlmv = mysqli_real_escape_string($conn, $regTlmv);
-  $regGenero = mysqli_real_escape_string($conn, $regGenero);
-  $regData = mysqli_real_escape_string($conn, $regData);
-
-  if($regpass != $regpassval)
+  function registo($regEmail, $regPass, $regRPass, $regNome, $regUNome, $regTlmv, $regGenero, $regData)
   {
-    echo 'As senhas não correspondem';
+    include 'conn.php';
+
+    $regEmail = mysqli_real_escape_string($conn, $regEmail);
+    $regPass = mysqli_real_escape_string($conn, $regPass);
+    $regNome = mysqli_real_escape_string($conn, $regNome);
+    $regUNome = mysqli_real_escape_string($conn, $regUNome);
+    $regTlmv = mysqli_real_escape_string($conn, $regTlmv);
+    $regGenero = mysqli_real_escape_string($conn, $regGenero);
+    $regData = mysqli_real_escape_string($conn, $regData);
+
+    if($regpass != $regpassval)
+    {
+      echo 'As senhas não correspondem';
+    }
+    else
+    {
+        /* Encriptar a password */
+        $regPass = base64_encode($regPass);
+        /* Evitar duplicados */
+        $existencia = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM Conta WHERE Email = '$regEmail'"));
+
+        if(!$existencia)
+        {
+          /* Ainda não há este email - cria registo */
+          mysqli_query($conn, "INSERT INTO Conta (Email, Password, Telemovel) VALUES ('$regEmail', '$regPass', '$regTlmv')");
+
+          /* Ultimo id criado via conn */
+          $cid = mysqli_insert_id($conn);
+
+          mysqli_query($conn, "INSERT INTO Utilizadores (UtilPNome, UtilUNome, UtilDataNasc, UtilGenero, ContaID) VALUES ('$regNome', '$regUNome', '$regData', '$regGenero', '$cid')");
+
+          echo '<script language = "javascript">';
+          echo 'alert("Obrigado. Registo efetuado com sucesso")';
+          echo '</script>';
+        }
+        else
+        {
+          echo 'O email indicado já se encontra registado';
+        }
+    }
+    include 'deconn.php';
   }
-  else
+
+  function devolverNome($id)
   {
-      /* Encriptar a password */
-      $regPass = base64_encode($regPass);
-      /* Evitar duplicados */
-      $existencia = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM Conta WHERE Email = '$regEmail'"));
+    include 'conn.php';
 
-      if(!$existencia)
-      {
-        /* Ainda não há este email - cria registo */
-        mysqli_query($conn, "INSERT INTO Conta (Email, Password, Telemovel) VALUES ('$regEmail', '$regPass', '$regTlmv')");
+    if (!empty($id))
+    {
+      $nomeUtil = mysqli_query($conn, "SELECT * FROM Utilizadores WHERE UtilID = $id");
 
-        /* Ultimo id criado via conn */
-        $cid = mysqli_insert_id($conn);
+      $nome = mysqli_fetch_array($nomeUtil);
 
-        mysqli_query($conn, "INSERT INTO Utilizadores (UtilPNome, UtilUNome, UtilDataNasc, UtilGenero, ContaID) VALUES ('$regNome', '$regUNome', '$regData', '$regGenero', '$cid')");
+      echo $nome['UtilPNome'];
+    }
 
-        echo '<script language = "javascript">';
-        echo 'alert("Obrigado. Registo efetuado com sucesso")';
-        echo '</script>';
-      }
-      else
-      {
-        echo 'O email indicado já se encontra registado';
-      }
+    include 'deconn.php';
   }
-  include 'deconn.php';
-}
 
-function devolverNome($id)
-{
-  include 'conn.php';
-
-  if (!empty($id))
+  function utilizador()
   {
-    $nomeUtil = mysqli_query($conn, "SELECT * FROM Utilizadores WHERE UtilID = $id");
-
-    $nome = mysqli_fetch_array($nomeUtil);
-
-    echo $nome['UtilPNome'];
+    if(@!$_SESSION["uid"])
+    {
+      echo '<li> <a href="login.php"> <i class="fas fa-user"></i> </a> </li>';
+    }
+    else
+    {
+      echo '<li> <a href="logout.php"> <i class="fas fa-user-cog"></i> </a> </li>';
+    }
   }
-
-  include 'deconn.php';
-}
-
-
-function utilizador()
-{
-  if(@!$_SESSION["uid"])
-  {
-    echo '<li> <a href="login.php"> <i class="fas fa-user"></i> </a> </li>';
-  }
-  else
-  {
-    echo '<li> <a href="logout.php"> <i class="fas fa-user-cog"></i> </a> </li>';
-  }
-}
 ?>
