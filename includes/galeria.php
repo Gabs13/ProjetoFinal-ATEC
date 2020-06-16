@@ -67,7 +67,7 @@
       </div>
       <hr class="modal_comentarios_separador"></hr>
       <div class="autor_modal_info">
-        <div class="autor_modal_info_btn"><i class="fas fa-heart" id="likePostModal"></i></div>
+        <div class="autor_modal_info_btn" id="autor_modal_info_btn"></i></div>
         <div class="autor_modal_info_btn2 autor_modal_info_btn"><i class="fas fa-share-alt"></i></div>
       </div>
       <div class="modal_comentarios_bottom">

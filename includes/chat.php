@@ -1,6 +1,7 @@
 <body>
   <div class="chat_body">
       <div class="chat_users">
+
         <!--SEARCHBOX-->
         <div class="chat_users_settings">
             
@@ -105,7 +106,6 @@
                   <input type="text" id="tb_messagem" autofocus autocomplete="off" placeholder="Escreva a sua mensagem...">
                   <button type="submit" class="chat_display_text_send"><i class="fas fa-paper-plane"></i></button>
                 </form>
-                
               </div>
 
           </div>

@@ -9,6 +9,7 @@ html{height: 100%;}
 body {background-color: #f2f2f2;
     height: 100%;
     font-family: 'Work Sans', sans-serif;
+    overflow-x: hidden;
 }
 
 /* Fim Geral ---------------------------------------------------------------- */
@@ -1568,7 +1569,6 @@ footer
   top: 5%;
   text-align: center;
   position: absolute;
-  overflow-x: hidden;
   transition: all 0.7s ease;
   z-index: 1;
   border-top-right-radius: 47px;
@@ -1638,7 +1638,11 @@ footer
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
-    
+}
+
+.name_dropdownlist label
+{
+  margin-right: 15px;
 }
 
 
