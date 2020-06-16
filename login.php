@@ -28,17 +28,14 @@
   </head>
   <body>
 
-    <form method="post">
-      <input type="submit" value="Destruir Sessão" name="Destruir">
-    </form>
 
     <?php
 
-    if (isset($_POST["Destruir"]))
-    {
-      destruir_sessao();
-      echo '<meta http-equiv="refresh" content="0;url=index.php">';
-    }
+      if (isset($_POST["Destruir"]))
+      {
+        destruir_sessao();
+        echo '<meta http-equiv="refresh" content="0;url=index.php">';
+      }
 
     include 'includes/navbar.php';
 
@@ -47,7 +44,7 @@
     include 'includes/galeria.php';
 
 
-    include 'includes/footerPrincipal.php';
+      include 'includes/footerPrincipal.php';
     ?>
     <!-- teste -->
   </body>
