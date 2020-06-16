@@ -38,15 +38,11 @@
       echo '<meta http-equiv="refresh" content="0;url=index.php">';
     }
 
-    include 'includes/navbar.php';
-<<<<<<< HEAD
+    //include 'includes/navbar.php';
 
-    //include 'includes/chat.php';
-
-    include 'includes/galeria.php';
-=======
     include 'includes/chat.php';
->>>>>>> d40be2bdfc8d946792c0f427d97400dea114f55a
+
+    //include 'includes/galeria.php';
 
 
     include 'includes/footerPrincipal.php';
