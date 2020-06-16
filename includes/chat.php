@@ -1,10 +1,40 @@
-<script src="javascript/scriptsmsgs.js"></script>
-
-
 <body>
   <div class="chat_body">
       <div class="chat_users">
-      <div class="chat_users_settings">botao de escrever nova mensagem e settings</div>
+      <div class="chat_users_settings">
+        <!--SEARCHBOX-->
+        <div class="chat_users_settings">
+            <div class="chat_user_settings_search_padding">
+                <div class="chat_user_settings_search">
+                    <input type="text" id="PesquisaNome" placeholder="Insira um Utilizador...">
+                    <i class="fas fa-search"></i>
+
+                    <script type="text/javascript">
+                      $(function() {
+                          $("#PesquisaNome").autocomplete({source: function( request, response ) {
+                                  $.ajax({
+                                      url: "functions/teste.php",
+                                      dataType: "jsonp",
+                                      data: {
+                                        nome: request.term
+                                      },
+                                      success: function(result) {
+                                        console.log(result);
+                                        //finalResult = jQuery.parseJSON(result);
+                                        //response(result);
+
+                                      }
+                                  });
+                              },
+                          });
+                      });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!--FINAL SEARCHBOX-->
+      </div>
+
           <div class="chat_users_display">
               <!--MENSAGEM DE UM UTILIZADOR-->
               <div class="chat_users_display_user">
