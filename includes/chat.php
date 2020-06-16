@@ -1,5 +1,7 @@
 <div class="chat_body">
     <div class="chat_users">
+    
+        <!--SEARCHBOX-->
         <div class="chat_users_settings">
             <div class="chat_user_settings_search_padding">
                 <div class="chat_user_settings_search">
@@ -8,6 +10,8 @@
                 </div>
             </div>
         </div>
+        <!--FINAL SEARCHBOX-->
+
         <div class="chat_users_display">
             <!--MENSAGEM DE UM UTILIZADOR-->
             <div class="chat_users_display_user">

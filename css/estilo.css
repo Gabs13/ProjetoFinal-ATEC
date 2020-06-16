@@ -1558,7 +1558,7 @@ footer
   text-decoration: none;
 }
 
-/* BARRA MENU -----------------------------------------------------------------*/
+/* BARRA MENU(NAV BAR) -----------------------------------------------------------------*/
 
 .menu {
   height: 70px;
@@ -1604,19 +1604,20 @@ footer
   /*background: #fff;*/
   z-index: 1;
 }
-/*
-.menu span i {
-  position: absolute;
-  transform-origin: 50% 50%;
-  width: 45%;
-  height: 2px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  background-color: #ccc;
-  transition: transform 0.3s ease, opacity 0.1s ease 0.1s;
+/*DROPDOWN LIST DO PERFIL*/
+.navbar_menu_dropdown
+{
+    display: block;
+    width: 12em;
+    height: 16em;
+    background-color: white;
+    z-index: 5;
 }
-*/
+.navbar_menu_dropdown>div
+{
+
+}
+
 
 .menu span img
 {
@@ -1794,7 +1795,7 @@ footer
 }
 .chat_users_display
 {
-    height: 93%;
+    height: 90%;
     width: calc(100% - 1px);
     border-right: 1px solid #aaa;
 }
