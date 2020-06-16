@@ -251,6 +251,22 @@ function registo($regEmail, $regPass, $regRPass, $regNome, $regUNome, $regTlmv, 
   include 'deconn.php';
 }
 
+function devolverNome($id)
+{
+  include 'conn.php';
+
+  if (!empty($id))
+  {
+    $nomeUtil = mysqli_query($conn, "SELECT * FROM Utilizadores WHERE UtilID = $id");
+
+    $nome = mysqli_fetch_array($nomeUtil);
+
+    echo $nome['UtilPNome'];
+  }
+
+  include 'deconn.php';
+}
+
 
 function utilizador()
 {

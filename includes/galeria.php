@@ -1,4 +1,7 @@
-
+<script>
+  var myvar = "<?php echo $_SESSION['UtilID'] ?>";
+  console.log(myvar);
+</script>
 <body>
     <div class="galery_title">GALERIAS</div>
 
@@ -68,7 +71,7 @@
         <div class="autor_modal_info_btn2 autor_modal_info_btn"><i class="fas fa-share-alt"></i></div>
       </div>
       <div class="modal_comentarios_bottom">
-        <input type="text" id="comentario_bottom" class="modal_user_comentario" placeholder="Adicione um comentário...">
+        <input autocomplete="off" type="text" id="comentario_bottom" class="modal_user_comentario" placeholder="Adicione um comentário...">
         <div id="modal_user_sendbtn"> </div>
       </div>
 

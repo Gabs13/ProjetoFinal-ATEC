@@ -17,6 +17,11 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+
     <script src="javascript/scripts.js"></script>
   </head>
   <body>
@@ -34,6 +39,9 @@
     }
 
     include 'includes/navbar.php';
+
+    //include 'includes/chat.php';
+
     include 'includes/galeria.php';
 
 

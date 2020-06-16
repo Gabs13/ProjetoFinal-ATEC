@@ -5,7 +5,10 @@
 
 .limpa{clear: both;}
 
-body {background-color: #f2f2f2;}
+html{height: 100%;}
+body {background-color: #f2f2f2;
+    height: 100%;
+}
 
 /* Fim Geral ---------------------------------------------------------------- */
 
@@ -958,7 +961,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     padding-left: 2%;
     width: 100%;
     height: 30%;
-    font-size: 0.7em;
+    font-size: 0.8em;
     font-weight: bold;
 }
 
@@ -1770,4 +1773,216 @@ footer
     width: 0px;
     font-weight: bold;
    }
-/* fim butao e search bar --------------------------------------------------------------------------*/
+/* fim botao e search bar -----------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------CHAT------------------------------------------------------------*/
+.chat_body
+{
+    display: flex;
+    width: 70%;
+    height: 98%;
+    margin-left: 15%;
+}
+.chat_users
+{
+    width: 30%;
+    height: 95%;
+    background-color: white;
+
+}
+.chat_users_display
+{
+    height: 95%;
+    width: calc(100% - 1px);
+    border-right: 1px solid #aaa;
+}
+
+.chat_users_display_user_img
+{
+    height: 60px;
+    width: 60px;
+    max-height: 80px;
+    max-width: 80px;
+    margin-right: 4%;
+}
+
+.chat_users_display_user
+{
+    padding: 4%;
+    height: 10%;
+    width: 96%;
+    display: flex;
+}
+
+.chat_users_display_user:hover
+{
+  background-color: #CCC;
+}
+
+.chat_users_display_user_img img
+{
+    height: 100%;
+    width: 100%;
+
+}
+.chat_users_display_info
+{
+    height: 100%;
+    width: 85%;
+    font-family: 'Work Sans', sans-serif;
+}
+.chat_users_settings
+{
+    height: 5%;
+    width: 100%;
+    background-color: #aaa;
+}
+
+.chat_users_display_user_nome
+{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.chat_users_display_user_mensagem
+{
+    padding: 5px;
+}
+
+.chat_display
+{
+    width: 69%;
+    height: 100%;
+    max-height: 100%;
+    position: static;
+
+}
+.chat_display_user
+{
+    width: 100%;
+    height: 92%;
+    background-color: white;
+}
+.chat_display_text
+{
+    width: 100%;
+    height: 5%;
+    max-height: 5%;
+    background-color: white;
+}
+
+.chat_display_text input
+{
+    height: 2em;
+    width: 90%;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+    border: none;
+    padding: 5px;
+    outline: blue;
+}
+.chat_display_text i
+{
+
+    color: #fffbfb;
+    padding-left: 1.4em;
+    padding-top: 0.6em;
+}
+
+.chat_display_text_send
+{
+    background-color: #D24D57;
+    width: 69px;
+}
+
+.chat_display_text_msg
+{
+    width: 70%;
+    background-color: #f2f2f2;
+    display: flex;
+
+}
+/*user que ta a mandar mensagem*/
+.chat_display_user
+{
+    height: 10%;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid gray;
+}
+
+.chat_display_user_profile
+{
+    display: flex;
+    padding: 2%;
+    width: 100%;
+}
+
+.chat_display_user_img
+{
+    height: 60px;
+    width: 60px;
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.chat_display_user_img img
+{
+    height: 60px;
+    width: 60px;
+}
+
+.chat_display_user_name
+{
+    margin-left: 20px;
+    font-size: 1.6em;
+}
+
+/*display das mensagens no ecra*/
+.chat_display_messages
+{
+    width: 92%;
+    height: 75%;
+    background-color: white;
+    padding: 4%;
+    overflow-x: scroll;
+
+}
+.chat_display_messages_display
+{
+    float: right;
+    width: 15em;
+    height: auto;
+    padding:1%;
+    background-color:rgba(210,77,87,0.7) ;
+    border-radius: 10px;
+
+}
+.chat_display_messages_hora
+{
+    float: right;
+}
+.chat_display_messages_texto
+{
+    margin-top: 0.8em;
+}
+.chat_display_messages_nome
+{
+    font-weight: bold;
+}
+
+/*utilizador esquerda*/
+.chat_display_messages_display_left
+{
+    float: left;
+    width: 15em;
+    height: auto;
+    padding:1%;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+.chat_display_messages_ocupy
+{
+    height: 6em;
+    width: 100%;
+    margin-bottom: 2em;
+}
