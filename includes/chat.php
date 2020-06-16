@@ -1,6 +1,13 @@
 <div class="chat_body">
     <div class="chat_users">
-    <div class="chat_users_settings">botao de escrever nova mensagem e settings</div>
+        <div class="chat_users_settings">
+            <div class="chat_user_settings_search_padding">
+                <div class="chat_user_settings_search">
+                    <input type="text" placeholder="Insira um Utilizador...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
         <div class="chat_users_display">
             <!--MENSAGEM DE UM UTILIZADOR-->
             <div class="chat_users_display_user">
