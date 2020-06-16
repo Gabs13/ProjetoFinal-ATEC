@@ -1,12 +1,9 @@
 <body>
   <div class="chat_body">
       <div class="chat_users">
-<<<<<<< HEAD
-
-=======
->>>>>>> daca2b737495037b9a786492593101e41e2cbaa7
         <!--SEARCHBOX-->
         <div class="chat_users_settings">
+            
             <div class="chat_user_settings_search_padding">
                 <div class="chat_user_settings_search">
                     <input type="text" id="PesquisaNome" placeholder="Insira um Utilizador...">
@@ -36,10 +33,29 @@
             </div>
         </div>
         <!--FINAL SEARCHBOX-->
-<<<<<<< HEAD
-      
-=======
->>>>>>> daca2b737495037b9a786492593101e41e2cbaa7
+
+        <!--RESULTADO DAS PESQUISAS-->
+        <div class="chat_resultados_pesquisa">
+                <li>
+                    <div class="chat_resultados_pesquisa_output">
+                        <div class="chat_resultados_pesquisa_output_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+                        <div class="chat_resultados_pesquisa_output_nome">Batman</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="chat_resultados_pesquisa_output">
+                        <div class="chat_resultados_pesquisa_output_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+                        <div class="chat_resultados_pesquisa_output_nome">Batman</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="chat_resultados_pesquisa_output">
+                        <div class="chat_resultados_pesquisa_output_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+                        <div class="chat_resultados_pesquisa_output_nome">Batman</div>
+                    </div>
+                </li>
+            </div>
+            <!--FINAL DAS PESQUISAS-->
 
           <div class="chat_users_display">
               <!--MENSAGEM DE UM UTILIZADOR-->
@@ -87,20 +103,7 @@
               <div class="chat_display_text_msg" >
                 <form onsubmit="return sendMessage();">
                   <input type="text" id="tb_messagem" autofocus autocomplete="off" placeholder="Escreva a sua mensagem...">
-<<<<<<< HEAD
-
-                  <input type="submit" value="Enviar"/>
-                  <div class="chat_display_text_send">
-                      <i class="fas fa-paper-plane"></i>
-                  </div>
-                </form>
-                <form class="navbar-search">
-                    <input type="text" class="search-query" placeholder="Search here" />
-                    <label for="mySubmit" class="btn"><i class="icon-search icon-white"></i> Search me</label>
-                    <input id="mySubmit" style="display:none" type="submit" value="Go" class="hidden" />
-=======
                   <button type="submit" class="chat_display_text_send"><i class="fas fa-paper-plane"></i></button>
->>>>>>> daca2b737495037b9a786492593101e41e2cbaa7
                 </form>
                 
               </div>

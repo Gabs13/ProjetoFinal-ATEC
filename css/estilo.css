@@ -1641,6 +1641,7 @@ footer
     
 }
 
+
 .menu span img
 {
 
@@ -2022,13 +2023,15 @@ footer
     width: 100%;
     margin-bottom: 2em;
 }
-/*caixa de procura de utilizadores no chat*/
+
+/*caixa de procura de utilizadores no chat -------*/
 .chat_users_settings
 {
     height: 10%;
     width: calc(100% - 1px);
     background-color: white;
     border-right: 1px solid #f2f2f2;
+    position: relative;
 }
 
 .chat_user_settings_search
@@ -2036,6 +2039,7 @@ footer
     height: 125%;
     background-color: #f2f2f2;
     border-radius: 8px;
+    position: relative;
 }
 
 .chat_user_settings_search input
@@ -2045,6 +2049,7 @@ footer
     border: none;
     background: #f2f2f2;
     padding-left: 10px;
+    outline: none;
 }
 
 .chat_user_settings_search i
@@ -2062,4 +2067,50 @@ footer
     padding-top: 6%;
     height: 30px;
     width: 88%;
+}
+
+/*resultado da pesquisa*/
+.chat_resultados_pesquisa
+{
+    position: absolute;
+    width: calc(18% + 13px);
+    z-index: 5;
+    background-color: #f2f2f2;
+    top: 9.3%;
+    left: calc(15% + 35px);
+    border-top: 1px solid white;
+    display: none;
+}
+
+.chat_resultados_pesquisa li
+{
+    padding-left: 1em;
+    list-style: none;
+    height: 50px;
+}
+
+.chat_resultados_pesquisa li:hover
+{
+    cursor:pointer;
+    background-color: #ccc;
+}
+
+.chat_resultados_pesquisa_output
+{
+    display: flex;
+    height: 100%;
+}
+.chat_resultados_pesquisa_output_nome
+{
+    padding-left: 1em;
+    padding-top: 13px;
+}
+.chat_resultados_pesquisa_output_img 
+{
+    padding-top: 7px;
+}
+.chat_resultados_pesquisa_output_img img
+{
+    height: 30px;
+    width: 30px;
 }
