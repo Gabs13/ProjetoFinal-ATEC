@@ -37,14 +37,14 @@
         echo '<meta http-equiv="refresh" content="0;url=index.php">';
       }
 
-    include 'includes/navbar.php';
+      //include 'includes/navbar.php';
 
-    //include 'includes/chat.php';
+      include 'includes/chat.php';
 
-    include 'includes/chat.php';
+      include 'includes/chat.php';
 
 
-      include 'includes/footerPrincipal.php';
+      //include 'includes/footerPrincipal.php';
     ?>
     <!-- teste -->
   </body>
