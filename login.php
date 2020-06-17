@@ -38,7 +38,7 @@
       }
 
       include 'includes/navbar.php';
-      include 'includes/chat.php';
+      include 'includes/resultadoPesquisa.php';
 
 
 
