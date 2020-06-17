@@ -1,6 +1,6 @@
 <body>
     <div class="resultado_Pesquisa_total">
-        <div class="resultadoPesquisa_back"><i class="fas fa-arrow-circle-left"></i></div>
+        <div class="resultadoPesquisa_back"><i><img src="Imagens/logotipo/artifex2.png"></i></div>
         <div class="resultadoPesquisa_body">  
             <div class="resultadoPesquisa_body_label">Pesquisa:</div>        
             <div class="resultadosPesquisa_container">

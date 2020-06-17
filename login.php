@@ -40,8 +40,6 @@
       include 'includes/navbar.php';
       include 'includes/resultadoPesquisa.php';
 
-
-
       //include 'includes/footerPrincipal.php';
     ?>
     <!-- teste -->
