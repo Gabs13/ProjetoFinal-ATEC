@@ -1,5 +1,6 @@
 /* Geral -------------------------------------------------------------------- */
 /*colors : vermelho escuro:#D24D57*/
+            /*rgba do vermelho escuro rgba(210,77,87,0.7)*/
 
 *{margin:0; padding: 0;}
 
@@ -2122,3 +2123,104 @@ footer
     height: 30px;
     width: 30px;
 }
+
+/*---------------------------------RESULTADOS DA PESQUISA PAG-----------------------------------------------*/
+.resultado_Pesquisa_total
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.resultadoPesquisa_body
+{
+    background-color: white;
+    width: 40%;
+    margin-left: 15%;
+    margin-top: 5%;
+    border-radius: 8px;
+    border: 1px solid #f2f2f2;
+}
+
+.resultadosPesquisa_container
+{
+    width: 90%;
+    height: 6em;
+    border-bottom: 1px solid #f2f2f2;
+    display: flex;
+    margin-left: 5%;
+}
+
+.resultadosPesquisa_container_img
+{
+    width: 70px;
+    height: 70px;
+    padding-top: 12px;
+}
+
+.resultadosPesquisa_container_img img
+{
+    width: 70px;
+    height: 70px;
+}
+
+.resultadosPesquisa_container_img img:hover
+{
+    cursor: pointer;
+}
+
+.resultadosPesquisa_container_nome
+{
+    font-size: 2em;
+    margin: 30px;
+}
+
+.resultadosPesquisa_container_nome:hover
+{
+    cursor: pointer;
+    text-decoration: underline;
+    transition: 1s;
+}
+
+.resultadoPesquisa_back
+{
+    width: 3%;
+    height: 3%;
+    margin-left: 15%;
+    margin-top: 5%;
+
+}
+
+.resultadoPesquisa_back i
+{
+    font-size: 4em;
+    color: rgba(210,77,87,0.7);
+}
+
+.resultadoPesquisa_back i:hover
+{
+    cursor: pointer;
+    color: rgba(210,77,87,1);
+    transition: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.resultadosPesquisa_container_chat
+{
+    margin-left: 50%;
+    height: 50%;
+    width: 50%;
+    margin-top: 5%;
+}
+
+.resultadosPesquisa_container_chat i
+{
+    font-size: 2em;
+    color: rgba(210,77,87);
+}
+
+.resultadosPesquisa_container_chat i:hover
+{
+    cursor: pointer;
+}
+
