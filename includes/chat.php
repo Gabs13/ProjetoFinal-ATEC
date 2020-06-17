@@ -4,9 +4,9 @@
 
         <!--SEARCHBOX-->
         <div class="chat_users_settings">
-            
+
             <div class="chat_user_settings_search_padding">
-                <div class="chat_user_settings_search">
+                <div class="chat_user_settings_search" id="chat_user_settings_search">
                     <input type="text" id="PesquisaNome" placeholder="Insira um Utilizador...">
                     <i class="fas fa-search"></i>
 

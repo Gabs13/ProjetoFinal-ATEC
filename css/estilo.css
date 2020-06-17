@@ -2055,6 +2055,7 @@ footer
     background: #f2f2f2;
     padding-left: 10px;
     outline: none;
+    border-radius: 8px;
 }
 
 .chat_user_settings_search i
@@ -2069,7 +2070,7 @@ footer
 .chat_user_settings_search_padding
 {
     padding-left: 6%;
-    padding-top: 6%;
+    padding-top: 3%;
     height: 30px;
     width: 88%;
 }
@@ -2078,13 +2079,16 @@ footer
 .chat_resultados_pesquisa
 {
     position: absolute;
-    width: calc(18% + 13px);
+    width: calc(18% + 8px);
     z-index: 5;
     background-color: #f2f2f2;
-    top: 9.3%;
-    left: calc(15% + 35px);
+    top: 9.5%;
+    left: calc(15% + 24px);
     border-top: 1px solid white;
     display: none;
+
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .chat_resultados_pesquisa li
@@ -2110,7 +2114,7 @@ footer
     padding-left: 1em;
     padding-top: 13px;
 }
-.chat_resultados_pesquisa_output_img 
+.chat_resultados_pesquisa_output_img
 {
     padding-top: 7px;
 }
