@@ -2206,7 +2206,8 @@ footer
     margin-left: 50%;
     height: 50%;
     width: 50%;
-    margin-top: 5%;
+    margin-top: 4%;
+    height: 100%;
 }
 
 .resultadosPesquisa_container_chat i
@@ -2218,5 +2219,21 @@ footer
 .resultadosPesquisa_container_chat i:hover
 {
     cursor: pointer;
+}
+
+.resultadoPesquisa_body_label
+{
+    width: 95%;
+    height: 2em;
+    border-bottom: 1px solid #aaa;
+    font-size: 2em;
+    padding-left: 5%;
+    padding-top: 3%;
+}
+
+.resultadoPesquisa_body_end
+{
+    height: 2em;
+    width: 100%;
 }
 
