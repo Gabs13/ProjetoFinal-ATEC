@@ -60,7 +60,13 @@
 
 
                         <div class="modal_comentario_buttons_likes" id="modal_comentario_buttons_likes">320 Likes
-                          <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
+                        </div>
+                    </div>
+              </div>
+            </div>
+            </div>
+            
+            <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
                           <div class="display_like_background" id="display_like_background">
                       
                             <div class="display_like_post">
@@ -83,12 +89,18 @@
                             <div class="display_post_finisher"></div>
                           </div>
                           <!--FINAL DIV DISPLAY LIKES-->
+<<<<<<< HEAD
                         </div>
 >>>>>>> e532478f5550139fde5c998c1b1005b6b73dfd90
                     </div>
               </div>
             </div>
             </div>';
+=======
+            
+            
+            ';
+>>>>>>> dbcdde7f8e62dd9ec4219dd4bbdbcabe354cc5b8
     }
     echo '<script src="javascript/scriptscomments.js"></script>';
   }

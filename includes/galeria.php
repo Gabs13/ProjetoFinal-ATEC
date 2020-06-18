@@ -16,9 +16,6 @@
       <img src="Imagens/quadro2.jpg">
     </div>
 
-
-
-
     <div class="modal_direita">
       <div class="autor_modal_user">
         <div class="autor_modal_user_img">
