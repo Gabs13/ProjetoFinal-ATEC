@@ -1343,6 +1343,16 @@ input[type=date]::-webkit-calendar-picker-indicator {
     border-bottom: 1px solid #EBECF0;
     height: 3em;
 }
+.display_like_post_scroll
+{
+    overflow-y: scroll;
+    overflow-x:none;
+}
+
+.display_like_post_scroll::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
 
 /*se nao houver comentarios no post*/
 .modal_comentario_empty
