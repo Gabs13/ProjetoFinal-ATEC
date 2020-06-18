@@ -26,7 +26,7 @@
                 <div>Ajuda e Support</div>
                 <div>
                   <form method="post">
-                    <input type="submit" value="Destruir Sessão" name="Destruir">
+                    <input type="submit" value="Log Out" name="Destruir">
                   </form>
                 </div>
               </div>

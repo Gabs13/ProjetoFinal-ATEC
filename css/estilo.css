@@ -1636,6 +1636,15 @@ footer
     transform: translate(-50%);
     top: 71px;
 }
+
+.navbar_menu_dropdown input
+{
+  border: none;
+  background-color: #fff;
+  font-size: 20px;
+  outline: none;
+}
+
 .navbar_menu_dropdown>div
 {
 
