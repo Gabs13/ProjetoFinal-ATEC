@@ -68,7 +68,7 @@
                               </div>
                               <div class="display_like_user">
                                 <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                                <div class="display_like_user_name">Ricardo Silva</div>
+                                <div class="display_like_user_name">r Silva </div>
                               </div>
                             </div>
                             <div class="display_post_finisher"></div>
