@@ -20,7 +20,7 @@ for(var i of settingI)
 {
   i.onclick= function(event)
   {
-    event.preventDefault();
+    //event.preventDefault();
     if(this.nextElementSibling.style.display =="none")
     {
       this.nextElementSibling.style.display ="block";
@@ -50,17 +50,14 @@ btncomentario.onclick = function()
   }
 }
 
-
-
-
 for(var e of likenumberButton)
 {
   e.onclick= function(event)
   {
     event.preventDefault();
-    if(modallikesdisplay.style.display =="none")
+    if(modallikesdisplay.style.display == "none")
     {
-      modallikesdisplay.style.display ="block";
+      modallikesdisplay.style.display = "block";
     }
     else
     {

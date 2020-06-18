@@ -1255,7 +1255,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     border-bottom-right-radius: 8px;
 }
 /*MODAL DOS LIKES DOS COMENTARIOS*/
-.display_like_background
+#display_like_background
 {
     display: none;
     width: 419px;
