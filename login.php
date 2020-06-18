@@ -25,7 +25,7 @@
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
 
     <script src="javascript/scripts.js"></script>
-    
+
   </head>
   <body>
 
@@ -39,7 +39,15 @@
       }
 
       include 'includes/navbar.php';
+
+
+      //include 'includes/chat.php';
+
+      include 'includes/galeria.php';
+
+
       include 'includes/galeria.php';
       //include 'includes/footerPrincipal.php';
+
     ?>
   </body>
