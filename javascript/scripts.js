@@ -22,31 +22,7 @@ $(document).ready(function()
   //dropdownlist button
   var dropdownnav = document.getElementById('dropdownlistNavbar');
   var btnDropdownlist = document.getElementsByClassName('navbar_menu_dropdown')[0];
-  //pesquisa de utilizadores no chat
-  var clickSearchUser = document.getElementById('PesquisaNome');
-  var dropdownResultados = document.getElementsByClassName('chat_resultados_pesquisa')[0];
 
-  /*funcao para aparecer resultados pesquisados*/
-  clickSearchUser.onfocus = function()
-  {
-    dropdownResultados.style.display="block";
-    dropdownResultados.style.transition= "1s";
-
-    $('#chat_user_settings_search').css('border-bottom-left-radius', '0px');
-    $('#chat_user_settings_search').css('border-bottom-right-radius', '0px');
-
-  }
-  /*sair dos resultados pesquisados*/
-  clickSearchUser.onfocusout = function()
-  {
-    dropdownResultados.style.display="none";
-    dropdownResultados.style.transition= "1s";
-
-    $('#chat_user_settings_search').css('border-radius', '8px');
-  }
-  $("#PesquisaNome").focusout(function(){
-
-  });
 
 
 /*Funcao para mostrar dropdownlist nav bar*/
@@ -164,8 +140,6 @@ function getGallery(id)
 
     success:function(result)
     {
-      console.log(result);
-
       var finalResult = JSON.parse(result);
 
       document.getElementById("modal_username_text").innerHTML = finalResult.User[1] + " " + finalResult.User[2]; //Preencher primeiro e ultimo nome no Post
@@ -184,15 +158,13 @@ function getGallery(id)
 
       if(finalResult.Like == true)
       {
-        document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost();">';
+        document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost(' + finalResult.Post[0] + ');">';
         $("#likePostModal").css('color', '#D24D57');
       }
       else
       {
-        document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost();">';
+        document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost(' + finalResult.Post[0] + ');">';
       }
-
-
 
       //display da modal e envias os dados pa modal por document.getelement
     }
@@ -216,8 +188,6 @@ function addComment(id)
 
       success:function(result)
       {
-        console.log(result);
-
         var finalResult = JSON.parse(result);
 
         $("#modal_direita_comentarios").load("functions/CarregarComentarios.php", {PostID: finalResult.Post[0]});
@@ -243,17 +213,42 @@ function removeComment(id)
     {
       var finalResult = JSON.parse(result);
 
-      console.log(finalResult);
-
       $("#modal_direita_comentarios").load("functions/CarregarComentarios.php", {PostID: finalResult.Post[1]});
     }
   });
 }
 
+function likePost(id)
+{
+  $.ajax({
+    type: "POST",
+    url: "functions/functions.php",
+    data: {
+      action: "likePostPHP",
+      id: id,
+    },
+
+    success:function(result)
+    {
+      var finalResult = JSON.parse(result);
+
+      if(finalResult.Like == true)
+      {
+        document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost(' + finalResult.Post[0] + ');">';
+        $("#likePostModal").css('color', '#D24D57');
+      }
+      else
+      {
+        document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost(' + finalResult.Post[0] + ');">';
+      }
+    }
+  })
+}
+
 var fotoCount = 12;
 
 $(window).scroll(function() {
-  if($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.9) // Scrollbar a 80%
+  if($(window).scrollTop() >= ($(document).height() - $(window).height()) * 1) // Scrollbar a 80%
   {
     fotoCount = fotoCount + 4;
 

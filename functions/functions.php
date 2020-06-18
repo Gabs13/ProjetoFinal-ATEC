@@ -69,8 +69,6 @@
     $Data['User'] = $Info;
     $Data['Like'] = $LikePost;
 
-
-
     echo json_encode($Data);
 
     //manda o id da galeria onlick para o php
@@ -117,6 +115,36 @@
     $Data['Post'] = $Gal;
 
     mysqli_query($conn, "DELETE FROM Comentarios WHERE ComentarioID = $CommentID");
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
+  if(@$_POST['action'] == 'likePostPHP')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    $PostID = $_POST['id'];
+
+    $LikePosts = mysqli_query($conn, "SELECT * FROM LikesPosts WHERE PostID = $PostID AND UtilID = $_SESSION[UtilID]");
+
+    $Data = array();
+
+    $Data['Post'] = $PostID;
+
+    if(mysqli_num_rows($LikePosts) == 0)
+    {
+      mysqli_query($conn, "INSERT INTO LikesPosts(PostID, UtilID) VALUES ($PostID, $_SESSION[UtilID])");
+      $Data['Like'] = true;
+    }
+    else
+    {
+      mysqli_query($conn, "DELETE FROM LikesPosts WHERE PostID = $PostID AND UtilID = $_SESSION[UtilID]");
+      $Data['Like'] = false;
+    }
 
     include 'deconn.php';
 

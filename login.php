@@ -38,12 +38,11 @@
       }
 
       include 'includes/navbar.php';
-      include 'includes/resultadoPesquisa.php';
 
+      //include 'includes/chat.php';
 
+      include 'includes/galeria.php';
 
-      //include 'includes/footerPrincipal.php';
+      include 'includes/footerPrincipal.php';
     ?>
-    <!-- teste -->
   </body>
-</html>
