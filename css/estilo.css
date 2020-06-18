@@ -1263,8 +1263,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
     z-index: 4;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    right: 44em;
-    top: 10.6em;
+    right: 31em;
+    top: 7.4em;
 }
 
 .display_like_post

@@ -45,7 +45,13 @@
 
 
                         <div class="modal_comentario_buttons_likes" id="modal_comentario_buttons_likes">320 Likes
-                          <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
+                        </div>
+                    </div>
+              </div>
+            </div>
+            </div>
+            
+            <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
                           <div class="display_like_background" id="display_like_background">
                       
                             <div class="display_like_post">
@@ -68,11 +74,9 @@
                             <div class="display_post_finisher"></div>
                           </div>
                           <!--FINAL DIV DISPLAY LIKES-->
-                        </div>
-                    </div>
-              </div>
-            </div>
-            </div>';
+            
+            
+            ';
     }
     echo '<script src="javascript/scriptscomments.js"></script>';
   }
