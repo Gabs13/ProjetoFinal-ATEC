@@ -54,7 +54,37 @@
                             echo '<div>Reportar</div>
                           </div>
                         </div>
+<<<<<<< HEAD
                         <div class="modal_comentario_buttons_likes" id="modal_comentario_buttons_likes'.$Comment["ComentarioID"].'">'.mysqli_num_rows($TotalLikes).' Likes</div>
+=======
+
+
+                        <div class="modal_comentario_buttons_likes" id="modal_comentario_buttons_likes">320 Likes
+                          <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
+                          <div class="display_like_background" id="display_like_background">
+                      
+                            <div class="display_like_post">
+                              <div class="display_like_close_container">
+                                <span id="display_like_post_close">&times;</span>
+                              </div>
+                              <div class="display_like_user">
+                                <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+                                <div class="display_like_user_name">Armando Nunes</div>
+                              </div>
+                              <div class="display_like_user">
+                                <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+                                <div class="display_like_user_name">Ricardo Machado</div>
+                              </div>
+                              <div class="display_like_user">
+                                <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+                                <div class="display_like_user_name">Ricardo Silva</div>
+                              </div>
+                            </div>
+                            <div class="display_post_finisher"></div>
+                          </div>
+                          <!--FINAL DIV DISPLAY LIKES-->
+                        </div>
+>>>>>>> e532478f5550139fde5c998c1b1005b6b73dfd90
                     </div>
               </div>
             </div>

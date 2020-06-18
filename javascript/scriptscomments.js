@@ -6,9 +6,12 @@ var settingI = document.getElementsByClassName('optionsbuttonI');
 //var indexSettings = document.getElementsByClassName('modal_hidden_options')[0];
 var indexSettingsID = document.getElementById('modal_hidden_options_id');
 //botao numero de likes comentarios modal
-var likenumberButton = document.getElementsByClassName('modal_comentario_buttons_likes')[0];
+var likenumberButton = document.getElementsByClassName('modal_comentario_buttons_likes');
 //botao de like modal
 var btnLikeModal = document.getElementById('btn_like');
+//
+var modallikesdisplay = document.getElementById('display_like_background');
+
 
 for(var i of settingI)
 {
@@ -39,18 +42,25 @@ btncomentario.onclick = function()
   }
 }
 
-//carregar a modal dos gostos dos comentarios
-likenumberButton.onclick=function()
+
+
+
+for(var e of likenumberButton)
 {
-  if(document.getElementsByClassName('display_like_background')[0].style.display=="none")
+  e.onclick= function(event)
   {
-    document.getElementsByClassName('display_like_background')[0].style.display="block";
-  }
-  else
-  {
-    document.getElementsByClassName('display_like_background')[0].style.display="none";
+    event.preventDefault();
+    if(modallikesdisplay.style.display =="none")
+    {
+      modallikesdisplay.style.display ="block";
+    }
+    else
+    {
+      modallikesdisplay.style.display ="none";
+    }
   }
 }
+ 
 
 btnLikeModal.onclick = function()
 {

@@ -1258,14 +1258,15 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .display_like_background
 {
     display: none;
-    width: 22.18%;
-    height: 53.5%;
+    width: 467px;
+    height: 576px;
     position: absolute;
     background-color: rgba(0,0, 0, 0.4);
     z-index: 4;
-    margin-left: 28%;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+    right: 44em;
+    top: 10.6em;
 }
 
 .display_like_post
