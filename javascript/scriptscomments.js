@@ -12,6 +12,9 @@ var btnLikeModal = document.getElementById('btn_like');
 //
 var modallikesdisplay = document.getElementById('display_like_background');
 
+//Span da modal do numero de likes
+var spanLikes = document.getElementById('display_like_post_close');
+
 
 for(var i of settingI)
 {
@@ -27,6 +30,11 @@ for(var i of settingI)
       this.nextElementSibling.style.display ="none";
     }
   }
+}
+
+spanLikes.onclick = function()
+{
+  document.getElementById('display_like_background').style.display="none";
 }
 
 /*CLICK BOTAO COMENTARIO MODAL ---------------------------------------------*/
@@ -60,7 +68,7 @@ for(var e of likenumberButton)
     }
   }
 }
- 
+
 
 btnLikeModal.onclick = function()
 {

@@ -5,9 +5,9 @@
 
   $PostID = $_POST['PostID'];
 
-  $Comments = mysqli_query($conn, "SELECT * FROM Comentarios WHERE PostID = $PostID");
+  $Comments = mysqli_query($conn, "SELECT ComentarioID, PostID, UtilID, Mensagem, DataMsg FROM Comentarios WHERE PostID = $PostID");
 
-  $Post = mysqli_query($conn, "SELECT * FROM Posts WHERE PostID = $PostID");
+  $Post = mysqli_query($conn, "SELECT PostID, PubDesc, DataPublicacao, UtilID FROM Posts WHERE PostID = $PostID");
 
   $PostInfo = mysqli_fetch_array($Post);
 
@@ -15,7 +15,7 @@
   {
     while($Comment = mysqli_fetch_array($Comments))
     {
-      $detailsComment = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM Utilizadores WHERE UtilID = $Comment[UtilID]"));
+      $detailsComment = mysqli_fetch_array(mysqli_query($conn, "SELECT UtilID, UtilPNome, UtilUNome FROM Utilizadores WHERE UtilID = $Comment[UtilID]"));
 
       $LikeComment = mysqli_query($conn, "SELECT LikeCommentID, ComentarioID, UtilID FROM LikesComentarios WHERE ComentarioID = $Comment[ComentarioID] AND UtilID = $_SESSION[UtilID]" );
 
@@ -54,21 +54,16 @@
                             echo '<div>Reportar</div>
                           </div>
                         </div>
-<<<<<<< HEAD
-                        <div class="modal_comentario_buttons_likes" id="modal_comentario_buttons_likes'.$Comment["ComentarioID"].'">'.mysqli_num_rows($TotalLikes).' Likes</div>
-=======
-
-
-                        <div class="modal_comentario_buttons_likes" id="modal_comentario_buttons_likes">320 Likes
+                        <div class="modal_comentario_buttons_likes" id="modal_comentario_buttons_likes'.$Comment["ComentarioID"].'">'.mysqli_num_rows($TotalLikes).' Likes
                         </div>
                     </div>
               </div>
             </div>
             </div>
-            
+
             <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
                           <div class="display_like_background" id="display_like_background">
-                      
+
                             <div class="display_like_post">
                               <div class="display_like_close_container">
                                 <span id="display_like_post_close">&times;</span>
@@ -89,18 +84,12 @@
                             <div class="display_post_finisher"></div>
                           </div>
                           <!--FINAL DIV DISPLAY LIKES-->
-<<<<<<< HEAD
                         </div>
->>>>>>> e532478f5550139fde5c998c1b1005b6b73dfd90
                     </div>
               </div>
             </div>
             </div>';
-=======
-            
-            
-            ';
->>>>>>> dbcdde7f8e62dd9ec4219dd4bbdbcabe354cc5b8
+
     }
     echo '<script src="javascript/scriptscomments.js"></script>';
   }

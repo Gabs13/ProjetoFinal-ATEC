@@ -15,8 +15,7 @@ $(document).ready(function()
   var btnuser = document.getElementById('toggle');
   //Botão de settings no comentario
   var btnsettingsModal = document.getElementById('btn_options');
-  //Span da modal do numero de likes
-  var spanLikes = document.getElementById('display_like_post_close');
+
   //Icon like da modal principal
   var mainmodalLike= document.getElementById('likePostModal');
   //dropdownlist button
@@ -69,10 +68,7 @@ dropdownnav.onclick = function()
   //   }
   // }
 
-  spanLikes.onclick = function()
-  {
-    document.getElementsByClassName('display_like_background')[0].style.display="none";
-  }
+
 
   //MODAL
 
@@ -257,8 +253,6 @@ function likeComment(id)
 
     success:function(result)
     {
-      console.log(result);
-
       var finalResult = JSON.parse(result);
 
       if(finalResult.Like == true)

@@ -1,48 +1,4 @@
 <?php
-  if(@$_POST['action'] == 'entrar')
-  {
-    include 'conn.php';
-
-    session_start();
-
-    $logMail = mysqli_real_escape_string($conn, $_POST['email']);
-    $logPass = mysqli_real_escape_string($conn, $_POST['password']);
-    /* Encripta a pass para comparar com a pass encriptada que está na base de dados */
-    $logPass = base64_encode($logPass);
-
-    /* Controlo de MYSQL Injections */
-    $logMail = mysqli_real_escape_string($conn, $logMail);
-    $logPass = mysqli_real_escape_string($conn, $logPass);
-    $validar = mysqli_query($conn, "SELECT * FROM Conta WHERE Email = '$logMail' AND Password = '$logPass'");
-    /* Array com resposta */
-    $validado = mysqli_fetch_array($validar);
-
-    if(!$validado)
-    {
-      /* Não existe user */
-      $resultado = array('erro' => '1');
-    }
-    else
-    {
-      /* Existe user */
-      /* Alocar à sessão o id e o tipo de user logado */
-      $_SESSION["CID"] = $validado["ContaID"];
-
-      $validarUtil = mysqli_query($conn, "SELECT * FROM Utilizadores WHERE ContaID = '$_SESSION[CID]'");
-
-      $validadoUtil = mysqli_fetch_array($validarUtil);
-
-      $_SESSION["CPNome"] = $validadoUtil["UtilPNome"];
-      $_SESSION["CUNome"] = $validadoUtil["UtilUNome"];
-
-      $resultado = array('sucesso' => '1');
-
-    }
-    include 'deconn.php';
-
-    echo json_encode($resultado);
-  }
-
   if(@$_POST['action'] == 'getGaleriaPHP')
   {
     include 'conn.php';
@@ -52,15 +8,15 @@
     //informação da modal
     $PostID = $_POST['id'];
 
-    $Galeria = mysqli_query($conn, "SELECT * FROM Posts WHERE PostID = $PostID");
+    $Galeria = mysqli_query($conn, "SELECT PostID, PubDesc, DataPublicacao, UtilID FROM Posts WHERE PostID = $PostID");
 
     $Gal = mysqli_fetch_array($Galeria);
 
-    $UtilInfo = mysqli_query($conn, "SELECT * FROM Utilizadores WHERE UtilID = $Gal[UtilID]");
+    $UtilInfo = mysqli_query($conn, "SELECT UtilID, UtilPNome, UtilUNome, UtilDataNasc, UtilGenero, ContaID FROM Utilizadores WHERE UtilID = $Gal[UtilID]");
 
     $Info = mysqli_fetch_array($UtilInfo);
 
-    $LikePosts = mysqli_query($conn, "SELECT * FROM LikesPosts WHERE UtilID = $_SESSION[UtilID] AND PostID = $PostID");
+    $LikePosts = mysqli_query($conn, "SELECT LikePostID, PostID, UtilID, DataLike FROM LikesPosts WHERE UtilID = $_SESSION[UtilID] AND PostID = $PostID");
 
     $LikePost = mysqli_num_rows($LikePosts);
 
@@ -89,7 +45,7 @@
 
     mysqli_query($conn, "INSERT INTO Comentarios (PostID, UtilID, Mensagem) VALUES ('$PostID', '$_SESSION[UtilID]', '$ContentComment')");
 
-    $Galeria = mysqli_query($conn, "SELECT * FROM Posts WHERE PostID = $PostID");
+    $Galeria = mysqli_query($conn, "SELECT PostID, PubDesc, DataPublicacao, UtilID FROM Posts WHERE PostID = $PostID");
 
     $Gal = mysqli_fetch_array($Galeria);
 
@@ -107,7 +63,7 @@
 
     $CommentID = $_POST['id'];
 
-    $Galeria = mysqli_query($conn, "SELECT * FROM Comentarios WHERE ComentarioID = $CommentID");
+    $Galeria = mysqli_query($conn, "SELECT ComentarioID, PostID, UtilID, Mensagem, DataMsg FROM Comentarios WHERE ComentarioID = $CommentID");
 
     $Gal = mysqli_fetch_array($Galeria);
 
@@ -115,6 +71,8 @@
     $Data['Post'] = $Gal;
 
     mysqli_query($conn, "DELETE FROM Comentarios WHERE ComentarioID = $CommentID");
+
+    mysqli_query($conn, "DELETE FROM LikesComentarios WHERE ComentarioID = $CommentID");
 
     include 'deconn.php';
 
@@ -129,7 +87,7 @@
 
     $PostID = $_POST['id'];
 
-    $LikePosts = mysqli_query($conn, "SELECT * FROM LikesPosts WHERE PostID = $PostID AND UtilID = $_SESSION[UtilID]");
+    $LikePosts = mysqli_query($conn, "SELECT LikeCommentID, ComentarioID, UtilID FROM LikesPosts WHERE PostID = $PostID AND UtilID = $_SESSION[UtilID]");
 
     $Data = array();
 
@@ -185,11 +143,11 @@
   {
     include 'conn.php';
 
-    $Posts = mysqli_query($conn, "SELECT * FROM Posts LIMIT 12");
+    $Posts = mysqli_query($conn, "SELECT PostID, PubDesc, DataPublicacao, UtilID FROM Posts LIMIT 12");
 
     while($Post = mysqli_fetch_array($Posts))
     {
-      $nomeUtil = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM Utilizadores WHERE UtilID = '$Post[UtilID]'"));
+      $nomeUtil = mysqli_fetch_array(mysqli_query($conn, "SELECT UtilID, UtilPNome, UtilUNome FROM Utilizadores WHERE UtilID = '$Post[UtilID]'"));
 
 
       echo'<!--CRIACAO DE UM POST NA GALERIA-->
@@ -228,7 +186,7 @@
     /* Controlo de MYSQL Injections */
     $logMail = mysqli_real_escape_string($conn, $logMail);
     $logPass = mysqli_real_escape_string($conn, $logPass);
-    $validar = mysqli_query($conn, "SELECT * FROM Conta WHERE Email = '$logMail' AND Password = '$logPass'");
+    $validar = mysqli_query($conn, "SELECT ContaID FROM Conta WHERE Email = '$logMail' AND Password = '$logPass'");
     /* Array com resposta */
     $validado = mysqli_fetch_array($validar);
 
@@ -247,7 +205,7 @@
       /* Alocar à sessão o id e o tipo de user logado */
       $_SESSION["CID"] = $validado["ContaID"];
 
-      $validarUtil = mysqli_query($conn, "SELECT * FROM Utilizadores WHERE ContaID = '$_SESSION[CID]'");
+      $validarUtil = mysqli_query($conn, "SELECT UtilID, UtilPNome, UtilUNome FROM Utilizadores WHERE ContaID = '$_SESSION[CID]'");
 
       $validadoUtil = mysqli_fetch_array($validarUtil);
 
