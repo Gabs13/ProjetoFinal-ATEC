@@ -245,6 +245,50 @@ function likePost(id)
   })
 }
 
+function likeComment(id)
+{
+  $.ajax({
+    type: "POST",
+    url: "functions/functions.php",
+    data: {
+      action: "likeCommentPHP",
+      id: id,
+    },
+
+    success:function(result)
+    {
+      console.log(result);
+
+      var finalResult = JSON.parse(result);
+
+      if(finalResult.Like == true)
+      {
+        var comentarioID = "#Comment" + finalResult.Comentario;
+
+        $(comentarioID).css('color', '#D24D57');
+
+        $(comentarioID).unbind('mouseenter mouseleave')
+
+        var likeCount = "#modal_comentario_buttons_likes" + finalResult.Comentario;
+
+        $(likeCount).load("functions/ContarLikesComments.php", {ComentarioID: finalResult.Comentario});
+      }
+      else
+      {
+        var comentarioID = "#Comment" + finalResult.Comentario;
+
+        $(comentarioID).css('color', '#000');
+
+        $(comentarioID).hover(function(){$(comentarioID).css('color', '#D24D57');}, function(){$(comentarioID).css('color', '#000');})
+
+        var likeCount = "#modal_comentario_buttons_likes" + finalResult.Comentario;
+
+        $(likeCount).load("functions/ContarLikesComments.php", {ComentarioID: finalResult.Comentario});
+      }
+    }
+  })
+}
+
 var fotoCount = 12;
 
 $(window).scroll(function() {

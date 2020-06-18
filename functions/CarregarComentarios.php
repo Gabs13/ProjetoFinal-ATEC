@@ -17,6 +17,9 @@
     {
       $detailsComment = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM Utilizadores WHERE UtilID = $Comment[UtilID]"));
 
+      $LikeComment = mysqli_query($conn, "SELECT LikeCommentID, ComentarioID, UtilID FROM LikesComentarios WHERE ComentarioID = $Comment[ComentarioID] AND UtilID = $_SESSION[UtilID]" );
+
+      $TotalLikes = mysqli_query($conn, "SELECT LikeCommentID FROM LikesComentarios WHERE ComentarioID = $Comment[ComentarioID]");
 
       echo '<div class="modal_comment_main_resposta">
               <div class="modal_comment_main">
@@ -25,11 +28,20 @@
                     <div class="modal_comentario_total">
                       <div class="modal_comentario_username">'.$detailsComment["UtilPNome"].' '.$detailsComment["UtilUNome"].'</div>
                         <div class="modal_comentario_texto">
-                          '.$Comment["Mensagem"].'
+                          <p>'.$Comment["Mensagem"].'</p>
                         </div>
                    </div>
                     <div class="modal_comentario_buttons">
-                        <div id="btn_like"><i class="fas fa-heart"></i></div>
+                    <div id="btn_like" id="btn_like">';
+      if (mysqli_num_rows($LikeComment) == 1)
+      {
+        echo '          <i class="fas fa-heart" style="color: #D24D57;" id="Comment'.$Comment["ComentarioID"].'" onclick="likeComment('.$Comment["ComentarioID"].')"></i>';
+      }
+      else
+      {
+        echo '          <i class="fas fa-heart" id="Comment'.$Comment["ComentarioID"].'" onclick="likeComment('.$Comment["ComentarioID"].')"></i>';
+      }
+      echo '            </div>
                         <div id="btn_comment"><i class="fas fa-comment"></i></div>
                         <div id="btn_options"><i id ="optionsbuttonI" class="fas fa-ellipsis-h optionsbuttonI"></i>
                           <div class="modal_hidden_options" id="modal_hidden_options_id" style="display: none;">
@@ -42,9 +54,7 @@
                             echo '<div>Reportar</div>
                           </div>
                         </div>
-
-
-                        <div class="modal_comentario_buttons_likes">320 Likes</div>
+                        <div class="modal_comentario_buttons_likes" id="modal_comentario_buttons_likes'.$Comment["ComentarioID"].'">'.mysqli_num_rows($TotalLikes).' Likes</div>
                     </div>
               </div>
             </div>

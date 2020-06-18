@@ -151,6 +151,36 @@
     echo json_encode($Data);
   }
 
+  if(@$_POST['action'] == 'likeCommentPHP')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    $CommentID = $_POST['id'];
+
+    $LikeComment = mysqli_query($conn, "SELECT LikeCommentID, ComentarioID, UtilID FROM LikesComentarios WHERE ComentarioID = $CommentID AND UtilID = $_SESSION[UtilID]");
+
+    $Data = array();
+
+    $Data['Comentario'] = $CommentID;
+
+    if(mysqli_num_rows($LikeComment) == 0)
+    {
+      mysqli_query($conn, "INSERT INTO LikesComentarios(ComentarioID, UtilID) VALUES ($CommentID, $_SESSION[UtilID])");
+      $Data['Like'] = true;
+    }
+    else
+    {
+      mysqli_query($conn, "DELETE FROM LikesComentarios WHERE ComentarioID = $CommentID AND UtilID = $_SESSION[UtilID]");
+      $Data['Like'] = false;
+    }
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
   function getGaleria()
   {
     include 'conn.php';
