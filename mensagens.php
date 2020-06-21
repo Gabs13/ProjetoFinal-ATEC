@@ -31,7 +31,6 @@
 
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
 
-    <script src="javascript/scripts.js"></script>
 
   </head>
   <body>
@@ -46,17 +45,11 @@
 
       include 'includes/navbar.php';
 
-
-      if(@!$_GET['pid'] && @!$_GET['uid'])
-      {
-        include 'includes/galeria.php';
-      }
-      else
-      {
-        include 'includes/resultadoPesquisa.php';
-      }
+      include 'includes/chat.php';
 
       include 'includes/footerPrincipal.php';
 
     ?>
+
+    <script src="javascript/scriptsmsgs.js"></script>
   </body>

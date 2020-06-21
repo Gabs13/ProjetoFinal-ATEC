@@ -78,3 +78,26 @@ btnLikeModal.onclick = function()
     btnLikeModal.style.color="black"
   }
 }
+
+function replyComment(id)
+{
+  var comentario = $('#comentario_bottom').val('');
+
+  $.ajax({
+    type: "POST",
+    url: "functions/functions.php",
+    data: {
+      action: "replyCommentPHP",
+      id: id,
+    },
+
+    success:function(result)
+    {
+      var finalResult = JSON.parse(result);
+
+      console.log(finalResult);
+
+      $('#comentario_bottom').val(finalResult.Util[0]);
+    }
+  })
+}

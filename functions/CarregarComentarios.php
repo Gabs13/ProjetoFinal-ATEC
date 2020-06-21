@@ -42,7 +42,7 @@
         echo '          <i class="fas fa-heart" id="Comment'.$Comment["ComentarioID"].'" onclick="likeComment('.$Comment["ComentarioID"].')"></i>';
       }
       echo '            </div>
-                        <div id="btn_comment"><i class="fas fa-comment"></i></div>
+                        <div id="btn_comment"><i onclick="replyComment('.$Comment["ComentarioID"].')" class="fas fa-comment"></i></div>
                         <div id="btn_options"><i id ="optionsbuttonI" class="fas fa-ellipsis-h optionsbuttonI"></i>
                           <div class="modal_hidden_options" id="modal_hidden_options_id" style="display: none;">
                             <div>Coiso</div>
@@ -54,14 +54,14 @@
                             echo '<div>Reportar</div>
                           </div>
                         </div>
-                        <div class="modal_comentario_buttons_likes" id="modal_comentario_buttons_likes'.$Comment["ComentarioID"].'">'.mysqli_num_rows($TotalLikes).' Likes
+                        <div class="modal_comentario_buttons_likes" id="modal_comentario_buttons_likes'.$Comment["ComentarioID"].'"> <p onclick="totalUsersLikes('.$Comment["ComentarioID"].')">'.mysqli_num_rows($TotalLikes).' Likes </p>
                         </div>
                     </div>
               </div>
             </div>
             </div>
 
-            
+
                         </div>
                     </div>
               </div>
