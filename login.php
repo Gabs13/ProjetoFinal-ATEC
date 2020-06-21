@@ -42,7 +42,7 @@
 
       //include 'includes/chatteste.php';
 
-      include 'includes/galeria.php';
+      include 'includes/.php';
 
       include 'includes/footerPrincipal.php';
 

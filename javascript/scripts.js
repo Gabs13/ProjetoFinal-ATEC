@@ -22,20 +22,20 @@ $(document).ready(function()
   var dropdownnav = document.getElementById('dropdownlistNavbar');
   var btnDropdownlist = document.getElementsByClassName('navbar_menu_dropdown')[0];
 
+  
 
-
-/*Funcao para mostrar dropdownlist nav bar*/
-dropdownnav.onclick = function()
-{
-  if(btnDropdownlist.style.display=="none")
+  /*Funcao para mostrar dropdownlist nav bar*/
+  dropdownnav.onclick = function()
   {
-    btnDropdownlist.style.display="block";
+    if(btnDropdownlist.style.display=="none")
+    {
+      btnDropdownlist.style.display="block";
+    }
+    else
+    {
+      btnDropdownlist.style.display="none";
+    }
   }
-  else
-  {
-    btnDropdownlist.style.display="none";
-  }
-}
 
 
   /*Empurrar body para baixo quando se abre navbar ---------------------------*/
