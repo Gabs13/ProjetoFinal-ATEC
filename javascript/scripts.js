@@ -148,7 +148,12 @@ function getGallery(id)
 
       $("#modal_direita_comentarios").load("functions/CarregarComentarios.php", {PostID: finalResult.Post[0]});
 
-      parent.location.hash = "?photouser&" + finalResult.User[0]; //Mudar a hash no url
+      //window.location.hash = '?photouser=' + finalResult.User[0];
+      //history.replaceState(null, null, ' ');
+
+      history.pushState('', document.title, '?pid=' + finalResult.Post[0] + '&uid=' + finalResult.User[0]);
+
+      //parent.location.hash = "?photouser=" + finalResult.User[0]; //Mudar a hash no url
 
       document.getElementById("modal_user_sendbtn").innerHTML = '<i onclick="addComment('+ finalResult.Post[0] +');" class="fas fa-location-arrow"></i>';
 
@@ -161,6 +166,8 @@ function getGallery(id)
       {
         document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost(' + finalResult.Post[0] + ');">';
       }
+
+
 
       //display da modal e envias os dados pa modal por document.getelement
     }
@@ -283,10 +290,17 @@ function likeComment(id)
   })
 }
 
+function totalUsersLikes(id)
+{
+  $("#display_like_post_scroll").empty();
+
+  $("#display_like_post_scroll").load("functions/UsersLikesComments.php", {ComentarioID: id});
+}
+
 var fotoCount = 12;
 
 $(window).scroll(function() {
-  if($(window).scrollTop() >= ($(document).height() - $(window).height()) * 1) // Scrollbar a 80%
+  if($(window).scrollTop() == ($(document).height() - $(window).height()) * 1) // Scrollbar a 80%
   {
     fotoCount = fotoCount + 4;
 

@@ -1,11 +1,6 @@
 <?php
   require 'functions/functions.php';
   session_start();
-
-  if (isset($_SESSION["UtilID"]))
-   {
-      header("location: login.php");
-   }
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +26,7 @@
   </head>
   <body>
     <?php
-    include 'includes/loginform.php';
+    include 'includes/registoform.php';
 
 
     //include 'includes/footerPrincipal.php';

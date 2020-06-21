@@ -500,6 +500,37 @@ input[type=date]::-webkit-calendar-picker-indicator {
   color: black;
 }
 
+.username
+{
+  width: 60% !important;
+}
+
+.username::placeholder
+{
+    margin-left: 1%;
+}
+
+#loader
+{
+  width: 30px;
+  height: 30px;
+  float: right;
+}
+
+#loader i
+{
+  width: 20px;
+  height: 20px;
+  margin: 7px;
+}
+
+#loader img
+{
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+}
+
 .regcheck
 {
   width: 100%;
@@ -983,8 +1014,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
     margin-top: 5%;
     display: flex;
     width: 100%;
-    height: 100%;
-    max-height: 100%;
 }
 
 .modal_comentario_userimg
@@ -1643,11 +1672,18 @@ footer
   background-color: #fff;
   font-size: 20px;
   outline: none;
+  cursor: pointer;
 }
 
 .navbar_menu_dropdown>div
 {
 
+}
+
+.navbar_menu_dropdown a
+{
+  text-decoration: none;
+  color: #000;
 }
 
 .name_dropdownlist
@@ -1718,6 +1754,12 @@ footer
   float: left;
   margin-top: 15px;
   padding-left: 30px;
+}
+
+.menuContent ul li a
+{
+  text-decoration: none;
+  color: #000;
 }
 
 .menuContent label

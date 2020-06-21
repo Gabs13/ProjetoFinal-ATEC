@@ -1,5 +1,4 @@
 <?php
-
   include 'conn.php';
 
   session_start();
@@ -8,7 +7,7 @@
 
   $TotalLikes = mysqli_query($conn, "SELECT LikeCommentID FROM LikesComentarios WHERE ComentarioID = $ComentarioID");
 
-  echo mysqli_num_rows($TotalLikes).' Likes';
+  echo '<p onclick="totalUsersLikes('.$ComentarioID.')">'.mysqli_num_rows($TotalLikes).' Likes </p>';
 
   include 'deconn.php';
 ?>

@@ -87,7 +87,7 @@
 
     $PostID = $_POST['id'];
 
-    $LikePosts = mysqli_query($conn, "SELECT LikeCommentID, ComentarioID, UtilID FROM LikesPosts WHERE PostID = $PostID AND UtilID = $_SESSION[UtilID]");
+    $LikePosts = mysqli_query($conn, "SELECT LikePostID, PostID, UtilID FROM LikesPosts WHERE PostID = $PostID AND UtilID = $_SESSION[UtilID]");
 
     $Data = array();
 
@@ -133,6 +133,51 @@
       mysqli_query($conn, "DELETE FROM LikesComentarios WHERE ComentarioID = $CommentID AND UtilID = $_SESSION[UtilID]");
       $Data['Like'] = false;
     }
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
+  if(@$_POST['action'] == 'replyCommentPHP')
+  {
+    include 'conn.php';
+
+    $IDComentario = $_POST['id'];
+
+    $IDUtil = mysqli_query($conn, "SELECT UtilID FROM Comentarios WHERE ComentarioID = $IDComentario");
+
+    $Util = mysqli_fetch_array($IDUtil);
+
+    $NomeUtil = mysqli_query($conn, "SELECT UtilPNome, UtilUNome FROM Utilizadores WHERE UtilID = $Util[UtilID]");
+
+    $DadosUtil = mysqli_fetch_array($NomeUtil);
+
+    $Data = array();
+
+    $Data['Util'] = $DadosUtil;
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
+  if(@$_POST['action'] == 'checkUserName')
+  {
+    include 'conn.php';
+
+    $UserName = $_POST['nome'];
+
+    $User = mysqli_query($conn, "SELECT UtilUser FROM Utilizadores WHERE UtilUser = '$UserName'");
+
+     if(mysqli_num_rows($User) > 0)
+     {
+       $Data['user'] = true;
+     }
+     else
+     {
+       $Data['user'] = false;
+     }
 
     include 'deconn.php';
 

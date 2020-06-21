@@ -14,14 +14,14 @@
                   <i class="fas fa-search"></i>
                 </a>
               </div>
-              <li>Perfil</li>
+              <li> <a href="mensagens.php">Mensagens</a> </li>
               <li>Network</li>
               <li>Galeria</li>
             </ul>
             <div class="name_dropdownlist">
               <label id="dropdownlistNavbar"> <?php echo $_SESSION["CPNome"].' '.$_SESSION["CUNome"]; ?> </label>
               <div class="navbar_menu_dropdown" id="navbar_menu_dropdown">
-                <div>Editar perfil</div>
+                <div><a href="includes/editarPerfil.php"> Editar perfil </a></div>
                 <div>Definições e Privacidade</div>
                 <div>Ajuda e Support</div>
                 <div>
