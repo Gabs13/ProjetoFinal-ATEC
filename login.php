@@ -39,11 +39,8 @@
       }
 
       include 'includes/navbar.php';
-
       //include 'includes/chatteste.php';
-
-      include 'includes/.php';
-
+      include 'includes/imagempost.php';
       include 'includes/footerPrincipal.php';
 
     ?>

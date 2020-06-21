@@ -35,7 +35,7 @@
                     <div id="btn_like" id="btn_like">';
       if (mysqli_num_rows($LikeComment) == 1)
       {
-        echo '          <i class="fas fa-heart" style="color: #D24D57;" id="Comment'.$Comment["ComentarioID"].'" onclick="likeComment('.$Comment["ComentarioID"].')"></i>';
+        echo '         <i class="fas fa-heart" style="color: #D24D57;" id="Comment'.$Comment["ComentarioID"].'" onclick="likeComment('.$Comment["ComentarioID"].')"></i>';
       }
       else
       {
@@ -60,8 +60,6 @@
               </div>
             </div>
             </div>
-
-            
                         </div>
                     </div>
               </div>
