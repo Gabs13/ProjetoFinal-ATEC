@@ -73,7 +73,8 @@
 
     $('form').submit(function (e){
       $.post(url, {
-        message: $('#message').val()
+        message: $('#message').val(),
+        IDSessao: IDSessao
       });
       $('#message').val('');
       return false;

@@ -1,5 +1,8 @@
-<html lang="pt">
-  <body>
+<body>
+    <div class='menu'>
+        <span class='toggle' id='toggle'>
+          <img src="imagens/Utilizadores/gabriel.jpg" alt="teste" width="65" height="65">
+        </span>
 
       <div class='menu'>
           <span class='toggle' id='toggle'>
@@ -35,14 +38,14 @@
             </div>
           </div>
         </div>
+      </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js">
-    </script>
-    <script>
-    $('.toggle').on('click', function() {
-    	$('.menu').toggleClass('active');
-      $("#navbar_menu_dropdown").css("display", "none");
-    });
-    </script>
-  </body>
-</html>
+  <script src="https://code.jquery.com/jquery-3.3.1.js">
+  </script>
+  <script>
+  $('.toggle').on('click', function() {
+  	$('.menu').toggleClass('active');
+    $("#navbar_menu_dropdown").css("display", "none");
+  });
+  </script>
+</body>
