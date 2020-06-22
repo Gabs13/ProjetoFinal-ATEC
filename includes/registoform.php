@@ -1,4 +1,5 @@
 <body>
+  <div class="registar_logotipo"><a><img src="Imagens/logotipo/artifex1.png"></a></div>
   <div class="pai">
       <div class="filho">
           <form method="post">
@@ -17,7 +18,10 @@
             <div class="borders"> <input type="email" id="regEmail" name="regEmail" placeholder="E-mail" required> </div>
             <div class="borders"> <input type="date" name="regData" placeholder="Data de Nascimento" required> </div>
             <div>
-                <input type="submit" name="bt_registar" value="Resgistar">
+                <input type="submit" name="bt_registar" value="Resgistar" id="registobtn1" style="display:none;">
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                   <a href="" id="registobtn2" class="btn btn-sm animated-button victoria-two">Registar</a> 
+                </div>
             </div>
           </form>
 

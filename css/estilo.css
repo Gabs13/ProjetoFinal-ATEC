@@ -407,6 +407,23 @@ body {background-color: #f2f2f2;
     margin-top:30px;
 }
 
+#registobtn2
+{
+    width: 200px !important;
+}
+
+.registar_logotipo
+{
+    margin: 50px auto;
+    width: 8%;
+}
+
+.registar_logotipo img
+{
+    height: 70px;
+    width: 160px;
+}
+
 .pai
 {
     width: 25%;
@@ -415,9 +432,8 @@ body {background-color: #f2f2f2;
     margin-right: 37.5%;
     display: flex;
     padding-bottom: 1.5%;
-    background-color: white;
     border-radius: 5px;
-    border:0.3px solid black;
+    box-shadow: 0px 0px 5px 1px #4e4e4e;
 }
 
 .filho
@@ -441,8 +457,8 @@ body {background-color: #f2f2f2;
     margin-right: 5%;
     border:none;
     outline:none;
-    background-color: lightgreen;
-    color:white;
+    background-color: #fff;
+    color:black;
 }
 .filho input::placeholder
 {
@@ -467,7 +483,7 @@ body {background-color: #f2f2f2;
 
 .filho input[type='number']
 {
-  background-color: lightgreen;
+  background-color: #fff;
 }
 
 .filho input[type='radio']
@@ -544,7 +560,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 {
     border: 1px solid rgba(0,0,0,0.2);
     height: 30px;
-    background-color: lightgreen;
+    background-color: #fff;
     overflow: hidden;
     border-radius: 8px;
     margin-bottom:20px;
@@ -935,6 +951,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 {
     height: 100%;
     width: 9%;
+    margin-right: 2%;
 }
 
 .autor_modal_info_btn:hover
@@ -1096,6 +1113,12 @@ input[type=date]::-webkit-calendar-picker-indicator {
     font-family: 'Poppins', sans-serif;
     color: #999999;
     font-size: 1em;
+}
+
+.autor_modal_info_likes
+{
+    width: 5em;
+    margin-left: 65%;
 }
 
 /*------------------------------------- RESPOSTA AO COMENTARIO ------------------------------------------------*/
@@ -1493,7 +1516,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
 a.animated-button.victoria-two {
 	border: 2px solid #D24D57;
 }
-a.animated-button.victoria-two:after {
+a.animated-button.victoria-two:after{
+    content: "";
 	background: #D24D57;
 	-moz-transform: translateX(-50%) translateY(-50%) rotate(25deg);
 	-ms-transform: translateX(-50%) translateY(-50%) rotate(25deg);
@@ -1502,7 +1526,7 @@ a.animated-button.victoria-two:after {
 }
 
 /* Global Button Styles */
-a.animated-button:link, a.animated-button:visited {
+a.animated-button:link, a.animated-button:visited{
 	position: relative;
 	display: block;
 	margin: 30px auto 0;
@@ -1522,7 +1546,7 @@ a.animated-button:link, a.animated-button:visited {
 	-o-transition: all 1s ease;
 	transition: all 1s ease;
 }
-a.animated-button:link:after, a.animated-button:visited:after {
+a.animated-button:link:after, a.animated-button:visited:after{
 	content: "";
 	position: absolute;
 	height: 0%;
@@ -1542,7 +1566,7 @@ a.animated-button:link:hover, a.animated-button:visited:hover {
 a.animated-button:link:hover:after, a.animated-button:visited:hover:after {
 	height: 450%;
 }
-a.animated-button:link, a.animated-button:visited {
+a.animated-button:link, a.animated-button:visited{
 	position: relative;
 	display: block;
 	margin: 30px auto 0;

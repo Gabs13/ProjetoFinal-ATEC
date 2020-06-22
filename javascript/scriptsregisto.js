@@ -32,3 +32,14 @@ document.querySelector("#regTlmv").addEventListener("keypress", function (evt) {
       evt.preventDefault();
   }
 });
+
+
+//BOTAO DE REGISTO
+$(document).ready(function()
+{
+  /*BOTAO DE LOGIN -----------------------------------------------------------*/
+  $(document).on('click', '#registobtn2', function(event) {
+    event.preventDefault();
+    $("#registobtn1").click();
+  });
+});//final jquery onload
