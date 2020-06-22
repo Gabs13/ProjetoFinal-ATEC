@@ -36,7 +36,7 @@ var cid = 0, abc = 0;
 $(document).ready(function(){
 
   $('form').submit(function (e){
-    $.post('http://localhost/ProjetoFinal/functions/CarregarConversa.php', {
+    $.post('functions/CarregarConversa.php', {
       message: $('#tb_messagem').val(),
       id: cid,
     });
@@ -57,7 +57,7 @@ function loadMsgs(id)
 {
   cid = id;
 
-  $.get('http://localhost/ProjetoFinal/functions/CarregarConversa.php' + '?start=' + start + '&cid=' + id, function(result){
+  $.get('functions/CarregarConversa.php' + '?start=' + start + '&cid=' + id, function(result){
     if(result.items)
     {
       result.items.forEach(item =>{
