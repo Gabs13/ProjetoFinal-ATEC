@@ -1953,6 +1953,7 @@ footer
     height: 10%;
     width: 96%;
     display: flex;
+    cursor: pointer;
 }
 
 .chat_users_display_user:hover
@@ -2080,8 +2081,8 @@ footer
     height: 75%;
     background-color: white;
     padding: 4%;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
 
 }
 
@@ -2375,7 +2376,7 @@ footer
 
 .editarPerfil_body_display_container:hover
 {
-    background-color: rgba(0, 0, 0, 0.1) !important; 
+    background-color: rgba(0, 0, 0, 0.1) !important;
     cursor: pointer;
 }
 
@@ -2495,14 +2496,14 @@ footer
 {
     background-color: 	#d61128;
     cursor: pointer;
-    
+
 
 }
 .editar_perfil_edicao_buttons button:last-of-type:hover
 {
     background-color:rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    
+
 }
 
 /*------------------------------------------------IMAGEMPOST---------------------------------------------*/

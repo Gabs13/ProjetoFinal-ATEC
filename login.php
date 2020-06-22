@@ -49,11 +49,11 @@
 
       if(@!$_GET['pid'] && @!$_GET['uid'])
       {
-        include 'includes/loginform.php';
+        include 'includes/galeria.php';
       }
       else
       {
-        include 'includes/loginform.php';
+        include 'includes/imagempost.php';
       }
 
       include 'includes/footerPrincipal.php';

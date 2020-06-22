@@ -12,7 +12,7 @@
     $UltimaMsg = mysqli_fetch_array($Conversa);
 
     echo '
-    <div class="chat_users_display_user" onclick="loadMsgs('.$UltimaMsg["ConversaID"].')">
+    <div class="chat_users_display_user" onclick="limparMsgs(); loadMsgs('.$UltimaMsg["ConversaID"].');">
         <div class="chat_users_display_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
         <div class="chat_users_display_info">
             <div class="chat_users_display_user_nome">'.$TodasConversas["PrimeiroNome"].' '.$TodasConversas["SegundoNome"].'</div>

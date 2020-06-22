@@ -30,37 +30,51 @@ function todasMensagens()
   $("#chat_users_display").load("functions/CarregarMensagens.php");
 }
 
-var start = 0, url = 'http://localhost/ProjetoFinal/functions/CarregarConversa.php';
+var start = 0;
+var cid = 0, abc = 0;
 
-$('form').submit(function (e){
-  $.post(url, {
-    message: $('#tb_messagem').val(),
-  });
-  $('#tb_messagem').val('');
-  return false;
-})
+$(document).ready(function(){
+
+  $('form').submit(function (e){
+    $.post('http://localhost/ProjetoFinal/functions/CarregarConversa.php', {
+      message: $('#tb_messagem').val(),
+      id: cid,
+    });
+    $('#tb_messagem').val('');
+    return false;
+  })
+});
+
+
+
+function limparMsgs()
+{
+    $('#chat_display_messages').empty();
+    start = 0;
+}
 
 function loadMsgs(id)
 {
-  $('#chat_display_messages').empty();
-
-  start = 0;
+  cid = id;
 
   $.get('http://localhost/ProjetoFinal/functions/CarregarConversa.php' + '?start=' + start + '&cid=' + id, function(result){
-    if(result.items){
+    if(result.items)
+    {
       result.items.forEach(item =>{
         start = item.MensagemConversaID;
         $('#chat_display_messages').append(renderMessage(item));
       })
       $('#chat_display_messages').animate({scrollTop: $('#chat_display_messages')[0].scrollHeight});
     };
-    //setTimeout(loadMsgs, 1000);
+
+    setTimeout(function() {loadMsgs(cid);}, 1000)
   });
+
+
 }
 
 function renderMessage(item)
 {
-  console.log(item);
   let time = new Date(item.DataMsg);
   if (time.getMinutes() < 10){
     time = time.getHours() + ':0' + time.getMinutes();

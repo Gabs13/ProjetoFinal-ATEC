@@ -1,6 +1,18 @@
 <?php
   include 'conn.php';
 
+  session_start();
+
+  $mensagem = @$_POST['message'];
+  $ConversaID = @$_POST['id'];
+
+  $result = array();
+
+  if (!empty($mensagem))
+  {
+    $result['send-status'] = mysqli_query($conn, "INSERT INTO MensagensConversa(Mensagem, UtilID, ConversaID) VALUES ('".$mensagem."', $_SESSION[UtilID], $ConversaID)");
+  }
+
   //Escrever as msgs
   $start = isset($_GET['start']) ? intval($_GET['start']) : 0;
   $IDConversa = $_GET['cid'];

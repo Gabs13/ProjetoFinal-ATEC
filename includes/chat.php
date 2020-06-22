@@ -61,31 +61,14 @@
           </div>
 
           <div class="chat_display_messages" id="chat_display_messages">
-              <!--<div class="chat_display_messages_ocupy">
-                  <div class="chat_display_messages_display">
-                      <div class="chat_display_messages_nome">Armando Nunes</div>
-                      <div class="chat_display_messages_texto">Nao gostei do teu honda ruben, é roubado e deita fumo</div>
-                      <div class="chat_display_messages_hora">16:04</div>
-                  </div>
-              </div>
 
-              <div class="chat_display_messages_ocupy">
-                  <div class="chat_display_messages_display_left">
-                      <div class="chat_display_messages_nome">Armando Nunes</div>
-                      <div class="chat_display_messages_texto">Nao gostei do teu honda ruben, é roubado e deita fumo</div>
-                      <div class="chat_display_messages_hora">16:04</div>
-                  </div>
-              </div>-->
           </div><!--FINAL DO DISPLAY DAS MENSAGENS-->
-
-
-
 
           <div class="chat_display_text">
               <div class="chat_display_text_msg" >
-                <form onsubmit="return sendMessage();">
+                <form>
                   <input type="text" id="tb_messagem" autofocus autocomplete="off" placeholder="Escreva a sua mensagem...">
-                  <button type="submit" class="chat_display_text_send"><i class="fas fa-paper-plane"></i></button>
+                  <input type="button" class="chat_display_text_send" value="Enviar"><i class="fas fa-paper-plane"></i>
                 </form>
               </div>
 
