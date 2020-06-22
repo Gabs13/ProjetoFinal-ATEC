@@ -1,10 +1,10 @@
-<script>
-  var myvar = "<?php echo $_SESSION['UtilID'] ?>";
-  console.log(myvar);
-</script>
-  
+<?php
+  $POSTID = $_GET['pid'];
+  $UserID = $_GET['uid'];
+?>
+
 <!--MODAL SLIDER DE IMAGENS-->
-<div class="imagempost_display" >
+<div class="imagempost_display">
     <div class="resultadoPesquisa_back"><i><img src="Imagens/logotipo/artifex2.png"></i></div>
         <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
         <div class="display_like_background" id="display_like_background" style='display:none;'>
@@ -12,59 +12,9 @@
                 <div class="display_like_close_container">
                     <span id="display_like_post_close">&times;</span>
                 </div>
-                <div class="display_like_post_scroll">
-                    <div class="display_like_user">
-                    <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                    <div class="display_like_user_name">Armando Nunes</div>
-                    </div>
-                    <div class="display_like_user">
-                    <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                    <div class="display_like_user_name">Ricardo Machado</div>
-                    </div>
-                    <div class="display_like_user">
-                    <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                    <div class="display_like_user_name">r Silva </div>
-                    </div>
-                    <div class="display_like_user">
-                    <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                    <div class="display_like_user_name">r Silva </div>
-                    </div>
-                    <div class="display_like_user">
-                    <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                    <div class="display_like_user_name">r Silva </div>
-                    </div>
-                    <div class="display_like_user">
-                    <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                    <div class="display_like_user_name">r Silva </div>
-                    </div>
-                    <div class="display_like_user">
-                    <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                    <div class="display_like_user_name">r Silva </div>
-                    </div>
-                    <div class="display_like_user">
-                    <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                    <div class="display_like_user_name">r Silva </div>
-                    </div>
-                    <div class="display_like_user">
-                    <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                    <div class="display_like_user_name">r Silva </div>
-                    </div>
-                    <div class="display_like_user">
-                    <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                    <div class="display_like_user_name">r Silva </div>
-                    </div>
-                    <div class="display_like_user">
-                    <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                    <div class="display_like_user_name">r Silva </div>
-                    </div>
-                    <div class="display_like_user">
-                    <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                    <div class="display_like_user_name">r Silva </div>
-                    </div>
-                    <div class="display_like_user">
-                    <div class="display_like_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                    <div class="display_like_user_name">r Silva </div>
-                    </div>
+                <div class="display_like_post_scroll" id="display_like_post_scroll">
+
+
                 </div>
             </div>
         <div class="display_post_finisher"></div>
@@ -83,7 +33,7 @@
                     </div>
                     <div class="autor_modal_user_nome" id="modal_username">
                         <img src="" alt="">
-                        <div id="modal_username_text">Armando Nunes</div>
+                        <div id="modal_username_text"></div>
                         <div class="modal_user_desc" id="modal_user_desc"></div>
                     </div>
                 </div>
@@ -103,6 +53,13 @@
         </div>
 
 </div>
+
+</script>
+
+<script>
+  var PostID = "<?php echo $_GET['pid'] ?>";
+  getGallery(PostID);
+</script>
 <!--FINAL DA MODAL---------------------------------------------------------------------------------------------->
 
 </body>
