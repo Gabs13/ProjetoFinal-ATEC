@@ -19,7 +19,7 @@
     }
   }
   else {
-    echo 'Não tem likes.';
+    echo '<p class="userlikeComments_nocomments">Não tem likes.</p>';
   }
 
 

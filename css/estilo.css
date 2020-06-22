@@ -1087,6 +1087,17 @@ input[type=date]::-webkit-calendar-picker-indicator {
     text-decoration: underline;
 }
 
+.userlikeComments_nocomments
+{
+    height: 5%;
+    width: 100%;
+    text-align: center;
+    padding-top: 99%;
+    font-family: 'Poppins', sans-serif;
+    color: #999999;
+    font-size: 1em;
+}
+
 /*------------------------------------- RESPOSTA AO COMENTARIO ------------------------------------------------*/
 .modal_comentario_resposta
 {
