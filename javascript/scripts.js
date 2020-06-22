@@ -22,7 +22,7 @@ $(document).ready(function()
   var dropdownnav = document.getElementById('dropdownlistNavbar');
   var btnDropdownlist = document.getElementsByClassName('navbar_menu_dropdown')[0];
 
-  
+
 
   /*Funcao para mostrar dropdownlist nav bar*/
   dropdownnav.onclick = function()
@@ -142,7 +142,10 @@ function getGallery(id)
 
       document.getElementById("modal_user_desc").innerHTML = finalResult.Post[1]; //Preencher descrição foto
 
-      document.getElementsByClassName("modalGallery")[0].style.display="block";
+      if (document.getElementsByClassName("modalGallery")[0] != null)
+      {
+        document.getElementsByClassName("modalGallery")[0].style.display="block";
+      }
 
       $("#modal_direita_comentarios").empty();
 
@@ -300,7 +303,7 @@ function totalUsersLikes(id)
 var fotoCount = 12;
 
 $(window).scroll(function() {
-  if($(window).scrollTop() == ($(document).height() - $(window).height()) * 1) // Scrollbar a 80%
+  if($(window).scrollTop() == ($(document).height() - $(window).height()) * 1) // Scrollbar a 100%
   {
     fotoCount = fotoCount + 4;
 

@@ -53,7 +53,7 @@
       }
       else
       {
-        include 'includes/resultadoPesquisa.php';
+        include 'includes/imagempost.php';
       }
 
       include 'includes/footerPrincipal.php';
