@@ -1,4 +1,8 @@
 <body>
+  <script>
+    var IDSessao = "<?php echo $_SESSION['UtilID'] ?>";
+  </script>
+
   <div class="chat_body">
       <div class="chat_users">
 
@@ -9,27 +13,6 @@
                 <div class="chat_user_settings_search" id="chat_user_settings_search">
                     <input type="text" id="PesquisaNome" placeholder="Insira um Utilizador...">
                     <i class="fas fa-search"></i>
-
-                    <script type="text/javascript">
-                      $(function() {
-                          $("#PesquisaNome").autocomplete({source: function( request, response ) {
-                                  $.ajax({
-                                      url: "functions/teste.php",
-                                      dataType: "jsonp",
-                                      data: {
-                                        nome: request.term
-                                      },
-                                      success: function(result) {
-                                        console.log(result);
-                                        //finalResult = jQuery.parseJSON(result);
-                                        //response(result);
-
-                                      }
-                                  });
-                              },
-                          });
-                      });
-                    </script>
                 </div>
             </div>
         </div>
@@ -58,17 +41,15 @@
             </div>
             <!--FINAL DAS PESQUISAS-->
 
-          <div class="chat_users_display">
+          <div class="chat_users_display" id="chat_users_display">
               <!--MENSAGEM DE UM UTILIZADOR-->
-              <div class="chat_users_display_user">
-                  <div class="chat_users_display_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                  <div class="chat_users_display_info">
-                      <div class="chat_users_display_user_nome"><?php devolverNome(5); ?></div>
-                      <div class="chat_users_display_user_mensagem">Queres ver o meu honda?</div>
-                  </div>
-              </div>
+
               <!--FINAL-->
           </div>
+
+          <script>
+            todasMensagens();
+          </script>
 
       </div>
       <div class="chat_display">

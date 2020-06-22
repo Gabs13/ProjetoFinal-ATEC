@@ -5,10 +5,11 @@
 
   $result = array();
   $messagem = @$_POST['message'];
+  $IDSessao = @$_POST['IDSessao']
 
   if (!empty($messagem))
   {
-    $result['send-status'] = mysqli_query($conn, "INSERT INTO Mensagens(FromID, ToID, Mensagem) VALUES ('5', '7', '".$messagem."')");
+    $result['send-status'] = mysqli_query($conn, "INSERT INTO Mensagens(FromID, ToID, Mensagem) VALUES ($IDSessao, '7', '".$messagem."')");
   }
 
   //Escrever as msgs
