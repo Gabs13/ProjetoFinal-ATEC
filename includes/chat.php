@@ -68,7 +68,7 @@
               <div class="chat_display_text_msg" >
                 <form>
                   <input type="text" id="tb_messagem" autofocus autocomplete="off" placeholder="Escreva a sua mensagem...">
-                  <input type="button" class="chat_display_text_send" value="Enviar"><i class="fas fa-paper-plane"></i>
+                  <button type="button" class="chat_display_text_send" value="Enviar"><i class="fas fa-paper-plane"></i></button>
                 </form>
               </div>
 
