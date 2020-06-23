@@ -52,11 +52,11 @@
           </script>
 
       </div>
-      <div class="chat_display">
+      <div class="chat_display" id="chat_display">
           <div class="chat_display_user">
               <div class="chat_display_user_profile">
                   <div class="chat_display_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                  <div class="chat_display_user_name">Ruben do Tuning</div>
+                  <div class="chat_display_user_name" id="chat_display_user_name"></div>
               </div>
           </div>
 

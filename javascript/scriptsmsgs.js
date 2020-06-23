@@ -47,12 +47,16 @@ $(document).ready(function(){
 
 
 
-function limparMsgs()
+function limparMsgs(id)
 {
     $('#chat_display_messages').empty();
     start = 0;
-}
 
+
+    $('#chat_display_user_name').load("functions/CarregarNomeChat.php", {id: id});
+
+    $('#chat_display').css('display', 'block');
+}
 
 
 function loadMsgs(id)
@@ -77,7 +81,12 @@ function loadMsgs(id)
 
 function renderMessage(item)
 {
+  let today = new Date();
+  let diamsg = new Date(item.DataMsg);
   let time = new Date(item.DataMsg);
+
+  console.log(diamsg.getDay());
+
   if (time.getMinutes() < 10){
     time = time.getHours() + ':0' + time.getMinutes();
   }
@@ -86,10 +95,26 @@ function renderMessage(item)
   }
   if (item.UtilID == IDSessao)
   {
-    return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + time + '</div> </div> </div>';
+    if (diamsg.getDay() != today.getDay())
+    {
+      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + (diamsg.getMonth() + 1) + '/' + diamsg.getDate() + ' ' + time + '</div> </div> </div>';
+    }
+    else
+    {
+      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + time + '</div> </div> </div>';
+    }
+
   }
   else
   {
-    return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display_left"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + time + '</div> </div> </div>' ;
+    if (diamsg.getDay() != today.getDay())
+    {
+      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display_left"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + (diamsg.getMonth() + 1) + '/' + diamsg.getDate() + ' ' + time + '</div> </div> </div>' ;
+    }
+    else
+    {
+      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display_left"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + time + '</div> </div> </div>' ;
+    }
+
   }
 }
