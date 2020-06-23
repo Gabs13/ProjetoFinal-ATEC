@@ -1951,7 +1951,6 @@ footer
 {
     padding: 4% 4% 4% 6%;
     height: 10%;
-    width: 96%;
     display: flex;
     cursor: pointer;
 }
@@ -1990,6 +1989,7 @@ footer
     height: 95%;
     max-height: 100%;
     position: static;
+    display: none;
 
 }
 
@@ -2003,11 +2003,12 @@ footer
 
 .chat_display_text input
 {
-    width: 90%;
+    width: 92%;
     background-color: white;
     border: 1px solid #f2f2f2;
     outline: none;
     padding-left: 10px;
+    background-color: #f0f2f5;
 }
 .chat_display_text i
 {
@@ -2019,13 +2020,13 @@ footer
 .chat_display_text_send
 {
     background-color: #D24D57;
-    width: 69px;
+    width: 8%;
     border: 1px solid #f2f2f2;
 }
 
 .chat_display_text_msg
 {
-    width: 70%;
+    width: 100%;
     background-color: white;
     display: flex;
     height: 100%;
@@ -2107,6 +2108,7 @@ footer
 .chat_display_messages_texto
 {
     margin-top: 0.8em;
+    word-break: break-all;
 }
 .chat_display_messages_nome
 {
