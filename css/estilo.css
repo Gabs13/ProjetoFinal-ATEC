@@ -596,9 +596,9 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .galery_container
 {
-    width: 70%;
-    margin-right: 15%;
-    margin-left: 15%;
+    width: 60%;
+    margin-right: 22%;
+    margin-left: 20%;
     margin-top: 50px;
     margin-bottom: 5%;
     border-radius: 8px;
@@ -620,10 +620,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .collection_container_item
 {
-    width: 14em;
-    height: 20em;
+    width: calc(31.6% - 26px);
     margin-right: 4%;
-    margin-left: 4%;
     margin-bottom: 4%;
     float:left;
 }
@@ -879,7 +877,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .autor_modal_user{
   display: flex;
   align-items: baseline;
-  height: 3.4em;
+  height: 4em;
   width: 100%;
 }
 

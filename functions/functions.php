@@ -245,9 +245,13 @@
     }
   }
 
+  $Mult = 3;
+
   function getGaleria()
   {
     include 'conn.php';
+
+    global $Mult;
 
     $Posts = mysqli_query($conn, "SELECT PostID, PubDesc, DataPublicacao, UtilID FROM Posts LIMIT 12");
 
@@ -257,27 +261,25 @@
 
       $fotoPost = mysqli_fetch_array(mysqli_query($conn, "SELECT CaminhoFoto FROM Fotos WHERE PostID = '$Post[PostID]'"));
 
-      echo'<!--CRIACAO DE UM POST NA GALERIA-->
+      echo '<!--CRIACAO DE UM POST NA GALERIA-->';
+      if ($Mult % 12 == 0)
+      {
+        echo '<div class="collection_container_item container_last_child" style="width: calc(64.9% - 26px); height: 52.455em;">';
+      }
+      else
+      {
+        echo '<div class="collection_container_item container_last_child" style="height: 24.8em;">';
+      }
 
-      <div class="collection_container_item container_last_child">
-          <div class="collection_container_name" style="background-image: url(/ProjetoFinal/imagens/posts/'.$fotoPost["CaminhoFoto"].'); background-size: cover; background-position: center;" onclick="getGallery('.$Post["PostID"].')" id="'.$Post["PostID"].'">
+      echo '<div class="collection_container_name" style="background-image: url(/ProjetoFinal/imagens/posts/'.$fotoPost["CaminhoFoto"].'); background-size: cover; background-position: center;" onclick="getGallery('.$Post["PostID"].')" id="'.$Post["PostID"].'">
           <!--MODAL SLIDER DE IMAGENS-->
 
               <div class="text_gallery">
                   <div class="collection_container_name_info2 collection_container_name_info">'.$nomeUtil["UtilPNome"].' '.$nomeUtil["UtilUNome"].'</div>
-                  <div class="collection_container_info_bot">
-                      <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-love-24.png"></div>
-                      <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-comments-24.png"></div>
-                      <div class="collection_container_name_info"><img src=".//Imagens/Icones/icons8-share-24.png"></div>
-                  </div>
               </div>
           </div>
-          <div class="collection_container_social">
-              <div class="collection_social_btn">"Animais"</div>
-              <div class="collection_social_btn">Pintura</div>
-
-          </div>
         </div>';
+        $Mult = $Mult + 1;
     }
 
     include 'deconn.php';
