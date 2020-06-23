@@ -24,6 +24,11 @@ $(document).ready(function()
       $("#post_img_file").click();
     });
 
+    $(document).on('click', '#post_send', function(event) {
+      event.preventDefault();
+      $("#post_send_file").click();
+    });
+
     const inpFile = document.getElementById('post_img_file');
     const previewContainer = document.getElementById('modal_esquerda');
     const previewImage = previewContainer.querySelector('.image_preview');

@@ -1,21 +1,25 @@
 <script src="javascript/scriptsposts.js"></script>
 
 <body class="body_chat">
+  <form action="functions/functions.php" method="POST" enctype="multipart/form-data">
     <div class="resultadoPesquisa_back"><i><img src="Imagens/logotipo/artifex2.png"></i></div>
     <div class="home_main"><!--ONDE VAO TAR OS POSTS-->
         <!--CRIACAO DO POST-->
         <div class="home_post_create">
             <div class="home_post_create_titulo">Insira o seu post...</div>
             <div class="home_post_create_container">
-                <input class="home_post_create_container_texto" id="home_post_create_container_texto" placeholder="Escreva a sua descrição..." disabled>
+
+                <input class="home_post_create_container_texto" id="home_post_create_container_texto" name="tb_desc" placeholder="Escreva a sua descrição..." disabled>
                 <div class="home_post_create_container_btns">
                   <input type="file" name="bt_carregarfoto" id="post_img_file" style="display:none;">
+                  <input type="submit" name="bt_postarfoto" id="post_send_file" style="display:none;">
                   <div class="home_post_create_container_send" id="post_img"><i class="far fa-image"></i></div>
                   <div class="home_post_create_container_send" id="post_send"><i class="fas fa-paper-plane"></i></div>
                 </div>
+
             </div>
         </div>
-
+</form>
 <div class="home_post_example_border" id="home_post_example_border">
 
   <p class="home_post_example_border_text" id="home_post_example_border_text">Preview de Post</p>

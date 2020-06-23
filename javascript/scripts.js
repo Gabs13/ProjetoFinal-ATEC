@@ -100,6 +100,8 @@ function getGallery(id)
     {
       var finalResult = JSON.parse(result);
 
+      document.getElementById("modal_esquerda").innerHTML = '<img src="/ProjetoFinal/imagens/posts/' + finalResult.Foto[0] + '">';
+
       document.getElementById("modal_username_text").innerHTML = finalResult.User[1] + " " + finalResult.User[2]; //Preencher primeiro e ultimo nome no Post
 
       document.getElementById("modal_user_desc").innerHTML = finalResult.Post[1]; //Preencher descrição foto

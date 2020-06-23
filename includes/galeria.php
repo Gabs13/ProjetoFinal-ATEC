@@ -16,7 +16,7 @@
           <span id="display_like_post_close">&times;</span>
         </div>
         <div class="display_like_post_scroll" id="display_like_post_scroll">
-          
+
         </div>
       </div>
       <div class="display_post_finisher"></div>
@@ -27,8 +27,8 @@
 
         <div class="modal_content">
 
-            <div class="modal_esquerda">
-              <img src="Imagens/quadro2.jpg">
+            <div class="modal_esquerda" id="modal_esquerda">
+
             </div>
 
             <div class="modal_direita">

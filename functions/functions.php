@@ -12,6 +12,10 @@
 
     $Gal = mysqli_fetch_array($Galeria);
 
+    $Foto = mysqli_query($conn, "SELECT CaminhoFoto FROM Fotos WHERE PostID = $PostID");
+
+    $InfoFoto = mysqli_fetch_array($Foto);
+
     $UtilInfo = mysqli_query($conn, "SELECT UtilID, UtilPNome, UtilUNome, UtilDataNasc, UtilGenero, ContaID FROM Utilizadores WHERE UtilID = $Gal[UtilID]");
 
     $Info = mysqli_fetch_array($UtilInfo);
@@ -24,6 +28,7 @@
     $Data['Post'] = $Gal;
     $Data['User'] = $Info;
     $Data['Like'] = $LikePost;
+    $Data['Foto'] = $InfoFoto;
 
     echo json_encode($Data);
 
@@ -184,6 +189,62 @@
     echo json_encode($Data);
   }
 
+  if(isset($_POST["bt_postarfoto"]))
+  {
+    $file = $_FILES['bt_carregarfoto'];
+    $desc = $_POST["tb_desc"];
+
+    $fileName = $_FILES['bt_carregarfoto']['name'];
+    $fileTmpName = $_FILES['bt_carregarfoto']['tmp_name'];
+    $fileSize = $_FILES['bt_carregarfoto']['size'];
+    $fileError = $_FILES['bt_carregarfoto']['error'];
+    $fileType = $_FILES['bt_carregarfoto']['type'];
+
+    $fileExt = explode('.', $fileName);
+    $fileActualExt = strtolower(end($fileExt));
+
+    $allowed = array('jpg', 'jpeg', 'png');
+
+    if (in_array($fileActualExt, $allowed))
+    {
+      if ($fileError === 0)
+      {
+        if ($fileSize < 1000000)
+        {
+          $fileNameNew = uniqid('', true).".".$fileActualExt;
+
+          $fileDestination = '../imagens/posts/'.$fileNameNew;
+
+          move_uploaded_file($fileTmpName, $fileDestination);
+
+          include 'conn.php';
+
+          session_start();
+
+          mysqli_query($conn, "INSERT INTO Posts(PubDesc, UtilID) VALUES ('$desc', $_SESSION[UtilID])");
+
+          $PID = mysqli_insert_id($conn);
+
+          mysqli_query($conn, "INSERT INTO Fotos(CaminhoFoto, PostID) VALUES ('$fileNameNew', $PID)");
+
+
+          include 'deconn.php';
+
+
+          header("Location: http://localhost/ProjetoFinal/login.php?uploadsucess=1");
+        }
+        else
+        {
+          echo "O ficheiro é muito grande!";
+        }
+      }
+    }
+    else
+    {
+      echo "Formato de ficheiro inválido!";
+    }
+  }
+
   function getGaleria()
   {
     include 'conn.php';
@@ -194,11 +255,12 @@
     {
       $nomeUtil = mysqli_fetch_array(mysqli_query($conn, "SELECT UtilID, UtilPNome, UtilUNome FROM Utilizadores WHERE UtilID = '$Post[UtilID]'"));
 
+      $fotoPost = mysqli_fetch_array(mysqli_query($conn, "SELECT CaminhoFoto FROM Fotos WHERE PostID = '$Post[PostID]'"));
 
       echo'<!--CRIACAO DE UM POST NA GALERIA-->
 
       <div class="collection_container_item container_last_child">
-          <div class="collection_container_name" onclick="getGallery('.$Post["PostID"].')" id="'.$Post["PostID"].'">
+          <div class="collection_container_name" style="background-image: url(/ProjetoFinal/imagens/posts/'.$fotoPost["CaminhoFoto"].'); background-size: cover; background-position: center;" onclick="getGallery('.$Post["PostID"].')" id="'.$Post["PostID"].'">
           <!--MODAL SLIDER DE IMAGENS-->
 
               <div class="text_gallery">

@@ -22,8 +22,7 @@
         <!--FINAL DIV DISPLAY LIKES-->
         <div class="modal_content">
 
-            <div class="modal_esquerda">
-                <img src="Imagens/quadro2.jpg">
+            <div class="modal_esquerda" id="modal_esquerda">
             </div>
 
             <div class="modal_direita">
