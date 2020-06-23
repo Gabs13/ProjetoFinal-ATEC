@@ -14,7 +14,8 @@
                 </div>
             </div>
         </div>
-
+    
+<div class="home_post_example_border" id="home_post_example_border">
         <!-- preview -->
     <div class="home_post_example" id="imgpreview" style="display: none;">
 
@@ -49,7 +50,7 @@
             </div>
         </div>
     </div>
-
+</div>
 
 
 
