@@ -2592,7 +2592,6 @@ footer
     font-size: 1.1em;
     padding-right: 6%;
     word-break: break-all;
-
 }
 
 .home_post_create_container_btns
@@ -2627,12 +2626,15 @@ footer
 .home_post_example
 {
     display: none;
-    margin: 6% auto;
-    margin-left: 5%; 
-    margin-right: 5%;
+    margin: 3%;
     background-color: rgba(255,255,255);
     border-radius: 8px;
     height: 36em;
+}
+
+.home_post_example_border
+{
+    
 }
 .previewImg
 {
