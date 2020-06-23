@@ -621,7 +621,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .collection_container_item
 {
     width: calc(31.6% - 26px);
-    margin-right: 4%;
+    margin-right: 2%;
+    margin-left: 2%;
     margin-bottom: 4%;
     float:left;
 }

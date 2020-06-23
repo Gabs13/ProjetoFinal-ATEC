@@ -26,7 +26,7 @@
     }
     else
     {
-      echo '<div class="collection_container_item container_last_child" style="height: 24.8em;">';
+      echo '<div class="collection_container_item container_last_child" style="height: 24.84em;">';
     }
 
     echo '<div class="collection_container_name" style="background-image: url(/ProjetoFinal/imagens/posts/'.$fotoPost["CaminhoFoto"].');background-size: cover; background-position: center;" onclick="getGallery('.$Post["PostID"].')" id="'.$Post["PostID"].'">
