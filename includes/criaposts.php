@@ -16,7 +16,7 @@
         </div>
 
         <!-- preview -->
-    <div class="home_post_example" id="imgpreview">
+    <div class="home_post_example" id="imgpreview" style="display: none;">
 
         <div class="modal_esquerda">
             <img src="Imagens/quadro2.jpg">

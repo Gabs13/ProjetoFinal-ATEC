@@ -13,11 +13,11 @@
                   <i class="fas fa-search"></i>
                 </a>
               </div>
-              <li>Home</li> 
+              <li>Home</li>
               <li> <a href="mensagens.php">Mensagens</a> </li>
               <li>Network</li>
-              <li>Galeria</li>
-              
+              <li> <a href="login.php"> Galeria</a> </li>
+
             </ul>
             <div class="name_dropdownlist">
               <label id="dropdownlistNavbar"> <?php echo $_SESSION["CPNome"].' '.$_SESSION["CUNome"]; ?> </label>
