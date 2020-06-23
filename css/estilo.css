@@ -2597,16 +2597,22 @@ footer
 .home_post_create_container_btns
 {
     width: 20%;
-    height: 101%;
+    height: 100.5%;
     background-color: #D24D57;
 }
 
 
-.home_post_create_container_send
+.home_post_create_container_send:first-of-type
 {
     height: 50%;
     width: 100%;
     border-bottom: 1px solid #ccc;
+}
+
+.home_post_create_container_send:last-of-type
+{
+  height: 50%;
+  width: 100%;
 }
 
 .home_post_create_container_send:hover
@@ -2634,10 +2640,20 @@ footer
 
 .home_post_example_border
 {
-    
+
 }
 .previewImg
 {
     padding-left: 0 !important;
     padding-top: 0 !important;
+}
+
+.home_post_example_border_text
+{
+  display:none;
+  width: 7.8em;
+  text-align:center;
+  margin-top: -10px;
+  margin-left: 10px;
+  background-color: #f2f2f2;
 }

@@ -22,7 +22,7 @@
             <div class="name_dropdownlist">
               <label id="dropdownlistNavbar"> <?php echo $_SESSION["CPNome"].' '.$_SESSION["CUNome"]; ?> </label>
               <div class="navbar_menu_dropdown" id="navbar_menu_dropdown">
-                <div><a href="includes/editarPerfil.php"> Editar perfil </a></div>
+                <div> <a href="edit.php"> Editar perfil </a></div>
                 <div>Definições e Privacidade</div>
                 <div>Ajuda e Support</div>
                 <div>
@@ -43,5 +43,9 @@
   	$('.menu').toggleClass('active');
     $("#navbar_menu_dropdown").css("display", "none");
   });
+  </script>
+
+  <script src="javascript/scriptsnavbar.js">
+
   </script>
 </body>

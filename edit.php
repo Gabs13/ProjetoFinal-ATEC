@@ -1,13 +1,6 @@
 <?php
   require 'functions/functions.php';
   session_start();
-
-  if (!isset($_SESSION["UtilID"]))
-   {
-      header("location: index.php");
-   }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +9,8 @@
     <meta charset="utf-8">
     <title>ArtIN</title>
     <link rel="icon" href="imagens/logotipo/browserIconCircle.png">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
@@ -24,18 +18,14 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK&family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo&display=swap" rel="stylesheet">
 
-    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
-
-    <script src="javascript/scripts.js"></script>
 
   </head>
-<body>
-
-
+  <body>
     <?php
       if (isset($_POST["Destruir"]))
       {
@@ -45,17 +35,9 @@
 
       include 'includes/navbar.php';
 
-
-      if(@!$_GET['pid'] && @!$_GET['uid'])
-      {
-        include 'includes/galeria.php';
-      }
-      else
-      {
-        include 'includes/imagempost.php';
-      }
-
-      include 'includes/footerPrincipal.php';
-
+      include 'includes/editarPerfil.php';
     ?>
-</body>
+    <!-- teste -->
+  </body>
+  <script src="javascript/scriptslogin.js"></script>
+</html>

@@ -6,6 +6,8 @@ $(document).ready(function()
     var imgPreview = document.getElementById('imgpreview');
     //caixa com border
     var borderPreview = document.getElementById('home_post_example_border');
+    //Texto Preview
+    var textPreview = document.getElementById('home_post_example_border_text');
 
     //FUNCAO PARA ABRIR A IMAGEM PREVIEW NO POST
     imgPreviewbtn.onclick = function()
@@ -15,7 +17,7 @@ $(document).ready(function()
             imgPreview.style.display="flex";
             borderPreview.style.border="1px solid #ccc";
             borderPreview.style.margin="10px";
-
+            textPreview.style.display="block";
         }
         else
         {
