@@ -26,5 +26,20 @@ $(document).ready(function()
     }
 
 
+    $(".home_post_create_container").on('input', function(){
+
+      var desc = $("#home_post_create_container_texto").val();
+
+      console.log(desc);
+
+      $("#modal_user_desc").html(desc);
+
+    });
+
+    $(document).on('click', '#post_img', function(event) {
+      event.preventDefault();
+      $("#post_img_file").click();
+    });
+
 
 });
