@@ -2028,6 +2028,7 @@ footer
     outline: none;
     padding-left: 10px;
     background-color: #f0f2f5;
+    font-size: 1.1em;
 }
 .chat_display_text i
 {
@@ -2146,9 +2147,15 @@ footer
 }
 .chat_display_messages_ocupy
 {
-    height: 6em;
+    /* height: 6em; */
     width: 100%;
     margin-bottom: 2em;
+    display: inline-block;
+}
+
+.chat_display_messages_ocupy:last-of-type
+{
+    margin-bottom: 0 !important;
 }
 
 /*caixa de procura de utilizadores no chat -------*/
