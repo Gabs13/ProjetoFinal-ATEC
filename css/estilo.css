@@ -812,6 +812,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
   width: 100%;
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
+  object-fit: cover;
 }
 
 .modal_direita{

@@ -7,7 +7,7 @@
         <div class="home_post_create">
             <div class="home_post_create_titulo">Insira o seu post...</div>
             <div class="home_post_create_container">
-                <input class="home_post_create_container_texto" id="home_post_create_container_texto" placeholder="Escreva a sua descrição...">
+                <input class="home_post_create_container_texto" id="home_post_create_container_texto" placeholder="Escreva a sua descrição..." disabled>
                 <div class="home_post_create_container_btns">
                   <input type="file" name="bt_carregarfoto" id="post_img_file" style="display:none;">
                   <div class="home_post_create_container_send" id="post_img"><i class="far fa-image"></i></div>
@@ -22,8 +22,8 @@
         <!-- preview -->
     <div class="home_post_example" id="imgpreview" style="display: none;">
 
-        <div class="modal_esquerda">
-            <img src="Imagens/quadro2.jpg">
+        <div class="modal_esquerda" id="modal_esquerda">
+            <img src="" class="image_preview">
         </div>
 
         <div class="modal_direita">
