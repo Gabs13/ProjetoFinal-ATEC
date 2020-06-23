@@ -53,23 +53,25 @@ function limparMsgs()
     start = 0;
 }
 
+
+
 function loadMsgs(id)
-{
-  cid = id;
+{ 
+    cid = id;
+    
+    $.get('functions/CarregarConversa.php' + '?start=' + start + '&cid=' + id, function(result){
+      if(result.items)
+      {
+        result.items.forEach(item =>{
+          start = item.MensagemConversaID;
+          $('#chat_display_messages').append(renderMessage(item));
+        })
+        $('#chat_display_messages').animate({scrollTop: $('#chat_display_messages')[0].scrollHeight});
+      };
 
-  $.get('functions/CarregarConversa.php' + '?start=' + start + '&cid=' + id, function(result){
-    if(result.items)
-    {
-      result.items.forEach(item =>{
-        start = item.MensagemConversaID;
-        $('#chat_display_messages').append(renderMessage(item));
-      })
-      $('#chat_display_messages').animate({scrollTop: $('#chat_display_messages')[0].scrollHeight});
-    };
-
-    setTimeout(function() {loadMsgs(cid);}, 1000)
-  });
-
+      setTimeout(function() {loadMsgs(cid);}, 1000)
+    });
+    
 
 }
 

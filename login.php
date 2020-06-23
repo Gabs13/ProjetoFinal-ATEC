@@ -48,7 +48,7 @@
 
       if(@!$_GET['pid'] && @!$_GET['uid'])
       {
-        include 'includes/galeria.php';
+        include 'includes/criaposts.php';
       }
       else
       {

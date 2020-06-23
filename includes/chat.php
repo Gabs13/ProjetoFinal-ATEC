@@ -1,4 +1,4 @@
-<body>
+<body class="body_chat">
   <script>
     var IDSessao = "<?php echo $_SESSION['UtilID'] ?>";
   </script>

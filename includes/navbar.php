@@ -4,10 +4,6 @@
           <img src="imagens/Utilizadores/gabriel.jpg" alt="teste" width="65" height="65">
         </span>
 
-      <div class='menu'>
-          <span class='toggle' id='toggle'>
-            <img src="imagens/Utilizadores/gabriel.jpg" alt="teste" width="65" height="65">
-          </span>
 
           <div class='menuContent'>
             <ul>
