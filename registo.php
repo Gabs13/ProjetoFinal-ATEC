@@ -33,5 +33,5 @@
     ?>
     <!-- teste -->
   </body>
-  <script src="javascript/scriptslogin.js"></script>
+  <script src="javascript/scriptsregisto.js"></script>
 </html>

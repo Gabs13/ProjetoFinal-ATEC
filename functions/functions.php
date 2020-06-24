@@ -341,19 +341,21 @@
 
     /* Função de registo */
 
-  function registo($regEmail, $regPass, $regRPass, $regNome, $regUNome, $regTlmv, $regGenero, $regData)
+  function registo($regEmail, $regPass, $regRPass, $regNome, $regUNome, $regTlmv, $regGenero, $regData, $regUser)
   {
     include 'conn.php';
 
     $regEmail = mysqli_real_escape_string($conn, $regEmail);
     $regPass = mysqli_real_escape_string($conn, $regPass);
+    $regRPass = mysqli_real_escape_string($conn, $regRPass);
     $regNome = mysqli_real_escape_string($conn, $regNome);
     $regUNome = mysqli_real_escape_string($conn, $regUNome);
     $regTlmv = mysqli_real_escape_string($conn, $regTlmv);
     $regGenero = mysqli_real_escape_string($conn, $regGenero);
     $regData = mysqli_real_escape_string($conn, $regData);
+    $regUser = mysqli_real_escape_string($conn, $regUser);
 
-    if($regpass != $regpassval)
+    if($regPass != $regRPass)
     {
       echo 'As senhas não correspondem';
     }
@@ -362,7 +364,7 @@
         /* Encriptar a password */
         $regPass = base64_encode($regPass);
         /* Evitar duplicados */
-        $existencia = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM Conta WHERE Email = '$regEmail'"));
+        $existencia = mysqli_fetch_array(mysqli_query($conn, "SELECT Email FROM Conta WHERE Email = '$regEmail'"));
 
         if(!$existencia)
         {
@@ -372,17 +374,20 @@
           /* Ultimo id criado via conn */
           $cid = mysqli_insert_id($conn);
 
-          mysqli_query($conn, "INSERT INTO Utilizadores (UtilPNome, UtilUNome, UtilDataNasc, UtilGenero, ContaID) VALUES ('$regNome', '$regUNome', '$regData', '$regGenero', '$cid')");
+          mysqli_query($conn, "INSERT INTO Utilizadores (UtilPNome, UtilUNome, UtilDataNasc, UtilGenero, ContaID, UtilUser) VALUES ('$regNome', '$regUNome', '$regData', '$regGenero', '$cid', '$regUser')");
 
           echo '<script language = "javascript">';
           echo 'alert("Obrigado. Registo efetuado com sucesso")';
           echo '</script>';
+
+          echo '<meta http-equiv="refresh" content="0;url=index.php">';
         }
         else
         {
           echo 'O email indicado já se encontra registado';
         }
     }
+    
     include 'deconn.php';
   }
 
