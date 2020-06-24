@@ -18,20 +18,6 @@ $(document).ready(function()
   //Icon like da modal principal
   var mainmodalLike= document.getElementById('likePostModal');
 
-
-  /**/
-
-  //fechar modal dos likes dos comentarios
-  // modalDireita.onclick = function()
-  // {
-  //   if(document.getElementsByClassName('display_like_background')[0].style.display=="block")
-  //   {
-  //     document.getElementsByClassName('display_like_background')[0].style.display="none";
-  //   }
-  // }
-
-
-
   //MODAL
 
   /*COMENTARIO MODAL BOTTOM (APARECER A SETA DE ENVIAR) ----------------------*/
@@ -124,6 +110,10 @@ function getGallery(id)
 
       document.getElementById("modal_user_sendbtn").innerHTML = '<i onclick="addComment('+ finalResult.Post[0] +');" class="fas fa-location-arrow"></i>';
 
+      $("#autor_modal_info_likes").empty();
+
+      $("#autor_modal_info_likes").load("functions/CarregarLikesPost.php", {PostID: finalResult.Post[0]});
+
       if(finalResult.Like == true)
       {
         document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost(' + finalResult.Post[0] + ');">';
@@ -133,10 +123,6 @@ function getGallery(id)
       {
         document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost(' + finalResult.Post[0] + ');">';
       }
-
-
-
-      //display da modal e envias os dados pa modal por document.getelement
     }
   });
 }
@@ -147,25 +133,67 @@ function addComment(id)
 
   if (comentario != "")
   {
-    $.ajax({
-      type: "POST",
-      url:"functions/functions.php",
-      data: {
-        action: "addCommentPHP",
-        id: id,
-        comentario: comentario,
-      },
+    var firstWords;
+    var codeLine = $('#comentario_bottom').val()[i];
+    var firstWord = $('#comentario_bottom').val().substr(0, $('#comentario_bottom').val().indexOf(" "));
 
-      success:function(result)
-      {
-        var finalResult = JSON.parse(result);
+    var comentarioID = localStorage.getItem('ComentarioID');
 
-        $("#modal_direita_comentarios").load("functions/CarregarComentarios.php", {PostID: finalResult.Post[0]});
+    var isResponse = [];
 
-        $('#comentario_bottom').val('');
-      }
-    });
+    for (var i=0; i < $('#comentario_bottom').val().length; i++)
+    {
+      var words = $('#comentario_bottom').val()[i].split(" ");
+      isResponse.push(words[0]);
+    }
+
+    if (firstWord == localStorage.getItem('NomeReply') && localStorage.getItem('ComentarioID') !== null)
+    {
+      $.ajax({
+        type: "POST",
+        url:"functions/functions.php",
+        data: {
+          action: "replyCommentPHP",
+          postid: id,
+          id: comentarioID,
+          comentario: comentario,
+        },
+
+        success:function(result)
+        {
+          var finalResult = JSON.parse(result);
+
+          $("#modal_direita_comentarios").load("functions/CarregarComentarios.php", {PostID: finalResult.Post});
+
+          $('#comentario_bottom').val('');
+
+        }
+      });
+    }
+    else
+    {
+      $.ajax({
+        type: "POST",
+        url:"functions/functions.php",
+        data: {
+          action: "addCommentPHP",
+          id: id,
+          comentario: comentario,
+        },
+
+        success:function(result)
+        {
+          var finalResult = JSON.parse(result);
+
+          $("#modal_direita_comentarios").load("functions/CarregarComentarios.php", {PostID: finalResult.Post[0]});
+
+          $('#comentario_bottom').val('');
+        }
+      });
+    }
   }
+
+  localStorage.clear();
 }
 
 function removeComment(id)
@@ -204,13 +232,17 @@ function likePost(id)
 
       if(finalResult.Like == true)
       {
-        document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost(' + finalResult.Post[0] + ');">';
+        document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost(' + finalResult.Post + ');">';
         $("#likePostModal").css('color', '#D24D57');
       }
       else
       {
-        document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost(' + finalResult.Post[0] + ');">';
+        document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost(' + finalResult.Post + ');">';
       }
+
+      $("#autor_modal_info_likes").empty();
+
+      $("#autor_modal_info_likes").load("functions/CarregarLikesPost.php", {PostID: finalResult.Post});
     }
   })
 }
@@ -257,11 +289,39 @@ function likeComment(id)
   })
 }
 
+function replyComment(id)
+{
+  var comentario = $('#comentario_bottom').val('');
+  localStorage.setItem('ComentarioID', id);
+
+  $.ajax({
+    type: "POST",
+    url: "functions/functions.php",
+    data: {
+      action: "getReplyCommentUserPHP",
+      id: id,
+    },
+
+    success:function(result)
+    {
+      var finalResult = JSON.parse(result);
+
+      $('#comentario_bottom').val('@' + finalResult.Util[2] + ' ');
+      localStorage.setItem('NomeReply', '@' + finalResult.Util[2]);
+    }
+  })
+}
+
 function totalUsersLikes(id)
 {
   $("#display_like_post_scroll").empty();
 
   $("#display_like_post_scroll").load("functions/UsersLikesComments.php", {ComentarioID: id});
+}
+
+function totalUsersLikesPosts(id)
+{
+  $("#display_like_post_scroll").load("functions/UsersLikesPosts.php", {PostID: id});
 }
 
 var fotoCount = 12;

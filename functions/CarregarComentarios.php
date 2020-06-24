@@ -68,6 +68,30 @@
             </div>
             </div>';
 
+      $detailsReplyComment = mysqli_query($conn, "SELECT ReplyComentarioID, UtilID, ComentarioID, Mensagem FROM ReplyComentarios WHERE ComentarioID = $Comment[ComentarioID]");
+
+      if(mysqli_num_rows($detailsReplyComment) > 0)
+      {
+        while($ReplyComment = mysqli_fetch_array($detailsReplyComment))
+        {
+          $detailsUserReply = mysqli_fetch_array(mysqli_query($conn, "SELECT UtilID, UtilPNome, UtilUNome FROM Utilizadores WHERE UtilID = $ReplyComment[UtilID]"));
+
+          echo '<!--REPOSTA AO COMENTARIO/ONCLICK DO BOTAO COMENTARIO-->
+          <div class="modal_comentario_reply">
+              <div class="modal_comentario_reply_imagem"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+              <div class="modal_comentario_reply_content">
+                <div class="modal_comentario_reply_content_name">'.$detailsUserReply["UtilPNome"].' '.$detailsUserReply["UtilUNome"].'</div>
+                <div class="modal_comentario_reply_content_main">
+                  <div class="modal_comentario_reply_content_texto">'.$ReplyComment["Mensagem"].'</div>
+                  <div class="modal_comentario_reply_content_like"><i class="fas fa-heart"></i></div>
+                </div>
+              </div>
+          </div>';
+        }
+      }
+
+      $replyComentarios = mysqli_query($conn, "SELECT ReplyComentarioID, UtilID, ComentarioID, Mensagem FROM ReplyComentarios WHERE ComentarioID = $Comment[ComentarioID]");
+
     }
     echo '<script src="javascript/scriptscomments.js"></script>';
   }

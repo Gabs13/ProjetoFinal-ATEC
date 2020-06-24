@@ -1,9 +1,9 @@
 <?php
   include 'conn.php';
+  
+  $PostID = $_POST['PostID'];
 
-  $ComentarioID = $_POST['ComentarioID'];
-
-  $TotalUsers = mysqli_query($conn, "SELECT LikesComentarios.UtilID, UtilPNome, UtilUNome FROM LikesComentarios LEFT JOIN Utilizadores ON LikesComentarios.UtilID = Utilizadores.UtilID WHERE ComentarioID = $ComentarioID");
+  $TotalUsers = mysqli_query($conn, "SELECT LikesPosts.UtilID, UtilPNome, UtilUNome FROM LikesPosts LEFT JOIN Utilizadores ON LikesPosts.UtilID = Utilizadores.UtilID WHERE PostID = $PostID");
 
   if (mysqli_num_rows($TotalUsers) != 0)
   {
@@ -18,6 +18,7 @@
   else {
     echo '<p class="userlikeComments_nocomments">Não tem likes.</p>';
   }
+
 
   include 'deconn.php';
 ?>

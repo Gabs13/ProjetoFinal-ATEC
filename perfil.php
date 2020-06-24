@@ -21,7 +21,6 @@
 
 
           <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
-          <script src="javascript/script_perfil.js"></script>
 
           <!-- Perfil -->
         </head>
@@ -31,6 +30,8 @@
             include 'includes/navbar.php';
 
             include 'includes/perfil_novo.php';
+
+            include 'includes/footerPrincipal.php';
         ?>
 
         </body>

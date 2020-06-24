@@ -1,27 +1,41 @@
-//pesquisa de utilizadores no chat
-//var clickSearchUser = document.getElementById('PesquisaNome');
-var dropdownResultados = document.getElementsByClassName('chat_resultados_pesquisa')[0];
+$(document).ready(function(){
+  //pesquisa de utilizadores no chat
+  var clickSearchUser = document.getElementById('PesquisaNome');
+  var dropdownResultados = document.getElementsByClassName('chat_resultados_pesquisa')[0];
 
-/*funcao para aparecer resultados pesquisados*/
-/*clickSearchUser.onfocus = function()
-{
-  dropdownResultados.style.display="block";
-  dropdownResultados.style.transition= "1s";
+  /*funcao para aparecer resultados pesquisados*/
+  clickSearchUser.onfocus = function()
+  {
+    dropdownResultados.style.display="block";
+    dropdownResultados.style.transition= "1s";
 
-  $('#chat_user_settings_search').css('border-bottom-left-radius', '0px');
-  $('#chat_user_settings_search').css('border-bottom-right-radius', '0px');
+    $('#chat_user_settings_search').css('border-bottom-left-radius', '0px');
+    $('#chat_user_settings_search').css('border-bottom-right-radius', '0px');
 
-}
-/*sair dos resultados pesquisados*/
-/*clickSearchUser.onfocusout = function()
-{
-  dropdownResultados.style.display="none";
-  dropdownResultados.style.transition= "1s";
+  }
+  /*sair dos resultados pesquisados*/
+  clickSearchUser.onfocusout = function()
+  {
+    dropdownResultados.style.display="none";
+    dropdownResultados.style.transition= "1s";
 
-  $('#chat_user_settings_search').css('border-radius', '8px');
-}*/
+    $('#chat_user_settings_search').css('border-radius', '8px');
+  }
 
-$("#PesquisaNome").focusout(function(){
+  $("#PesquisaNome").focusout(function(){
+
+  });
+
+  $("#PesquisaNome").focusout(function(){
+
+  });
+
+  $(".chat_user_settings_search").on('input', function(){
+
+    var nome = $("#PesquisaNome").val();
+
+    $("#chat_resultados_pesquisa").load("functions/CarregarNomesPesquisa.php", {nome: nome});
+  });
 
 });
 
@@ -60,22 +74,22 @@ function limparMsgs(id)
 
 
 function loadMsgs(id)
-{ 
+{
     cid = id;
-    
+
     $.get('functions/CarregarConversa.php' + '?start=' + start + '&cid=' + id, function(result){
       if(result.items)
       {
         result.items.forEach(item =>{
           start = item.MensagemConversaID;
           $('#chat_display_messages').append(renderMessage(item));
+          $("#chat_users_display").load("functions/CarregarMensagens.php");
         })
         $('#chat_display_messages').animate({scrollTop: $('#chat_display_messages')[0].scrollHeight});
-      };
-
+      };    
       setTimeout(function() {loadMsgs(cid);}, 1000)
     });
-    
+
 
 }
 
@@ -115,6 +129,5 @@ function renderMessage(item)
     {
       return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display_left"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + time + '</div> </div> </div>' ;
     }
-
   }
 }
