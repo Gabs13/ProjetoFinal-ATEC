@@ -42,4 +42,5 @@ $(document).ready(function()
     event.preventDefault();
     $("#registobtn1").click();
   });
+
 });//final jquery onload

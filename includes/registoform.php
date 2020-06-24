@@ -4,7 +4,7 @@
       <div class="filho">
           <form method="post">
             <div class="titulo">Regista-te já!</div>
-            <div class="borders border1"> <input class="username" type="text" id="regUsername" name="regUsername" placeholder="Nome de Utilizador" required> <div id="loader"> </div> </div>
+            <div class="borders border1"> <input type="text" id="regUsername" name="regUsername" class="username" placeholder="Nome de Utilizador" required> <div id="loader"> </div> </div>
             <div class="borders"> <input type="text" id="regNome" name="regNome" placeholder="Primeiro Nome" keypress="limparTB('regNome')" required> </div>
             <div class="borders"> <input type="text" id="regUNome" name="regUNome" placeholder="Ultimo Nome" required> </div>
             <div class="borders"> <input type="password" id="regPass" name="regPass" placeholder="Password" required> </div>
@@ -20,10 +20,17 @@
             <div>
                 <input type="submit" name="bt_registar" value="Resgistar" id="registobtn1" style="display:none;">
                 <div class="col-md-3 col-sm-3 col-xs-6">
-                   <a href="" id="registobtn2" class="btn btn-sm animated-button victoria-two">Registar</a> 
+                   <a href="" id="registobtn2" class="btn btn-sm animated-button victoria-two">Registar</a>
                 </div>
             </div>
           </form>
+
+          <?php
+            if(isset($_POST["bt_registar"]))
+            {
+              registo($_POST["regEmail"], $_POST["regPass"], $_POST["regRPass"], $_POST["regNome"], $_POST["regUNome"], $_POST["regTlmv"], $_POST["regGenero"], $_POST["regData"], $_POST["regUsername"]);
+            }
+          ?>
 
           <script type="text/javascript">
           $(document).ready(function(){
@@ -54,7 +61,7 @@
                     {
                       $("#loader").html('<i class="fas fa-check" style="color: green;"> </i>');
                     }
-                    else 
+                    else
                     {
                       $("#loader").html('<i class="fas fa-times" style="color: red;"> </i>');
                     }
@@ -70,19 +77,10 @@
                 $("#loader").html('<i class="fas fa-times" style="color: red;"> </i>');
               }
 
-
-
             });
 
          });
           </script>
-
-          <?php
-            if(isset($_POST["bt_registar"]))
-            {
-              registo($_POST["regEmail"], $_POST["regPass"], $_POST["regRPass"], $_POST["regNome"], $_POST["regUNome"], $_POST["regTlmv"], $_POST["regGenero"], $_POST["regData"]);
-            }
-          ?>
       </div>
   </div>
 </body>
