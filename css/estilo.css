@@ -2559,6 +2559,7 @@ footer
     height: 100%;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
+    padding-bottom: 20px;
 }
 
 .home_post_create
@@ -2664,6 +2665,66 @@ footer
   margin-top: -10px;
   margin-left: 10px;
   background-color: #f2f2f2;
+}
+
+/*--------------------------------------------------------- HOME --------------------------------------------------*/
+
+.casa_main
+{
+    width: 50%;
+    height: 100%;
+    margin-left: 25%;
+    margin-top: 2%;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.casa_create_post
+{
+    width: 30%;
+    display: flex;
+    color: gray;
+    font-size: 1.6em;
+    text-align: center;
+    margin-left: 35%;
+    padding-top: 40px;
+    
+}
+
+.casa_create_post p
+{
+    padding-right: 15px;
+    text-align: center;
+}
+
+.casa_create_post i
+{
+    font-size: 1.2em;
+}
+
+.casa_create_include
+{
+    display: none;
+    /* margin-right: 45%; */
+
+}
+
+.casa_create_post:hover
+{
+    cursor: pointer;
+}
+
+.casa_main_seperator
+{
+    border-bottom: 1px solid #ccc;
+    width: 90%;
+    height: 10px;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.casa_main_post
+{
+    margin-bottom: 7em;
 }
 
 /* PERFIL */
