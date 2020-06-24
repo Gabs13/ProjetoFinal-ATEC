@@ -1,4 +1,3 @@
-<script src="javascript/scriptsperfil.js"></script>
 <body>
     <!--Modal de seguidores-->
     <div class="modal_perfil" id="modal_perfil">
@@ -59,3 +58,4 @@
 
 
 </body>
+

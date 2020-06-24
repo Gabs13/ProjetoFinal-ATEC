@@ -19,26 +19,9 @@
         <!--FINAL SEARCHBOX-->
 
         <!--RESULTADO DAS PESQUISAS-->
-        <div class="chat_resultados_pesquisa">
-                <li>
-                    <div class="chat_resultados_pesquisa_output">
-                        <div class="chat_resultados_pesquisa_output_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                        <div class="chat_resultados_pesquisa_output_nome">Batman</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="chat_resultados_pesquisa_output">
-                        <div class="chat_resultados_pesquisa_output_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                        <div class="chat_resultados_pesquisa_output_nome">Batman</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="chat_resultados_pesquisa_output">
-                        <div class="chat_resultados_pesquisa_output_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
-                        <div class="chat_resultados_pesquisa_output_nome">Batman</div>
-                    </div>
-                </li>
-            </div>
+        <div class="chat_resultados_pesquisa" id="chat_resultados_pesquisa">
+
+        </div>
             <!--FINAL DAS PESQUISAS-->
 
           <div class="chat_users_display" id="chat_users_display">

@@ -144,7 +144,7 @@
     echo json_encode($Data);
   }
 
-  if(@$_POST['action'] == 'replyCommentPHP')
+  if(@$_POST['action'] == 'getReplyCommentUserPHP')
   {
     include 'conn.php';
 
@@ -154,13 +154,32 @@
 
     $Util = mysqli_fetch_array($IDUtil);
 
-    $NomeUtil = mysqli_query($conn, "SELECT UtilPNome, UtilUNome FROM Utilizadores WHERE UtilID = $Util[UtilID]");
+    $NomeUtil = mysqli_query($conn, "SELECT UtilPNome, UtilUNome, UtilUser FROM Utilizadores WHERE UtilID = $Util[UtilID]");
 
     $DadosUtil = mysqli_fetch_array($NomeUtil);
 
     $Data = array();
 
     $Data['Util'] = $DadosUtil;
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
+  if(@$_POST['action'] == 'replyCommentPHP')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    $ComentarioID = $_POST['id'];
+    $ContentComment = $_POST['comentario'];
+    $PostID = $_POST['postid'];
+
+    mysqli_query($conn, "INSERT INTO ReplyComentarios(UtilID, ComentarioID, Mensagem) VALUES ('$_SESSION[UtilID]', '$ComentarioID', '$ContentComment')");
+
+    $Data['Post'] = $PostID;
 
     include 'deconn.php';
 
@@ -387,7 +406,7 @@
           echo 'O email indicado já se encontra registado';
         }
     }
-    
+
     include 'deconn.php';
   }
 

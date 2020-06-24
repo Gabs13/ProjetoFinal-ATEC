@@ -45,7 +45,7 @@ function login()
 
 //funcao para mudar as cores dos inputs
 function inputColor()
-  {
-      document.getElementById("logMail").style.border="1px solid #D24D57";
-      document.getElementById("logPass").style.border="1px solid #D24D57";
-  }
+{
+    document.getElementById("logMail").style.border="1px solid #D24D57";
+    document.getElementById("logPass").style.border="1px solid #D24D57";
+}
