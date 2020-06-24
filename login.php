@@ -47,7 +47,11 @@
       if(@!$_GET['pid'] && @!$_GET['uid'])
       {
         //include 'includes/criaposts.php';
+<<<<<<< HEAD
         include 'includes/galeria.php';
+=======
+        include 'includes/perfil_novo.php';
+>>>>>>> 1943c491d8f4325a17c1127f0c0869e558131dd3
       }
       else
       {

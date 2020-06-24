@@ -2727,9 +2727,9 @@ footer
     margin-bottom: 7em;
 }
 
-/* PERFIL */
+/*-------------------------------------------------- PERFIL ------------------------------------------------------*/
 
-.profile-head {
+/* .profile-head {
     transform: translateY(5rem)
   }
 
@@ -2739,4 +2739,238 @@ footer
     background-repeat: no-repeat;
     background-size: 750px 200px;
     background-position:center center ;
-  }
+  } */
+
+.perfil_utilizador
+{
+    background-color: white;
+    width: 1000px;
+    margin-left: 30%;
+    height: 20em;
+    margin-top: 4%;
+    display: flex;
+}
+
+.perfil_utilizador_imagem
+{
+    width: 30%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.perfil_utilizador_imagem img
+{
+    width: 100%;
+    height: 100%;
+    transition: transform .5s ease;
+    -webkit-filter: brightness(100%);
+}
+
+.perfil_utilizador_imagem img:hover
+{
+    transform: scale(1.5);
+    -webkit-filter: brightness(50%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    cursor: pointer;
+}
+
+.img_edit
+{
+    display: none;
+    color: #ccc;
+    z-index: 3;
+    position: absolute;
+    font-size: 4em;
+    top:19%;
+    left: 34%;
+
+}
+
+.perfil_utilizador_imagem:hover .img_edit
+{
+    display: block;
+}
+
+
+.perfil_utilizador_container
+{
+    width: 70%;
+    height: 100%;
+    display: block;
+}
+.perfil_utilizador_info_btns_seguidores:hover
+{
+    cursor: pointer;
+}
+
+.perfil_utilizador_info_btns_seguidores_nr
+{
+    font-size: 2.5em;
+}
+
+.perfil_utilizador_info_btns_seguidores_text
+{
+    font-size: 1.5em;
+}
+
+.perfil_utilizador_info_btns>div
+{
+    padding-right: 2em;
+}
+
+.perfil_utilizador_info_btns
+{
+    display: flex;
+    margin-top: 9em;
+    float: right;
+    /*margin-right: 2em;*/
+}
+
+.perfil_utilizador_info_nome
+{
+    margin-left: 2%;
+    margin-top: 2%;
+    font-size: 2em;
+    margin-bottom: 3%;
+}
+.perfil_utilizador_edit_info
+{
+    display: flex;
+}
+
+.perfil_utilizador_edit_text:hover
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.perfil_utilizador_edit_text
+{
+    width: 42%;
+    float: right;
+    color: #D24D57;
+    padding-top: 16px;
+    font-size: 1.4em;
+}
+
+.perfil_utilizador_info
+{
+    width: 60%;
+}
+
+.perfil_utilizador_edit
+{
+    width: 40%;
+
+}
+
+.perfil_utilizador_info_localizacao
+{
+    font-size: 1.3em;
+    margin-left: 2%;
+}
+
+.perfil_utilizador_info_localizacao i
+{
+    color: #D24D57;
+    margin-right: 10px;
+}
+
+/*modal dentro do perfil(seguidores)----*/
+
+.modal_perfil
+{
+    
+    position:fixed;
+    z-index: 2;/*Ficar por cima dos elementos no eixo Z*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+}
+
+.modal_perfil_container
+{
+    width: 30%;
+    height: 45em;
+    margin-left: 35%;
+    margin-top: 8%;
+    background-color: white;
+}
+
+.modal_perfil_container_nome
+{
+    width: 90%;
+    height: 1.8em;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 2em;
+    border-bottom: 1px solid #CCC;
+    padding-top: 20px;
+    display: flex;
+}
+
+.modal_perfil_container_items
+{
+    width: 90%;
+    margin-left: 5%;
+    border-bottom: 1px solid #ccc;
+    height: 5em;
+    display: flex;
+    padding-top: 2%;
+}
+
+.modal_perfil_container_items:hover
+{
+    /* background-color: #ccc; */
+    transition: 1s;
+    cursor: pointer;
+}
+
+.modal_perfil_container_items_img
+{
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+}
+
+.modal_perfil_container_items_nome
+{
+    padding-left: 2em;
+}
+
+.modal_perfil_container_items_nome_name
+{
+    font-size: 1.8em;
+}
+
+.modal_perfil_container_items_nome_username
+{
+    font-size: 1.1em;
+    padding-top: 8px;
+    color: #D24D57;
+}
+
+.modal_perfil_container_items_img img
+{
+    
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+}
+
+.modal_perfil_container_title
+{
+    width: 100%;
+}
