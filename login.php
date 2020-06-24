@@ -47,7 +47,7 @@
       if(@!$_GET['pid'] && @!$_GET['uid'])
       {
         //include 'includes/criaposts.php';
-        include 'includes/home.php';
+        include 'includes/perfil_novo.php';
       }
       else
       {
