@@ -1,4 +1,5 @@
-<html lang="pt">
+<body>
+
 <!-- corpo-->
 <div class="row py-5 px-4">
     <div class="col-md-5 mx-auto">
@@ -49,4 +50,3 @@
 
 
 </body>
-</html>
