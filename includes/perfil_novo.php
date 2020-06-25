@@ -109,7 +109,7 @@
                     <div class="perfil_utilizador_edit">
                         <?php
 
-                        if (@$_GET['uid'] == $_SESSION['UtilID'])
+                        if (@$_GET['uid'] == @$_SESSION['UtilID'])
                         {
                           echo '<div class="perfil_utilizador_edit_text">Editar <i class="far fa-edit"></i></div>';
                         }

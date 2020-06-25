@@ -131,6 +131,8 @@ $(document).ready(function()
             totalFollowers(finalResult.User['UtilID']);
           });
 
+          $("#perfil_galeria").html('<div class="loading_perfil"> <img src="imagens/Icones/loadingperfil.gif"> </div>');
+
           $("#perfil_galeria").load("functions/CarregarFotosPerfil.php", {UserID: finalResult.User['UtilID']});
         }
       })
