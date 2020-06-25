@@ -2737,34 +2737,21 @@ footer
     background-color: white;
 }
 
-
-/* .profile-head {
-    transform: translateY(5rem)
-  }
-
-  .cover {
-    background-color:blue;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-size: 750px 200px;
-    background-position:center center ;
-  } */
-
 .perfil_utilizador
 {
     background-color: white;
-    width: 80em;
+    width: 75em;
     height: 14em;
     display: flex;
     /* padding: 2%; */
     padding-top: 2%;
-    padding-left: 3%;
+    padding-left: 7%;
 }
 
 .perfil_utilizador_imagem
 {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     overflow: hidden;
     position: relative;
     border-radius: 50%;
@@ -2822,12 +2809,12 @@ footer
 
 .perfil_utilizador_info_btns_seguidores_nr
 {
-    font-size: 2.5em;
+    font-size: 1.5em;
 }
 
 .perfil_utilizador_info_btns_seguidores_text
 {
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .perfil_utilizador_info_btns>div
@@ -3034,19 +3021,19 @@ footer
 .perfil_descricao
 {
     background-color: #ccc;
-    width: 1000px;
-    margin-left: 13%;
-    height: 13em;
+    width: 55%;
+    margin-left: 22.5%;
+    height: 10em;
     margin-top: 4%;
     display: block;
 }
 
 .perfil_descricao_title
 {
-    font-size: 1.8em;
+    font-size: 1.3em;
     color: #999999;
     font-style: italic;
-    width: 90%;
+    width: 87%;
 }
 
 .perfil_descricao_edit 
@@ -3084,7 +3071,7 @@ footer
     background-color: none;
     width: 90%;
     padding: 5%;
-    font-size: 1.7em;
+    font-size: 1.1em;
     color: #4e4e4e;
 }
 
@@ -3192,7 +3179,8 @@ footer
 
 .perfil_galeria_post
 {
-    width: calc(31.6% - 26px);
+    width: calc(27.1% - 26px);
+    height: 24.84em;
     /* margin-right: 2%;
     margin-bottom: 4%; */
     margin-left: 2%;
