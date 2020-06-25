@@ -2731,8 +2731,8 @@ footer
 
 .perfil_main_container
 {
-    width: 70%;
-    margin-left: 15%;
+    margin-left: 20%;
+    margin-right: 20%;
     margin-top: 4%;
     background-color: white;
 }
@@ -2835,7 +2835,6 @@ footer
     margin-left: 2%;
     margin-top: 2%;
     font-size: 1.4em;
-    margin-bottom: 3%;
 }
 .perfil_utilizador_edit_info
 {
@@ -2850,7 +2849,6 @@ footer
 
 .perfil_utilizador_edit_text
 {
-    width: 31%;
     float: right;
     color: #D24D57;
     padding-top: 16px;
@@ -2878,8 +2876,10 @@ footer
 
 .perfil_utilizador_info_username
 {
-    font-size: 1.1em;
+    font-size: 1em;
     color: #D24D57;
+    margin-left: 2%;
+    margin-bottom: 5%;
 }
 
 

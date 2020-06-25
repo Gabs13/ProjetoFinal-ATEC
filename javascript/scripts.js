@@ -161,7 +161,7 @@ function addComment(id)
 
         var b, c;
 
-        b = '<a class="identificacao" href="perfil.php/?&uname=' + username + '&uid=' + uid + '">';
+        b = '<a class="identificacao" href="perfil.php?&uname=' + username + '&uid=' + uid + '">';
         c = '</a>';
         var comentariofinal = [b, a.slice(0, $("#comentario_bottom").val().indexOf(" ")), c, a.slice($("#comentario_bottom").val().indexOf(" "))].join('');
 

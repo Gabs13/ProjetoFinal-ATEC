@@ -12,7 +12,7 @@
                    <div class="modal_perfil_container_items_nome_name">Gabigol</div>
                    <div class="modal_perfil_container_items_nome_username">Gabriel Cosme</div>
                 </div>
-            </div>   
+            </div>
         </div>
         <div class="modal_perfil_container_final"></div>
     </div>
@@ -27,7 +27,7 @@
                 <div class="modal_descricao_container_input"><input placeholder="Escreva aqui a sua descrição..."></div>
                 <div class="modal_descricao_container_send"><i class="far fa-edit"></i></div>
             </div>
-        </div>    
+        </div>
     </div>
 
     <div class="perfil_main_container">
@@ -44,7 +44,13 @@
                         <div class="perfil_utilizador_info_descricao">Gosto muito de arte oh meu deus xisdeh</div>
                     </div>
                     <div class="perfil_utilizador_edit">
-                        <div class="perfil_utilizador_edit_text">Editar <i class="far fa-edit"></i></div>
+                        <?php
+
+                        if (@$_GET['uid'] == $_SESSION['UtilID'])
+                        {
+                          echo '<div class="perfil_utilizador_edit_text">Editar <i class="far fa-edit"></i></div>';
+                        }
+                        ?>
                     </div>
                 </div>
                 <div class="perfil_utilizador_info_btns">
@@ -63,7 +69,7 @@
                 </div>
             </div>
         </div>
-        
+
 
 
         <!--parte das fotos inseridas pelo utilizador-->
@@ -81,13 +87,12 @@
 
 
         </div>
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     </div>
 
 </body>
-
