@@ -2909,13 +2909,12 @@ footer
 
 .modal_perfil_container
 {
-    height: 25em;
+    height: 30em;
     margin-left: 37%;
     margin-right: 37%;
     margin-top: 8%;
     background-color: white;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-radius: 8px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -3006,13 +3005,12 @@ footer
 
 .modal_perfil_container_final
 {
-    width: 30%;
+    width: 100%;
     height: 5em;
-    margin-left: 35%;
     border-top: 1px solid #ccc;
     background-color: white;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    background-color: white;
+    margin-top: 50%;
 }
 
 .perfil_utilizador_info_btns_aseguir:hover

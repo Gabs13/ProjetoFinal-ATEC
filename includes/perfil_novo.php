@@ -5,7 +5,8 @@
         <div class="modal_perfil_container">
             <div class="modal_perfil_container_nome">
                 <div class="modal_perfil_container_title">Seguidores</div>
-                <span class="perfil_modal_close" id="perfil_modal_close">X</span></div>
+                <span class="perfil_modal_close" id="perfil_modal_close">X</span>
+            </div>
             <div class="modal_perfil_container_items">
                 <div class="modal_perfil_container_items_img"><a><img src="Imagens/Utilizadores/gabriel.jpg"></a></div>
                 <div class="modal_perfil_container_items_nome">
@@ -13,22 +14,11 @@
                    <div class="modal_perfil_container_items_nome_username">Gabriel Cosme</div>
                 </div>
             </div>
+            <div class="modal_perfil_container_final"></div>
         </div>
-        <div class="modal_perfil_container_final"></div>
+        
     </div>
     <!--FINAL MODAL PERFIL-->
-
-    <!--MODAL DE ESCREVER A DESCRIÇÃO-->
-    <div class="modal_descricao" id="modal_descricao" style="display:none;">
-        <div class="modal_descricao_content">
-            <div class="modal_descricao_titulo">O que melhor te descreve artisticamente?</div>
-            <span class="modal_descricao_close" id="modal_descricao_close">X</span>
-            <div class="modal_descricao_create">
-                <div class="modal_descricao_container_input"><input placeholder="Escreva aqui a sua descrição..."></div>
-                <div class="modal_descricao_container_send"><i class="far fa-edit"></i></div>
-            </div>
-        </div>
-    </div>
 
     <div class="perfil_main_container">
         <!--parte do container com as informacoes do utilizador-->
