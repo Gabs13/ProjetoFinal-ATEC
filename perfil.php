@@ -24,7 +24,11 @@
         <body>
 
         <?php
-            include 'includes/navbar.php';
+            if (isset($_SESSION['UtilID'])) {
+              include 'includes/navbar.php';
+            }
+
+
             if(@$_GET['uname'] && @$_GET['uid'])
             {
               include 'includes/perfil_novo.php';
