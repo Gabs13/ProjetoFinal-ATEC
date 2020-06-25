@@ -1,6 +1,6 @@
 <script src="javascript/scriptshome.js"></script>
 <body>
-     <div class="resultadoPesquisa_back"><i><img src="Imagens/logotipo/artifex2.png"></i></div><!--SIMBOLO ARTIFEX -->
+     <div class="resultadoPesquisa_back"><i><img src="imagens/logotipo/artifex2.png"></i></div><!--SIMBOLO ARTIFEX -->
     <!-- Aparecer criacao de post(includes) -->
   
     <div class="casa_create_include" id="casa_create_include">
@@ -41,7 +41,7 @@
 
                     <div class="modal_comment_main_resposta">
                         <div class="modal_comment_main">
-                            <div class="modal_comentario_userimg"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+                            <div class="modal_comentario_userimg"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>
                             <div class="modal_total_buttons">
                             <div class="modal_comentario_total">
                                 <div class="modal_comentario_username">Nome Comentario</div>
@@ -106,7 +106,7 @@
 
                     <div class="modal_comment_main_resposta">
                         <div class="modal_comment_main">
-                            <div class="modal_comentario_userimg"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+                            <div class="modal_comentario_userimg"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>
                             <div class="modal_total_buttons">
                             <div class="modal_comentario_total">
                                 <div class="modal_comentario_username">Nome Comentario</div>

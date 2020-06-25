@@ -23,7 +23,7 @@
 
       echo '<div class="modal_comment_main_resposta">
               <div class="modal_comment_main">
-                  <div class="modal_comentario_userimg"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+                  <div class="modal_comentario_userimg"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>
                   <div class="modal_total_buttons">
                     <div class="modal_comentario_total">
                       <div class="modal_comentario_username">'.$detailsComment["UtilPNome"].' '.$detailsComment["UtilUNome"].'</div>
@@ -78,7 +78,7 @@
 
           echo '<!--REPOSTA AO COMENTARIO/ONCLICK DO BOTAO COMENTARIO-->
           <div class="modal_comentario_reply">
-              <div class="modal_comentario_reply_imagem"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+              <div class="modal_comentario_reply_imagem"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>
               <div class="modal_comentario_reply_content">
                 <div class="modal_comentario_reply_content_name">'.$detailsUserReply["UtilPNome"].' '.$detailsUserReply["UtilUNome"].'</div>
                 <div class="modal_comentario_reply_content_main">

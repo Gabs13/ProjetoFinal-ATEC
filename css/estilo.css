@@ -821,7 +821,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .arrow_2
 {
-    background-image: url('../Imagens/icons8-double-right-50.png');
+    background-image: url('../imagens/icons8-double-right-50.png');
     top: 50vh;
     transform: translateY(-50%);
     content: "";
@@ -841,7 +841,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .arrow_2:hover
 {
 
-    background-image: url('../Imagens/rigth_arrow_white.png');
+    background-image: url('../imagens/rigth_arrow_white.png');
     height: 3em;
     width: 3em;
     transition: 0.3s;
@@ -849,7 +849,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .arrow_1
 {
-    background-image: url('../Imagens/icons8-double-left-50.png');
+    background-image: url('../imagens/icons8-double-left-50.png');
     top: 50vh;
     transform: translateY(-50%);
     content: "";
@@ -869,7 +869,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 {
     height: 3em;
     width: 3em;
-    background-image: url('../Imagens/left_arrow_white.png');
+    background-image: url('../imagens/left_arrow_white.png');
     transition: 0.3s;
 }
 

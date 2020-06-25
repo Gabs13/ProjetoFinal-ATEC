@@ -6,7 +6,7 @@
 <!--MODAL SLIDER DE IMAGENS-->
 <body>
   <div class="imagempost_display">
-      <div class="resultadoPesquisa_back"><i><img src="Imagens/logotipo/artifex2.png"></i></div>
+      <div class="resultadoPesquisa_back"><i><img src="imagens/logotipo/artifex2.png"></i></div>
           <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
           <div class="display_like_background" id="display_like_background" style='display:none;'>
               <div class="display_like_post">

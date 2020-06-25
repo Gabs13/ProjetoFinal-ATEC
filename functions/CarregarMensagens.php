@@ -17,7 +17,7 @@
 
     echo '
     <div class="chat_users_display_user" onclick="limparMsgs('.$UltimaMsg["ConversaID"].'); loadMsgs('.$UltimaMsg["ConversaID"].');">
-        <div class="chat_users_display_user_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+        <div class="chat_users_display_user_img"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>
         <div class="chat_users_display_info">
             <div class="chat_users_display_user_nome" id="chat_users_display_user_nome">'.$TodasConversas["PrimeiroNome"].' '.$TodasConversas["SegundoNome"].'</div>
             <div class="chat_users_display_user_mensagem">';

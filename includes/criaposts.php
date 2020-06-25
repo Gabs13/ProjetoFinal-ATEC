@@ -41,7 +41,7 @@
         <div class="modal_direita_comentarios" id="modal_direita_comentarios">
           <div class="modal_comment_main_resposta">
             <div class="modal_comment_main">
-              <div class="modal_comentario_userimg"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+              <div class="modal_comentario_userimg"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>
               <div class="modal_total_buttons">
                 <div class="modal_comentario_total">
                   <div class="modal_comentario_username">Nome Comentario</div>

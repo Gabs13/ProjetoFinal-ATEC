@@ -1,5 +1,5 @@
 <body>
-  <div class="registar_logotipo"><a><img src="Imagens/logotipo/artifex1.png"></a></div>
+  <div class="registar_logotipo"><a><img src="imagens/logotipo/artifex1.png"></a></div>
   <div class="pai">
       <div class="filho">
           <form method="post">

@@ -12,7 +12,7 @@
   {
     echo '<li>
         <div class="chat_resultados_pesquisa_output">
-            <div class="chat_resultados_pesquisa_output_img"><a><img src="Imagens/Icones/icons8-male-user-26.png"></a></div>
+            <div class="chat_resultados_pesquisa_output_img"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>
             <div class="chat_resultados_pesquisa_output_nome">'.$ResultadoNome["Nome"].'</div>
         </div>
     </li>';

@@ -8,7 +8,7 @@
                 <span class="perfil_modal_close" id="perfil_modal_close">X</span>
             </div>
             <div class="modal_perfil_container_items">
-                <div class="modal_perfil_container_items_img"><a><img src="Imagens/Utilizadores/gabriel.jpg"></a></div>
+                <div class="modal_perfil_container_items_img"><a><img src="imagens/Utilizadores/gabriel.jpg"></a></div>
                 <div class="modal_perfil_container_items_nome">
                    <div class="modal_perfil_container_items_nome_name">Gabigol</div>
                    <div class="modal_perfil_container_items_nome_username">Gabriel Cosme</div>
@@ -78,7 +78,7 @@
         <!--parte do container com as informacoes do utilizador-->
         <div class="perfil_utilizador">
             <div class="perfil_utilizador_imagem">
-                <a><i class="fas fa-camera img_edit"></i><img src="Imagens/Utilizadores/gabriel.jpg"></a>
+                <a><i class="fas fa-camera img_edit"></i><img src="imagens/Utilizadores/gabriel.jpg"></a>
             </div>
             <div class="perfil_utilizador_container">
                 <div class="perfil_utilizador_edit_info">
@@ -120,13 +120,13 @@
         <div class="perfil_galeria">
 
             <div class="perfil_galeria_post" id="perfil_galeria_post">
-                <a><img src="Imagens\posts\5ef26bf8c301b3.00058452.jpg"></a>
+                <a><img src="imagens\posts\5ef26bf8c301b3.00058452.jpg"></a>
             </div>
             <div class="perfil_galeria_post" id="perfil_galeria_post">
-                <a><img src="Imagens\posts\5ef26bf8c301b3.00058452.jpg"></a>
+                <a><img src="imagens\posts\5ef26bf8c301b3.00058452.jpg"></a>
             </div>
             <div class="perfil_galeria_post" id="perfil_galeria_post">
-                <a><img src="Imagens\posts\5ef26bf8c301b3.00058452.jpg"></a>
+                <a><img src="imagens\posts\5ef26bf8c301b3.00058452.jpg"></a>
             </div>
 
 
