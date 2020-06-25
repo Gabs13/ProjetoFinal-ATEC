@@ -7,13 +7,16 @@
                 <div class="modal_perfil_container_title">Seguidores</div>
                 <span class="perfil_modal_close" id="perfil_modal_close">X</span>
             </div>
-            <div class="modal_perfil_container_items">
-                <div class="modal_perfil_container_items_img"><a><img src="imagens/Utilizadores/gabriel.jpg"></a></div>
-                <div class="modal_perfil_container_items_nome">
-                   <div class="modal_perfil_container_items_nome_name">Gabigol</div>
-                   <div class="modal_perfil_container_items_nome_username">Gabriel Cosme</div>
+            <div class="">
+                <div class="modal_perfil_container_items">
+                    <div class="modal_perfil_container_items_img"><a><img src="imagens/Utilizadores/gabriel.jpg"></a></div>
+                    <div class="modal_perfil_container_items_nome">
+                    <div class="modal_perfil_container_items_nome_name">Gabigol</div>
+                    <div class="modal_perfil_container_items_nome_username">Gabriel Cosme</div>
+                    </div>
                 </div>
             </div>
+            
             <div class="modal_perfil_container_final"></div>
         </div>
 
