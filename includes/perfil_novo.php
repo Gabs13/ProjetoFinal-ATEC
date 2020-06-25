@@ -16,7 +16,7 @@
             </div>
             <div class="modal_perfil_container_final"></div>
         </div>
-        
+
     </div>
     <!--FINAL MODAL PERFIL-->
 
@@ -78,7 +78,11 @@
         <!--parte do container com as informacoes do utilizador-->
         <div class="perfil_utilizador">
             <div class="perfil_utilizador_imagem">
-                <a><i class="fas fa-camera img_edit"></i><img src="imagens/Utilizadores/gabriel.jpg"></a>
+              <div class="img_edit" id="img_edit">
+                <i class="fas fa-camera"></i>
+              </div>
+              <img class="perfil_utilizador_imagem_img" id="perfil_utilizador_imagem_img" src="imagens/Utilizadores/gabriel.jpg">
+
             </div>
             <div class="perfil_utilizador_container">
                 <div class="perfil_utilizador_edit_info">
