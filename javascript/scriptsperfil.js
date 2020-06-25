@@ -15,7 +15,7 @@ $(document).ready(function()
     //BOTAO FECHAR MODAL
     var btnModalPostClose =document.getElementById('closePerfil');
     //IMGAEM DO POST
-    var postImagePerfil = document.getElementById('perfil_galeria_post');
+    var postImagePerfil = document.getElementsByClassName('perfil_galeria_post');
     //modal do post
     var postModal = document.getElementById('modalperfilpost');
 

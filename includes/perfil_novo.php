@@ -68,7 +68,19 @@
 </div>
 </div>
         <!--FINAL DA MODAL---------------------------------------------------------------------------------------------->
-
+    <!--MODAL DE EDICAO DA FOTO DE PERFIL-->
+    <div class="modal_edicao_foto">
+        <div class="modal_edicao_foto_container">
+            <div class="modal_edicao_foto_container_img">
+                <img class="perfil_utilizador_imagem_img" id="perfil_utilizador_imagem_img" src="imagens/Utilizadores/gabriel.jpg">
+            </div>
+            
+            <div class="modal_edicao_foto_container_btns">
+                <div class="modal_edicao_foto_container_btns_edit">Editar</div>
+                <div class="modal_edicao_foto_container_btns_edit">Confirmar</div>
+            </div>
+        </div>
+    </div>
 
     <!--FINAL DA MODAL DO POST-->
 
