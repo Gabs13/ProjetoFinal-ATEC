@@ -75,12 +75,14 @@
     <div class="perfil_main_container">
         <!--parte do container com as informacoes do utilizador-->
         <div class="perfil_utilizador">
+            
             <div class="perfil_utilizador_imagem">
                 <div class="img_edit">
-                    <i class="fas fa-camera "></i>
+                    <i class="fas fa-camera"></i>
                 </div>
                 <img src="imagens/Utilizadores/gabriel.jpg">
             </div>
+
             <div class="perfil_utilizador_container">
                 <div class="perfil_utilizador_edit_info">
                     <div class="perfil_utilizador_info">

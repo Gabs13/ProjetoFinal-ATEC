@@ -2216,10 +2216,16 @@ footer
     top: 9.5%;
     left: calc(15% + 24px);
     border-top: 1px solid white;
-    display: none;
+    display: block;
 
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+}
+
+.chat_resultados_pesquisa_output_add
+{
+    font-size: 2em;
+    padding: 1%;
 }
 
 .chat_resultados_pesquisa li
@@ -2244,6 +2250,7 @@ footer
 {
     padding-left: 1em;
     padding-top: 13px;
+    width: 74%;
 }
 .chat_resultados_pesquisa_output_img
 {
@@ -2767,7 +2774,7 @@ footer
     -webkit-filter: brightness(100%);
 }
 
-.perfil_utilizador_imagem img:hover div:hover
+.perfil_utilizador_imagem img:hover 
 {
     transform: scale(1.5);
     -webkit-filter: brightness(50%);
@@ -2789,6 +2796,18 @@ footer
     top: 22%;
     left: 28%;
 
+}
+
+.img_edit:hover .perfil_utilizador_imagem img
+{
+    transform: scale(1.5);
+    -webkit-filter: brightness(50%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    cursor: pointer;
 }
 
 .perfil_utilizador_imagem:hover .img_edit
