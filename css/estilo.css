@@ -2942,19 +2942,16 @@ footer
     overflow-x: hidden;
 }
 
-.modal_perfil_container::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
-}
+
 
 .modal_perfil_container_nome
 {
     width: 100%;
-    height: 1.8em;
+    height: 10%;
     text-align: center;
     font-size: 2em;
     border-bottom: 1px solid #CCC;
-    padding-top: 20px;
+    padding-top: 5%;
     display: flex;
 }
 
@@ -3012,8 +3009,8 @@ footer
 
 .modal_perfil_container_title
 {
-    width: 90%;
-    padding-left: 4%;
+    padding-left: 34%;
+    padding-right: 21%;
 }
 
 .perfil_modal_close:hover
@@ -3029,7 +3026,7 @@ footer
 .modal_perfil_container_final
 {
     width: 100%;
-    height: 5em;
+    height: 10%;
     border-top: 1px solid #ccc;
     background-color: white;
     
@@ -3038,8 +3035,14 @@ footer
 .modal_perfil_container_main
 {
     width: 100%;
-    height: 50%;
+    height: 75%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 
+.modal_perfil_container_main::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
 }
 
 .perfil_utilizador_info_btns_aseguir:hover
