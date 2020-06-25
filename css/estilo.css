@@ -2745,6 +2745,7 @@ footer
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 4%;
+    margin-bottom: 5%;
     background-color: white;
 }
 
@@ -3205,9 +3206,8 @@ footer
 .perfil_galeria
 {
     width: 100%;
-    padding: 2%;
     padding-top: 15%;
-    display: flex;
+    display: inline-block;
 }
 
 .perfil_galeria_post
