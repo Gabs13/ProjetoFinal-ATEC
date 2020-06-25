@@ -208,6 +208,24 @@
     echo json_encode($Data);
   }
 
+  if(@$_POST['action'] == 'getInfoUserPHP')
+  {
+    include 'conn.php';
+
+    $Username = $_POST['nome'];
+
+
+    $IDUser = mysqli_query($conn, "SELECT UtilID FROM Utilizadores WHERE UtilUser = '$Username'");
+
+    $resultado = mysqli_fetch_array($IDUser);
+
+    $Data = array('Info'=>$resultado['UtilID']);
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
   if(isset($_POST["bt_postarfoto"]))
   {
     $file = $_FILES['bt_carregarfoto'];

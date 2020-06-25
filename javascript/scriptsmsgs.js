@@ -3,38 +3,26 @@ $(document).ready(function(){
   var clickSearchUser = document.getElementById('PesquisaNome');
   var dropdownResultados = document.getElementsByClassName('chat_resultados_pesquisa')[0];
 
-  /*funcao para aparecer resultados pesquisados*/
-  clickSearchUser.onfocus = function()
-  {
-    dropdownResultados.style.display="block";
-    dropdownResultados.style.transition= "1s";
-
-    $('#chat_user_settings_search').css('border-bottom-left-radius', '0px');
-    $('#chat_user_settings_search').css('border-bottom-right-radius', '0px');
-
-  }
-  /*sair dos resultados pesquisados*/
-  clickSearchUser.onfocusout = function()
-  {
-    dropdownResultados.style.display="none";
-    dropdownResultados.style.transition= "1s";
-
-    $('#chat_user_settings_search').css('border-radius', '8px');
-  }
-
-  $("#PesquisaNome").focusout(function(){
-
-  });
-
-  $("#PesquisaNome").focusout(function(){
-
-  });
-
   $(".chat_user_settings_search").on('input', function(){
 
     var nome = $("#PesquisaNome").val();
+    if (nome != '')
+    {
+      dropdownResultados.style.display="block";
+      dropdownResultados.style.transition= "1s";
 
-    $("#chat_resultados_pesquisa").load("functions/CarregarNomesPesquisa.php", {nome: nome});
+      $('#chat_user_settings_search').css('border-bottom-left-radius', '0px');
+      $('#chat_user_settings_search').css('border-bottom-right-radius', '0px');
+
+      $("#chat_resultados_pesquisa").load("functions/CarregarNomesPesquisa.php", {nome: nome});
+    }
+    else
+    {
+      dropdownResultados.style.display="none";
+      dropdownResultados.style.transition= "1s";
+
+      $('#chat_user_settings_search').css('border-radius', '8px');
+    }
   });
 
 });
@@ -60,6 +48,7 @@ $(document).ready(function(){
 });
 
 
+var intervalomsgs;
 
 function limparMsgs(id)
 {
@@ -70,11 +59,14 @@ function limparMsgs(id)
     $('#chat_display_user_name').load("functions/CarregarNomeChat.php", {id: id});
 
     $('#chat_display').css('display', 'block');
-}
 
+    clearInterval(intervalomsgs);
+}
 
 function loadMsgs(id)
 {
+  intervalomsgs = setInterval(function(){
+
     cid = id;
 
     $.get('functions/CarregarConversa.php' + '?start=' + start + '&cid=' + id, function(result){
@@ -86,11 +78,10 @@ function loadMsgs(id)
           $("#chat_users_display").load("functions/CarregarMensagens.php");
         })
         $('#chat_display_messages').animate({scrollTop: $('#chat_display_messages')[0].scrollHeight});
-      };    
-      setTimeout(function() {loadMsgs(cid);}, 1000)
+      };
+
     });
-
-
+  }, 1000);
 }
 
 function renderMessage(item)
