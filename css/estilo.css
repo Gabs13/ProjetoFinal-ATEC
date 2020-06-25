@@ -2116,7 +2116,7 @@ footer
 .chat_display_messages_display
 {
     float: right;
-    width: 15em;
+    max-width: 50%;
     height: auto;
     padding:1%;
     background-color:rgba(210,77,87,0.7) ;
@@ -2125,12 +2125,15 @@ footer
 }
 .chat_display_messages_hora
 {
+    margin-top: 0.2em;
     float: right;
+    font-size: 0.8em;
+    font-weight: bold;
 }
 .chat_display_messages_texto
 {
     margin-top: 0.8em;
-    word-break: break-all;
+    word-break: break-word;
 }
 .chat_display_messages_nome
 {
@@ -2141,7 +2144,7 @@ footer
 .chat_display_messages_display_left
 {
     float: left;
-    width: 15em;
+    max-width: 50%;
     height: auto;
     padding:1%;
     background-color: #f2f2f2;
@@ -2224,8 +2227,9 @@ footer
 
 .chat_resultados_pesquisa_output_add
 {
-    font-size: 2em;
-    padding: 1%;
+    font-size: 1.7em;
+    padding-top: 0.25em;
+    color: #D24D57;
 }
 
 .chat_resultados_pesquisa li
@@ -2774,7 +2778,7 @@ footer
     -webkit-filter: brightness(100%);
 }
 
-.perfil_utilizador_imagem img:hover 
+.perfil_utilizador_imagem img:hover
 {
     transform: scale(1.5);
     -webkit-filter: brightness(50%);

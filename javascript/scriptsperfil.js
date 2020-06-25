@@ -15,7 +15,7 @@ $(document).ready(function()
     //BOTAO FECHAR MODAL
     var btnModalPostClose =document.getElementById('closePerfil');
     //IMGAEM DO POST
-    var postImagePerfil = document.getElementById('perfil_galeria_post');
+    var postImagePerfil = document.getElementsByClassName('perfil_galeria_post');
     //modal do post
     var postModal = document.getElementById('modalperfilpost');
 
@@ -63,7 +63,6 @@ $(document).ready(function()
         }
     }
 
-
     /*ABRIR MODAL DE SEGUIDORES*/
     btnSeguidores.onclick = function()
     {
@@ -97,21 +96,50 @@ $(document).ready(function()
         if (event.target == modalPerfil || event.target == btnModalClose)
         {
             modalPerfil.style.display = "none";
-            var pos = $(window).scrollTop(); //Saber a posição atual
-            window.location.hash = '';
-            history.pushState('', document.title, window.location.pathname);
-            event.preventDefault();
-             $(window).scrollTop(pos); // Dar scroll até à posição que estava
         }
 
         if (event.target == postModal || event.target == btnModalPostClose)
         {
             postModal.style.display = "none";
-            var pos = $(window).scrollTop(); //Saber a posição atual
-            window.location.hash = '';
-            history.pushState('', document.title, window.location.pathname);
-            event.preventDefault();
-             $(window).scrollTop(pos); // Dar scroll até à posição que estava
         }
     }
+
+    function carregarPerfil(nome)
+    {
+      $.ajax({
+        type: "POST",
+        url: "functions/functions.php",
+        data:{
+          action: "carregarPerfilPHP",
+          nome: nome,
+        },
+        success:function(result)
+        {
+          var finalResult = JSON.parse(result);
+
+          console.log(finalResult);
+
+          $("#perfil_utilizador_info_nome").html(finalResult.User['UtilPNome'] + ' ' + finalResult.User['UtilUNome']);
+          $("#perfil_utilizador_info_username").html('@' + finalResult.User['UtilUser']);
+          $("#perfil_utilizador_info_descricao").html(finalResult.User['UtilDesc']);
+
+          $("#total_seguidores").html(finalResult.TFollowers);
+          $("#total_aseguir").html(finalResult.TFollowing);
+
+          $("#perfil_utilizador_info_btns_seguidores").click(function(){
+            totalFollowers(finalResult.User['UtilID']);
+          });
+        }
+      })
+    }
+
+    function totalFollowers(id)
+    {
+      console.log(id);
+    }
+
+
+    var url = new URL(window.location);
+    var getid = url.searchParams.get("uname");
+    carregarPerfil(getid);
 });

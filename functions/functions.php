@@ -214,12 +214,42 @@
 
     $Username = $_POST['nome'];
 
-
     $IDUser = mysqli_query($conn, "SELECT UtilID FROM Utilizadores WHERE UtilUser = '$Username'");
 
     $resultado = mysqli_fetch_array($IDUser);
 
     $Data = array('Info'=>$resultado['UtilID']);
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
+  if(@$_POST['action'] == 'carregarPerfilPHP')
+  {
+    include 'conn.php';
+
+    $UserName = $_POST['nome'];
+
+    $User = mysqli_query($conn, "SELECT UtilID, UtilUser, UtilPNome, UtilUNome, UtilDesc FROM Utilizadores WHERE UtilUser = '$UserName'");
+
+    $DadosUtil = mysqli_fetch_array($User);
+
+    $Followers = mysqli_query($conn, "SELECT UtilID, FollowID FROM Seguidores WHERE UtilID = $DadosUtil[UtilID]");
+
+    $TotalFollowers = mysqli_num_rows($Followers);
+
+    $Following = mysqli_query($conn, "SELECT UtilID, FollowID FROM Seguidores WHERE FollowID = $DadosUtil[UtilID]");
+
+    $TotalFollowing = mysqli_num_rows($Following);
+
+    $Data = array();
+
+    $Data['User'] = $DadosUtil;
+
+    $Data['TFollowers'] = $TotalFollowers;
+
+    $Data['TFollowing'] = $TotalFollowing;
 
     include 'deconn.php';
 
