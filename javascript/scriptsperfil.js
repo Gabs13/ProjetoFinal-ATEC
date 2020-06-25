@@ -130,6 +130,8 @@ $(document).ready(function()
           $("#perfil_utilizador_info_btns_seguidores").click(function(){
             totalFollowers(finalResult.User['UtilID']);
           });
+
+          $("#perfil_galeria").load("functions/CarregarGaleriaScroll.php", {fotoCount: 6});
         }
       })
     }

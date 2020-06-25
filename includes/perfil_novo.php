@@ -133,16 +133,16 @@
 
 
         <!--parte das fotos inseridas pelo utilizador-->
-        <div class="perfil_galeria">
+        <div class="perfil_galeria" id="perfil_galeria">
 
             <div class="perfil_galeria_post" id="perfil_galeria_post">
-                <a><img src="imagens\posts\5ef26bf8c301b3.00058452.jpg"></a>
+                <img src="imagens\posts\5ef26bf8c301b3.00058452.jpg"><
             </div>
             <div class="perfil_galeria_post" id="perfil_galeria_post">
-                <a><img src="imagens\posts\5ef26bf8c301b3.00058452.jpg"></a>
+                <img src="imagens\posts\5ef26bf8c301b3.00058452.jpg">
             </div>
             <div class="perfil_galeria_post" id="perfil_galeria_post">
-                <a><img src="imagens\posts\5ef26bf8c301b3.00058452.jpg"></a>
+                <img src="imagens\posts\5ef26bf8c301b3.00058452.jpg">
             </div>
         </div>
     </div>
