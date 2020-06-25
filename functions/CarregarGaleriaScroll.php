@@ -42,5 +42,4 @@
   }
 
   include 'deconn.php';
-
 ?>

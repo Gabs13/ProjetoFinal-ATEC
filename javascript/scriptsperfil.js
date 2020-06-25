@@ -131,7 +131,7 @@ $(document).ready(function()
             totalFollowers(finalResult.User['UtilID']);
           });
 
-          $("#perfil_galeria").load("functions/CarregarGaleriaScroll.php", {fotoCount: 6});
+          $("#perfil_galeria").load("functions/CarregarFotosPerfil.php", {UserID: finalResult.User['UtilID']});
         }
       })
     }
