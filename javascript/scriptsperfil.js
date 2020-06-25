@@ -10,31 +10,32 @@ $(document).ready(function()
     var btnSeguidores = document.getElementById('perfil_utilizador_info_btns_seguidores');
     //BOTAO DE LIGAR MODAL A SEGUIR
     var btnAseguir = document.getElementById('perfil_utilizador_info_btns_aseguir');
-    
     //BOTAO DE FECHAR MODAL DE SEGUIDORES E A SEGUIR
     var btnModalClose = document.getElementById('perfil_modal_close');
     //BOTAO FECHAR MODAL
     var btnModalPostClose =document.getElementById('closePerfil');
-    
-    
-    //IMGAEM DO POST
-    var postImagePerfil = document.getElementById('perfil_galeria_post');
+    //IMAGEM DO POST
+    var postImagePerfil = document.getElementsByClassName('perfil_galeria_post');
     //modal do post
     var postModal = document.getElementById('modalperfilpost');
     
     
     /*CLICKAR NO POST E ABRIR MODAL*/
-    postImagePerfil.onclick=function()
+    for (var ctmodal in postImagePerfil)
     {
-        if(postModal.style.display=="none")
+        postImagePerfil[ctmodal].onclick=function()
         {
-            postModal.style.display="block";    
-        }
-        else
-        {
-            postModal.style.display="none"; 
+            if(postModal.style.display=="none")
+            {
+                postModal.style.display="block";    
+            }
+            else
+            {
+                postModal.style.display="none"; 
+            }
         }
     }
+    
 
     /*ABRIR MODAL DE SEGUIDORES*/
     btnSeguidores.onclick = function()
@@ -88,7 +89,6 @@ $(document).ready(function()
 
         }
     }
-
 
 
 });

@@ -2767,7 +2767,7 @@ footer
     -webkit-filter: brightness(100%);
 }
 
-.perfil_utilizador_imagem img:hover
+.perfil_utilizador_imagem img:hover div:hover
 {
     transform: scale(1.5);
     -webkit-filter: brightness(50%);
@@ -2786,8 +2786,8 @@ footer
     z-index: 3;
     position: absolute;
     font-size: 4em;
-    top:19%;
-    left: 34%;
+    top: 22%;
+    left: 28%;
 
 }
 
@@ -2858,6 +2858,7 @@ footer
 .perfil_utilizador_info
 {
     width: 60%;
+    padding-left: 10px;
 }
 
 .perfil_utilizador_edit

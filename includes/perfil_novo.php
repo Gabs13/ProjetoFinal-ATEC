@@ -34,7 +34,7 @@
         </div>
         <!--FINAL DIV DISPLAY LIKES-->
 
-        
+
         <div class="modal_content">
             <div class="modal_esquerda" id="modal_esquerda"></div>
             <div class="modal_direita">
@@ -76,7 +76,10 @@
         <!--parte do container com as informacoes do utilizador-->
         <div class="perfil_utilizador">
             <div class="perfil_utilizador_imagem">
-                <a><i class="fas fa-camera img_edit"></i><img src="imagens/Utilizadores/gabriel.jpg"></a>
+                <div class="img_edit">
+                    <i class="fas fa-camera "></i>
+                </div>
+                <img src="imagens/Utilizadores/gabriel.jpg">
             </div>
             <div class="perfil_utilizador_container">
                 <div class="perfil_utilizador_edit_info">
