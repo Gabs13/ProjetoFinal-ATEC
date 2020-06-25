@@ -3192,3 +3192,17 @@ footer
     height: 100%;
     width: 100%;
 }
+
+.identificacao
+{
+  text-decoration: none;
+  color: #cc3b46;
+  font-weight: bold;
+  background-color: rgba(210,77,87,0.3);
+  border-radius: 3px;
+}
+
+.identificacao:hover
+{
+  color: #ed0c1e;
+}
