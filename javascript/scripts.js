@@ -131,44 +131,72 @@ function addComment(id)
 {
   var comentario = $('#comentario_bottom').val();
 
+  //localStorage.removeItem('ComentarioFinal');
+
   if (comentario != "")
   {
-    var firstWords;
-    var codeLine = $('#comentario_bottom').val()[i];
     var firstWord = $('#comentario_bottom').val().substr(0, $('#comentario_bottom').val().indexOf(" "));
 
     var comentarioID = localStorage.getItem('ComentarioID');
 
-    var isResponse = [];
+    var a = $('#comentario_bottom').val();
 
-    for (var i=0; i < $('#comentario_bottom').val().length; i++)
-    {
-      var words = $('#comentario_bottom').val()[i].split(" ");
-      isResponse.push(words[0]);
-    }
+    var username = a.slice(1, $("#comentario_bottom").val().indexOf(" "));
+
+
+    $.ajax({
+      type: "POST",
+      url: "functions/functions.php",
+      data: {
+        action: "getInfoUserPHP",
+        nome: username,
+      },
+      success:function(result)
+      {
+        var finalResult = JSON.parse(result);
+
+        localStorage.removeItem('ComentarioFinal');
+
+        var uid = finalResult['Info'];
+
+        var b, c;
+
+        b = '<a href="perfil.php/?&uname=' + username + '&uid=' + uid + '">';
+        c = '</a>';
+        var comentariofinal = [b, a.slice(0, $("#comentario_bottom").val().indexOf(" ")), c, a.slice($("#comentario_bottom").val().indexOf(" "))].join('');
+
+        localStorage.setItem('ComentarioFinal', comentariofinal);
+      }
+    });
+
 
     if (firstWord == localStorage.getItem('NomeReply') && localStorage.getItem('ComentarioID') !== null)
     {
-      $.ajax({
-        type: "POST",
-        url:"functions/functions.php",
-        data: {
-          action: "replyCommentPHP",
-          postid: id,
-          id: comentarioID,
-          comentario: comentario,
-        },
+      setTimeout(function(){
+        var comentariofinal = window.localStorage.getItem('ComentarioFinal');
+        $.ajax({
+          type: "POST",
+          url:"functions/functions.php",
+          data: {
+            action: "replyCommentPHP",
+            postid: id,
+            id: comentarioID,
+            comentario: comentariofinal,
+          },
 
-        success:function(result)
-        {
-          var finalResult = JSON.parse(result);
+          success:function(result)
+          {
+            var finalResult = JSON.parse(result);
 
-          $("#modal_direita_comentarios").load("functions/CarregarComentarios.php", {PostID: finalResult.Post});
+            $("#modal_direita_comentarios").load("functions/CarregarComentarios.php", {PostID: finalResult.Post});
 
-          $('#comentario_bottom').val('');
+            $('#comentario_bottom').val('');
 
-        }
-      });
+          }
+        });
+
+      }, 400);
+
     }
     else
     {
