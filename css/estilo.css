@@ -2788,7 +2788,6 @@ footer
     font-size: 4em;
     top: 20%;
     left: 29%;
-
 }
 
 .perfil_utilizador_imagem:hover .img_edit
@@ -2858,6 +2857,7 @@ footer
 .perfil_utilizador_info
 {
     width: 60%;
+    padding-left: 10px;
 }
 
 .perfil_utilizador_edit

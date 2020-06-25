@@ -48,17 +48,21 @@ $(document).ready(function()
 
 
     /*CLICKAR NO POST E ABRIR MODAL*/
-    postImagePerfil.onclick=function()
+    for (var ctmodal in postImagePerfil)
     {
-        if(postModal.style.display=="none")
+        postImagePerfil[ctmodal].onclick=function()
         {
-            postModal.style.display="block";
-        }
-        else
-        {
-            postModal.style.display="none";
+            if(postModal.style.display=="none")
+            {
+                postModal.style.display="block";
+            }
+            else
+            {
+                postModal.style.display="none";
+            }
         }
     }
+
 
     /*ABRIR MODAL DE SEGUIDORES*/
     btnSeguidores.onclick = function()
@@ -89,6 +93,7 @@ $(document).ready(function()
     //FECHAR MODAL ASEGUIR E SEGUIDORES
     window.onclick = function(event)
     {
+
         if (event.target == modalPerfil || event.target == btnModalClose)
         {
             modalPerfil.style.display = "none";
