@@ -75,9 +75,9 @@
     <div class="modal_edicao_foto">
         <div class="modal_edicao_foto_container">
             <div class="modal_edicao_foto_container_img">
-                <img class="perfil_utilizador_imagem_img" id="perfil_utilizador_imagem_img" src="imagens/Utilizadores/gabriel.jpg">
+                <img class="perfil_utilizador_imagem_img" src="imagens/Utilizadores/gabriel.jpg">
             </div>
-            
+
             <div class="modal_edicao_foto_container_btns">
                 <div class="modal_edicao_foto_container_btns_edit">Editar</div>
                 <div class="modal_edicao_foto_container_btns_edit">Confirmar</div>
@@ -126,7 +126,7 @@
                         <div class="perfil_utilizador_info_btns_seguidores_text">A Seguir</div>
                     </div>
                     <div class="perfil_utilizador_info_btns_fotos" id="perfil_utilizador_info_btns_fotos">
-                        <div class="perfil_utilizador_info_btns_seguidores_nr">20</div>
+                        <div class="perfil_utilizador_info_btns_seguidores_nr" id="total_posts"></div>
                         <div class="perfil_utilizador_info_btns_seguidores_text">Posts</div>
                     </div>
                 </div>
@@ -136,16 +136,16 @@
 
 
         <!--parte das fotos inseridas pelo utilizador-->
-        <div class="perfil_galeria">
+        <div class="perfil_galeria" id="perfil_galeria">
 
             <div class="perfil_galeria_post" id="perfil_galeria_post">
-                <a><img src="imagens\posts\5ef26bf8c301b3.00058452.jpg"></a>
+                <img src="imagens\posts\5ef26bf8c301b3.00058452.jpg"><
             </div>
             <div class="perfil_galeria_post" id="perfil_galeria_post">
-                <a><img src="imagens\posts\5ef26bf8c301b3.00058452.jpg"></a>
+                <img src="imagens\posts\5ef26bf8c301b3.00058452.jpg">
             </div>
             <div class="perfil_galeria_post" id="perfil_galeria_post">
-                <a><img src="imagens\posts\5ef26bf8c301b3.00058452.jpg"></a>
+                <img src="imagens\posts\5ef26bf8c301b3.00058452.jpg">
             </div>
         </div>
     </div>

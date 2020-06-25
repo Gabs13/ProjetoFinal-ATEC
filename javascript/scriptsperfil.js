@@ -125,10 +125,13 @@ $(document).ready(function()
 
           $("#total_seguidores").html(finalResult.TFollowers);
           $("#total_aseguir").html(finalResult.TFollowing);
+          $("#total_posts").html(finalResult.TPosts);
 
           $("#perfil_utilizador_info_btns_seguidores").click(function(){
             totalFollowers(finalResult.User['UtilID']);
           });
+
+          $("#perfil_galeria").load("functions/CarregarGaleriaScroll.php", {fotoCount: 6});
         }
       })
     }

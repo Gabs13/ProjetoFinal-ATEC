@@ -3215,6 +3215,7 @@ footer
     margin-bottom: 4%; */
     margin-left: 6%;
     margin-bottom: 4%;
+    cursor: pointer;
 }
 
 .perfil_galeria_post img
@@ -3255,14 +3256,13 @@ footer
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
-    display: block;
+    display: none;
 }
 
 .modal_edicao_foto_container
 {
-    width: 12%;
-    margin-left: 44%;
-    margin-right: 44%;
+    margin-left: 40%;
+    margin-right: 40%;
     margin-top: 10%;
     height: 21em;
     background-color: white;
@@ -3274,12 +3274,13 @@ footer
 .modal_edicao_foto_container_img
 {
     top: 10%;
-    margin-left: 4.5em;
+    margin-left: 28%;
+    margin-right: 28%;
     height: 50%;
     overflow: hidden;
     position: relative;
     border-radius: 50%;
-    margin-right: 4.5em;
+
 }
 
 .modal_edicao_foto_container_img img
@@ -3312,7 +3313,7 @@ footer
     width: 50%;
     text-align: center;
     padding-top: 0.5em;
-  
+
 }
 
 .modal_edicao_foto_container_btns:hover
