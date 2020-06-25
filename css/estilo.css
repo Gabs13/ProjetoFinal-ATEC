@@ -2688,7 +2688,7 @@ footer
     text-align: center;
     margin-left: 35%;
     padding-top: 40px;
-    
+
 }
 
 .casa_create_post p
@@ -2884,7 +2884,7 @@ footer
 
 .modal_perfil
 {
-    
+
     position:fixed;
     z-index: 2;/*Ficar por cima dos elementos no eixo Z*/
     left: 0;
@@ -2906,9 +2906,9 @@ footer
 
 .modal_perfil_container
 {
-    width: 30%;
-    height: 45em;
-    margin-left: 35%;
+    height: 25em;
+    margin-left: 37%;
+    margin-right: 37%;
     margin-top: 8%;
     background-color: white;
     border-top-left-radius: 8px;
@@ -2978,7 +2978,7 @@ footer
 
 .modal_perfil_container_items_img img
 {
-    
+
     display: inline;
     margin: 0 auto;
     height: 100%;
@@ -3036,10 +3036,10 @@ footer
     width: 87%;
 }
 
-.perfil_descricao_edit 
+.perfil_descricao_edit
 {
     width: 5%;
-    padding-left: 0%; 
+    padding-left: 0%;
 }
 
 .perfil_descricao_edit i:hover
@@ -3183,7 +3183,8 @@ footer
     height: 24.84em;
     /* margin-right: 2%;
     margin-bottom: 4%; */
-    margin-left: 2%;
+    margin-left: 6%;
+    margin-bottom: 4%;
 }
 
 .perfil_galeria_post img
