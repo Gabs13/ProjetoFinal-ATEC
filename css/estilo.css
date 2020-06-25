@@ -2764,7 +2764,7 @@ footer
     border-radius: 50%;
 }
 
-.perfil_utilizador_imagem img
+.perfil_utilizador_imagem_img
 {
     display: inline;
     margin: 0 auto;
@@ -2793,9 +2793,8 @@ footer
     z-index: 3;
     position: absolute;
     font-size: 4em;
-    top: 22%;
-    left: 28%;
-
+    top: 20%;
+    left: 29%;
 }
 
 .img_edit:hover .perfil_utilizador_imagem img

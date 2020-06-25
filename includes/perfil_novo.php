@@ -16,7 +16,7 @@
             </div>
             <div class="modal_perfil_container_final"></div>
         </div>
-        
+
     </div>
     <!--FINAL MODAL PERFIL-->
 
@@ -77,10 +77,11 @@
         <div class="perfil_utilizador">
             
             <div class="perfil_utilizador_imagem">
-                <div class="img_edit">
-                    <i class="fas fa-camera"></i>
-                </div>
-                <img src="imagens/Utilizadores/gabriel.jpg">
+              <div class="img_edit" id="img_edit">
+                <i class="fas fa-camera"></i>
+              </div>
+              <img class="perfil_utilizador_imagem_img" id="perfil_utilizador_imagem_img" src="imagens/Utilizadores/gabriel.jpg">
+
             </div>
 
             <div class="perfil_utilizador_container">

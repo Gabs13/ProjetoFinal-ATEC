@@ -14,12 +14,39 @@ $(document).ready(function()
     var btnModalClose = document.getElementById('perfil_modal_close');
     //BOTAO FECHAR MODAL
     var btnModalPostClose =document.getElementById('closePerfil');
-    //IMAGEM DO POST
-    var postImagePerfil = document.getElementsByClassName('perfil_galeria_post');
+    //IMGAEM DO POST
+    var postImagePerfil = document.getElementById('perfil_galeria_post');
     //modal do post
     var postModal = document.getElementById('modalperfilpost');
-    
-    
+
+    var imgCamera = document.getElementById('img_edit');
+
+
+    $("#img_edit").mouseenter(function(){
+      $("#perfil_utilizador_imagem_img").css('transform', 'scale(1.5)');
+      $("#perfil_utilizador_imagem_img").css('-webkit-filter', 'brightness(50%)');
+      $("#perfil_utilizador_imagem_img").css('-webkit-transition:', 'all 1s ease');
+      $("#perfil_utilizador_imagem_img").css('-moz-transition:', 'all 1s ease');
+      $("#perfil_utilizador_imagem_img").css('-o-transition', 'all 1s ease');
+      $("#perfil_utilizador_imagem_img").css('-ms-transition', 'all 1s ease');
+      $("#perfil_utilizador_imagem_img").css('transition', 'all 1s ease');
+      $("#perfil_utilizador_imagem_img").css('cursor', 'pointer');
+      $("#img_edit").css('cursor', 'pointer');
+    });
+
+    $("#img_edit").mouseleave(function(){
+      $("#perfil_utilizador_imagem_img").css('transform', '');
+      $("#perfil_utilizador_imagem_img").css('-webkit-filter', '');
+      $("#perfil_utilizador_imagem_img").css('-webkit-transition:', '');
+      $("#perfil_utilizador_imagem_img").css('-moz-transition:', '');
+      $("#perfil_utilizador_imagem_img").css('-o-transition', '');
+      $("#perfil_utilizador_imagem_img").css('-ms-transition', '');
+      $("#perfil_utilizador_imagem_img").css('transition', '');
+      $("#perfil_utilizador_imagem_img").css('cursor', '');
+      $("#img_edit").css('cursor', '');
+    });
+
+
     /*CLICKAR NO POST E ABRIR MODAL*/
     for (var ctmodal in postImagePerfil)
     {
@@ -27,15 +54,15 @@ $(document).ready(function()
         {
             if(postModal.style.display=="none")
             {
-                postModal.style.display="block";    
+                postModal.style.display="block";
             }
             else
             {
-                postModal.style.display="none"; 
+                postModal.style.display="none";
             }
         }
     }
-    
+
 
     /*ABRIR MODAL DE SEGUIDORES*/
     btnSeguidores.onclick = function()
@@ -66,7 +93,7 @@ $(document).ready(function()
     //FECHAR MODAL ASEGUIR E SEGUIDORES
     window.onclick = function(event)
     {
-       
+
         if (event.target == modalPerfil || event.target == btnModalClose)
         {
             modalPerfil.style.display = "none";
@@ -75,7 +102,6 @@ $(document).ready(function()
             history.pushState('', document.title, window.location.pathname);
             event.preventDefault();
              $(window).scrollTop(pos); // Dar scroll até à posição que estava
-
         }
 
         if (event.target == postModal || event.target == btnModalPostClose)
@@ -86,9 +112,6 @@ $(document).ready(function()
             history.pushState('', document.title, window.location.pathname);
             event.preventDefault();
              $(window).scrollTop(pos); // Dar scroll até à posição que estava
-
         }
     }
-
-
 });
