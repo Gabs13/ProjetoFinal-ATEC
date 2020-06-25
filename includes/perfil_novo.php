@@ -87,7 +87,7 @@
     <div class="perfil_main_container">
         <!--parte do container com as informacoes do utilizador-->
         <div class="perfil_utilizador">
-            
+
             <div class="perfil_utilizador_imagem">
               <div class="img_edit" id="img_edit">
                 <i class="fas fa-camera"></i>
@@ -99,9 +99,9 @@
             <div class="perfil_utilizador_container">
                 <div class="perfil_utilizador_edit_info">
                     <div class="perfil_utilizador_info">
-                        <div class="perfil_utilizador_info_nome">Gabriel Cosme</div>
-                        <div class="perfil_utilizador_info_username">@Gabigol</div>
-                        <div class="perfil_utilizador_info_descricao">Gosto muito de arte oh meu deus xisdeh</div>
+                        <div class="perfil_utilizador_info_nome" id="perfil_utilizador_info_nome"></div>
+                        <div class="perfil_utilizador_info_username" id="perfil_utilizador_info_username"></div>
+                        <div class="perfil_utilizador_info_descricao" id="perfil_utilizador_info_descricao"></div>
                     </div>
                     <div class="perfil_utilizador_edit">
                         <?php
@@ -115,11 +115,11 @@
                 </div>
                 <div class="perfil_utilizador_info_btns">
                     <div class="perfil_utilizador_info_btns_seguidores" id="perfil_utilizador_info_btns_seguidores">
-                        <div class="perfil_utilizador_info_btns_seguidores_nr">3000</div>
+                        <div class="perfil_utilizador_info_btns_seguidores_nr" id="total_seguidores"></div>
                         <div class="perfil_utilizador_info_btns_seguidores_text">Seguidores</div>
                     </div>
                     <div class="perfil_utilizador_info_btns_aseguir" id="perfil_utilizador_info_btns_aseguir">
-                        <div class="perfil_utilizador_info_btns_seguidores_nr">45</div>
+                        <div class="perfil_utilizador_info_btns_seguidores_nr" id="total_aseguir"></div>
                         <div class="perfil_utilizador_info_btns_seguidores_text">A Seguir</div>
                     </div>
                     <div class="perfil_utilizador_info_btns_fotos" id="perfil_utilizador_info_btns_fotos">
@@ -144,15 +144,6 @@
             <div class="perfil_galeria_post" id="perfil_galeria_post">
                 <a><img src="imagens\posts\5ef26bf8c301b3.00058452.jpg"></a>
             </div>
-
-
         </div>
-
-
-
-
-
-
     </div>
-
 </body>

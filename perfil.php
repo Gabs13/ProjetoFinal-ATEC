@@ -25,8 +25,10 @@
 
         <?php
             include 'includes/navbar.php';
-
-            include 'includes/perfil_novo.php';
+            if(@$_GET['uname'] && @$_GET['uid'])
+            {
+              include 'includes/perfil_novo.php';
+            }
 
             include 'includes/footerPrincipal.php';
         ?>
