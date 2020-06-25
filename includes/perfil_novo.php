@@ -20,6 +20,60 @@
     </div>
     <!--FINAL MODAL PERFIL-->
 
+    <!--MODAL SLIDER DE IMAGENS-->
+    <div class="modalGallery" id="modalperfilpost" style="display:none;">
+        <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
+        <div class="display_like_background" id="display_like_background" style='display:none;'>
+            <div class="display_like_post">
+                <div class="display_like_close_container">
+                    <span id="display_perfil_post_close">&times;</span>
+                </div>
+                <div class="display_like_post_scroll" id="display_like_post_scroll"></div>
+            </div>
+            <div class="display_post_finisher"></div>
+        </div>
+        <!--FINAL DIV DISPLAY LIKES-->
+
+        <div class="arrow_1"></div>
+        <div class="modal_content">
+            <div class="modal_esquerda" id="modal_esquerda"></div>
+            <div class="modal_direita">
+                <div class="autor_modal_user">
+                <div class="autor_modal_user_img">
+                    <img src="">
+                </div>
+                <div class="autor_modal_user_nome" id="modal_username">
+                    <img src="" alt="">
+                    <div id="modal_username_text"></div>
+                    <div class="modal_user_desc" id="modal_user_desc"></div>
+                </div>
+            </div>
+            <hr class="modal_comentarios_separador"></hr>
+            <div class="modal_direita_comentarios" id="modal_direita_comentarios"></div>
+            <hr class="modal_comentarios_separador"></hr>
+            <div class="autor_modal_info">
+                <div class="autor_modal_info_btn" id="autor_modal_info_btn"></i></div>
+                <div class="autor_modal_info_btn2 autor_modal_info_btn"><i class="fas fa-share-alt"></i></div>
+                <div class="autor_modal_info_likes" id="autor_modal_info_likes">20 likes</div>
+            </div>
+            <div class="modal_comentarios_bottom">
+                <input autocomplete="off" type="text" id="comentario_bottom" class="modal_user_comentario" placeholder="Adicione um comentário...">
+            <div id="modal_user_sendbtn"> </div>
+        </div>
+
+    </div>
+
+    <div class="close" id="closePerfil">&times;</div>
+
+</div>
+
+        <div class="arrow_2"></div>
+</div>
+        <!--FINAL DA MODAL---------------------------------------------------------------------------------------------->
+
+
+    <!--FINAL DA MODAL DO POST-->
+
     <div class="perfil_main_container">
         <!--parte do container com as informacoes do utilizador-->
         <div class="perfil_utilizador">
@@ -65,13 +119,13 @@
         <!--parte das fotos inseridas pelo utilizador-->
         <div class="perfil_galeria">
 
-            <div class="perfil_galeria_post">
+            <div class="perfil_galeria_post" id="perfil_galeria_post">
                 <a><img src="Imagens\posts\5ef26bf8c301b3.00058452.jpg"></a>
             </div>
-            <div class="perfil_galeria_post">
+            <div class="perfil_galeria_post" id="perfil_galeria_post">
                 <a><img src="Imagens\posts\5ef26bf8c301b3.00058452.jpg"></a>
             </div>
-            <div class="perfil_galeria_post">
+            <div class="perfil_galeria_post" id="perfil_galeria_post">
                 <a><img src="Imagens\posts\5ef26bf8c301b3.00058452.jpg"></a>
             </div>
 

@@ -3207,3 +3207,8 @@ footer
 {
   color: #ed0c1e;
 }
+
+.modalperfilpost
+{
+    display: none;
+}
