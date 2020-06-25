@@ -3209,6 +3209,7 @@ footer
     margin-bottom: 4%; */
     margin-left: 6%;
     margin-bottom: 4%;
+    cursor: pointer;
 }
 
 .perfil_galeria_post img

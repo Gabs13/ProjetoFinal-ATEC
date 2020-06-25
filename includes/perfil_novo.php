@@ -111,7 +111,7 @@
                         <div class="perfil_utilizador_info_btns_seguidores_text">A Seguir</div>
                     </div>
                     <div class="perfil_utilizador_info_btns_fotos" id="perfil_utilizador_info_btns_fotos">
-                        <div class="perfil_utilizador_info_btns_seguidores_nr">20</div>
+                        <div class="perfil_utilizador_info_btns_seguidores_nr" id="total_posts"></div>
                         <div class="perfil_utilizador_info_btns_seguidores_text">Posts</div>
                     </div>
                 </div>

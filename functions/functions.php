@@ -243,6 +243,10 @@
 
     $TotalFollowing = mysqli_num_rows($Following);
 
+    $Posts = mysqli_query($conn, "SELECT PostID FROM Posts WHERE UtilID = $DadosUtil[UtilID]");
+
+    $TotalPosts = mysqli_num_rows($Posts);
+
     $Data = array();
 
     $Data['User'] = $DadosUtil;
@@ -250,6 +254,8 @@
     $Data['TFollowers'] = $TotalFollowers;
 
     $Data['TFollowing'] = $TotalFollowing;
+
+    $Data['TPosts'] = $TotalPosts;
 
     include 'deconn.php';
 
