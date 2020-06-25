@@ -2729,6 +2729,15 @@ footer
 
 /*-------------------------------------------------- PERFIL ------------------------------------------------------*/
 
+.perfil_main_container
+{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 4%;
+    background-color: white;
+}
+
+
 /* .profile-head {
     transform: translateY(5rem)
   }
@@ -2744,24 +2753,29 @@ footer
 .perfil_utilizador
 {
     background-color: white;
-    width: 1000px;
-    margin-left: 30%;
-    height: 20em;
-    margin-top: 4%;
+    width: 80em;
+    height: 14em;
     display: flex;
+    /* padding: 2%; */
+    padding-top: 2%;
+    padding-left: 3%;
 }
 
 .perfil_utilizador_imagem
 {
-    width: 30%;
-    height: 100%;
+    width: 200px;
+    height: 200px;
     overflow: hidden;
+    position: relative;
+    border-radius: 50%;
 }
 
 .perfil_utilizador_imagem img
 {
-    width: 100%;
+    display: inline;
+    margin: 0 auto;
     height: 100%;
+    width: auto;
     transition: transform .5s ease;
     -webkit-filter: brightness(100%);
 }
@@ -2798,8 +2812,7 @@ footer
 
 .perfil_utilizador_container
 {
-    width: 70%;
-    height: 100%;
+    width: 85%;
     display: block;
 }
 .perfil_utilizador_info_btns_seguidores:hover
@@ -2825,7 +2838,7 @@ footer
 .perfil_utilizador_info_btns
 {
     display: flex;
-    margin-top: 9em;
+    margin-top: 3em;
     float: right;
     /*margin-right: 2em;*/
 }
@@ -2850,7 +2863,7 @@ footer
 
 .perfil_utilizador_edit_text
 {
-    width: 42%;
+    width: 31%;
     float: right;
     color: #D24D57;
     padding-top: 16px;
@@ -2895,6 +2908,13 @@ footer
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
     display: none;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
 .modal_perfil_container
@@ -2904,13 +2924,21 @@ footer
     margin-left: 35%;
     margin-top: 8%;
     background-color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.modal_perfil_container::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
 }
 
 .modal_perfil_container_nome
 {
-    width: 90%;
+    width: 100%;
     height: 1.8em;
-    margin-left: 5%;
     text-align: center;
     font-size: 2em;
     border-bottom: 1px solid #CCC;
@@ -2972,5 +3000,206 @@ footer
 
 .modal_perfil_container_title
 {
+    width: 90%;
+    padding-left: 4%;
+}
+
+.perfil_modal_close:hover
+{
+    cursor: pointer;
+}
+.perfil_modal_close
+{
+    width: 10%;
+    height: 100%;
+}
+
+.modal_perfil_container_final
+{
+    width: 30%;
+    height: 5em;
+    margin-left: 35%;
+    border-top: 1px solid #ccc;
+    background-color: white;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.perfil_utilizador_info_btns_aseguir:hover
+{
+    cursor: pointer;
+}
+
+/*DESCRIÇÃO DO PERFIL*/
+.perfil_descricao
+{
+    background-color: #ccc;
+    width: 1000px;
+    margin-left: 13%;
+    height: 13em;
+    margin-top: 4%;
+    display: block;
+}
+
+.perfil_descricao_title
+{
+    font-size: 1.8em;
+    color: #999999;
+    font-style: italic;
+    width: 90%;
+}
+
+.perfil_descricao_edit 
+{
+    width: 5%;
+    padding-left: 0%; 
+}
+
+.perfil_descricao_edit i:hover
+{
+    cursor: pointer;
+    color: #444444;
+    transition: 1s;
+}
+
+
+.perfil_descricao_edit i
+{
+    font-size: 1.8em;
+    color: #999999;
+}
+
+.perfil_descricao_output
+{
+    width: 100%;
+    padding-top: 2%;
+    padding-left: 5%;
+    display: flex;
+    height: 20%;
+}
+
+.perfil_descricao_text
+{
+    height: 42%;
+    background-color: none;
+    width: 90%;
+    padding: 5%;
+    font-size: 1.7em;
+    color: #4e4e4e;
+}
+
+/*modal de edicao da descricao*/
+
+.modal_descricao
+{
+    position:fixed;
+    z-index: 2;/*Ficar por cima dos elementos no eixo Z*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.modal_descricao_content
+{
+    width: 40em;
+    height: 10em;
+    background-color: white;
+    margin-top: 10%;
+    margin-left: 38%;
+    border-radius: 8px;
+}
+
+.modal_descricao_titulo
+{
+    display: inline-block;
+    width: 87%;
+    font-size: 1.4em;
+    padding: 2%;
+    height: 15%;
+    padding-left: 3%;
+}
+
+.modal_descricao_close
+{
+    display: inline-block;
+    font-size: 1.4em;
+    padding: 2%;
+}
+
+.modal_descricao_create
+{
+    display: flex;
+    height: 50%;
+}
+
+.modal_descricao_container_input
+{
+    width: 80%;
+    height: 100%;
+    background-color: #2f3640;
+}
+
+.modal_descricao_container_input input
+{
+    height: 100%;
+    width: 100%;
+    padding: 2%;
+    border: none;
+    font-size: 1.2em;
+    outline: none;
+    padding-left: 4%;
+}
+
+.modal_descricao_container_send
+{
+    height: 100%;
+    width: 5%;
+    font-size: 1.6em;
+    padding-top: 1.2em;
+    padding-left: 3.3em;
+    color: #D24D57;
+}
+
+.modal_descricao_container_send:hover
+{
+    cursor: pointer;
+}
+
+.modal_descricao_close:hover
+{
+    cursor: pointer;
+}
+
+.perfil_galeria
+{
+    width: 100%;
+    padding: 2%;
+    padding-top: 15%;
+    display: flex;
+}
+
+.perfil_galeria_post
+{
+    width: calc(31.6% - 26px);
+    /* margin-right: 2%;
+    margin-bottom: 4%; */
+    margin-left: 2%;
+}
+
+.perfil_galeria_post img
+{
+    height: 100%;
     width: 100%;
 }
