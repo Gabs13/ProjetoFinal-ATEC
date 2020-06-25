@@ -29,6 +29,32 @@
                         <button type="button">Confirmar</button>
                         <button type="button" id="btnCancelar" class="btnCancelar">Cancelar</button>
                     </div>
+                </div>
+                <div class="editarPerfil_body_display_container"  id="body_container">
+                    <div class="editarPerfil_body_display_info">Username</div>
+                    <div class="editarPerfil_body_display_output">odoTuning69</div>
+                    <div class="editarPerfil_body_display_edit" id="6">Editar</div>
+                </div>
+                <div class="editarPerfil_body_display_full"  style="display:none;">  
+                    <div class="editar_perfil_edicao_nome">Novo Username:</div>
+                    <input type="text" placeholder="Ruben69">
+                    <div class="editar_perfil_edicao_buttons">
+                        <button type="button">Confirmar</button>
+                        <button type="button" id="btnCancelar" class="btnCancelar">Cancelar</button>
+                    </div>
+                </div>
+                <div class="editarPerfil_body_display_container"  id="body_container">
+                    <div class="editarPerfil_body_display_info">Descrição</div>
+                    <div class="editarPerfil_body_display_output">Gosto de batidos do burgrking e nao faser piscas xisdeh é sooo babes</div>
+                    <div class="editarPerfil_body_display_edit" id="7">Editar</div>
+                </div>
+                <div class="editarPerfil_body_display_full"  style="display:none;">  
+                    <div class="editar_perfil_edicao_nome">Nova Descrição:</div>
+                    <input type="text" placeholder="Gosto de batidos do burgerking e nao fazer piscas xisdeh é sooo babes">
+                    <div class="editar_perfil_edicao_buttons">
+                        <button type="button">Confirmar</button>
+                        <button type="button" id="btnCancelar" class="btnCancelar">Cancelar</button>
+                    </div>
                 </div>  
                 <div class="editarPerfil_body_display_container" id="body_container">
                     <div class="editarPerfil_body_display_info">Telemovel</div>
@@ -69,6 +95,7 @@
                         <button type="button" id="btnCancelar" class="btnCancelar">Cancelar</button>
                     </div>
                 </div> 
+
             <div class="editarPerfil_body_display_last"></div>     
         </div> 
     </div>
