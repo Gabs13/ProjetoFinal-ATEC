@@ -34,7 +34,7 @@
         </div>
         <!--FINAL DIV DISPLAY LIKES-->
 
-        <div class="arrow_1"></div>
+        
         <div class="modal_content">
             <div class="modal_esquerda" id="modal_esquerda"></div>
             <div class="modal_direita">
@@ -66,8 +66,6 @@
     <div class="close" id="closePerfil">&times;</div>
 
 </div>
-
-        <div class="arrow_2"></div>
 </div>
         <!--FINAL DA MODAL---------------------------------------------------------------------------------------------->
 
