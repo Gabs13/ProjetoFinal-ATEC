@@ -1299,7 +1299,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
 {
     display: none;
     z-index: 3;
-    height: 6.85em;
     width: 100%;
     background-color: white;
     border: 1px solid #aaa;
@@ -2585,11 +2584,11 @@ footer
     color: white;
     text-align: center;
     vertical-align: middle;
-    line-height: 2em; 
+    line-height: 2em;
     padding-left: 0 !important;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 4px;
 }
 
 .perfil_utilizador_info_btns_followbtn:hover
@@ -3086,7 +3085,7 @@ footer
     height: 10%;
     border-top: 1px solid #ccc;
     background-color: white;
-    
+
 }
 
 .modal_perfil_container_main
@@ -3354,10 +3353,12 @@ footer
 
 .modal_edicao_foto_container_img img
 {
-    display: inline;
     margin: 0 auto;
     height: 100%;
-    width: auto;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    background-color: #000;
 }
 
 .modal_edicao_foto_container_btns
@@ -3374,7 +3375,11 @@ footer
 
 .modal_edicao_foto_container_img_close
 {
-
+    color: #aaa;
+    font-size: 40px;
+    font-weight: bold;
+    margin-right: 0.3em;
+    height: 5%;
 }
 
 .modal_edicao_foto_container_btns_edit
@@ -3426,4 +3431,3 @@ footer
     margin-top: 5%;
     background-color: white;
 }
-

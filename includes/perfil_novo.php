@@ -16,7 +16,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="modal_perfil_container_final"></div>
         </div>
 
@@ -72,16 +72,18 @@
 </div>
         <!--FINAL DA MODAL---------------------------------------------------------------------------------------------->
     <!--MODAL DE EDICAO DA FOTO DE PERFIL-->
-    <div class="modal_edicao_foto">
+    <div class="modal_edicao_foto" id="modal_edicao_foto">
         <div class="modal_edicao_foto_container">
-            <span>&times;</span>
-            <div class="modal_edicao_foto_container_img">
-                <img class="perfil_utilizador_imagem_img" src="imagens/Utilizadores/gabriel.jpg">
+        <span class="modal_edicao_foto_container_img_close" id="modal_edicao_foto_container_img_close">&times;</span>
+            <div class="modal_edicao_foto_container_img" id="modal_edicao_foto_container_img">
+                <img class="perfil_utilizador_imagem_img" id="perfil_utilizador_preview_img" src="imagens/Utilizadores/gabriel.jpg">
             </div>
 
             <div class="modal_edicao_foto_container_btns">
-                <div class="modal_edicao_foto_container_btns_edit">Editar</div>
-                <div class="modal_edicao_foto_container_btns_edit">Confirmar</div>
+              <input type="file" name="bt_carregarfoto" id="post_img_file" style="display:none;">
+              <input type="submit" name="bt_postarfoto" id="post_send_file" style="display:none;">
+              <div class="modal_edicao_foto_container_btns_edit" id="modal_edicao_foto_file">Editar</div>
+              <div class="modal_edicao_foto_container_btns_edit" id="modal_edicao_foto_bt">Confirmar</div>
             </div>
         </div>
     </div>

@@ -1,4 +1,5 @@
 <body>
+  <div class="resultadoPesquisa_back"><i><img src="imagens/logotipo/artifex2.png"></i></div><!--SIMBOLO ARTIFEX -->
   <div class="registar_logotipo"><a><img src="imagens/logotipo/artifex1.png"></a></div>
   <div class="pai">
       <div class="filho">
