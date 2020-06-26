@@ -16,7 +16,6 @@ $(document).ready(function()
     {    
         console.log(isClicked)
        
-
             editPerfilElement[t].onclick = function(event)
             {
                 if(isClicked==false)
@@ -29,9 +28,7 @@ $(document).ready(function()
                         this.parentElement.nextElementSibling.style.transition="1s";    
                     }
                 }
-            }
-        
-        
+            }   
     }
 
     /*Funcao para cancelar o editar*/
