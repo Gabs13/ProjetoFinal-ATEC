@@ -779,6 +779,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     border-radius:8px;
     display: flex;
     height: 36em;
+    width: 845px;
 }
 
 .close
@@ -1356,15 +1357,15 @@ input[type=date]::-webkit-calendar-picker-indicator {
 #display_like_background
 {
     display: none;
-    width: 358px;
-    height: 576px;
+    width: 368.81px;
+    height: 577px;
     position: absolute;
     background-color: rgba(0,0, 0, 0.4);
     z-index: 4;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    right: 34.5em;
-    top: 7.1em;
+    right: 36.5em;
+    top: 7.5em;
 }
 
 .display_like_post

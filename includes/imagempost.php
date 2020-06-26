@@ -10,21 +10,18 @@
         <a href="login.php"> <img src="imagens/logotipo/artifex2.png"> </a>
       </div>
           <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
-          <div class="display_like_background" id="display_like_background" style='display:none;'>
-              <div class="display_like_post">
-                  <div class="display_like_close_container">
-                      <span id="display_like_post_close">&times;</span>
-                  </div>
-                  <div class="display_like_post_scroll" id="display_like_post_scroll">
-
-
-                  </div>
-              </div>
-          <div class="display_post_finisher"></div>
-          </div>
+          
           <!--FINAL DIV DISPLAY LIKES-->
           <div class="modal_content">
-
+            <div class="display_like_background" id="display_like_background" style='display:none;'>
+              <div class="display_like_post">
+                  <div class="display_like_close_container">
+                    <span id="display_like_post_close">&times;</span>
+                  </div>
+                  <div class="display_like_post_scroll" id="display_like_post_scroll"></div>
+              </div>
+              <div class="display_post_finisher"></div>
+          </div>
               <div class="modal_esquerda" id="modal_esquerda">
               </div>
 
@@ -52,7 +49,7 @@
                       <div id="modal_user_sendbtn"> </div>
                   </div>
               </div>
-              <div class="close" ></div>
+              <div class="close" id="closePerfil">&times;</div>
           </div>
 
   </div>

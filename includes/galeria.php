@@ -6,7 +6,7 @@
     <div class="galery_title">GALERIAS</div>
 
       <!--MODAL SLIDER DE IMAGENS-->
-      <div class="modalGallery" id="modalperfilpost">
+      <div class="modalGallery" id="modalperfilpost"> 
 
       <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
       <div class="display_like_background" id="display_like_background" style='display:none;'>
