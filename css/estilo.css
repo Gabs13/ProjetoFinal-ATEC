@@ -1273,7 +1273,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
 {
     display: none;
     z-index: 3;
-    height: 6.85em;
     width: 100%;
     background-color: white;
     border: 1px solid #aaa;
@@ -2939,8 +2938,6 @@ footer
     margin-top: 8%;
     background-color: white;
     border-radius: 8px;
-    overflow-y: scroll;
-    overflow-x: hidden;
 }
 
 
@@ -3030,7 +3027,7 @@ footer
     height: 10%;
     border-top: 1px solid #ccc;
     background-color: white;
-    
+
 }
 
 .modal_perfil_container_main
@@ -3288,10 +3285,12 @@ footer
 
 .modal_edicao_foto_container_img img
 {
-    display: inline;
     margin: 0 auto;
     height: 100%;
-    width: auto;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    background-color: #000;
 }
 
 .modal_edicao_foto_container_btns

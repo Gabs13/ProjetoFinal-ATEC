@@ -44,9 +44,8 @@
       echo '            </div>
                         <div id="btn_comment"><i onclick="replyComment('.$Comment["ComentarioID"].')" class="fas fa-comment"></i></div>
                         <div id="btn_options"><i id ="optionsbuttonI" class="fas fa-ellipsis-h optionsbuttonI"></i>
-                          <div class="modal_hidden_options" id="modal_hidden_options_id" style="display: none;">
-                            <div>Coiso</div>
-                            <div>Idolatrar o '.$detailsComment["UtilPNome"].'</div>';
+                          <div class="modal_hidden_options" id="modal_hidden_options_id" style="display: none;">';
+
                             if ($Comment["UtilID"] == $_SESSION["UtilID"] || $PostInfo["UtilID"] == $_SESSION["UtilID"])
                             {
                               echo '<div onclick="removeComment('.$Comment["ComentarioID"].');"> Remover </div>';

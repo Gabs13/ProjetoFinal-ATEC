@@ -10,35 +10,33 @@ $(document).ready(function()
 
     /*Função de onclick pagina de editarPerfil para editar elementos*/
     console.log(editPerfilElement);
-    
-    
-    for (var t in editPerfilElement)
-    {    
-        console.log(isClicked)
-       
 
+
+    for (var t in editPerfilElement)
+    {
+        console.log(isClicked);
             editPerfilElement[t].onclick = function(event)
             {
                 if(isClicked==false)
                 {
                     isClicked=true;
                     if(this.parentElement.nextElementSibling.style.display=="none")
-                    {   
+                    {
                         this.parentElement.style.display="none";
                         this.parentElement.nextElementSibling.style.display="flex";
-                        this.parentElement.nextElementSibling.style.transition="1s";    
+                        this.parentElement.nextElementSibling.style.transition="1s";
                     }
                 }
             }
-        
-        
+
+
     }
 
     /*Funcao para cancelar o editar*/
     for (var z in botaodeCancelarEditar)
     {
         botaodeCancelarEditar[z].onclick = function()
-        { 
+        {
             isClicked=false;
             console.log(this.parentElement.parentElement.previousElementSibling);
             this.parentElement.parentElement.previousElementSibling.style.display="flex";
@@ -46,5 +44,3 @@ $(document).ready(function()
         }
     }
 });
-
-

@@ -21,6 +21,10 @@ $(document).ready(function()
 
     var imgCamera = document.getElementById('img_edit');
 
+    const inpFile = document.getElementById('post_img_file');
+    const previewContainer = document.getElementById('modal_edicao_foto_container_img');
+    const previewImage = previewContainer.querySelector('.perfil_utilizador_imagem_img');
+
 
     $("#img_edit").mouseenter(function(){
       $("#perfil_utilizador_imagem_img").css('transform', 'scale(1.5)');
@@ -45,6 +49,53 @@ $(document).ready(function()
       $("#perfil_utilizador_imagem_img").css('cursor', '');
       $("#img_edit").css('cursor', '');
     });
+
+    $("#img_edit").click(function(event){
+      if ($("#modal_edicao_foto").css('display') == 'none')
+      {
+        $("#modal_edicao_foto").css('display', 'block');
+      }
+    });
+
+    $("#perfil_utilizador_imagem_img").click(function(event){
+      $("#img_edit").click();
+    });
+
+    $(window).click(function(event) {
+      if (event.target == document.getElementById('modal_edicao_foto'))
+      {
+        $("#modal_edicao_foto").css('display', 'none');
+        previewImage.setAttribute("src", document.getElementById("perfil_utilizador_imagem_img").getAttribute('src'));
+      }
+    });
+
+    $("#modal_edicao_foto_file").on('click', function(event) {
+      event.preventDefault();
+      $("#post_img_file").click();
+    });
+
+    $(document).keydown(function (e) {
+      if (e.keyCode == 27) {
+          $("#modal_edicao_foto").css('display', 'none');
+      }
+
+    });
+
+
+    inpFile.addEventListener("change", function(){
+      const file = this.files[0];
+
+      if (file)
+      {
+        const reader = new FileReader();
+
+        reader.addEventListener("load", function() {
+          previewImage.setAttribute("src", this.result);
+        });
+
+        reader.readAsDataURL(file);
+      }
+    })
 
 
     /*CLICKAR NO POST E ABRIR MODAL*/
