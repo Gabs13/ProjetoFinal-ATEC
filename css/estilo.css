@@ -1200,6 +1200,13 @@ input[type=date]::-webkit-calendar-picker-indicator {
     text-align: right;
 }
 
+.modal_comentario_reply_btns i:hover
+{
+    color: #D24D57;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
 .modal_comentario_conteudo
 {
     display: block;
@@ -2352,8 +2359,8 @@ footer
 .resultadoPesquisa_back
 {
     position: absolute;
-    top: 5px;
-    left: 15px;
+    top: -9px;
+    left: 47px;
 
 }
 

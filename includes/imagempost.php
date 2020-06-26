@@ -6,7 +6,9 @@
 <!--MODAL SLIDER DE IMAGENS-->
 <body>
   <div class="imagempost_display">
-      <div class="resultadoPesquisa_back"><i><img src="imagens/logotipo/artifex2.png"></i></div>
+      <div class="resultadoPesquisa_back">
+        <a href="login.php"> <img src="imagens/logotipo/artifex2.png"> </a>
+      </div>
           <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
           <div class="display_like_background" id="display_like_background" style='display:none;'>
               <div class="display_like_post">
@@ -53,8 +55,6 @@
           </div>
 
   </div>
-
-  </script>
 
   <script>
     var PostID = "<?php echo $_GET['pid'] ?>";

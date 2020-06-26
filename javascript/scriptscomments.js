@@ -16,10 +16,10 @@ $(document).ready(function()
   var spanLikes = document.getElementById('display_like_post_close');
 
   //Total Likes Post
-  var totalLikes = document.getElementById('autor_modal_info_likes');
+  /*var totalLikes = document.getElementById('autor_modal_info_likes');
 
 
-  totalLikes.onclick = function()
+   totalLikes.onclick = function()
   {
     if(modallikesdisplay.style.display == "none")
     {
@@ -29,36 +29,36 @@ $(document).ready(function()
     {
       modallikesdisplay.style.display ="none";
     }
-  }
+  }*/
 
- 
+
   for(var i of settingI)
   {
-    
+
     i.onclick= function()
-    {  
+    {
       // for(var l of indexSettingsID)
       // {
       //   console.log('banauashindf');
       //   l.style.display="none";
       // }
-      
+
       if(this.nextElementSibling.style.display =="none")
       {
          for(var l of indexSettingsID)
         {
           l.style.display="none";
         }
-        this.nextElementSibling.style.display ="block";   
-        
+        this.nextElementSibling.style.display ="block";
+
       }
       else
       {
         this.nextElementSibling.style.display ="none";
-        
+
       }
     }
-    
+
   }
 
   spanLikes.onclick = function()
