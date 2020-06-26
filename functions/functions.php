@@ -257,6 +257,10 @@
 
     $Data['TPosts'] = $TotalPosts;
 
+    session_start();
+
+    $Data['IDSessao'] = $_SESSION['UtilID'];
+
     include 'deconn.php';
 
     echo json_encode($Data);

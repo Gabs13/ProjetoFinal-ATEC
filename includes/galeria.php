@@ -6,7 +6,7 @@
     <div class="galery_title">GALERIAS</div>
 
       <!--MODAL SLIDER DE IMAGENS-->
-      <div class="modalGallery" id="modal">
+      <div class="modalGallery" id="modalperfilpost">
 
       <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
       <div class="display_like_background" id="display_like_background" style='display:none;'>
@@ -25,13 +25,13 @@
 
         <div class="arrow_1"></div>
 
-        <div class="modal_content">
+        <div class="modal_content" id="modal_content">
 
             <div class="modal_esquerda" id="modal_esquerda">
 
             </div>
 
-            <div class="modal_direita">
+            <div class="modal_direita" id="modal_direita">
               <div class="autor_modal_user">
                 <div class="autor_modal_user_img">
                   <img src="">
@@ -66,7 +66,7 @@
 
             </div>
 
-            <div class="close" id="close">&times;</div>
+            <div class="close" id="closePerfil">&times;</div>
 
         </div>
 

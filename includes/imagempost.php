@@ -43,8 +43,9 @@
                   <div class="modal_direita_comentarios" id="modal_direita_comentarios"></div>
                   <hr class="modal_comentarios_separador"></hr>
                   <div class="autor_modal_info">
-                      <div class="autor_modal_info_btn" id="autor_modal_info_btn"></i></div>
-                      <div class="autor_modal_info_btn2 autor_modal_info_btn"><i class="fas fa-share-alt"></i></div>
+                    <div class="autor_modal_info_btn" id="autor_modal_info_btn"></i></div>
+                    <div class="autor_modal_info_btn2 autor_modal_info_btn"><i class="fas fa-share-alt"></i></div>
+                    <div class="autor_modal_info_likes" id="autor_modal_info_likes">20 likes</div>
                   </div>
                   <div class="modal_comentarios_bottom">
                       <input autocomplete="off" type="text" id="comentario_bottom" class="modal_user_comentario" placeholder="Adicione um comentário...">
