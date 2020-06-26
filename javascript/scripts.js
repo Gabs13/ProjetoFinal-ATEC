@@ -48,6 +48,7 @@ $(document).ready(function()
 
       $('#comentario_bottom').val('');
     }
+   
   }
 
   //Fechar quando a tecla ESC é clickada

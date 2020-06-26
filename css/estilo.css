@@ -2355,15 +2355,62 @@ footer
     text-decoration: underline;
     transition: 1s;
 }
+/*------------------------SIMBOLO ARTIFEX--------------------*/
+.resultadoPesquisa_back 
+{
+    position: absolute;
+    top: -9px;
+    left: 47px;
+    
+}
+.tooltiptext
+{
+    position: absolute;
+    top: 80px;
+    left: 9px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    visibility: hidden;
+    width: 180px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+/* 
+  
+  
+  
+  
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;*/  
+}
 
 .resultadoPesquisa_back
 {
     position: absolute;
     top: -9px;
     left: 47px;
-
 }
-
+.resultadoPesquisa_back .tooltiptext::after {
+    content: "";
+    position: absolute;
+    left: 45%;
+    bottom: 100%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+.resultadoPesquisa_back:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+/*--------*/
 .resultadoPesquisa_back img
 {
     height: 100px;

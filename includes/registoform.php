@@ -1,5 +1,12 @@
 <body>
-  <div class="resultadoPesquisa_back"><i><img src="imagens/logotipo/artifex2.png"></i></div><!--SIMBOLO ARTIFEX -->
+  <a href="login.php">
+  <!--SIMBOLO ARTIFEX -->
+    <div class="resultadoPesquisa_back" >
+      <i><img src="imagens/logotipo/artifex2.png"></i>
+      <span class="tooltiptext">Voltar para o Login</span>
+    </div>
+  </a>
+
   <div class="registar_logotipo"><a><img src="imagens/logotipo/artifex1.png"></a></div>
   <div class="pai">
       <div class="filho">

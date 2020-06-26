@@ -31,18 +31,23 @@ $(document).ready(function()
     }
   }*/
 
+  /*FECHAR A MODAL DOS SETTINGS FORA DA JANELA*/ 
+  $(window).click(function(event){
+    
+    if(event.target!=$("#modal_hidden_options_id"))
+        {
+          console.log('sdfsdfsdfsd');
+          // indexSettingsID.style.display="none";
+          $("#modal_hidden_options_id").css("display", "none");
+        }
+  });
+
 
   for(var i of settingI)
   {
 
     i.onclick= function()
     {
-      // for(var l of indexSettingsID)
-      // {
-      //   console.log('banauashindf');
-      //   l.style.display="none";
-      // }
-
       if(this.nextElementSibling.style.display =="none")
       {
          for(var l of indexSettingsID)

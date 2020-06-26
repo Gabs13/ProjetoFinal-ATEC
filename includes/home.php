@@ -1,6 +1,6 @@
 <script src="javascript/scriptshome.js"></script>
 <body>
-     <div class="resultadoPesquisa_back"><i><img src="imagens/logotipo/artifex2.png"></i></div><!--SIMBOLO ARTIFEX -->
+    <div class="resultadoPesquisa_back"><i><img src="imagens/logotipo/artifex2.png"></i></div><!--SIMBOLO ARTIFEX -->
     <!-- Aparecer criacao de post(includes) -->
   
     <div class="casa_create_include" id="casa_create_include">
