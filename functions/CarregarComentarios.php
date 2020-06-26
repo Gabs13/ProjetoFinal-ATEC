@@ -89,8 +89,19 @@
                 </div>              
               </div>
               <div class="modal_comentario_reply_btns">
-                <div><i class="fas fa-heart"></i></div>
-                <div id="btn_options"><i id ="optionsbuttonI" class="fas fa-ellipsis-h optionsbuttonI"></i></div>
+                <div><i class="fas fa-heart"></i>
+                  
+                </div>
+                <div id="btn_options"><i id ="optionsbuttonI" class="fas fa-ellipsis-h optionsbuttonI"></i>
+                  <div class="modal_hidden_options" id="modal_hidden_options_id" style="display: none;">';
+
+                    if ($Comment["UtilID"] == $_SESSION["UtilID"] || $PostInfo["UtilID"] == $_SESSION["UtilID"])
+                    {
+                      echo '<div onclick="removeComment('.$Comment["ComentarioID"].');"> Remover </div>';
+                    }
+                    echo '<div>Reportar</div>
+                  </div>
+                </div>
                 <div class="modal_comentario_reply_btns_likes">20 Likes</div>
               </div> 
             </div>   

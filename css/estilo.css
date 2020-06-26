@@ -1872,15 +1872,15 @@ footer
 
 
 .menu .menuContent ul li:hover:before {
-  opacity: 0.8;
-  top: 13px;
-  left: 20px;
+    opacity: 0.8;
+    top: 13px;
+    left: 20px;
 }
 .menu .menuContent ul li:hover:after {
-  opacity: 0.8;
-  bottom: 13px;
-  left: -20px;
-  width: 100%;
+    opacity: 0.8;
+    bottom: 13px;
+    left: -20px;
+    width: 100%;
     transition: width .3s;
 }
 
@@ -1912,21 +1912,12 @@ footer
     top: 35px;
     left: 6.5%;
     transform: translate(-50%, -50%);
-    background: #2f3640;
+    background: #D24D57;
     height: 40px;
     border-radius: 40px;
     padding: 10px;
    }
 
-   .procura:hover > .buscar-txt {
-    width: 140px;
-    padding: 0 6px;
-   }
-
-   .procura:hover > .buscar-btn {
-    background: white;
-    color: black;
-   }
 
    .buscar-btn {
     color: #e84118;
@@ -1934,7 +1925,7 @@ footer
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #2f3640;
+    background: #D24D57;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1943,11 +1934,16 @@ footer
     cursor: pointer;
    }
 
+   .buscar-txt::placeholder
+   {
+       color: #f2f2f2;
+   }
+   
    .buscar-btn > i {
     font-size: 30px;
    }
 
-   .buscar-txt {
+.buscar-txt {
     border: none;
     background: none;
     outline: none;
@@ -1959,7 +1955,7 @@ footer
     line-height: 40px;
     width: 0px;
     font-weight: bold;
-   }
+}
 /* fim botao e search bar -----------------------------------------------------------------------------------------*/
 
 /*-------------------------------------------------CHAT------------------------------------------------------------*/
@@ -2049,7 +2045,7 @@ footer
 .chat_display_text
 {
     width: 100%;
-    height: calc(6% - 2px);
+    height: calc(6% + 2px);
     max-height: 16%;
     background-color: white;
 }
@@ -2063,6 +2059,7 @@ footer
     padding-left: 10px;
     background-color: #f0f2f5;
     font-size: 1.1em;
+    border: 1px solid #ccc;
 }
 .chat_display_text i
 {
@@ -2105,7 +2102,7 @@ footer
 .chat_display_user_profile
 {
     display: flex;
-    padding: 2%;
+    padding: 10px;
     width: 100%;
 }
 

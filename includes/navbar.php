@@ -7,7 +7,7 @@
 
           <div class='menuContent'>
             <ul>
-              <div class="procura">
+              <div class="procura" id="procura">
                 <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
                 <a class="buscar-btn">
                   <i class="fas fa-search"></i>
