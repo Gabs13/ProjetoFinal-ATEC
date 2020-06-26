@@ -231,7 +231,7 @@
 
     $UserName = $_POST['nome'];
 
-    $User = mysqli_query($conn, "SELECT UtilID, UtilUser, UtilPNome, UtilUNome, UtilDesc FROM Utilizadores WHERE UtilUser = '$UserName'");
+    $User = mysqli_query($conn, "SELECT UtilID, UtilUser, UtilPNome, UtilUNome, UtilDesc, UtilFoto FROM Utilizadores WHERE UtilUser = '$UserName'");
 
     $DadosUtil = mysqli_fetch_array($User);
 
@@ -260,6 +260,59 @@
     include 'deconn.php';
 
     echo json_encode($Data);
+  }
+
+  if(isset($_POST["bt_postarfoto_perfil"]))
+  {
+    $file = $_FILES['bt_carregarfoto'];
+
+    $fileName = $_FILES['bt_carregarfoto']['name'];
+    $fileTmpName = $_FILES['bt_carregarfoto']['tmp_name'];
+    $fileSize = $_FILES['bt_carregarfoto']['size'];
+    $fileError = $_FILES['bt_carregarfoto']['error'];
+    $fileType = $_FILES['bt_carregarfoto']['type'];
+
+    $fileExt = explode('.', $fileName);
+    $fileActualExt = strtolower(end($fileExt));
+
+    $allowed = array('jpg', 'jpeg', 'png');
+
+    if (in_array($fileActualExt, $allowed))
+    {
+      if ($fileError === 0)
+      {
+        if ($fileSize < 1000000)
+        {
+          $fileNameNew = uniqid('', true).".".$fileActualExt;
+
+          $fileDestination = '../imagens/Utilizadores/'.$fileNameNew;
+
+          move_uploaded_file($fileTmpName, $fileDestination);
+
+          include 'conn.php';
+
+          session_start();
+
+          mysqli_query($conn, "UPDATE Utilizadores SET UtilFoto = '$fileNameNew' WHERE UtilID = $_SESSION[UtilID]");
+
+          $Util = mysqli_query($conn, "SELECT UtilUser, UtilID FROM Utilizadores WHERE UtilID = $_SESSION[UtilID]");
+
+          $DadosUtil = mysqli_fetch_array($Util);
+
+          header("Location: http://localhost/ProjetoFinal/perfil.php?&uname=".$DadosUtil['UtilUser']."&uid=".$DadosUtil['UtilID']);
+
+          include 'deconn.php';
+        }
+        else
+        {
+          echo "O ficheiro é muito grande!";
+        }
+      }
+    }
+    else
+    {
+      echo "Formato de ficheiro inválido!";
+    }
   }
 
   if(isset($_POST["bt_postarfoto"]))
@@ -387,13 +440,14 @@
       /* Alocar à sessão o id e o tipo de user logado */
       $_SESSION["CID"] = $validado["ContaID"];
 
-      $validarUtil = mysqli_query($conn, "SELECT UtilID, UtilPNome, UtilUNome FROM Utilizadores WHERE ContaID = '$_SESSION[CID]'");
+      $validarUtil = mysqli_query($conn, "SELECT UtilID, UtilPNome, UtilUNome, UtilUser FROM Utilizadores WHERE ContaID = '$_SESSION[CID]'");
 
       $validadoUtil = mysqli_fetch_array($validarUtil);
 
       $_SESSION["UtilID"] = $validadoUtil["UtilID"];
       $_SESSION["CPNome"] = $validadoUtil["UtilPNome"];
       $_SESSION["CUNome"] = $validadoUtil["UtilUNome"];
+      $_SESSION["UtilUser"] = $validadoUtil["UtilUser"];
 
       echo '<meta http-equiv="refresh" content="0;url=login.php">';
     }

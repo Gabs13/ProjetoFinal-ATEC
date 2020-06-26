@@ -75,11 +75,10 @@ function loadMsgs(id)
         result.items.forEach(item =>{
           start = item.MensagemConversaID;
           $('#chat_display_messages').append(renderMessage(item));
-          $("#chat_users_display").load("functions/CarregarMensagens.php");
         })
         $('#chat_display_messages').animate({scrollTop: $('#chat_display_messages')[0].scrollHeight});
       };
-
+      todasMensagens();
     });
   }, 1000);
 }

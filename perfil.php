@@ -24,6 +24,12 @@
         <body>
 
         <?php
+            if (isset($_POST["Destruir"]))
+            {
+              destruir_sessao();
+              echo '<meta http-equiv="refresh" content="0;url=index.php">';
+            }
+            
             if (isset($_SESSION['UtilID'])) {
               include 'includes/navbar.php';
             }

@@ -9,7 +9,7 @@
             </div>
             <div class="modal_perfil_container_main">
                 <div class="modal_perfil_container_items">
-                    <div class="modal_perfil_container_items_img"><a><img src="imagens/Utilizadores/gabriel.jpg"></a></div>
+                    <div class="modal_perfil_container_items_img"><a><img src=""></a></div>
                     <div class="modal_perfil_container_items_nome">
                     <div class="modal_perfil_container_items_nome_name">Gabigol</div>
                     <div class="modal_perfil_container_items_nome_username">Gabriel Cosme</div>
@@ -76,12 +76,14 @@
         <div class="modal_edicao_foto_container">
         <span class="modal_edicao_foto_container_img_close" id="modal_edicao_foto_container_img_close">&times;</span>
             <div class="modal_edicao_foto_container_img" id="modal_edicao_foto_container_img">
-                <img class="perfil_utilizador_imagem_img" id="perfil_utilizador_preview_img" src="imagens/Utilizadores/gabriel.jpg">
+                <img class="perfil_utilizador_imagem_img" id="perfil_utilizador_preview_img" src="">
             </div>
 
             <div class="modal_edicao_foto_container_btns">
-              <input type="file" name="bt_carregarfoto" id="post_img_file" style="display:none;">
-              <input type="submit" name="bt_postarfoto" id="post_send_file" style="display:none;">
+              <form action="functions/functions.php" method="POST" enctype="multipart/form-data">
+                <input type="file" name="bt_carregarfoto" id="post_img_file" style="display:none;">
+                <input type="submit" name="bt_postarfoto_perfil" id="post_send_file" style="display:none;">
+              </form>
               <div class="modal_edicao_foto_container_btns_edit" id="modal_edicao_foto_file">Editar</div>
               <div class="modal_edicao_foto_container_btns_edit" id="modal_edicao_foto_bt">Confirmar</div>
             </div>
@@ -98,7 +100,7 @@
               <div class="img_edit" id="img_edit">
                 <i class="fas fa-camera"></i>
               </div>
-              <img class="perfil_utilizador_imagem_img" id="perfil_utilizador_imagem_img" src="imagens/Utilizadores/gabriel.jpg">
+              <img class="perfil_utilizador_imagem_img" id="perfil_utilizador_imagem_img" src="">
 
             </div>
 
@@ -112,7 +114,7 @@
                     <div class="perfil_utilizador_edit">
                         <?php
 
-                        if (@$_GET['uid'] == @$_SESSION['UtilID'])
+                        if (@$_GET['uname'] == @$_SESSION['UtilUser'])
                         {
                           echo '<div class="perfil_utilizador_edit_text">Editar <i class="far fa-edit"></i></div>';
                         }
@@ -120,7 +122,18 @@
                     </div>
                 </div>
                 <div class="perfil_utilizador_info_btns">
-                    <div class="perfil_utilizador_info_btns_followbtn" id="perfil_utilizador_info_btns_followbtn">Seguir</div>
+                  <?php
+
+                    if (isset($_SESSION['UtilUser']))
+                    {
+                      echo '<div class="perfil_utilizador_info_btns_followbtn" id="perfil_utilizador_info_btns_followbtn">Seguir</div>';
+                    }
+                    else
+                    {
+                      echo '<div class="perfil_utilizador_info_btns_followbtn" style="display: none;" id="perfil_utilizador_info_btns_followbtn">Seguir</div>';
+                    }
+                  ?>
+
                     <div class="perfil_utilizador_info_btns_direita">
                         <div class="perfil_utilizador_info_btns_seguidores" id="perfil_utilizador_info_btns_seguidores">
                             <div class="perfil_utilizador_info_btns_seguidores_nr" id="total_seguidores"></div>

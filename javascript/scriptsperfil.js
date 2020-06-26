@@ -79,11 +79,15 @@ $(document).ready(function()
       $("#post_img_file").click();
     });
 
+    $("#modal_edicao_foto_bt").on('click', function(event) {
+      event.preventDefault();
+      $("#post_send_file").click();
+    });
+
     $(document).keydown(function (e) {
       if (e.keyCode == 27) {
           $("#modal_edicao_foto").css('display', 'none');
       }
-
     });
 
 
@@ -183,6 +187,10 @@ $(document).ready(function()
           var finalResult = JSON.parse(result);
 
           console.log(finalResult);
+
+          $("#perfil_utilizador_imagem_img").attr("src", 'imagens/Utilizadores/' + finalResult.User['UtilFoto']);
+
+          $("#perfil_utilizador_preview_img").attr("src", 'imagens/Utilizadores/' + finalResult.User['UtilFoto']);
 
           $("#perfil_utilizador_info_nome").html(finalResult.User['UtilPNome'] + ' ' + finalResult.User['UtilUNome']);
           $("#perfil_utilizador_info_username").html('@' + finalResult.User['UtilUser']);

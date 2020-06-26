@@ -3321,8 +3321,8 @@ footer
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
-    display: block;
-    
+    display: none;
+
 }
 
 .modal_edicao_foto_container
@@ -3387,6 +3387,7 @@ footer
     font-weight: bold;
     margin-right: 0.3em;
     height: 5%;
+    cursor: pointer;
 }
 
 .modal_edicao_foto_container_btns_edit
