@@ -1,3 +1,7 @@
+var url = new URL(window.location);
+var getuser = url.searchParams.get("uname");
+var getid = url.searchParams.get("uid");
+
 $(document).ready(function(){
   //BOTAO DE FECHAR MODAL DE SEGUIDORES E A SEGUIR
   var btnModalClose = document.getElementById('perfil_modal_close');
@@ -5,8 +9,6 @@ $(document).ready(function(){
   var btnModalPostClose = document.getElementById('closePerfil');
 
 });
-
-
 
 function getGallery(id)
 {
@@ -37,12 +39,7 @@ function getGallery(id)
 
       $("#modal_direita_comentarios").load("functions/CarregarComentarios.php", {PostID: finalResult.Post[0]});
 
-      //window.location.hash = '?photouser=' + finalResult.User[0];
-      //history.replaceState(null, null, ' ');
-
       history.pushState('', document.title, '?pid=' + finalResult.Post[0] + '&uid=' + finalResult.User[0]);
-
-      //parent.location.hash = "?photouser=" + finalResult.User[0]; //Mudar a hash no url
 
       document.getElementById("modal_user_sendbtn").innerHTML = '<i onclick="addComment('+ finalResult.Post[0] +');" class="fas fa-location-arrow"></i>';
 

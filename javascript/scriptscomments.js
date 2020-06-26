@@ -61,8 +61,15 @@ $(document).ready(function()
     {
       modal.style.display = "none";
       var pos = $(window).scrollTop(); //Saber a posição atual
-      window.location.hash = '';
-      history.pushState('', document.title, window.location.pathname);
+      if(getuser == null || getid == null)
+      {
+        history.replaceState('', document.title, window.location.pathname);
+      }
+      else
+      {
+        history.replaceState('', document.title, "perfil.php?&uname=" + getuser + "&uid=" + getid);
+      }
+
       event.preventDefault();
       $(window).scrollTop(pos); // Dar scroll até à posição que estava
 
@@ -80,8 +87,14 @@ $(document).ready(function()
     if (e.keyCode == 27) {
         modal.style.display = "none";
         var pos = $(window).scrollTop(); //Saber a posição atual
-        window.location.hash = '';
-        history.pushState('', document.title, window.location.pathname);
+        if(getuser == null || getid == null)
+        {
+          history.replaceState('', document.title, window.location.pathname);
+        }
+        else
+        {
+          history.replaceState('', document.title, "perfil.php?&uname=" + getuser + "&uid=" + getid);
+        }
         e.preventDefault();
         $(window).scrollTop(pos); // Dar scroll até à posição que estava
 
