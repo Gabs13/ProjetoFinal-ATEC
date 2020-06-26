@@ -2584,11 +2584,11 @@ footer
     color: white;
     text-align: center;
     vertical-align: middle;
-    line-height: 2em; 
+    line-height: 2em;
     padding-left: 0 !important;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 4px;
 }
 
 .perfil_utilizador_info_btns_followbtn:hover
@@ -3417,4 +3417,3 @@ footer
     margin-top: 5%;
     background-color: white;
 }
-
