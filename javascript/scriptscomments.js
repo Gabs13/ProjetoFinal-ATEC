@@ -4,7 +4,7 @@ $(document).ready(function()
   var settingI = document.getElementsByClassName('optionsbuttonI');
   //index das settings
   //var indexSettings = document.getElementsByClassName('modal_hidden_options')[0];
-  var indexSettingsID = document.getElementById('modal_hidden_options_id');
+  var indexSettingsID = document.getElementsByClassName('modal_hidden_options');
   //botao numero de likes comentarios modal
   var likenumberButton = document.getElementsByClassName('modal_comentario_buttons_likes');
   //botao de like modal
@@ -31,21 +31,34 @@ $(document).ready(function()
     }
   }
 
-
+ 
   for(var i of settingI)
   {
-    i.onclick= function(event)
-    {
-      //event.preventDefault();
+    
+    i.onclick= function()
+    {  
+      // for(var l of indexSettingsID)
+      // {
+      //   console.log('banauashindf');
+      //   l.style.display="none";
+      // }
+      
       if(this.nextElementSibling.style.display =="none")
       {
-        this.nextElementSibling.style.display ="block";
+         for(var l of indexSettingsID)
+        {
+          l.style.display="none";
+        }
+        this.nextElementSibling.style.display ="block";   
+        
       }
       else
       {
         this.nextElementSibling.style.display ="none";
+        
       }
     }
+    
   }
 
   spanLikes.onclick = function()

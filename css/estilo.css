@@ -1179,6 +1179,31 @@ input[type=date]::-webkit-calendar-picker-indicator {
     width: 70%;
     float: right;
     margin-bottom: 5%;
+    margin-right: 2px;
+}
+/*mcomentario de reply no modal*/
+
+.modal_comentario_reply_btns
+{
+    display: flex;
+    width: 100%;
+}
+
+.modal_comentario_reply_btns>div
+{
+    padding-right: 5px;
+}
+.modal_comentario_reply_btns_likes
+{
+    font-size: 0.7em;
+    width: 70%;
+    text-align: right;
+}
+
+.modal_comentario_conteudo
+{
+    display: block;
+    width: 85%;
 }
 
 .modal_comentario_reply_content
@@ -1216,14 +1241,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .modal_comentario_reply_imagem
 {
-    width: 20%;
+    width: 15%;
 }
 
 .modal_comentario_reply_imagem img
 {
     height: 26px;
     width: 26px;
-    padding-top: 10px;
+    padding-top: 7px;
 
 }
 
@@ -1267,6 +1292,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     padding-bottom: 5px;
     padding-left: 2px;
 }
+
 
 /*hidden options comentario-------------*/
 .modal_hidden_options
@@ -2545,6 +2571,31 @@ footer
 
 }
 
+.perfil_utilizador_info_btns_direita
+{
+    display: flex;
+}
+
+.perfil_utilizador_info_btns_followbtn
+{
+    width: 6em;
+    background-color: #cc3b46;
+    height: 2em;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 2em; 
+    padding-left: 0 !important;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.perfil_utilizador_info_btns_followbtn:hover
+{
+    cursor: pointer;
+}
+
 /*------------------------------------------------IMAGEMPOST---------------------------------------------*/
 
 .imagempost_display
@@ -2839,7 +2890,7 @@ footer
     font-size: 1em;
 }
 
-.perfil_utilizador_info_btns>div
+.perfil_utilizador_info_btns_direita>div
 {
     padding-left: 2em;
 }
@@ -2847,9 +2898,11 @@ footer
 .perfil_utilizador_info_btns
 {
     display: flex;
-    margin-top: 3em;
+    margin-top: 4em;
     float: right;
-    /*margin-right: 2em;*/
+    position: relative;
+    /* margin-right: 2em; */
+    width: 97%;
 }
 
 .perfil_utilizador_info_nome
@@ -2904,6 +2957,12 @@ footer
     margin-left: 2%;
     margin-bottom: 5%;
 }
+.perfil_utilizador_info_btns_direita
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
 
 
 /*modal dentro do perfil(seguidores)----*/
@@ -2939,7 +2998,6 @@ footer
     background-color: white;
     border-radius: 8px;
 }
-
 
 
 .modal_perfil_container_nome
@@ -3349,3 +3407,14 @@ footer
   margin-left: auto;
   margin-right: auto;
 }
+
+/*--------------------------------------Definicoes---------------------------------*/
+.definicoes_body
+{
+    height: 80%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5%;
+    background-color: white;
+}
+

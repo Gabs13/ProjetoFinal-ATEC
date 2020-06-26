@@ -28,8 +28,6 @@ $(document).ready(function()
                     }
                 }
             }
-
-
     }
 
     /*Funcao para cancelar o editar*/
