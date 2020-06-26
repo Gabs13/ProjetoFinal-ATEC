@@ -18,6 +18,10 @@ $(document).ready(function()
     var postImagePerfil = document.getElementsByClassName('perfil_galeria_post');
     //modal do post
     var postModal = document.getElementById('modalperfilpost');
+    //BOTAO DE SEGUIR
+    var followbtn = document.getElementById('perfil_utilizador_info_btns_followbtn');
+
+
 
     var imgCamera = document.getElementById('img_edit');
 
@@ -45,6 +49,15 @@ $(document).ready(function()
       $("#perfil_utilizador_imagem_img").css('cursor', '');
       $("#img_edit").css('cursor', '');
     });
+
+    /*Funcao para seguir*/
+    followbtn.onclick= function()
+    {
+      followbtn.style.border="1px solid #cc3b46";
+      followbtn.style.backgroundColor="white";
+      followbtn.style.color="#cc3b46";
+      followbtn.innerHTML='A Seguir <i class="fas fa-check"></i>';
+    }
 
 
     /*CLICKAR NO POST E ABRIR MODAL*/

@@ -1,10 +1,6 @@
 <body>
-    <div class="">
-
+    <div class="definicoes_body">
+            sfgsfgdfgdf
     </div>
-
-
-
-
 
 </body>

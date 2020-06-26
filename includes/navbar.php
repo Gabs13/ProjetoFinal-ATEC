@@ -14,8 +14,8 @@
                 </a>
               </div>
               <li>Home</li>
+              <li> <a href="perfil.php">Perfil</a></li>
               <li> <a href="mensagens.php">Mensagens</a> </li>
-              <li>Network</li>
               <li> <a href="login.php"> Galeria</a> </li>
 
             </ul>

@@ -27,7 +27,7 @@
             }
             else
             {
-              echo 'Tu: '.$UltimaMsg["Mensagem"].' <i style="color: blue; float: right; margin-right: 10px;">'.strftime("%a", strtotime($UltimaMsg["DataMsg"])).'</i>';
+              echo '<div style="font-weight:bold;">Tu: '.$UltimaMsg["Mensagem"].'</div> <i style="color: blue; float: right; margin-right: 10px;">'.strftime("%a", strtotime($UltimaMsg["DataMsg"])).'</i>';
             }
             echo'</div>
         </div>

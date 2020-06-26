@@ -117,17 +117,20 @@
                     </div>
                 </div>
                 <div class="perfil_utilizador_info_btns">
-                    <div class="perfil_utilizador_info_btns_seguidores" id="perfil_utilizador_info_btns_seguidores">
-                        <div class="perfil_utilizador_info_btns_seguidores_nr" id="total_seguidores"></div>
-                        <div class="perfil_utilizador_info_btns_seguidores_text">Seguidores</div>
-                    </div>
-                    <div class="perfil_utilizador_info_btns_aseguir" id="perfil_utilizador_info_btns_aseguir">
-                        <div class="perfil_utilizador_info_btns_seguidores_nr" id="total_aseguir"></div>
-                        <div class="perfil_utilizador_info_btns_seguidores_text">A Seguir</div>
-                    </div>
-                    <div class="perfil_utilizador_info_btns_fotos" id="perfil_utilizador_info_btns_fotos">
-                        <div class="perfil_utilizador_info_btns_seguidores_nr" id="total_posts"></div>
-                        <div class="perfil_utilizador_info_btns_seguidores_text">Posts</div>
+                    <div class="perfil_utilizador_info_btns_followbtn" id="perfil_utilizador_info_btns_followbtn">Seguir</div>
+                    <div class="perfil_utilizador_info_btns_direita">
+                        <div class="perfil_utilizador_info_btns_seguidores" id="perfil_utilizador_info_btns_seguidores">
+                            <div class="perfil_utilizador_info_btns_seguidores_nr" id="total_seguidores"></div>
+                            <div class="perfil_utilizador_info_btns_seguidores_text">Seguidores</div>
+                        </div>
+                        <div class="perfil_utilizador_info_btns_aseguir" id="perfil_utilizador_info_btns_aseguir">
+                            <div class="perfil_utilizador_info_btns_seguidores_nr" id="total_aseguir"></div>
+                            <div class="perfil_utilizador_info_btns_seguidores_text">A Seguir</div>
+                        </div>
+                        <div class="perfil_utilizador_info_btns_fotos" id="perfil_utilizador_info_btns_fotos">
+                            <div class="perfil_utilizador_info_btns_seguidores_nr" id="total_posts"></div>
+                            <div class="perfil_utilizador_info_btns_seguidores_text">Posts</div>
+                        </div>
                     </div>
                 </div>
             </div>
