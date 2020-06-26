@@ -74,6 +74,7 @@
     <!--MODAL DE EDICAO DA FOTO DE PERFIL-->
     <div class="modal_edicao_foto">
         <div class="modal_edicao_foto_container">
+            <span>&times;</span>
             <div class="modal_edicao_foto_container_img">
                 <img class="perfil_utilizador_imagem_img" src="imagens/Utilizadores/gabriel.jpg">
             </div>

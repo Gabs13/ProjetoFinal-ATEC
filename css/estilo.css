@@ -3315,7 +3315,8 @@ footer
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
-    display: none;
+    display: block;
+    
 }
 
 .modal_edicao_foto_container
@@ -3327,7 +3328,16 @@ footer
     background-color: white;
     display: block;
     border-radius: 8px;
+    position: relative;
 
+}
+
+.modal_edicao_foto_container span
+{
+    position: absolute;
+    right: 3%;
+    font-size: 1.4em;
+    top: 2%;
 }
 
 .modal_edicao_foto_container_img
