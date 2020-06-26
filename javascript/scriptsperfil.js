@@ -30,38 +30,6 @@ $(document).ready(function()
     const previewContainer = document.getElementById('modal_edicao_foto_container_img');
     const previewImage = previewContainer.querySelector('.perfil_utilizador_imagem_img');
 
-
-    $("#img_edit").mouseenter(function(){
-      $("#perfil_utilizador_imagem_img").css('transform', 'scale(1.5)');
-      $("#perfil_utilizador_imagem_img").css('-webkit-filter', 'brightness(50%)');
-      $("#perfil_utilizador_imagem_img").css('-webkit-transition:', 'all 1s ease');
-      $("#perfil_utilizador_imagem_img").css('-moz-transition:', 'all 1s ease');
-      $("#perfil_utilizador_imagem_img").css('-o-transition', 'all 1s ease');
-      $("#perfil_utilizador_imagem_img").css('-ms-transition', 'all 1s ease');
-      $("#perfil_utilizador_imagem_img").css('transition', 'all 1s ease');
-      $("#perfil_utilizador_imagem_img").css('cursor', 'pointer');
-      $("#img_edit").css('cursor', 'pointer');
-    });
-
-    $("#img_edit").mouseleave(function(){
-      $("#perfil_utilizador_imagem_img").css('transform', '');
-      $("#perfil_utilizador_imagem_img").css('-webkit-filter', '');
-      $("#perfil_utilizador_imagem_img").css('-webkit-transition:', '');
-      $("#perfil_utilizador_imagem_img").css('-moz-transition:', '');
-      $("#perfil_utilizador_imagem_img").css('-o-transition', '');
-      $("#perfil_utilizador_imagem_img").css('-ms-transition', '');
-      $("#perfil_utilizador_imagem_img").css('transition', '');
-      $("#perfil_utilizador_imagem_img").css('cursor', '');
-      $("#img_edit").css('cursor', '');
-    });
-
-    $("#img_edit").click(function(event){
-      if ($("#modal_edicao_foto").css('display') == 'none')
-      {
-        $("#modal_edicao_foto").css('display', 'block');
-      }
-    });
-
     $("#perfil_utilizador_imagem_img").click(function(event){
       $("#img_edit").click();
     });
@@ -115,23 +83,6 @@ $(document).ready(function()
       followbtn.innerHTML='A Seguir <i class="fas fa-check"></i>';
     }
 
-
-    /*CLICKAR NO POST E ABRIR MODAL*/
-    for (var ctmodal in postImagePerfil)
-    {
-        postImagePerfil[ctmodal].onclick=function()
-        {
-            if(postModal.style.display=="none")
-            {
-                postModal.style.display="block";
-            }
-            else
-            {
-                postModal.style.display="none";
-            }
-        }
-    }
-
     /*ABRIR MODAL DE SEGUIDORES*/
     btnSeguidores.onclick = function()
     {
@@ -161,7 +112,6 @@ $(document).ready(function()
     //FECHAR MODAL ASEGUIR E SEGUIDORES
     window.onclick = function(event)
     {
-
         if (event.target == modalPerfil || event.target == btnModalClose)
         {
             modalPerfil.style.display = "none";
@@ -188,9 +138,20 @@ $(document).ready(function()
 
           console.log(finalResult);
 
-          $("#perfil_utilizador_imagem_img").attr("src", 'imagens/Utilizadores/' + finalResult.User['UtilFoto']);
+          if(finalResult.User['UtilFoto'] == null)
+          {
+            $("#perfil_utilizador_imagem_img").attr("src", 'imagens/Icones/icons8-male-user-26.png');
 
-          $("#perfil_utilizador_preview_img").attr("src", 'imagens/Utilizadores/' + finalResult.User['UtilFoto']);
+            $("#perfil_utilizador_preview_img").attr("src", 'imagens/Icones/icons8-male-user-26.png');
+          }
+          else
+          {
+            $("#perfil_utilizador_imagem_img").attr("src", 'imagens/Utilizadores/' + finalResult.User['UtilFoto']);
+
+            $("#perfil_utilizador_preview_img").attr("src", 'imagens/Utilizadores/' + finalResult.User['UtilFoto']);
+          }
+
+
 
           $("#perfil_utilizador_info_nome").html(finalResult.User['UtilPNome'] + ' ' + finalResult.User['UtilUNome']);
           $("#perfil_utilizador_info_username").html('@' + finalResult.User['UtilUser']);
@@ -207,6 +168,79 @@ $(document).ready(function()
           $("#perfil_galeria").html('<div class="loading_perfil"> <img src="imagens/Icones/loadingperfil.gif"> </div>');
 
           $("#perfil_galeria").load("functions/CarregarFotosPerfil.php", {UserID: finalResult.User['UtilID']});
+
+          if (finalResult.User['UtilID'] == finalResult.IDSessao)
+          {
+            //Hover on da animação na foto de perfil
+            $("#perfil_utilizador_imagem").find( "img" ).mouseenter(function(){
+              $("#perfil_utilizador_imagem_img").css('transform', 'scale(1.5)');
+              $("#perfil_utilizador_imagem_img").css('-webkit-filter', 'brightness(50%)');
+              $("#perfil_utilizador_imagem_img").css('-webkit-transition:', 'all 1s ease');
+              $("#perfil_utilizador_imagem_img").css('-moz-transition:', 'all 1s ease');
+              $("#perfil_utilizador_imagem_img").css('-o-transition', 'all 1s ease');
+              $("#perfil_utilizador_imagem_img").css('-ms-transition', 'all 1s ease');
+              $("#perfil_utilizador_imagem_img").css('transition', 'all 1s ease');
+              $("#perfil_utilizador_imagem_img").css('cursor', 'pointer');
+            });
+
+            //Hover out da animação na foto de perfil
+            $("#perfil_utilizador_imagem").find( "img" ).mouseleave(function(){
+              $("#perfil_utilizador_imagem_img").css('transform', '');
+              $("#perfil_utilizador_imagem_img").css('-webkit-filter', '');
+              $("#perfil_utilizador_imagem_img").css('-webkit-transition:', '');
+              $("#perfil_utilizador_imagem_img").css('-moz-transition:', '');
+              $("#perfil_utilizador_imagem_img").css('-o-transition', '');
+              $("#perfil_utilizador_imagem_img").css('-ms-transition', '');
+              $("#perfil_utilizador_imagem_img").css('transition', '');
+              $("#perfil_utilizador_imagem_img").css('cursor', '');
+            });
+
+            //Hover on da animação na foto de perfil
+            $("#perfil_utilizador_imagem").mouseenter(function(){
+              $("#img_edit").css('display', 'block');
+            });
+
+            //Hover out da animação na foto de perfil
+            $("#perfil_utilizador_imagem").mouseleave(function(){
+              $("#img_edit").css('display', 'none');
+            });
+
+            //Hover on da animação na foto de perfil
+            $("#img_edit").mouseenter(function(){
+              $("#perfil_utilizador_imagem_img").css('transform', 'scale(1.5)');
+              $("#perfil_utilizador_imagem_img").css('-webkit-filter', 'brightness(50%)');
+              $("#perfil_utilizador_imagem_img").css('-webkit-transition:', 'all 1s ease');
+              $("#perfil_utilizador_imagem_img").css('-moz-transition:', 'all 1s ease');
+              $("#perfil_utilizador_imagem_img").css('-o-transition', 'all 1s ease');
+              $("#perfil_utilizador_imagem_img").css('-ms-transition', 'all 1s ease');
+              $("#perfil_utilizador_imagem_img").css('transition', 'all 1s ease');
+              $("#perfil_utilizador_imagem_img").css('cursor', 'pointer');
+
+              $("#img_edit").css('cursor', 'pointer');
+            });
+
+            //Hover out da animação na foto de perfil
+            $("#img_edit").mouseleave(function(){
+              $("#perfil_utilizador_imagem_img").css('transform', '');
+              $("#perfil_utilizador_imagem_img").css('-webkit-filter', '');
+              $("#perfil_utilizador_imagem_img").css('-webkit-transition:', '');
+              $("#perfil_utilizador_imagem_img").css('-moz-transition:', '');
+              $("#perfil_utilizador_imagem_img").css('-o-transition', '');
+              $("#perfil_utilizador_imagem_img").css('-ms-transition', '');
+              $("#perfil_utilizador_imagem_img").css('transition', '');
+              $("#perfil_utilizador_imagem_img").css('cursor', '');
+
+              $("#img_edit").css('cursor', '');
+            });
+
+            //Função para abrir a modal para alterar a fotografia de perfil
+            $("#img_edit").click(function(event){
+              if ($("#modal_edicao_foto").css('display') == 'none')
+              {
+                $("#modal_edicao_foto").css('display', 'block');
+              }
+            });
+          }
         }
       })
     }
@@ -216,8 +250,64 @@ $(document).ready(function()
       console.log(id);
     }
 
-
     var url = new URL(window.location);
     var getid = url.searchParams.get("uname");
     carregarPerfil(getid);
+
+
 });
+
+function getGallery(id)
+{
+  $.ajax({
+    type:"POST",
+    url:"functions/functions.php",
+    data: {
+      action: "getGaleriaPHP",
+      id: id,
+    },
+
+    success:function(result)
+    {
+      var finalResult = JSON.parse(result);
+
+      document.getElementById("modal_esquerda").innerHTML = '<img src="/ProjetoFinal/imagens/posts/' + finalResult.Foto[0] + '">';
+
+      document.getElementById("modal_username_text").innerHTML = finalResult.User[1] + " " + finalResult.User[2]; //Preencher primeiro e ultimo nome no Post
+
+      document.getElementById("modal_user_desc").innerHTML = finalResult.Post[1]; //Preencher descrição foto
+
+      if (document.getElementsByClassName("modalGallery")[0] != null)
+      {
+        document.getElementsByClassName("modalGallery")[0].style.display="block";
+      }
+
+      $("#modal_direita_comentarios").empty();
+
+      $("#modal_direita_comentarios").load("functions/CarregarComentarios.php", {PostID: finalResult.Post[0]});
+
+      //window.location.hash = '?photouser=' + finalResult.User[0];
+      //history.replaceState(null, null, ' ');
+
+      history.pushState('', document.title, '?pid=' + finalResult.Post[0] + '&uid=' + finalResult.User[0]);
+
+      //parent.location.hash = "?photouser=" + finalResult.User[0]; //Mudar a hash no url
+
+      document.getElementById("modal_user_sendbtn").innerHTML = '<i onclick="addComment('+ finalResult.Post[0] +');" class="fas fa-location-arrow"></i>';
+
+      $("#autor_modal_info_likes").empty();
+
+      $("#autor_modal_info_likes").load("functions/CarregarLikesPost.php", {PostID: finalResult.Post[0]});
+
+      if(finalResult.Like == true)
+      {
+        document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost(' + finalResult.Post[0] + ');">';
+        $("#likePostModal").css('color', '#D24D57');
+      }
+      else
+      {
+        document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost(' + finalResult.Post[0] + ');">';
+      }
+    }
+  });
+}

@@ -2353,12 +2353,12 @@ footer
     transition: 1s;
 }
 /*------------------------SIMBOLO ARTIFEX--------------------*/
-.resultadoPesquisa_back 
+.resultadoPesquisa_back
 {
     position: absolute;
     top: -9px;
     left: 47px;
-    
+
 }
 .tooltiptext
 {
@@ -2374,18 +2374,18 @@ footer
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
-/* 
-  
-  
-  
-  
+/*
+
+
+
+
   position: absolute;
   z-index: 1;
   bottom: 125%;
   left: 50%;
   margin-left: -60px;
   opacity: 0;
-  transition: opacity 0.3s;*/  
+  transition: opacity 0.3s;*/
 }
 
 .resultadoPesquisa_back
@@ -2880,18 +2880,6 @@ footer
     -webkit-filter: brightness(100%);
 }
 
-.perfil_utilizador_imagem img:hover
-{
-    transform: scale(1.5);
-    -webkit-filter: brightness(50%);
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-    cursor: pointer;
-}
-
 .img_edit
 {
     display: none;
@@ -2902,24 +2890,6 @@ footer
     top: 20%;
     left: 29%;
 }
-
-.img_edit:hover .perfil_utilizador_imagem img
-{
-    transform: scale(1.5);
-    -webkit-filter: brightness(50%);
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-    cursor: pointer;
-}
-
-.perfil_utilizador_imagem:hover .img_edit
-{
-    display: block;
-}
-
 
 .perfil_utilizador_container
 {
