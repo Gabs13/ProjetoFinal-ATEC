@@ -13,10 +13,10 @@
             <div class="home_post_create">
               <div class="home_post_create_titulo">Insira o seu post...</div>
               <div class="home_post_create_container">
-                <input class="home_post_create_container_texto" id="home_post_create_container_texto" name="tb_desc" placeholder="Escreva a sua descrição..." disabled>
+                <input class="home_post_create_container_texto" id="home_post_create_container_texto_1" name="tb_desc_1" placeholder="Escreva a sua descrição..." disabled>
                 <div class="home_post_create_container_btns">
-                  <input type="file" name="bt_carregarfoto" id="post_img_file" style="display:none;">
-                  <input type="submit" name="bt_postarfoto" id="post_send_file" style="display:none;">
+                  <input type="file" name="bt_carregarfoto_1" id="post_img_file_1" style="display:none;">
+                  <input type="submit" name="bt_postarfoto_2" id="post_send_file_2" style="display:none;">
                   <div class="home_post_create_container_send" id="post_img"><i class="far fa-image"></i></div>
                   <div class="home_post_create_container_send" id="post_send"><i class="fas fa-paper-plane"></i></div>
                 </div>
@@ -78,7 +78,7 @@
             <div class="autor_modal_info_btn2 autor_modal_info_btn"><i class="fas fa-share-alt"></i></div>
           </div>
           <div class="modal_comentarios_bottom">
-            <input autocomplete="off" type="text" id="comentario_bottom" class="modal_user_comentario" placeholder="Adicione um comentário...">
+            <input autocomplete="off" type="text" id="comentario_bottom_1" class="modal_user_comentario" placeholder="Adicione um comentário...">
             <div id="modal_user_sendbtn"> </div>
           </div>  
         </div>
