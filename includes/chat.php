@@ -20,7 +20,6 @@
 
         <!--RESULTADO DAS PESQUISAS-->
         <div class="chat_resultados_pesquisa" id="chat_resultados_pesquisa">
-
         </div>
             <!--FINAL DAS PESQUISAS-->
 
@@ -39,7 +38,10 @@
           <div class="chat_display_user">
               <div class="chat_display_user_profile">
                   <div class="chat_display_user_img" id="chat_display_user_img"> <img src="imagens/Icones/icons8-male-user-26.png"> </div>
-                  <div class="chat_display_user_name" id="chat_display_user_name"></div>
+                  <div class="chat_display_userinfo">
+                    <div class="chat_display_user_name" id="chat_display_user_name"></div>
+                    <div class="chat_display_user_username" id="chat_display_user_username">@gabsonthebeat</div>
+                  </div>
               </div>
           </div>
 
