@@ -105,17 +105,21 @@ $(document).ready(function()
     }
 
     //FECHAR MODAL ASEGUIR E SEGUIDORES
-    window.onclick = function(event)
+    $(window).click(function(event)
     {
         if (event.target == modalPerfil || event.target == btnModalClose)
         {
             modalPerfil.style.display = "none";
         }
-    }
+    });
+
+
 
     carregarPerfil(getuser);
 
 });
+
+
 
 function totalFollowers(id)
 {
@@ -255,7 +259,7 @@ function carregarPerfil(nome)
           }
         });
 
-        
+
       }
     }
   })
