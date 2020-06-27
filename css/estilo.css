@@ -1358,14 +1358,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
 {
     display: none;
     width: 368.81px;
-    height: 577px;
+    height: 576px;
     position: absolute;
     background-color: rgba(0,0, 0, 0.4);
     z-index: 4;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     right: 36.5em;
-    top: 7.5em;
+    top: 7.54em;
 }
 
 .display_like_post
@@ -2650,10 +2650,10 @@ footer
 
 /*------------------------------------------------IMAGEMPOST---------------------------------------------*/
 
-.imagempost_display
+.modalpostimg
 {
     display: block;
-    /* z-index: 2; */
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -2668,10 +2668,7 @@ footer
 {
     width: 50%;
     margin: 2% 25% 0 25%;
-    background-color: #f2f2f2;
     height: 100%;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
     padding-bottom: 20px;
 }
 
@@ -2757,17 +2754,28 @@ footer
 
 .home_post_example
 {
-    display: none;
-    margin: 3%;
+    display: flex;
     background-color: rgba(255,255,255);
     border-radius: 8px;
     height: 36em;
+    margin-top: 3%;
+}
+.home_post_example_border
+{
+    margin-right: 28%;
+    margin-left: 28%;
+    width: 845px;
 }
 
 .previewImg
 {
     padding-left: 0 !important;
     padding-top: 0 !important;
+}
+
+#modal_criar_post_close
+{
+    font-size: 2em;
 }
 
 .home_post_example_border_text
@@ -3453,4 +3461,20 @@ footer
     margin-right: 25%;
     margin-top: 5%;
     background-color: white;
+}
+
+
+/*CRIAR POST NA NAV BAR*/
+.modal_criar_post
+{
+    position:fixed;
+    z-index: 2;/*Ficar por cima dos elementos no eixo Z*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    display: none;
 }

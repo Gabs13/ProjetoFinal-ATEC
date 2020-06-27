@@ -7,7 +7,36 @@ var btnDropdownlist = document.getElementsByClassName('navbar_menu_dropdown')[0]
 
 //botao de pesquisa
 var searchbar = document.getElementById('procura');
+//botao de adicionar 
+var addbtn = document.getElementById('add_posts_nav');
+var modaladdpost = document.getElementById('modal_criar_post');
+var closepostcreate = document.getElementById('modal_criar_post_close');
 
+
+$(document).ready(function(){
+  addbtn.onclick=function()
+  {
+    if(modaladdpost.style.display=="none")
+    {
+      modaladdpost.style.display="block";
+    }
+    else
+    {
+      modaladdpost.style.display="none";
+    }
+    
+  }
+
+
+  window.onclick = function(event)
+  {
+    if (event.target == modaladdpost || event.target == closepostcreate)
+    {
+      modaladdpost.style.display="none";
+    }
+  }
+
+});
 
 $(document).ready(function(){
   $(".procura").mouseenter(function(){
