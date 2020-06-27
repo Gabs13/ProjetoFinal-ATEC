@@ -229,6 +229,8 @@
   {
     include 'conn.php';
 
+    session_start();
+
     $UserName = $_POST['nome'];
 
     $User = mysqli_query($conn, "SELECT UtilID, UtilUser, UtilPNome, UtilUNome, UtilDesc, UtilFoto FROM Utilizadores WHERE UtilUser = '$UserName'");
@@ -247,19 +249,68 @@
 
     $TotalPosts = mysqli_num_rows($Posts);
 
+    $isFollowing = mysqli_query($conn, "SELECT SeguidoresID, UtilID, FollowID FROM Seguidores WHERE UtilID = $_SESSION[UtilID] && FollowID = $DadosUtil[UtilID]");
+
     $Data = array();
+
+    if(mysqli_num_rows($isFollowing) == 0)
+    {
+      $Data['Seguir'] = false;
+    }
+    else
+    {
+      $Data['Seguir'] = true;
+    }
 
     $Data['User'] = $DadosUtil;
 
-    $Data['TFollowers'] = $TotalFollowers;
+    $Data['TFollowing'] = $TotalFollowers;
 
-    $Data['TFollowing'] = $TotalFollowing;
+    $Data['TFollowers'] = $TotalFollowing;
 
     $Data['TPosts'] = $TotalPosts;
 
+    $Data['IDSessao'] = $_SESSION['UtilID'];
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
+  if(@$_POST['action'] == 'seguirPHP')
+  {
+    include 'conn.php';
+
+    $IDFollow = $_POST['id'];
+
     session_start();
 
-    $Data['IDSessao'] = $_SESSION['UtilID'];
+    $isFollowing = mysqli_query($conn, "SELECT SeguidoresID, UtilID, FollowID FROM Seguidores WHERE UtilID = $_SESSION[UtilID] && FollowID = $IDFollow");
+
+    $Data = array();
+
+    if(mysqli_num_rows($isFollowing) == 0)
+    {
+      mysqli_query($conn, "INSERT INTO Seguidores(UtilID, FollowID) VALUES ($_SESSION[UtilID], $IDFollow)");
+      $Data['Seguir'] = true;
+    }
+    else
+    {
+      mysqli_query($conn, "DELETE FROM Seguidores WHERE UtilID = $_SESSION[UtilID] && FollowID = $IDFollow");
+      $Data['Seguir'] = false;
+    }
+
+    $Followers = mysqli_query($conn, "SELECT UtilID, FollowID FROM Seguidores WHERE UtilID = $IDFollow");
+
+    $TotalFollowers = mysqli_num_rows($Followers);
+
+    $Following = mysqli_query($conn, "SELECT UtilID, FollowID FROM Seguidores WHERE FollowID = $IDFollow");
+
+    $TotalFollowing = mysqli_num_rows($Following);
+
+    $Data['TFollowing'] = $TotalFollowers;
+
+    $Data['TFollowers'] = $TotalFollowing;
 
     include 'deconn.php';
 

@@ -3,7 +3,7 @@
 
   session_start();
 
-  $Conversas = mysqli_query($conn, "SELECT u.UtilID as UtilID, c.ConversaID as ConversaID, u.UtilPNome as PrimeiroNome, u.UtilUNome as SegundoNome FROM Conversas c, Utilizadores as u WHERE CASE WHEN c.UserUm = $_SESSION[UtilID] THEN c.UserDois = u.UtilID WHEN c.UserDois = $_SESSION[UtilID] THEN c.UserUm = u.UtilID END AND (c.UserUm = $_SESSION[UtilID] OR c.UserDois = $_SESSION[UtilID])");
+  $Conversas = mysqli_query($conn, "SELECT u.UtilID as UtilID, c.ConversaID as ConversaID, u.UtilPNome as PrimeiroNome, u.UtilUNome as SegundoNome, u.UtilUser as User, u.UtilFoto as Foto FROM Conversas c, Utilizadores as u WHERE CASE WHEN c.UserUm = $_SESSION[UtilID] THEN c.UserDois = u.UtilID WHEN c.UserDois = $_SESSION[UtilID] THEN c.UserUm = u.UtilID END AND (c.UserUm = $_SESSION[UtilID] OR c.UserDois = $_SESSION[UtilID])");
 
   while($TodasConversas = mysqli_fetch_array($Conversas))
   {
@@ -16,9 +16,18 @@
     setlocale(LC_ALL, 'pt_PT');
 
     echo '
-    <div class="chat_users_display_user" onclick="limparMsgs('.$TodasConversas["ConversaID"].'); loadMsgs('.$TodasConversas["ConversaID"].');">
-        <div class="chat_users_display_user_img"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>
-        <div class="chat_users_display_info">
+    <div class="chat_users_display_user" onclick="limparMsgs('.$TodasConversas["ConversaID"].'); loadMsgs('.$TodasConversas["ConversaID"].');">';
+
+    if($TodasConversas["Foto"] != null)
+    {
+      echo '<div class="chat_users_display_user_img"> <img src="imagens/Utilizadores/'.$TodasConversas["Foto"].'"> </div>';
+    }
+    else {
+      echo '<div class="chat_users_display_user_img"> <img src="imagens/Icones/icons8-male-user-26.png"> </div>';
+    }
+
+
+    echo   '<div class="chat_users_display_info">
             <div class="chat_users_display_user_nome" id="chat_users_display_user_nome">'.$TodasConversas["PrimeiroNome"].' '.$TodasConversas["SegundoNome"].'</div>
             <div class="chat_users_display_user_mensagem">';
             if ($UltimaMsg["UtilID"] != $_SESSION["UtilID"])

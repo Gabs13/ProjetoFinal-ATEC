@@ -33,9 +33,24 @@
         echo '<meta http-equiv="refresh" content="0;url=index.php">';
       }
 
-      include 'includes/navbar.php';
+      if(!$_GET['uname'] && !$_GET['uid'])
+      {
+        header("Location: http://localhost/ProjetoFinal/login.php");
+      }
+      else
+      {
+        if($_SESSION['UtilID'] == $_GET['uid'] && $_SESSION['UtilUser'] == $_GET['uname'])
+        {
+          include 'includes/navbar.php';
 
-      include 'includes/editarPerfil.php';
+          include 'includes/editarPerfil.php';
+        }
+        else
+        {
+          header("Location: http://localhost/ProjetoFinal/login.php");
+        }
+      }
+
     ?>
     <!-- teste -->
   </body>
