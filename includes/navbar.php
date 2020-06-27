@@ -105,7 +105,7 @@
         <li> <a href="<?php echo "perfil.php?&uname=".$_SESSION['UtilUser']."&uid=".$_SESSION['UtilID']; ?>">Perfil</a></li>
         <li> <a href="mensagens.php">Mensagens</a> </li>
         <li> <a href="login.php"> Galeria</a> </li>
-        <li><i class="fas fa-plus-square" id="add_posts_nav"></i></li>
+        <li><div class="post_creation_button"><i class="fas fa-plus-square" id="add_posts_nav"></i><span class="post_creation_text">Crie o seu post!</span></div></li>
       </ul>
       <div class="name_dropdownlist">
         <label id="dropdownlistNavbar"> <?php echo $_SESSION["CPNome"].' '.$_SESSION["CUNome"]; ?> </label>
