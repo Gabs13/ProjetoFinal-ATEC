@@ -102,7 +102,7 @@
           </a>
         </div>
         <li>Home</li>
-        <li> <a href="perfil.php">Perfil</a></li>
+        <li> <a href="<?php echo "perfil.php?&uname=".$_SESSION['UtilUser']."&uid=".$_SESSION['UtilID']; ?>">Perfil</a></li>
         <li> <a href="mensagens.php">Mensagens</a> </li>
         <li> <a href="login.php"> Galeria</a> </li>
         <li><i class="fas fa-plus-square" id="add_posts_nav"></i></li>
@@ -110,7 +110,7 @@
       <div class="name_dropdownlist">
         <label id="dropdownlistNavbar"> <?php echo $_SESSION["CPNome"].' '.$_SESSION["CUNome"]; ?> </label>
         <div class="navbar_menu_dropdown" id="navbar_menu_dropdown">
-          <div> <a href="edit.php"> Editar perfil </a></div>
+          <div> <a href="<?php echo "edit.php?&uname=".$_SESSION['UtilUser']."&uid=".$_SESSION['UtilID']; ?>"> Editar perfil </a></div>
           <div>Definições e Privacidade</div>
           <div>Ajuda e Support</div>
           <div>
