@@ -58,9 +58,11 @@ function criarConversa(id)
     },
     success:function(result)
     {
-      todasMensagens();
-      limparMsgs(id);
-      loadMsgs(id);
+      var finalResult = JSON.parse(result);
+
+      limparMsgs(finalResult.Info);
+      loadMsgs(finalResult.Info);
+
     }
 
   });
@@ -107,8 +109,6 @@ function renderMessage(item)
   let today = new Date();
   let diamsg = new Date(item.DataMsg);
   let time = new Date(item.DataMsg);
-
-  console.log(diamsg.getDay());
 
   if (time.getMinutes() < 10){
     time = time.getHours() + ':0' + time.getMinutes();
