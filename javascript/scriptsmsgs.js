@@ -47,6 +47,25 @@ $(document).ready(function(){
   })
 });
 
+function criarConversa(id)
+{
+  $.ajax({
+    type: "POST",
+    url: "functions/functions.php",
+    data:{
+      action: "criarConversaPHP",
+      id: id,
+    },
+    success:function(result)
+    {
+      todasMensagens();
+      limparMsgs(id);
+      loadMsgs(id);
+    }
+
+  });
+}
+
 
 var intervalomsgs;
 
