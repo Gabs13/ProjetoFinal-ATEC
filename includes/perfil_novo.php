@@ -7,14 +7,8 @@
         <div class="modal_perfil_container_title">Seguidores</div>
         <span class="perfil_modal_close" id="perfil_modal_close">X</span>
       </div>
-      <div class="modal_perfil_container_main">
-        <div class="modal_perfil_container_items">
-          <div class="modal_perfil_container_items_img"><a><img src=""></a></div>
-          <div class="modal_perfil_container_items_nome">
-            <div class="modal_perfil_container_items_nome_name">Gabigol</div>
-            <div class="modal_perfil_container_items_nome_username">Gabriel Cosme</div>
-          </div>
-        </div>
+      <div class="modal_perfil_container_main" id="modal_perfil_container_main">
+
       </div>
 
       <div class="modal_perfil_container_final"></div>
@@ -133,9 +127,9 @@
           <div class="perfil_utilizador_edit">
             <?php
 
-            if (@$_GET['uname'] == @$_SESSION['UtilUser'])
+            if (@$_GET['uname'] == @$_SESSION['UtilUser'] && @$_GET['uid'] == @$_SESSION['UtilID'])
             {
-              echo '<div class="perfil_utilizador_edit_text">Editar <i class="far fa-edit"></i></div>';
+              echo '<div class="perfil_utilizador_edit_text"> <a style="color: #D24D57; cursor: pointer;" href="edit.php?&uname='.$_SESSION['UtilUser'].'&uid='.$_SESSION['UtilID'].'"> Editar  </a> <i class="far fa-edit"></i></div>';
             }
             ?>
           </div>
@@ -143,13 +137,13 @@
         <div class="perfil_utilizador_info_btns">
           <?php
 
-          if (isset($_SESSION['UtilUser']))
+          if (isset($_SESSION['UtilUser']) && $_GET['uname'] != @$_SESSION['UtilUser'] && $_GET['uid'] != @$_SESSION['UtilID'])
           {
-            echo '<div class="perfil_utilizador_info_btns_followbtn" id="perfil_utilizador_info_btns_followbtn">Seguir</div>';
+            echo '<div class="perfil_utilizador_info_btns_followbtn" id="perfil_utilizador_info_btns_followbtn" onclick="getSeguir('.$_GET['uid'].')"></div>';
           }
           else
           {
-            echo '<div class="perfil_utilizador_info_btns_followbtn" style="display: none;" id="perfil_utilizador_info_btns_followbtn">Seguir</div>';
+            echo '<div class="perfil_utilizador_info_btns_followbtn" style="display: none;" id="perfil_utilizador_info_btns_followbtn"></div>';
           }
           ?>
 

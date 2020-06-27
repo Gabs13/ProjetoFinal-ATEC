@@ -29,7 +29,12 @@
               destruir_sessao();
               echo '<meta http-equiv="refresh" content="0;url=index.php">';
             }
-            
+
+            if(@$_GET['pid'] && @$_GET['uid'])
+            {
+              header("Location: http://localhost/ProjetoFinal/login.php?pid=".$_GET['pid']."&uid=".$_GET['uid']);
+            }
+
             if (isset($_SESSION['UtilID'])) {
               include 'includes/navbar.php';
             }

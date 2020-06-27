@@ -1,3 +1,7 @@
+var url = new URL(window.location);
+var getuser = url.searchParams.get("uname");
+var getid = url.searchParams.get("uid");
+
 $(document).ready(function()
 {
     //MODAL DE SEGUIDORES NO PERFIL
@@ -74,15 +78,6 @@ $(document).ready(function()
       }
     })
 
-    /*Funcao para seguir*/
-    followbtn.onclick= function()
-    {
-      followbtn.style.border="1px solid #cc3b46";
-      followbtn.style.backgroundColor="white";
-      followbtn.style.color="#cc3b46";
-      followbtn.innerHTML='A Seguir <i class="fas fa-check"></i>';
-    }
-
     /*ABRIR MODAL DE SEGUIDORES*/
     btnSeguidores.onclick = function()
     {
@@ -116,146 +111,194 @@ $(document).ready(function()
         {
             modalPerfil.style.display = "none";
         }
-
-        if (event.target == postModal || event.target == btnModalPostClose)
-        {
-            postModal.style.display = "none";
-        }
     }
 
-    function carregarPerfil(nome)
-    {
-      $.ajax({
-        type: "POST",
-        url: "functions/functions.php",
-        data:{
-          action: "carregarPerfilPHP",
-          nome: nome,
-        },
-        success:function(result)
-        {
-          var finalResult = JSON.parse(result);
-
-          console.log(finalResult);
-
-          if(finalResult.User['UtilFoto'] == null)
-          {
-            $("#perfil_utilizador_imagem_img").attr("src", 'imagens/Icones/icons8-male-user-26.png');
-
-            $("#perfil_utilizador_preview_img").attr("src", 'imagens/Icones/icons8-male-user-26.png');
-          }
-          else
-          {
-            $("#perfil_utilizador_imagem_img").attr("src", 'imagens/Utilizadores/' + finalResult.User['UtilFoto']);
-
-            $("#perfil_utilizador_preview_img").attr("src", 'imagens/Utilizadores/' + finalResult.User['UtilFoto']);
-          }
-
-
-
-          $("#perfil_utilizador_info_nome").html(finalResult.User['UtilPNome'] + ' ' + finalResult.User['UtilUNome']);
-          $("#perfil_utilizador_info_username").html('@' + finalResult.User['UtilUser']);
-          $("#perfil_utilizador_info_descricao").html(finalResult.User['UtilDesc']);
-
-          $("#total_seguidores").html(finalResult.TFollowers);
-          $("#total_aseguir").html(finalResult.TFollowing);
-          $("#total_posts").html(finalResult.TPosts);
-
-          $("#perfil_utilizador_info_btns_seguidores").click(function(){
-            totalFollowers(finalResult.User['UtilID']);
-          });
-
-          $("#perfil_galeria").html('<div class="loading_perfil"> <img src="imagens/Icones/loadingperfil.gif"> </div>');
-
-          $("#perfil_galeria").load("functions/CarregarFotosPerfil.php", {UserID: finalResult.User['UtilID']});
-
-          if (finalResult.User['UtilID'] == finalResult.IDSessao)
-          {
-            //Hover on da animação na foto de perfil
-            $("#perfil_utilizador_imagem").find( "img" ).mouseenter(function(){
-              $("#perfil_utilizador_imagem_img").css('transform', 'scale(1.5)');
-              $("#perfil_utilizador_imagem_img").css('-webkit-filter', 'brightness(50%)');
-              $("#perfil_utilizador_imagem_img").css('-webkit-transition:', 'all 1s ease');
-              $("#perfil_utilizador_imagem_img").css('-moz-transition:', 'all 1s ease');
-              $("#perfil_utilizador_imagem_img").css('-o-transition', 'all 1s ease');
-              $("#perfil_utilizador_imagem_img").css('-ms-transition', 'all 1s ease');
-              $("#perfil_utilizador_imagem_img").css('transition', 'all 1s ease');
-              $("#perfil_utilizador_imagem_img").css('cursor', 'pointer');
-            });
-
-            //Hover out da animação na foto de perfil
-            $("#perfil_utilizador_imagem").find( "img" ).mouseleave(function(){
-              $("#perfil_utilizador_imagem_img").css('transform', '');
-              $("#perfil_utilizador_imagem_img").css('-webkit-filter', '');
-              $("#perfil_utilizador_imagem_img").css('-webkit-transition:', '');
-              $("#perfil_utilizador_imagem_img").css('-moz-transition:', '');
-              $("#perfil_utilizador_imagem_img").css('-o-transition', '');
-              $("#perfil_utilizador_imagem_img").css('-ms-transition', '');
-              $("#perfil_utilizador_imagem_img").css('transition', '');
-              $("#perfil_utilizador_imagem_img").css('cursor', '');
-            });
-
-            //Hover on da animação na foto de perfil
-            $("#perfil_utilizador_imagem").mouseenter(function(){
-              $("#img_edit").css('display', 'block');
-            });
-
-            //Hover out da animação na foto de perfil
-            $("#perfil_utilizador_imagem").mouseleave(function(){
-              $("#img_edit").css('display', 'none');
-            });
-
-            //Hover on da animação na foto de perfil
-            $("#img_edit").mouseenter(function(){
-              $("#perfil_utilizador_imagem_img").css('transform', 'scale(1.5)');
-              $("#perfil_utilizador_imagem_img").css('-webkit-filter', 'brightness(50%)');
-              $("#perfil_utilizador_imagem_img").css('-webkit-transition:', 'all 1s ease');
-              $("#perfil_utilizador_imagem_img").css('-moz-transition:', 'all 1s ease');
-              $("#perfil_utilizador_imagem_img").css('-o-transition', 'all 1s ease');
-              $("#perfil_utilizador_imagem_img").css('-ms-transition', 'all 1s ease');
-              $("#perfil_utilizador_imagem_img").css('transition', 'all 1s ease');
-              $("#perfil_utilizador_imagem_img").css('cursor', 'pointer');
-
-              $("#img_edit").css('cursor', 'pointer');
-            });
-
-            //Hover out da animação na foto de perfil
-            $("#img_edit").mouseleave(function(){
-              $("#perfil_utilizador_imagem_img").css('transform', '');
-              $("#perfil_utilizador_imagem_img").css('-webkit-filter', '');
-              $("#perfil_utilizador_imagem_img").css('-webkit-transition:', '');
-              $("#perfil_utilizador_imagem_img").css('-moz-transition:', '');
-              $("#perfil_utilizador_imagem_img").css('-o-transition', '');
-              $("#perfil_utilizador_imagem_img").css('-ms-transition', '');
-              $("#perfil_utilizador_imagem_img").css('transition', '');
-              $("#perfil_utilizador_imagem_img").css('cursor', '');
-
-              $("#img_edit").css('cursor', '');
-            });
-
-            //Função para abrir a modal para alterar a fotografia de perfil
-            $("#img_edit").click(function(event){
-              if ($("#modal_edicao_foto").css('display') == 'none')
-              {
-                $("#modal_edicao_foto").css('display', 'block');
-              }
-            });
-          }
-        }
-      })
-    }
-
-    function totalFollowers(id)
-    {
-      console.log(id);
-    }
-
-    var url = new URL(window.location);
-    var getid = url.searchParams.get("uname");
-    carregarPerfil(getid);
-
+    carregarPerfil(getuser);
 
 });
+
+function totalFollowers(id)
+{
+  $("#modal_perfil_container_main").load("functions/CarregarTotalFollowers.php", {id: id});
+}
+
+function carregarPerfil(nome)
+{
+  $.ajax({
+    type: "POST",
+    url: "functions/functions.php",
+    data:{
+      action: "carregarPerfilPHP",
+      nome: nome,
+    },
+    success:function(result)
+    {
+      var finalResult = JSON.parse(result);
+
+      console.log(finalResult);
+
+      if(finalResult.User['UtilFoto'] == null)
+      {
+        $("#perfil_utilizador_imagem_img").attr("src", 'imagens/Icones/icons8-male-user-26.png');
+
+        $("#perfil_utilizador_preview_img").attr("src", 'imagens/Icones/icons8-male-user-26.png');
+      }
+      else
+      {
+        $("#perfil_utilizador_imagem_img").attr("src", 'imagens/Utilizadores/' + finalResult.User['UtilFoto']);
+
+        $("#perfil_utilizador_preview_img").attr("src", 'imagens/Utilizadores/' + finalResult.User['UtilFoto']);
+      }
+
+
+
+      $("#perfil_utilizador_info_nome").html(finalResult.User['UtilPNome'] + ' ' + finalResult.User['UtilUNome']);
+      $("#perfil_utilizador_info_username").html('@' + finalResult.User['UtilUser']);
+      $("#perfil_utilizador_info_descricao").html(finalResult.User['UtilDesc']);
+
+      $("#total_seguidores").html(finalResult.TFollowers);
+      $("#total_aseguir").html(finalResult.TFollowing);
+      $("#total_posts").html(finalResult.TPosts);
+
+      $("#perfil_utilizador_info_btns_seguidores").click(function(){
+        totalFollowers(finalResult.User['UtilID']);
+      });
+
+      if(finalResult.Seguir == true)
+      {
+        $("#perfil_utilizador_info_btns_followbtn").css("border", "1px solid #cc3b46");
+        $("#perfil_utilizador_info_btns_followbtn").css("background-color", "white");
+        $("#perfil_utilizador_info_btns_followbtn").css("color", "#cc3b46");
+        $("#perfil_utilizador_info_btns_followbtn").html('A Seguir <i class="fas fa-check"></i>');
+      }
+      else
+      {
+        $("#perfil_utilizador_info_btns_followbtn").css("border", "");
+        $("#perfil_utilizador_info_btns_followbtn").css("background-color", "#cc3b46");
+        $("#perfil_utilizador_info_btns_followbtn").css("color", "white");
+        $("#perfil_utilizador_info_btns_followbtn").html('Seguir');
+      }
+
+      $("#perfil_galeria").html('<div class="loading_perfil"> <img src="imagens/Icones/loadingperfil.gif"> </div>');
+
+      $("#perfil_galeria").load("functions/CarregarFotosPerfil.php", {UserID: finalResult.User['UtilID']});
+
+      if (finalResult.User['UtilID'] == finalResult.IDSessao)
+      {
+        //Hover on da animação na foto de perfil
+        $("#perfil_utilizador_imagem").find( "img" ).mouseenter(function(){
+          $("#perfil_utilizador_imagem_img").css('transform', 'scale(1.5)');
+          $("#perfil_utilizador_imagem_img").css('-webkit-filter', 'brightness(50%)');
+          $("#perfil_utilizador_imagem_img").css('-webkit-transition:', 'all 1s ease');
+          $("#perfil_utilizador_imagem_img").css('-moz-transition:', 'all 1s ease');
+          $("#perfil_utilizador_imagem_img").css('-o-transition', 'all 1s ease');
+          $("#perfil_utilizador_imagem_img").css('-ms-transition', 'all 1s ease');
+          $("#perfil_utilizador_imagem_img").css('transition', 'all 1s ease');
+          $("#perfil_utilizador_imagem_img").css('cursor', 'pointer');
+        });
+
+        //Hover out da animação na foto de perfil
+        $("#perfil_utilizador_imagem").find( "img" ).mouseleave(function(){
+          $("#perfil_utilizador_imagem_img").css('transform', '');
+          $("#perfil_utilizador_imagem_img").css('-webkit-filter', '');
+          $("#perfil_utilizador_imagem_img").css('-webkit-transition:', '');
+          $("#perfil_utilizador_imagem_img").css('-moz-transition:', '');
+          $("#perfil_utilizador_imagem_img").css('-o-transition', '');
+          $("#perfil_utilizador_imagem_img").css('-ms-transition', '');
+          $("#perfil_utilizador_imagem_img").css('transition', '');
+          $("#perfil_utilizador_imagem_img").css('cursor', '');
+        });
+
+        //Hover on da animação na foto de perfil
+        $("#perfil_utilizador_imagem").mouseenter(function(){
+          $("#img_edit").css('display', 'block');
+        });
+
+        //Hover out da animação na foto de perfil
+        $("#perfil_utilizador_imagem").mouseleave(function(){
+          $("#img_edit").css('display', 'none');
+        });
+
+        //Hover on da animação na foto de perfil
+        $("#img_edit").mouseenter(function(){
+          $("#perfil_utilizador_imagem_img").css('transform', 'scale(1.5)');
+          $("#perfil_utilizador_imagem_img").css('-webkit-filter', 'brightness(50%)');
+          $("#perfil_utilizador_imagem_img").css('-webkit-transition:', 'all 1s ease');
+          $("#perfil_utilizador_imagem_img").css('-moz-transition:', 'all 1s ease');
+          $("#perfil_utilizador_imagem_img").css('-o-transition', 'all 1s ease');
+          $("#perfil_utilizador_imagem_img").css('-ms-transition', 'all 1s ease');
+          $("#perfil_utilizador_imagem_img").css('transition', 'all 1s ease');
+          $("#perfil_utilizador_imagem_img").css('cursor', 'pointer');
+
+          $("#img_edit").css('cursor', 'pointer');
+        });
+
+        //Hover out da animação na foto de perfil
+        $("#img_edit").mouseleave(function(){
+          $("#perfil_utilizador_imagem_img").css('transform', '');
+          $("#perfil_utilizador_imagem_img").css('-webkit-filter', '');
+          $("#perfil_utilizador_imagem_img").css('-webkit-transition:', '');
+          $("#perfil_utilizador_imagem_img").css('-moz-transition:', '');
+          $("#perfil_utilizador_imagem_img").css('-o-transition', '');
+          $("#perfil_utilizador_imagem_img").css('-ms-transition', '');
+          $("#perfil_utilizador_imagem_img").css('transition', '');
+          $("#perfil_utilizador_imagem_img").css('cursor', '');
+
+          $("#img_edit").css('cursor', '');
+        });
+
+        //Função para abrir a modal para alterar a fotografia de perfil
+        $("#img_edit").click(function(event){
+          if ($("#modal_edicao_foto").css('display') == 'none')
+          {
+            $("#modal_edicao_foto").css('display', 'block');
+          }
+        });
+
+        
+      }
+    }
+  })
+}
+
+/*Funcao para seguir*/
+function getSeguir(id)
+{
+  $.ajax({
+    type: "POST",
+    url: "functions/functions.php",
+    data:{
+      action: "seguirPHP",
+      id: id,
+    },
+    success:function(result)
+    {
+      var finalResult = JSON.parse(result);
+
+      if(finalResult.Seguir == true)
+      {
+        $("#perfil_utilizador_info_btns_followbtn").css("border", "1px solid #cc3b46");
+        $("#perfil_utilizador_info_btns_followbtn").css("background-color", "white");
+        $("#perfil_utilizador_info_btns_followbtn").css("color", "#cc3b46");
+        $("#perfil_utilizador_info_btns_followbtn").html('A Seguir <i class="fas fa-check"></i>');
+
+        $("#total_seguidores").html(finalResult.TFollowers);
+        $("#total_aseguir").html(finalResult.TFollowing);
+      }
+      else
+      {
+        $("#perfil_utilizador_info_btns_followbtn").css("border", "");
+        $("#perfil_utilizador_info_btns_followbtn").css("background-color", "#cc3b46");
+        $("#perfil_utilizador_info_btns_followbtn").css("color", "white");
+        $("#perfil_utilizador_info_btns_followbtn").html('Seguir');
+
+        $("#total_seguidores").html(finalResult.TFollowers);
+        $("#total_aseguir").html(finalResult.TFollowing);
+      }
+    }
+
+  });
+}
 
 function getGallery(id)
 {
@@ -286,12 +329,7 @@ function getGallery(id)
 
       $("#modal_direita_comentarios").load("functions/CarregarComentarios.php", {PostID: finalResult.Post[0]});
 
-      //window.location.hash = '?photouser=' + finalResult.User[0];
-      //history.replaceState(null, null, ' ');
-
       history.pushState('', document.title, '?pid=' + finalResult.Post[0] + '&uid=' + finalResult.User[0]);
-
-      //parent.location.hash = "?photouser=" + finalResult.User[0]; //Mudar a hash no url
 
       document.getElementById("modal_user_sendbtn").innerHTML = '<i onclick="addComment('+ finalResult.Post[0] +');" class="fas fa-location-arrow"></i>';
 

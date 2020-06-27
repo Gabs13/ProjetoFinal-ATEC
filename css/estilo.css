@@ -1990,10 +1990,8 @@ footer
 
 .chat_users_display_user_img
 {
-    height: 60px;
-    width: 60px;
-    max-height: 80px;
-    max-width: 80px;
+    height: 55px;
+    width: 55px;
     margin-right: 4%;
 }
 
@@ -2014,6 +2012,7 @@ footer
 {
     height: 100%;
     width: 100%;
+    border-radius: 50%;
 
 }
 .chat_users_display_info
