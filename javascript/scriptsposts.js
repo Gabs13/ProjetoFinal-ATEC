@@ -4,33 +4,31 @@ $(document).ready(function()
     var imgPreviewbtn = document.getElementById('post_img');
     // Prewview da imagem do post
     var imgPreview = document.getElementById('imgpreview');
-    //caixa com border
-    var borderPreview = document.getElementById('home_post_example_border');
     //Texto Preview
     var textPreview = document.getElementById('home_post_example_border_text');
     //Caixa de texto
-    var descPreview = document.getElementById('home_post_create_container_texto');
+    var descPreview = document.getElementById('home_post_create_container_texto_1');
 
 
     $(".home_post_create_container").on('input', function(){
-      var desc = $("#home_post_create_container_texto").val();
+      var desc = $("#home_post_create_container_texto_1").val();
 
-      $("#modal_user_desc").html(desc);
+      $("#modal_user_desc_preview").html(desc);
 
     });
 
     $(document).on('click', '#post_img', function(event) {
       event.preventDefault();
-      $("#post_img_file").click();
+      $("#post_img_file_1").click();
     });
 
     $(document).on('click', '#post_send', function(event) {
       event.preventDefault();
-      $("#post_send_file").click();
+      $("#post_send_file_2").click();
     });
 
-    const inpFile = document.getElementById('post_img_file');
-    const previewContainer = document.getElementById('modal_esquerda');
+    const inpFile = document.getElementById('post_img_file_1');
+    const previewContainer = document.getElementById('modal_esquerda_preview');
     const previewImage = previewContainer.querySelector('.image_preview');
 
     inpFile.addEventListener("change", function(){
@@ -44,9 +42,8 @@ $(document).ready(function()
         reader.addEventListener("load", function() {
           previewImage.setAttribute("src", this.result);
           imgPreview.style.display="flex";
-          borderPreview.style.border="1px solid #ccc"; 
-          borderPreview.style.margin="10px";
           textPreview.style.display="block";
+          document.getElementById('home_post_example').style.display = "flex";
           descPreview.disabled = false;
         });
 

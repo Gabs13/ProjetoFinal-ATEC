@@ -1364,8 +1364,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
     z-index: 4;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    right: 36.5em;
-    top: 7.54em;
+    right: 31.65em;
+    top: 7.1em;
 }
 
 .display_like_post
@@ -1939,7 +1939,7 @@ footer
    {
        color: #f2f2f2;
    }
-   
+
    .buscar-btn > i {
     font-size: 30px;
    }
@@ -2704,7 +2704,7 @@ footer
 
 .home_post_create_container input
 {
-    width: 82.5%;
+    width: 68.5%;
     height: 98%;
     border: none;
     padding-left: 5%;
@@ -2753,12 +2753,12 @@ footer
 
 .home_post_example
 {
-    display: flex;
+    display: none;
     background-color: rgba(255,255,255);
-    border-radius: 8px;
+    border-radius: 12px;
     height: 36em;
-    margin-top: 3%;
 }
+
 .home_post_example_border
 {
     margin-right: 28%;
@@ -2781,10 +2781,13 @@ footer
 {
   display:none;
   width: 7.8em;
+  font-weight: bold;
+  font-size: 1.3em;
   text-align:center;
   margin-top: -10px;
   margin-left: 10px;
-  background-color: #f2f2f2;
+  color: #D24D57;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 /*--------------------------------------------------------- HOME --------------------------------------------------*/

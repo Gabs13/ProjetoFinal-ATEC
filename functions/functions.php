@@ -372,14 +372,14 @@
 
   if(isset($_POST["bt_postarfoto"]))
   {
-    $file = $_FILES['bt_carregarfoto'];
-    $desc = $_POST["tb_desc"];
+    $file = $_FILES['bt_carregarfoto_1'];
+    $desc = $_POST["tb_desc_1"];
 
-    $fileName = $_FILES['bt_carregarfoto']['name'];
-    $fileTmpName = $_FILES['bt_carregarfoto']['tmp_name'];
-    $fileSize = $_FILES['bt_carregarfoto']['size'];
-    $fileError = $_FILES['bt_carregarfoto']['error'];
-    $fileType = $_FILES['bt_carregarfoto']['type'];
+    $fileName = $_FILES['bt_carregarfoto_1']['name'];
+    $fileTmpName = $_FILES['bt_carregarfoto_1']['tmp_name'];
+    $fileSize = $_FILES['bt_carregarfoto_1']['size'];
+    $fileError = $_FILES['bt_carregarfoto_1']['error'];
+    $fileType = $_FILES['bt_carregarfoto_1']['type'];
 
     $fileExt = explode('.', $fileName);
     $fileActualExt = strtolower(end($fileExt));
@@ -408,11 +408,12 @@
 
           mysqli_query($conn, "INSERT INTO Fotos(CaminhoFoto, PostID) VALUES ('$fileNameNew', $PID)");
 
+          $link = $_POST['link'];
+
+          header("Location: $link");
+
 
           include 'deconn.php';
-
-
-          header("Location: http://localhost/ProjetoFinal/login.php?uploadsucess=1");
         }
         else
         {
