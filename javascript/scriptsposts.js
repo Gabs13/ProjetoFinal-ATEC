@@ -44,7 +44,7 @@ $(document).ready(function()
         reader.addEventListener("load", function() {
           previewImage.setAttribute("src", this.result);
           imgPreview.style.display="flex";
-          borderPreview.style.border="1px solid #ccc";
+          borderPreview.style.border="1px solid #ccc"; 
           borderPreview.style.margin="10px";
           textPreview.style.display="block";
           descPreview.disabled = false;
