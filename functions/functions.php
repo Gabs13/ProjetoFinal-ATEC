@@ -317,6 +317,19 @@
     echo json_encode($Data);
   }
 
+  if(@$_POST['action'] == 'criarConversaPHP')
+  {
+    include 'conn.php';
+
+    $UserDois = $_POST['id'];
+
+    session_start();
+
+    mysqli_query($conn, "INSERT INTO Conversas(UserUm, UserDois) VALUES($_SESSION[UtilID], $UserDois)");
+
+    include 'deconn.php';
+  }
+
   if(isset($_POST["bt_postarfoto_perfil"]))
   {
     $file = $_FILES['bt_carregarfoto'];
@@ -340,7 +353,7 @@
         {
           $fileNameNew = uniqid('', true).".".$fileActualExt;
 
-          $fileDestination = '../imagens/Utilizadores/'.$fileNameNew;
+          $fileDestination = $_SERVER['DOCUMENT_ROOT'].'/ProjetoFinal/imagens/Utilizadores/'.$fileNameNew;
 
           move_uploaded_file($fileTmpName, $fileDestination);
 
@@ -354,7 +367,9 @@
 
           $DadosUtil = mysqli_fetch_array($Util);
 
-          header("Location: http://localhost/ProjetoFinal/perfil.php?&uname=".$DadosUtil['UtilUser']."&uid=".$DadosUtil['UtilID']);
+          $link = $_POST['link'];
+
+          header("Location: $link");
 
           include 'deconn.php';
         }
@@ -394,9 +409,12 @@
         {
           $fileNameNew = uniqid('', true).".".$fileActualExt;
 
-          $fileDestination = '../imagens/posts/'.$fileNameNew;
+          $teste = $fileTmpName;
+
+          $fileDestination = $_SERVER['DOCUMENT_ROOT'].'/ProjetoFinal/imagens/posts/'.$fileNameNew;
 
           move_uploaded_file($fileTmpName, $fileDestination);
+
 
           include 'conn.php';
 

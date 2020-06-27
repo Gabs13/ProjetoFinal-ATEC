@@ -77,20 +77,20 @@
 
           echo '<!--REPOSTA AO COMENTARIO/ONCLICK DO BOTAO COMENTARIO-->
           <div class="modal_comentario_reply">
-               
+
             <div class="modal_comentario_reply_imagem"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>
-            <div class="modal_comentario_conteudo">     
+            <div class="modal_comentario_conteudo">
               <div class="modal_comentario_reply_content_btns">
                 <div class="modal_comentario_reply_content">
                   <div class="modal_comentario_reply_content_name">'.$detailsUserReply["UtilPNome"].' '.$detailsUserReply["UtilUNome"].'</div>
                   <div class="modal_comentario_reply_content_main">
                     <div class="modal_comentario_reply_content_texto">'.$ReplyComment["Mensagem"].'</div>
                   </div>
-                </div>              
+                </div>
               </div>
               <div class="modal_comentario_reply_btns">
                 <div><i class="fas fa-heart"></i>
-                  
+
                 </div>
                 <div id="btn_options"><i id ="optionsbuttonI" class="fas fa-ellipsis-h optionsbuttonI"></i>
                   <div class="modal_hidden_options" id="modal_hidden_options_id" style="display: none;">';
@@ -103,8 +103,8 @@
                   </div>
                 </div>
                 <div class="modal_comentario_reply_btns_likes">20 Likes</div>
-              </div> 
-            </div>   
+              </div>
+            </div>
           </div>';
         }
       }
@@ -112,12 +112,13 @@
       $replyComentarios = mysqli_query($conn, "SELECT ReplyComentarioID, UtilID, ComentarioID, Mensagem FROM ReplyComentarios WHERE ComentarioID = $Comment[ComentarioID]");
 
     }
-    echo '<script src="javascript/scriptscomments.js"></script>';
   }
   else
   {
     echo '<p class="modal_comentario_empty">Não tem comentários.</p>';
   }
+
+  echo '<script src="javascript/scriptscomments.js"></script>';
 
   include 'deconn.php';
 

@@ -2260,6 +2260,7 @@ footer
     font-size: 1.7em;
     padding-top: 0.25em;
     color: #D24D57;
+    cursor: pointer;
 }
 
 .chat_resultados_pesquisa li
@@ -2271,7 +2272,6 @@ footer
 
 .chat_resultados_pesquisa li:hover
 {
-    cursor:pointer;
     background-color: #ccc;
 }
 
