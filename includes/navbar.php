@@ -84,11 +84,10 @@
         </div>
           <div class="close" id="closePerfil" style="color:white">&times;</div>
       </div>
-</div>
+  </div>
 </div>
 
-<!-----------------------------------------FINAL DA MODA CRIAR POSt--------------------------------->
-
+<!-------------------------------------------FINAL DA MODA CRIAR POST------------------------------------------>
           <div class='menuContent'>
             <ul>
               <div class="procura" id="procura">
@@ -97,7 +96,7 @@
                   <i class="fas fa-search"></i>
                 </a>
               </div>
-              <li>Home</li>
+              <li style="padding-left:0;">Home</li>
               <li> <a href="perfil.php">Perfil</a></li>
               <li> <a href="mensagens.php">Mensagens</a> </li>
               <li> <a href="login.php"> Galeria</a> </li>
