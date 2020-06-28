@@ -876,18 +876,31 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .autor_modal_user{
   display: flex;
-  align-items: baseline;
   height: 4em;
   width: 100%;
 }
 
 .autor_modal_user_img{
-  float: left;
+    float: left;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%;
+}
+.autor_modal_user_img img
+{
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    transition: transform .5s ease;
 }
 
 .autor_modal_user_nome{
     padding-bottom: 2%;
-  float:left;
+    float:left;
+    padding-left: 10px;
 }
 
 .modal_user_desc
@@ -897,7 +910,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     float: left;
     font-size: 0.8em;
     padding-top: 5px;
-
+    font-style: italic;
 }
 
 /*------------------------------ Modal direita, parte dos comentarios ---------------------------------------*/
@@ -3367,8 +3380,10 @@ footer
 
 .modal_perfil_container_title
 {
-    padding-left: 32%;
-    padding-right: 21%;
+    padding-left: 20%;
+    padding-right: 11%;
+    width: 80%;
+    text-align: center;
 }
 
 .perfil_modal_close:hover
@@ -3377,7 +3392,7 @@ footer
 }
 .perfil_modal_close
 {
-    width: 10%;
+    width: 20%;
     height: 100%;
 }
 

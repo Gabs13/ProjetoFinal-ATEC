@@ -28,7 +28,6 @@
           <img id="autor_modal_user_img" src="">
         </div>
         <div class="autor_modal_user_nome" id="modal_username">
-          <img src="" alt="">
         <div id="modal_username_text"></div>
         <div class="modal_user_desc" id="modal_user_desc"></div>
       </div>
