@@ -39,7 +39,7 @@
 
     include 'includes/navbar.php';
 
-    include 'includes/novohome.php';
+    include 'includes/testehome.php';
 
 
 
