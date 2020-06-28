@@ -33,7 +33,7 @@
             <div class="chat_users_display_user_mensagem">';
             if ($UltimaMsg["UtilID"] != $_SESSION["UtilID"])
             {
-              echo $UltimaMsg["Mensagem"].' <i style="color: blue; float: right; margin-right: 10px;">'.strftime("%a", strtotime($UltimaMsg["DataMsg"])).'</i>';
+              echo '<div>'.$UltimaMsg["Mensagem"].'</div> <i style="color: blue; float: right; margin-right: 10px;">'.strftime("%a", strtotime($UltimaMsg["DataMsg"])).'</i>';
             }
             else
             {

@@ -2051,12 +2051,27 @@ footer
 .chat_users_display_user_mensagem
 {
     padding: 5px;
-    width: 16em;
+    width: 18em;
     max-width: 16em;
     height: 25%;
     max-height: 25%;
     line-break: anywhere;
     overflow: hidden;
+    display: flex;
+}
+.chat_users_display_user_mensagem div
+{
+    font-weight: bold;
+    width: 86%;
+}
+
+.chat_users_display_user_mensagem i
+{
+    color: blue;
+    float: right;
+    width: 14%;
+    margin-right:0% !important;
+    
 }
 
 .chat_display
@@ -2201,6 +2216,7 @@ footer
     padding:1%;
     background-color:rgba(210,77,87,0.7) ;
     border-radius: 10px;
+    min-width:10em;
 
 }
 .chat_display_messages_hora
@@ -2218,6 +2234,21 @@ footer
 .chat_display_messages_nome
 {
     font-weight: bold;
+    width:95%;
+}
+.chat_msgs_settings
+{
+    padding-right:10px;
+}
+.chat_msgs_settings_btn
+{
+    width:5%;
+    position: relative;
+}
+.chat_msgs_settings_btn:hover .chat_users_display_settings_modal
+{
+    display: block;
+    transition: 2s;
 }
 
 /*utilizador esquerda*/
@@ -2229,6 +2260,7 @@ footer
     padding:1%;
     background-color: #f2f2f2;
     border-radius: 10px;
+    min-width: 10em;
 }
 .chat_display_messages_ocupy
 {
@@ -2294,7 +2326,7 @@ footer
 {
     position: absolute;
     width: calc(18% + 8px);
-    z-index: 2;
+    z-index: 1;
     background-color: #f2f2f2;
     top: 9.5%;
     left: calc(15% + 24px);
@@ -2305,6 +2337,11 @@ footer
     border-bottom-left-radius: 5px;
 }
 
+.chat_msgs_settings
+{
+    display: flex;
+
+}
 .chat_resultados_pesquisa_output_add
 {
     font-size: 1.7em;

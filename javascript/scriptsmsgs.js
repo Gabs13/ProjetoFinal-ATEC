@@ -8,6 +8,19 @@ $(document).ready(function(){
   var eliminateChat = document.getElementsByClassName('chat_users_display_settings_modal');
   //modal de eliminar conversas
   var modaleliminateChat = document.getElementById('chat_eliminatemodal');
+  //botao de no no modal de eliminar
+  var btnnoEliminate = document.getElementById('chat_eleminatemodal_btns_no');
+  var btnfecharEliminate = document.getElementById('closemodalEliminar');//X para fechar modal de eliminar
+  var btneliminamsg = document.getElementsByClassName('chat_users_display_settings_modal');//abrir eliminar nas mensagens
+
+  //funcao para fechar modal de eliminar
+  window.onclick = function(event)
+  {
+    if (event.target == modaleliminateChat || event.target == btnnoEliminate || event.target == btnfecharEliminate)
+    {
+      modaleliminateChat.style.display="none";
+    }
+  }
 
   //funcao para abrir modal de eliminar os posts
 
@@ -100,7 +113,7 @@ function limparMsgs(id)
         $('#chat_display_user_name').html(finalResult.Info['PrimeiroNome'] + ' ' + finalResult.Info['SegundoNome']);
         $('#chat_display_user_username').html('<a href="perfil.php?uname=' + finalResult.Info['User'] + '&uid=' + finalResult.Info['UtilID'] + '"> @' + finalResult.Info['User'] + '</a>');
 
-        if(finalResult.Info['Foto'] != null)
+        if(finalResult.Info['Foto'] != null) 
         {
           $('#chat_display_user_img_img').attr("src", "imagens/Utilizadores/" + finalResult.Info['Foto']);
         }
@@ -152,11 +165,11 @@ function renderMessage(item)
   {
     if (diamsg.getDay() != today.getDay())
     {
-      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + (diamsg.getMonth() + 1) + '/' + diamsg.getDate() + ' ' + time + '</div> </div> </div>';
+      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display"><div class="chat_msgs_settings"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_msgs_settings_btn"><i class="fas fa-ellipsis-h"></i><div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal" onclick="eliminarModal(this)">Eliminar</div></div></div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + (diamsg.getMonth() + 1) + '/' + diamsg.getDate() + ' ' + time + '</div> </div> </div>';
     }
     else
     {
-      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + time + '</div> </div> </div>';
+      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display"> <div class="chat_msgs_settings"><div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_msgs_settings_btn"><i class="fas fa-ellipsis-h"></i><div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal" onclick="eliminarModal(this)">Eliminar</div></div></div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + time + '</div> </div> </div>';
     }
 
   }
@@ -164,11 +177,11 @@ function renderMessage(item)
   {
     if (diamsg.getDay() != today.getDay())
     {
-      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display_left"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + (diamsg.getMonth() + 1) + '/' + diamsg.getDate() + ' ' + time + '</div> </div> </div>' ;
+      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display_left"> <div class="chat_msgs_settings"><div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div><div class="chat_msgs_settings_btn"><i class="fas fa-ellipsis-h"></i><div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal" onclick="eliminarModal(this)">Eliminar</div></div></div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + (diamsg.getMonth() + 1) + '/' + diamsg.getDate() + ' ' + time + '</div> </div> </div>' ;
     }
     else
     {
-      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display_left"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + time + '</div> </div> </div>' ;
+      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display_left"> <div class="chat_msgs_settings"><div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div><div class="chat_msgs_settings_btn"><i class="fas fa-ellipsis-h"></i><div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal" >Eliminar</div></div></div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + time + '</div> </div> </div>' ;
     }
   }
 }

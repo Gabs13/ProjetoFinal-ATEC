@@ -12,8 +12,8 @@
         </div>
         <div class="chat_eliminatemodal_texto">Deseja eliminar o seguinte conteúdo?</div>
         <div class="chat_eliminatemodal_btns">
-          <div class="chat_eleminatemodal_btns_yes">Sim</div>
-          <div class="chat_eleminatemodal_btns_no">Não</div>
+          <div class="chat_eleminatemodal_btns_yes" id="chat_eleminatemodal_btns_yes">Sim</div>
+          <div class="chat_eleminatemodal_btns_no" id="chat_eleminatemodal_btns_no">Não</div>
         </div>
       </div>
     </div>
