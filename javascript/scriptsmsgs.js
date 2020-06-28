@@ -183,13 +183,12 @@ function renderMessage(item)
   {
     if (diamsg.getDay() != today.getDay())
     {
-      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display"><div class="chat_msgs_settings"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_msgs_settings_btn"><i class="fas fa-ellipsis-h"></i><div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal" onclick="eliminarModal()">Eliminar</div></div></div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + (diamsg.getMonth() + 1) + '/' + diamsg.getDate() + ' ' + time + '</div> </div> </div>';
+      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display"><div class="chat_msgs_settings"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_msgs_settings_btn"><i class="fas fa-ellipsis-h"></i><div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal" onclick="eliminarModal(' + item.MensagemConversaID + ')">Eliminar</div></div></div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + (diamsg.getMonth() + 1) + '/' + diamsg.getDate() + ' ' + time + '</div> </div> </div>';
     }
     else
     {
-      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display"> <div class="chat_msgs_settings"><div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_msgs_settings_btn"><i class="fas fa-ellipsis-h"></i><div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal" onclick="eliminarModal()">Eliminar</div></div></div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + time + '</div> </div> </div>';
+      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display"> <div class="chat_msgs_settings"><div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_msgs_settings_btn"><i class="fas fa-ellipsis-h"></i><div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal" onclick="eliminarModal(' + item.MensagemConversaID + ')">Eliminar</div></div></div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + time + '</div> </div> </div>';
     }
-
   }
   else
   {

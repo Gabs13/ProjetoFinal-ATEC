@@ -2229,6 +2229,7 @@ footer
 .chat_display_messages_nome
 {
     font-weight: bold;
+    width: 95%;
 }
 
 /*utilizador esquerda*/
@@ -4069,4 +4070,21 @@ footer
     height: 50vh;
     margin-top: 5%;
     margin-left:25%;
+}
+
+.chat_msgs_settings
+{
+    padding-right:10px;
+    display: flex;
+}
+.chat_msgs_settings_btn
+{
+    width:5%;
+    position: relative;
+    text-align: right;
+}
+.chat_msgs_settings_btn:hover .chat_users_display_settings_modal
+{
+    display: block;
+    transition: 2s;
 }
