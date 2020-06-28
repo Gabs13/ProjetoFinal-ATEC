@@ -124,6 +124,14 @@ $(document).ready(function()
 function totalFollowers(id)
 {
   $("#modal_perfil_container_main").load("functions/CarregarTotalFollowers.php", {id: id});
+  $("#modal_perfil_container_title").html("Seguidores");
+}
+
+function totalFollowing(id)
+{
+  $("#modal_perfil_container_main").load("functions/CarregarTotalFollowing.php", {id: id});
+
+  $("#modal_perfil_container_title").html("A seguir");
 }
 
 function carregarPerfil(nome)
@@ -166,6 +174,10 @@ function carregarPerfil(nome)
 
       $("#perfil_utilizador_info_btns_seguidores").click(function(){
         totalFollowers(finalResult.User['UtilID']);
+      });
+
+      $("#perfil_utilizador_info_btns_aseguir").click(function(){
+        totalFollowing(finalResult.User['UtilID']);
       });
 
       if(finalResult.Seguir == true)

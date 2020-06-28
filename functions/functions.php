@@ -368,6 +368,27 @@
     echo json_encode($Data);
   }
 
+  if(@$_POST['action'] == 'CarregarInfoConversaPHP')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    $CID = $_POST['id'];
+
+    $Conversas = mysqli_query($conn, "SELECT u.UtilID as UtilID, c.ConversaID as ConversaID, u.UtilPNome as PrimeiroNome, u.UtilUNome as SegundoNome, u.UtilUser as User, u.UtilFoto as Foto FROM Conversas c, Utilizadores as u WHERE CASE WHEN c.UserUm = $_SESSION[UtilID] THEN c.UserDois = u.UtilID WHEN c.UserDois = $_SESSION[UtilID] THEN c.UserUm = u.UtilID END AND (c.UserUm = $_SESSION[UtilID] OR c.UserDois = $_SESSION[UtilID]) AND ConversaID = $CID");
+
+    $TodasConversas = mysqli_fetch_array($Conversas);
+
+    $Data = array();
+
+    $Data['Info'] = $TodasConversas;
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
   if(isset($_POST["bt_postarfoto_perfil"]))
   {
     $file = $_FILES['bt_carregarfoto'];
@@ -484,6 +505,44 @@
   }
 
   $Mult = 3;
+
+  function getHome($id)
+  {
+    include 'conn.php';
+
+    $Followers = mysqli_query($conn, "SELECT UtilID, FollowID FROM Seguidores WHERE UtilID = $id");
+
+    if(mysqli_num_rows($Followers) > 0)
+    {
+      while($TotalFollowers = mysqli_fetch_array($Followers))
+      {
+        $Posts = mysqli_query($conn, "SELECT PostID, PubDesc, DataPublicacao, Posts.UtilID, UtilUser, UtilPNome, UtilUNome, UtilFoto FROM Posts LEFT JOIN Utilizadores ON Posts.UtilID = Utilizadores.UtilID WHERE Posts.UtilID = $TotalFollowers[FollowID]");
+        if(mysqli_num_rows($Posts) > 0)
+        {
+          while($InfoPosts = mysqli_fetch_array($Posts))
+          {
+            $Foto = mysqli_query($conn, "SELECT CaminhoFoto, PostID FROM Fotos WHERE PostID = $InfoPosts[PostID]");
+
+            $InfoFoto = mysqli_fetch_array($Foto);
+
+            echo '<div class="collection_container_item container_last_child" style="height: 24.84em;">';
+
+
+            echo '<div class="collection_container_name" style="background-image: url(/ProjetoFinal/imagens/posts/'.$InfoFoto["CaminhoFoto"].'); background-size: cover; background-position: center;" onclick="getGallery('.$InfoPosts["PostID"].')" id="'.$InfoPosts["PostID"].'">
+                <!--MODAL SLIDER DE IMAGENS-->
+
+                    <div class="text_gallery">
+                        <div class="collection_container_name_info2 collection_container_name_info">'.$InfoPosts["UtilPNome"].' '.$InfoPosts["UtilUNome"].'</div>
+                    </div>
+                </div>
+              </div>';
+          }
+        }
+      }
+    }
+
+    include 'deconn.php';
+  }
 
   function getGaleria()
   {

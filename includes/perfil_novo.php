@@ -4,7 +4,7 @@
   <div class="modal_perfil" id="modal_perfil" style="display:none;">
     <div class="modal_perfil_container">
       <div class="modal_perfil_container_nome">
-        <div class="modal_perfil_container_title">Seguidores</div>
+        <div class="modal_perfil_container_title" id="modal_perfil_container_title">Seguidores</div>
         <span class="perfil_modal_close" id="perfil_modal_close">X</span>
       </div>
       <div class="modal_perfil_container_main" id="modal_perfil_container_main">
@@ -18,7 +18,7 @@
   <!--FINAL MODAL PERFIL-->
 
  <!--MODAL SLIDER DE IMAGENS-->
- <div class="modalGallery" id="modalperfilpost"> 
+ <div class="modalGallery" id="modalperfilpost">
 
 <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
 <div class="display_like_background" id="display_like_background" style='display:none;'>

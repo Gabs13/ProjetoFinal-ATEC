@@ -62,8 +62,6 @@
                       <div><i class="fas fa-comment"></i></div>
                       <div><i class="fas fa-ellipsis-h optionsbuttonI"></i>
                         <div class="modal_hidden_options" style="display: none;">
-                          <div>Coiso</div>
-                          <div>Idolatrar o Gabriel</div>
                           <div>Remover</div>
                           <div>Reportar</div>
                         </div>
@@ -101,7 +99,7 @@
             <i class="fas fa-search"></i>
           </a>
         </div>
-        <li>Home</li>
+        <li> <a href="home.php"> Home </a> </li>
         <li> <a href="<?php echo "perfil.php?&uname=".$_SESSION['UtilUser']."&uid=".$_SESSION['UtilID']; ?>">Perfil</a></li>
         <li> <a href="mensagens.php">Mensagens</a> </li>
         <li> <a href="login.php"> Galeria</a> </li>

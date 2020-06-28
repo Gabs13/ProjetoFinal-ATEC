@@ -29,7 +29,7 @@
 
     echo   '<div class="chat_users_display_info">
             <div class="chat_users_display_user_nome" id="chat_users_display_user_nome">'.$TodasConversas["PrimeiroNome"].' '.$TodasConversas["SegundoNome"].'</div>
-            <div class="chat_users_display_user_username">Armandao69</div>
+            <div class="chat_users_display_user_username">@'.$TodasConversas["User"].'</div>
             <div class="chat_users_display_user_mensagem">';
             if ($UltimaMsg["UtilID"] != $_SESSION["UtilID"])
             {
