@@ -11,7 +11,6 @@ $(document).ready(function()
     /*Função de onclick pagina de editarPerfil para editar elementos*/
     console.log(editPerfilElement);
 
-
     for (var t in editPerfilElement)
     {
         console.log(isClicked);
@@ -41,4 +40,49 @@ $(document).ready(function()
             this.parentElement.parentElement.style.display="none";
         }
     }
+
+    carregarInfoEdit();
 });
+
+function carregarInfoEdit()
+{
+  $.ajax({
+    type: "POST",
+    url: "functions/functions.php",
+    data: {
+      action: 'carregarInfoEditPHP',
+    },
+    success:function(result)
+    {
+      var finalResult = JSON.parse(result);
+
+
+      $("#lb_pnome").html(finalResult.Info['UtilPNome']);
+      $("#tb_pnome").attr("placeholder", finalResult.Info['UtilPNome']);
+
+      $("#lb_unome").html(finalResult.Info['UtilUNome']);
+      $("#tb_unome").attr("placeholder", finalResult.Info['UtilUNome']);
+
+
+      $("#lb_desc").html(finalResult.Info['UtilDesc']);
+      $("#tb_desc").attr("placeholder", finalResult.Info['UtilDesc']);
+
+
+      $("#lb_tlmv").html(finalResult.Info['Telemovel']);
+      $("#tb_tlmv").attr("placeholder", finalResult.Info['Telemovel']);
+
+      if (finalResult.Info['UtilGenero'] == 1)
+      {
+        $("#lb_genero").html("Masculino");
+      }
+      else if (finalResult.Info['UtilGenero'] == 2)
+      {
+        $("#lb_genero").html("Feminino");
+      }
+      else
+      {
+        $("#lb_genero").html("Outro");
+      }
+    }
+  });
+}

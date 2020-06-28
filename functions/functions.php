@@ -349,6 +349,25 @@
     echo json_encode($Data);
   }
 
+  if(@$_POST['action'] == 'carregarInfoEditPHP')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    $Util = mysqli_query($conn, "SELECT UtilID, UtilUser, UtilPNome, UtilUNome, UtilDesc, UtilGenero, Telemovel FROM Utilizadores LEFT JOIN Conta ON Utilizadores.ContaID = Conta.ContaID WHERE UtilID = $_SESSION[UtilID]");
+
+    $InfoUtil = mysqli_fetch_array($Util);
+
+    $Data = array();
+
+    $Data['Info'] = $InfoUtil;
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
   if(isset($_POST["bt_postarfoto_perfil"]))
   {
     $file = $_FILES['bt_carregarfoto'];

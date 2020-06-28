@@ -374,6 +374,22 @@ function replyComment(id)
   })
 }
 
+function likeReplyComment(id)
+{
+  $.ajax({
+    type: "POST",
+    url: "functions/functions.php",
+    data: {
+      action: "likeReplyCommentPHP",
+      id: id,
+    },
+    success:function(result)
+    {
+      var finalResult = JSON.parse(result);
+    }
+  });
+}
+
 function totalUsersLikes(id)
 {
   $("#display_like_post_scroll").empty();
