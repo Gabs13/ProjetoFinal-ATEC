@@ -24,7 +24,6 @@ $(document).ready(function(){
       $('#chat_user_settings_search').css('border-radius', '8px');
     }
   });
-
 });
 
 function todasMensagens()
@@ -62,12 +61,9 @@ function criarConversa(id)
 
       limparMsgs(finalResult.Info);
       loadMsgs(finalResult.Info);
-
     }
-
   });
 }
-
 
 var intervalomsgs;
 
@@ -76,8 +72,30 @@ function limparMsgs(id)
     $('#chat_display_messages').empty();
     start = 0;
 
+    $.ajax({
+      type: "POST",
+      url: "functions/functions.php",
+      data: {
+        action: 'CarregarInfoConversaPHP',
+        id: id,
+      },
+      success:function(result)
+      {
+        var finalResult = JSON.parse(result);
 
-    $('#chat_display_user_name').load("functions/CarregarNomeChat.php", {id: id});
+        $('#chat_display_user_name').html(finalResult.Info['PrimeiroNome'] + ' ' + finalResult.Info['SegundoNome']);
+        $('#chat_display_user_username').html('@' + finalResult.Info['User']);
+
+        if(finalResult.Info['Foto'] != null)
+        {
+          $('#chat_display_user_img_img').attr("src", "imagens/Utilizadores/" + finalResult.Info['Foto']);
+        }
+        else
+        {
+          $('#chat_display_user_img_img').attr("src", "imagens/Icones/icons8-male-user-26.png");
+        }
+      }
+    });
 
     $('#chat_display').css('display', 'block');
 

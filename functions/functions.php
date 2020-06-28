@@ -368,6 +368,27 @@
     echo json_encode($Data);
   }
 
+  if(@$_POST['action'] == 'CarregarInfoConversaPHP')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    $CID = $_POST['id'];
+
+    $Conversas = mysqli_query($conn, "SELECT u.UtilID as UtilID, c.ConversaID as ConversaID, u.UtilPNome as PrimeiroNome, u.UtilUNome as SegundoNome, u.UtilUser as User, u.UtilFoto as Foto FROM Conversas c, Utilizadores as u WHERE CASE WHEN c.UserUm = $_SESSION[UtilID] THEN c.UserDois = u.UtilID WHEN c.UserDois = $_SESSION[UtilID] THEN c.UserUm = u.UtilID END AND (c.UserUm = $_SESSION[UtilID] OR c.UserDois = $_SESSION[UtilID]) AND ConversaID = $CID");
+
+    $TodasConversas = mysqli_fetch_array($Conversas);
+
+    $Data = array();
+
+    $Data['Info'] = $TodasConversas;
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
   if(isset($_POST["bt_postarfoto_perfil"]))
   {
     $file = $_FILES['bt_carregarfoto'];

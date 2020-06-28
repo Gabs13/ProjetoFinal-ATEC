@@ -101,7 +101,7 @@
             <i class="fas fa-search"></i>
           </a>
         </div>
-        <li>Home</li>
+        <li> <a href="home.php"> Home </a> </li>
         <li> <a href="<?php echo "perfil.php?&uname=".$_SESSION['UtilUser']."&uid=".$_SESSION['UtilID']; ?>">Perfil</a></li>
         <li> <a href="mensagens.php">Mensagens</a> </li>
         <li> <a href="login.php"> Galeria</a> </li>
