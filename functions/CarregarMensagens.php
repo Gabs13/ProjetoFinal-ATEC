@@ -41,10 +41,10 @@
             }
             echo'</div>
         </div>
-        
+
     </div>
     <div class="chat_users_display_settings"><i class="fas fa-ellipsis-h"></i>
-      <div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal">Eliminar</div>
+      <div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal'.$TodasConversas["ConversaID"].'" onclick="eliminarModal('.$TodasConversas["ConversaID"].');">Eliminar</div>
     </div>
     ';
   }

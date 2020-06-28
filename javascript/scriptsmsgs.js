@@ -2,17 +2,14 @@ $(document).ready(function(){
   //pesquisa de utilizadores no chat
   var clickSearchUser = document.getElementById('PesquisaNome');
   var dropdownResultados = document.getElementsByClassName('chat_resultados_pesquisa')[0];
-  
+
+  var deletemodal = document.getElementById('chat_users_display_settings_modal2');
   //abrir modal de eliminar conversas
   var eliminateChat = document.getElementsByClassName('chat_users_display_settings_modal');
   //modal de eliminar conversas
   var modaleliminateChat = document.getElementById('chat_eliminatemodal');
 
   //funcao para abrir modal de eliminar os posts
-  
-  $(".chat_users_display_settings_modal").click(function(){
-    console.log('adfdfs');
-  });
 
   $(".chat_user_settings_search").on('input', function(){
 
@@ -37,6 +34,10 @@ $(document).ready(function(){
   });
 });
 
+function eliminarModal(id)
+{
+  $("#chat_eliminatemodal").css('display', 'block');
+}
 
 
 function todasMensagens()
@@ -97,7 +98,7 @@ function limparMsgs(id)
         var finalResult = JSON.parse(result);
 
         $('#chat_display_user_name').html(finalResult.Info['PrimeiroNome'] + ' ' + finalResult.Info['SegundoNome']);
-        $('#chat_display_user_username').html('@' + finalResult.Info['User']);
+        $('#chat_display_user_username').html('<a href="perfil.php?uname=' + finalResult.Info['User'] + '&uid=' + finalResult.Info['UtilID'] + '"> @' + finalResult.Info['User'] + '</a>');
 
         if(finalResult.Info['Foto'] != null)
         {

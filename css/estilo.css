@@ -2124,6 +2124,14 @@ footer
     color: #cc3b46;
 }
 
+.chat_display_user_username a
+{
+    font-size: 1em;
+    color: #cc3b46;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .chat_display_user_img
 {
     height: 60px;
