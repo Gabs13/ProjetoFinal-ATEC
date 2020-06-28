@@ -2375,7 +2375,7 @@ footer
     text-decoration: underline;
     transition: 1s;
 }
-/*------------------------SIMBOLO ARTIFEX--------------------*/
+/*--------------------------------------------SIMBOLO ARTIFEX-----------------------------------------------------*/
 
 .tooltiptext
 {
@@ -2395,29 +2395,40 @@ footer
 
 .post_creation_text
 {
+    width: 70px;
+    height: 70px;
     position: absolute;
-    top: 70px;
-    left: -76px;
+    right: 0;
+    cursor: pointer;
+    /* background: #fff; */
+    z-index: 1;
+}
+
+.post_creation_text {
+    position: absolute;
+    top: 61px;
+    left: -71px;
     opacity: 0;
     transition: opacity 0.3s;
     visibility: hidden;
-    width: 180px !important;
-    height: 50px !important;
+    width: 170px !important;
+    height: 40px !important;
     background-color: #555;
     color: #fff;
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
     font-size: 0.9em;
-
 }
 
 .post_creation_button
 {
     position: absolute;
-    top: -25px;
+    top: -23px;
     left: 43px;
+    font-size: 1.4em;
 }
+
 .post_creation_button .post_creation_text::after {
     content: "";
     position: absolute;
@@ -2432,10 +2443,38 @@ footer
     opacity: 1;
   }
 
+/*settings no utilizador*/
+.chat_users_display_settings
+{
+    display: block;
+    position: relative;
+}
 
+.chat_users_display_settings_modal
+{
+    position: absolute;
+    border: 1px solid #ccc;
+    color: #cc3b46;
+    width: 70px;
+    padding: 5px;
+    text-align: center;
+    background-color: white;
+    display: none;
+    
+}
 
+.chat_users_display_settings:hover .chat_users_display_settings_modal 
+{
+    display: block;
+    transition: 2s;
+    
+}
 
-
+.chat_users_display_settings_modal:hover
+{
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
 
 
 .resultadoPesquisa_back

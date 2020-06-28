@@ -2,6 +2,9 @@ $(document).ready(function(){
   //pesquisa de utilizadores no chat
   var clickSearchUser = document.getElementById('PesquisaNome');
   var dropdownResultados = document.getElementsByClassName('chat_resultados_pesquisa')[0];
+  
+  
+
 
   $(".chat_user_settings_search").on('input', function(){
 

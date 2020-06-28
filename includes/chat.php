@@ -4,6 +4,18 @@
   </script>
 
   <div class="chat_body">
+    <!--MODAL DE ELIMINAR MENSAGEM-->
+    <div class="chat_eliminatemodal">
+      <div class="chat_eliminatemodal_titulo"></div>
+      <div class="chat_eliminatemodal_texto"></div>
+      <div class="chat_eliminatemodal_btns">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+
+
       <div class="chat_users">
 
         <!--SEARCHBOX-->
