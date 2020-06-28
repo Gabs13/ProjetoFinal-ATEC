@@ -28,13 +28,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Archivo&display=swap" rel="stylesheet">
 
-
+    <script src="javascript/scriptshome.js"></script>
   </head>
   <body>
     <?php
+    if(@$_GET['pid'] && @$_GET['uid'])
+    {
+      header("Location: http://localhost/ProjetoFinal/login.php?pid=".$_GET['pid']."&uid=".$_GET['uid']);
+    }
+
     include 'includes/navbar.php';
 
-    include 'includes/homeform.php';
+    include 'includes/novohome.php';
+
+
 
     include 'includes/footerPrincipal.php';
     ?>

@@ -3,7 +3,7 @@
   console.log(myvar);
 </script>
 <body>
-  <div class="galery_title">GALERIAS</div>
+  <div class="galery_title">Home</div>
     <!--MODAL SLIDER DE IMAGENS-->
   <div class="modalGallery" id="modalperfilpost">
     <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
@@ -60,7 +60,7 @@
     <!--CRIACAO DE UM POST NA GALERIA-->
     <div class="galery_container" id = "Container_Posts"><!--INICIO DA GALERIA-->
     <?php
-      getGaleria();
+      getHome($_SESSION['UtilID']);
     ?>
 
 

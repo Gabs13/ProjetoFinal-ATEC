@@ -1,31 +1,58 @@
+var url = new URL(window.location);
+var getuser = url.searchParams.get("uname");
+var getid = url.searchParams.get("uid");
+
 $(document).ready(function()
 {
-    //botao de criar um novo post
-    var homebtnCreate = document.getElementById('casa_create_post');
-    //container de criar o post
-    var homecontainerpost = document.getElementById('casa_create_include');
-    //main container da pagina
-    var homemainbody = document.getElementById('casa_main');
-
-
-    homebtnCreate.onclick=function()
-    {
-        if(homecontainerpost.style.display=="block")
-        {
-            homecontainerpost.style.display="none"; 
-            homecontainerpost.style.transition="2s"; 
-            homemainbody.style.marginTop="2%"; 
-        }
-        else
-        {
-            homecontainerpost.style.display="block";
-            homecontainerpost.style.transition="2s";  
-            homemainbody.style.marginTop="0% ";
-        }
-
-
-
-    }
-
 
 });
+
+function getGallery(id)
+{
+  $.ajax({
+    type:"POST",
+    url:"functions/functions.php",
+    data: {
+      action: "getGaleriaPHP",
+      id: id,
+    },
+
+    success:function(result)
+    {
+      var finalResult = JSON.parse(result);
+
+      document.getElementById("modal_esquerda").innerHTML = '<img src="/ProjetoFinal/imagens/posts/' + finalResult.Foto[0] + '">';
+
+      document.getElementById("modal_username_text").innerHTML = finalResult.User[1] + " " + finalResult.User[2]; //Preencher primeiro e ultimo nome no Post
+
+      document.getElementById("modal_user_desc").innerHTML = finalResult.Post[1]; //Preencher descrição foto
+
+      if (document.getElementsByClassName("modalGallery")[0] != null)
+      {
+        document.getElementsByClassName("modalGallery")[0].style.display="block";
+      }
+
+      $("#modal_direita_comentarios").empty();
+
+      $("#modal_direita_comentarios").load("functions/CarregarComentarios.php", {PostID: finalResult.Post[0]});
+
+      history.pushState('', document.title, '?pid=' + finalResult.Post[0] + '&uid=' + finalResult.User[0]);
+
+      document.getElementById("modal_user_sendbtn").innerHTML = '<i onclick="addComment('+ finalResult.Post[0] +');" class="fas fa-location-arrow"></i>';
+
+      $("#autor_modal_info_likes").empty();
+
+      $("#autor_modal_info_likes").load("functions/CarregarLikesPost.php", {PostID: finalResult.Post[0]});
+
+      if(finalResult.Like == true)
+      {
+        document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost(' + finalResult.Post[0] + ');">';
+        $("#likePostModal").css('color', '#D24D57');
+      }
+      else
+      {
+        document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost(' + finalResult.Post[0] + ');">';
+      }
+    }
+  });
+}

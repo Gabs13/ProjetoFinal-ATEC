@@ -2393,17 +2393,6 @@ footer
     padding: 5px 0;
 }
 
-.post_creation_text
-{
-    width: 70px;
-    height: 70px;
-    position: absolute;
-    right: 0;
-    cursor: pointer;
-    /* background: #fff; */
-    z-index: 1;
-}
-
 .post_creation_text {
     position: absolute;
     top: 61px;
@@ -2418,7 +2407,7 @@ footer
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
-    font-size: 0.9em;
+    font-size: 0.7em;
 }
 
 .post_creation_button
@@ -2460,14 +2449,14 @@ footer
     text-align: center;
     background-color: white;
     display: none;
-    
+
 }
 
-.chat_users_display_settings:hover .chat_users_display_settings_modal 
+.chat_users_display_settings:hover .chat_users_display_settings_modal
 {
     display: block;
     transition: 2s;
-    
+
 }
 
 .chat_users_display_settings_modal:hover
@@ -2760,14 +2749,14 @@ footer
     margin-top: 1.5em;
     margin-right: 15px;
   }
-  
+
   /* Hide the browser's default radio button */
   .editar_perfil_gen_container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
   }
-  
+
   /* Create a custom radio button */
   .checkmark {
     position: absolute;
@@ -2778,29 +2767,29 @@ footer
     background-color: #eee;
     border-radius: 50%;
   }
-  
+
   /* On mouse-over, add a grey background color */
   .editar_perfil_gen_container:hover input ~ .checkmark {
     background-color: #ccc;
   }
-  
+
   /* When the radio button is checked, add a blue background */
   .editar_perfil_gen_container input:checked ~ .checkmark {
     background-color: #2196F3;
   }
-  
+
   /* Create the indicator (the dot/circle - hidden when not checked) */
   .checkmark:after {
     content: "";
     position: absolute;
     display: none;
   }
-  
+
   /* Show the indicator (dot/circle) when checked */
   .editar_perfil_gen_container input:checked ~ .checkmark:after {
     display: block;
   }
-  
+
   /* Style the indicator (dot/circle) */
   .editar_perfil_gen_container .checkmark:after {
        top: 9px;
@@ -2959,7 +2948,6 @@ footer
 .casa_main
 {
     width: 50%;
-    height: 100%;
     margin-left: 25%;
     margin-top: 2%;
     border-left: 1px solid #ccc;

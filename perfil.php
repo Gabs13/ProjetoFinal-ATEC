@@ -1,6 +1,11 @@
 <?php
   require 'functions/functions.php';
   session_start();
+  
+  if (!isset($_SESSION["UtilID"]))
+   {
+      header("location: index.php");
+   }
 ?>
 
 <!DOCTYPE html>
