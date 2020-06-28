@@ -6,7 +6,7 @@
 
   $Nome = $_POST['nome'];
 
-  $PesquisaNome = mysqli_query($conn, "SELECT UtilID, CONCAT(UtilPNome, ' ', UtilUNome) as Nome, UtilFoto FROM Utilizadores WHERE CONCAT(UtilPNome, ' ', UtilUNome) LIKE '%$Nome%' AND UtilID != $_SESSION[UtilID]  LIMIT 5");
+  $PesquisaNome = mysqli_query($conn, "SELECT UtilID, CONCAT(UtilPNome, ' ', UtilUNome) as Nome, UtilFoto, UtilUser FROM Utilizadores WHERE (CONCAT(UtilPNome, ' ', UtilUNome) LIKE '%$Nome%' OR UtilUser LIKE '%$Nome%') AND UtilID != $_SESSION[UtilID]  LIMIT 5");
 
 
   while($ResultadoNome = mysqli_fetch_array($PesquisaNome))

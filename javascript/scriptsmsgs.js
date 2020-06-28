@@ -98,7 +98,7 @@ function limparMsgs(id)
         var finalResult = JSON.parse(result);
 
         $('#chat_display_user_name').html(finalResult.Info['PrimeiroNome'] + ' ' + finalResult.Info['SegundoNome']);
-        $('#chat_display_user_username').html('@' + finalResult.Info['User']);
+        $('#chat_display_user_username').html('<a href="perfil.php?uname=' + finalResult.Info['User'] + '&uid=' + finalResult.Info['UtilID'] + '"> @' + finalResult.Info['User'] + '</a>');
 
         if(finalResult.Info['Foto'] != null)
         {
