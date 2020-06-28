@@ -3,19 +3,23 @@
     var IDSessao = "<?php echo $_SESSION['UtilID'] ?>";
   </script>
 
-  <div class="chat_body">
-    <!--MODAL DE ELIMINAR MENSAGEM-->
-    <div class="chat_eliminatemodal">
-      <div class="chat_eliminatemodal_titulo"></div>
-      <div class="chat_eliminatemodal_texto"></div>
-      <div class="chat_eliminatemodal_btns">
-        <div></div>
-        <div></div>
+<!--MODAL DE ELIMINAR MENSAGEM-->
+<div class="chat_eliminatemodal" id="chat_eliminatemodal">
+      <div class="chat_eliminatemodal_container">
+        <div class="chat_eliminatemodal_top">
+          <div class="chat_eliminatemodal_titulo">Eliminar</div>
+          <div class="chat_eliminatemodal_top_close" id="closemodalEliminar">&times;</div>
+        </div>
+        <div class="chat_eliminatemodal_texto">Deseja eliminar o seguinte conteúdo?</div>
+        <div class="chat_eliminatemodal_btns">
+          <div class="chat_eleminatemodal_btns_yes">Sim</div>
+          <div class="chat_eleminatemodal_btns_no">Não</div>
+        </div>
       </div>
     </div>
-
-
-
+  
+<div class="chat_body">
+    
       <div class="chat_users">
 
         <!--SEARCHBOX-->

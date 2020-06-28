@@ -2318,6 +2318,109 @@ footer
     width: 30px;
 }
 
+/*chat modal de eliminar conversas----*/
+.chat_eliminatemodal
+{
+    display:none;
+    position:fixed;
+    z-index: 2;/*Ficar por cima dos elementos no eixo Z*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.6);
+}
+
+.chat_eliminatemodal_container
+{
+    margin-right: 35%;
+    margin-left: 35%;
+    width: 30%;
+    background-color: white;
+    margin-top: 10%;
+    height: 10em;
+}
+
+.chat_eliminatemodal_top
+{
+    display: flex;
+    height: 3em;
+    width: 96%;
+    border-bottom: 1px solid #ccc;
+    margin: 2%;
+}
+
+.chat_eliminatemodal_top_close{
+    font-size: 1.8em;
+    color: gray;
+    font-weight: bold;
+    padding-top: 3px;
+}
+
+.chat_eliminatemodal_titulo{
+    width: 95%;
+    padding-top: 6px;
+    font-size: 1.4em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.chat_eliminatemodal_top_close{
+    font-size: 1.8em;
+    color: gray;
+    font-weight: bold;
+    padding-top: 3px;
+}
+.chat_eliminatemodal_top_close:hover{
+    cursor: pointer;
+    color:black;
+}
+
+.chat_eliminatemodal_texto{
+    padding-left: 11px;
+    font-size: 1.2em;
+}
+
+.chat_eliminatemodal_btns{
+    display: flex;
+    height: 2em;
+    margin-top: 1.8em;
+    margin-left: 26em;
+}
+
+.chat_eleminatemodal_btns_yes{
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1em;
+    height: 1em;
+    background-color: #cc3b46;
+    color: white;
+    font-weight: bold;
+    margin-right: 15px;
+}
+.chat_eleminatemodal_btns_yes:hover{
+    cursor: pointer;
+}
+
+.chat_eleminatemodal_btns_no{
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1em;
+    height: 1em;
+    background-color: #ccc;
+    color: black;
+    font-weight: bold;
+}
+.chat_eleminatemodal_btns_no{
+    cursor: pointer;
+}
+
 /*---------------------------------RESULTADOS DA PESQUISA PAG-----------------------------------------------*/
 .resultado_Pesquisa_total
 {
