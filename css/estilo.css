@@ -1262,14 +1262,21 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .modal_comentario_reply_imagem
 {
-    width: 15%;
+    height: 26px;
+    width: 26px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%;
 }
 
 .modal_comentario_reply_imagem img
 {
-    height: 26px;
-    width: 26px;
-    padding-top: 7px;
+   
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    transition: transform .5s ease;
 
 }
 
