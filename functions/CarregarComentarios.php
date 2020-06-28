@@ -25,11 +25,11 @@
               <div class="modal_comment_main">';
               if ($detailsComment['UtilFoto'] != null)
               {
-                echo '<div class="modal_comentario_reply_imagem"><a><img src="imagens/Utilizadores/'.$detailsComment['UtilFoto'].'"></a></div>';
+                echo '<div class="modal_comentario_reply_imagem"> <a href="perfil.php?&uname='.$detailsComment['UtilUser'].'&uid='.$detailsComment['UtilID'].'"> <img src="imagens/Utilizadores/'.$detailsComment['UtilFoto'].'"> </a> </div>';
               }
               else
               {
-                echo '<div class="modal_comentario_reply_imagem"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>';
+                echo '<div class="modal_comentario_reply_imagem"> <a href="perfil.php?&uname='.$detailsComment['UtilUser'].'&uid='.$detailsComment['UtilID'].'"> <img src="imagens/Icones/icons8-male-user-26.png"> </a> </div>';
               }
               echo'<div class="modal_total_buttons">
                     <div class="modal_comentario_total">
@@ -90,11 +90,11 @@
           <div class="modal_comentario_reply">';
           if ($detailsUserReply['UtilFoto'] != null)
           {
-            echo '<div class="modal_comentario_reply_imagem"><a><img src="imagens/Utilizadores/'.$detailsUserReply['UtilFoto'].'"></a></div>';
+            echo '<div class="modal_comentario_reply_imagem"> <a href="perfil.php?&uname='.$detailsUserReply['UtilUser'].'&uid='.$detailsUserReply['UtilID'].'"> <img src="imagens/Utilizadores/'.$detailsUserReply['UtilFoto'].'"> </a> </div>';
           }
           else
           {
-            echo '<div class="modal_comentario_reply_imagem"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>';
+            echo '<div class="modal_comentario_reply_imagem"> <a href="perfil.php?&uname='.$detailsUserReply['UtilUser'].'&uid='.$detailsUserReply['UtilID'].'"> <img src="imagens/Icones/icons8-male-user-26.png"> </a> </div>';
           }
 
           echo'<div class="modal_comentario_conteudo">
