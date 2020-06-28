@@ -509,6 +509,17 @@
     echo json_encode($Data);
   }
 
+  if(@$_POST['action'] == 'removerMsgPHP')
+  {
+    include 'conn.php';
+
+    $MsgID = $_POST['id'];
+
+    mysqli_query($conn, "UPDATE MensagensConversa SET isDeleted = 1 WHERE MensagemConversaID = $MsgID");
+
+    include 'deconn.php';
+  }
+
   if(isset($_POST["bt_postarfoto_perfil"]))
   {
     $file = $_FILES['bt_carregarfoto'];
@@ -669,10 +680,6 @@
 
             echo '<div class="newhome_collection_img" style="background-image: url(/ProjetoFinal/imagens/posts/'.$InfoFoto["CaminhoFoto"].'); background-size: cover; background-position: center;" onclick="getGallery('.$InfoPosts["PostID"].')" id="'.$InfoPosts["PostID"].'">
                 <!--MODAL SLIDER DE IMAGENS-->
-
-                    <div class="text_gallery_home text_gallery">
-                        <div class="collection_container_name_info2 collection_container_name_info">'.$InfoPosts["UtilPNome"].' '.$InfoPosts["UtilUNome"].'</div>
-                    </div>
                 </div>
               </div>';
           }

@@ -42,7 +42,7 @@
     <hr class="modal_comentarios_separador"></hr>
     <div class="autor_modal_info">
       <div class="autor_modal_info_btn" id="autor_modal_info_btn"></i></div>
-      <div class="autor_modal_info_btn2 autor_modal_info_btn"><i class="fas fa-share-alt"></i></div>
+      <div class="autor_modal_info_btn2 autor_modal_info_btn"><i class="fas fa-share-alt" onclick="btPartilhar()"></i></div>
       <div class="autor_modal_info_likes" id="autor_modal_info_likes"></div>
     </div>
     <div class="modal_comentarios_bottom">

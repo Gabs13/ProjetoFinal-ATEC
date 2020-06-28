@@ -18,10 +18,6 @@ while($Post = mysqli_fetch_array($Posts))
   echo '<div class="collection_container_item container_last_child" style="height: 24.84em;" onclick="getGallery('.$Post["PostID"].');">
           <div class="collection_container_name" style="background-image: url(/ProjetoFinal/imagens/posts/'.$fotoPost["CaminhoFoto"].');background-size: cover; background-position: center;" onclick="getGallery('.$Post["PostID"].')" id="'.$Post["PostID"].'">
           <!--MODAL SLIDER DE IMAGENS-->
-
-              <div class="text_gallery">
-                  <div class="collection_container_name_info2 collection_container_name_info">'.$nomeUtil["UtilPNome"].' '.$nomeUtil["UtilUNome"].'</div>
-              </div>
           </div>
         </div>';
 }

@@ -2049,7 +2049,7 @@ footer
 .chat_users_display_info
 {
     height: 100%;
-    width: 85%;
+    width: 80%;
     font-family: 'Work Sans', sans-serif;
 }
 
@@ -2067,6 +2067,12 @@ footer
     max-height: 25%;
     line-break: anywhere;
     overflow: hidden;
+    display: flex;
+}
+
+.chat_users_display_user_mensagem div
+{
+    width: 80%;
 }
 
 .chat_display
@@ -2241,6 +2247,7 @@ footer
     padding:1%;
     background-color: #f2f2f2;
     border-radius: 10px;
+    min-width: 10em;
 }
 .chat_display_messages_ocupy
 {
