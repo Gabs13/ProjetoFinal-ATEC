@@ -28,6 +28,16 @@ function getGallery(id)
 
       document.getElementById("modal_username_text").innerHTML = finalResult.User[1] + " " + finalResult.User[2]; //Preencher primeiro e ultimo nome no Post
 
+      if(finalResult.User['UtilFoto'] != null)
+      {
+        $("#autor_modal_user_img").attr("src", "imagens/Utilizadores/" + finalResult.User['UtilFoto']);
+      }
+      else
+      {
+        $("#autor_modal_user_img").attr("src", "imagens/Icones/icons8-male-user-26.png");
+      }
+
+
       document.getElementById("modal_user_desc").innerHTML = finalResult.Post[1]; //Preencher descrição foto
 
       if (document.getElementsByClassName("modalGallery")[0] != null)

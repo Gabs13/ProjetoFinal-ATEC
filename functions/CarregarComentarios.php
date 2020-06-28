@@ -15,16 +15,23 @@
   {
     while($Comment = mysqli_fetch_array($Comments))
     {
-      $detailsComment = mysqli_fetch_array(mysqli_query($conn, "SELECT UtilID, UtilPNome, UtilUNome FROM Utilizadores WHERE UtilID = $Comment[UtilID]"));
+      $detailsComment = mysqli_fetch_array(mysqli_query($conn, "SELECT UtilID, UtilPNome, UtilUNome, UtilUser, UtilFoto FROM Utilizadores WHERE UtilID = $Comment[UtilID]"));
 
       $LikeComment = mysqli_query($conn, "SELECT LikeCommentID, ComentarioID, UtilID FROM LikesComentarios WHERE ComentarioID = $Comment[ComentarioID] AND UtilID = $_SESSION[UtilID]" );
 
       $TotalLikes = mysqli_query($conn, "SELECT LikeCommentID FROM LikesComentarios WHERE ComentarioID = $Comment[ComentarioID]");
 
       echo '<div class="modal_comment_main_resposta">
-              <div class="modal_comment_main">
-                  <div class="modal_comentario_userimg"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>
-                  <div class="modal_total_buttons">
+              <div class="modal_comment_main">';
+              if ($detailsComment['UtilFoto'] != null)
+              {
+                echo '<div class="modal_comentario_reply_imagem"><a><img src="imagens/Utilizadores/'.$detailsComment['UtilFoto'].'"></a></div>';
+              }
+              else
+              {
+                echo '<div class="modal_comentario_reply_imagem"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>';
+              }
+              echo'<div class="modal_total_buttons">
                     <div class="modal_comentario_total">
                       <div class="modal_comentario_username">'.$detailsComment["UtilPNome"].' '.$detailsComment["UtilUNome"].'</div>
                         <div class="modal_comentario_texto">
@@ -73,13 +80,20 @@
       {
         while($ReplyComment = mysqli_fetch_array($detailsReplyComment))
         {
-          $detailsUserReply = mysqli_fetch_array(mysqli_query($conn, "SELECT UtilID, UtilPNome, UtilUNome FROM Utilizadores WHERE UtilID = $ReplyComment[UtilID]"));
+          $detailsUserReply = mysqli_fetch_array(mysqli_query($conn, "SELECT UtilID, UtilPNome, UtilUNome, UtilUser, UtilFoto FROM Utilizadores WHERE UtilID = $ReplyComment[UtilID]"));
 
           echo '<!--REPOSTA AO COMENTARIO/ONCLICK DO BOTAO COMENTARIO-->
-          <div class="modal_comentario_reply">
+          <div class="modal_comentario_reply">';
+          if ($detailsUserReply['UtilFoto'] != null)
+          {
+            echo '<div class="modal_comentario_reply_imagem"><a><img src="imagens/Utilizadores/'.$detailsUserReply['UtilFoto'].'"></a></div>';
+          }
+          else
+          {
+            echo '<div class="modal_comentario_reply_imagem"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>';
+          }
 
-            <div class="modal_comentario_reply_imagem"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>
-            <div class="modal_comentario_conteudo">
+          echo'<div class="modal_comentario_conteudo">
               <div class="modal_comentario_reply_content_btns">
                 <div class="modal_comentario_reply_content">
                   <div class="modal_comentario_reply_content_name">'.$detailsUserReply["UtilPNome"].' '.$detailsUserReply["UtilUNome"].'</div>

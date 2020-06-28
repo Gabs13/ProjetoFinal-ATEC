@@ -25,7 +25,7 @@
     <div class="modal_direita" id="modal_direita">
       <div class="autor_modal_user">
         <div class="autor_modal_user_img">
-          <img src="">
+          <img id="autor_modal_user_img" src="">
         </div>
         <div class="autor_modal_user_nome" id="modal_username">
           <img src="" alt="">

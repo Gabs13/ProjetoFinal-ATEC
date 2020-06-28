@@ -9,11 +9,9 @@ $(document).ready(function()
     var isClicked=false; //flag para desligar e ligar os edits
 
     /*Função de onclick pagina de editarPerfil para editar elementos*/
-    console.log(editPerfilElement);
 
     for (var t in editPerfilElement)
     {
-        console.log(isClicked);
             editPerfilElement[t].onclick = function(event)
             {
                 if(isClicked==false)
@@ -35,14 +33,147 @@ $(document).ready(function()
         botaodeCancelarEditar[z].onclick = function()
         {
             isClicked=false;
-            console.log(this.parentElement.parentElement.previousElementSibling);
             this.parentElement.parentElement.previousElementSibling.style.display="flex";
             this.parentElement.parentElement.style.display="none";
         }
     }
 
     carregarInfoEdit();
+
+
+
+    $(".editarPerfil_body_display_full").on('input', function(){
+      if ($("#tb_tlmv").val().length != 9)
+      {
+        $("#tb_tlmv").css("border-color", "red");
+        $("#tb_tlmv").css("outline", "none");
+      }
+      else {
+        $("#tb_tlmv").css("border-color", "green");
+        $("#tb_tlmv").css("outline", "none");
+      }
+    });
 });
+
+function atualizarPNome()
+{
+  var nome = $("#tb_pnome").val();
+
+  if($("#tb_pnome").val().length != 0)
+  {
+    $.ajax({
+      type: "POST",
+      url: "functions/functions.php",
+      data: {
+        action: "atualizarPNomePHP",
+        nome: nome,
+      },
+      success:function(result)
+      {
+        carregarInfoEdit();
+
+        $("#btnCancelar1").trigger("click");
+
+        $("#tb_pnome").val("");
+      }
+    });
+  }
+}
+
+function atualizarUNome()
+{
+  var unome = $("#tb_unome").val();
+
+  if($("#tb_unome").val().length != 0)
+  {
+    $.ajax({
+      type: "POST",
+      url: "functions/functions.php",
+      data: {
+        action: "atualizarUNomePHP",
+        nome: unome,
+      },
+      success:function(result)
+      {
+        carregarInfoEdit();
+
+        $("#btnCancelar2").trigger("click");
+
+        $("#tb_unome").val("");
+      }
+    });
+  }
+}
+
+function atualizarDesc()
+{
+  var desc = $("#tb_desc").val();
+
+  if($("#tb_desc").val().length != 0)
+  {
+    $.ajax({
+      type: "POST",
+      url: "functions/functions.php",
+      data: {
+        action: "atualizarDescPHP",
+        desc: desc,
+      },
+      success:function(result)
+      {
+        carregarInfoEdit();
+
+        $("#btnCancelar3").trigger("click");
+
+        $("#tb_desc").val("");
+      }
+    });
+  }
+}
+
+function atualizarTlmv()
+{
+  var tlmv = $("#tb_tlmv").val();
+
+  if($("#tb_tlmv").val().length == 9)
+  {
+    $.ajax({
+      type: "POST",
+      url: "functions/functions.php",
+      data: {
+        action: "atualizarTlmvPHP",
+        tlmv: tlmv,
+      },
+      success:function(result)
+      {
+        carregarInfoEdit();
+
+        $("#btnCancelar4").trigger("click");
+
+        $("#tb_tlmv").val("");
+      }
+    });
+  }
+}
+
+function atualizarGen()
+{
+  var gen = $('input[name=bt_gen]:checked').val()
+
+  $.ajax({
+    type: "POST",
+    url: "functions/functions.php",
+    data: {
+      action: "atualizarGenPHP",
+      gen: gen,
+    },
+    success:function(result)
+    {
+      carregarInfoEdit();
+
+      $("#btnCancelar5").trigger("click");
+    }
+  });
+}
 
 function carregarInfoEdit()
 {
@@ -74,14 +205,12 @@ function carregarInfoEdit()
       if (finalResult.Info['UtilGenero'] == 1)
       {
         $("#lb_genero").html("Masculino");
+        $("#radio_bt_M").attr("checked", "checked");
       }
       else if (finalResult.Info['UtilGenero'] == 2)
       {
         $("#lb_genero").html("Feminino");
-      }
-      else
-      {
-        $("#lb_genero").html("Outro");
+        $("#radio_bt_F").attr("checked", "checked");
       }
     }
   });

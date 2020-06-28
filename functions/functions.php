@@ -16,7 +16,7 @@
 
     $InfoFoto = mysqli_fetch_array($Foto);
 
-    $UtilInfo = mysqli_query($conn, "SELECT UtilID, UtilPNome, UtilUNome, UtilDataNasc, UtilGenero, ContaID FROM Utilizadores WHERE UtilID = $Gal[UtilID]");
+    $UtilInfo = mysqli_query($conn, "SELECT UtilID, UtilPNome, UtilUNome, UtilDataNasc, UtilGenero, ContaID, UtilFoto, UtilUser FROM Utilizadores WHERE UtilID = $Gal[UtilID]");
 
     $Info = mysqli_fetch_array($UtilInfo);
 
@@ -387,6 +387,75 @@
     include 'deconn.php';
 
     echo json_encode($Data);
+  }
+
+  if(@$_POST['action'] == 'atualizarPNomePHP')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    $Nome = $_POST['nome'];
+
+    mysqli_query($conn, "UPDATE Utilizadores SET UtilPNome = '$Nome' WHERE UtilID = $_SESSION[UtilID]");
+
+    $_SESSION["CPNome"] = $Nome;
+
+    include 'deconn.php';
+  }
+
+  if(@$_POST['action'] == 'atualizarUNomePHP')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    $Nome = $_POST['nome'];
+
+    mysqli_query($conn, "UPDATE Utilizadores SET UtilUNome = '$Nome' WHERE UtilID = $_SESSION[UtilID]");
+
+    $_SESSION["CUNome"] = $Nome;
+
+    include 'deconn.php';
+  }
+
+  if(@$_POST['action'] == 'atualizarDescPHP')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    $Desc = $_POST['desc'];
+
+    mysqli_query($conn, "UPDATE Utilizadores SET UtilDesc = '$Desc' WHERE UtilID = $_SESSION[UtilID]");
+
+    include 'deconn.php';
+  }
+
+  if(@$_POST['action'] == 'atualizarTlmvPHP')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    $tlmv = $_POST['tlmv'];
+
+    mysqli_query($conn, "UPDATE Conta LEFT JOIN Utilizadores ON Conta.ContaID = Utilizadores.ContaID SET Telemovel = $tlmv WHERE Utilizadores.UtilID = $_SESSION[UtilID]");
+
+    include 'deconn.php';
+  }
+
+  if(@$_POST['action'] == 'atualizarGenPHP')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    $gen = $_POST['gen'];
+
+    mysqli_query($conn, "UPDATE Utilizadores SET UtilGenero = $gen WHERE UtilID = $_SESSION[UtilID]");
+
+    include 'deconn.php';
   }
 
   if(isset($_POST["bt_postarfoto_perfil"]))

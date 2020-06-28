@@ -14,7 +14,7 @@
           <div class="editar_perfil_edicao_nome">Novo Nome:</div>
           <input type="text" id="tb_pnome" placeholder="Rúben">
           <div class="editar_perfil_edicao_buttons">
-            <button type="button">Confirmar</button>
+            <button type="button" onclick="atualizarPNome()">Confirmar</button>
             <button type="button" id="btnCancelar1" class="btnCancelar" onclick="carregarInfoEdit()">Cancelar</button>
           </div>
         </div>
@@ -27,7 +27,7 @@
           <div class="editar_perfil_edicao_nome">Novo Ultimo Nome:</div>
           <input type="text" id="tb_unome" placeholder="do Tuning">
           <div class="editar_perfil_edicao_buttons">
-            <button type="button">Confirmar</button>
+            <button type="button" onclick="atualizarUNome()">Confirmar</button>
             <button type="button" id="btnCancelar2" class="btnCancelar" onclick="carregarInfoEdit()">Cancelar</button>
           </div>
         </div>
@@ -40,7 +40,7 @@
           <div class="editar_perfil_edicao_nome">Nova Descrição:</div>
           <input type="text" id="tb_desc">
           <div class="editar_perfil_edicao_buttons">
-            <button type="button">Confirmar</button>
+            <button type="button" onclick="atualizarDesc()">Confirmar</button>
             <button type="button" id="btnCancelar3" class="btnCancelar" onclick="carregarInfoEdit()">Cancelar</button>
           </div>
         </div>
@@ -53,7 +53,7 @@
           <div class="editar_perfil_edicao_nome">Novo Telemovel:</div>
           <input type="text" id="tb_tlmv" placeholder="939284801">
           <div class="editar_perfil_edicao_buttons">
-            <button type="button">Confirmar</button>
+            <button type="button" onclick="atualizarTlmv()">Confirmar</button>
             <button type="button" id="btnCancelar4" class="btnCancelar" onclick="carregarInfoEdit()">Cancelar</button>
           </div>
         </div>
@@ -65,15 +65,15 @@
         <div class="editarPerfil_body_display_full" id="editarPerfil_body_display_full" style="display:none;">
           <div class="editar_perfil_edicao_nome">Novo Genero:</div>
           <label class="editar_perfil_gen_container">Masculino
-            <input type="radio" checked="checked" name="radio">
+            <input id="radio_bt_M" type="radio" name="bt_gen" value="1">
             <span class="checkmark"></span>
           </label>
           <label class="editar_perfil_gen_container">Feminino
-            <input type="radio" name="radio">
+            <input id="radio_bt_F" type="radio" name="bt_gen" value="2">
             <span class="checkmark"></span>
           </label>
           <div class="editar_perfil_edicao_buttons">
-            <button type="button">Confirmar</button>
+            <button type="button" onclick="atualizarGen()">Confirmar</button>
             <button type="button" id="btnCancelar5" class="btnCancelar" onclick="carregarInfoEdit();">Cancelar</button>
           </div>
         </div>
