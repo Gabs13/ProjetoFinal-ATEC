@@ -4,6 +4,18 @@
       <img id="img_navbar" width="65" height="65">
     </span>
 
+    <!--NOTIFICAÇÕES DA NAVBAR-->
+    <div class="notificacao_container" style="display:none;">
+      <div class="notification_item">
+        <div class="notification_item_img"><img src="imagens/Utilizadores/gabriel.jpg"></div>
+        <div class="notification_item_info">
+          <div class="notification_item_info_username">@fabinho69</div>
+          <div class="notification_item_info_text">Gostou do seu commentário</div>
+        </div>
+        <div class="notification_item_notice"></div>
+      </div>
+    </div>
+
     <!------------------------------------INICIO DO MODAL DE CRIAR POST--------------------------------------->
     <div class="modal_criar_post" id="modal_criar_post" style="display:none">
       <span id="modal_criar_post_close">&times;</span>
@@ -104,6 +116,7 @@
         <li> <a href="mensagens.php">Mensagens</a> </li>
         <li> <a href="login.php"> Galeria</a> </li>
         <li><div class="post_creation_button"><i class="fas fa-plus-square" id="add_posts_nav"></i><span class="post_creation_text">Crie o seu post!</span></div></li>
+        <li><div class="post_creation_button" id="notification_bar_btn"><i class="far fa-bell" id="add_posts_nav"></i><span class="post_creation_text">Notificações!</span></div></li>
       </ul>
       <div class="name_dropdownlist">
         <label id="dropdownlistNavbar"> <?php echo $_SESSION["CPNome"].' '.$_SESSION["CUNome"]; ?> </label>

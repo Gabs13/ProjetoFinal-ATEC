@@ -28,10 +28,11 @@
           <img id="autor_modal_user_img" src="">
         </div>
         <div class="autor_modal_user_nome" id="modal_username">
-        <div id="modal_username_text"></div>
-        <div class="modal_user_desc" id="modal_user_desc"></div>
+          <div id="modal_username_text"></div>
+          <div class="modal_user_username">@fabinhobxb69</div>
+          <div class="modal_user_desc" id="modal_user_desc"></div>
+        </div>
       </div>
-    </div>
     <hr class="modal_comentarios_separador"></hr>
     <div class="modal_direita_comentarios" id="modal_direita_comentarios"></div>
     <hr class="modal_comentarios_separador"></hr>
