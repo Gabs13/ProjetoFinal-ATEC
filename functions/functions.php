@@ -525,13 +525,20 @@
 
             $InfoFoto = mysqli_fetch_array($Foto);
 
-            echo '<div class="collection_container_item container_last_child" style="height: 24.84em;">';
+            echo '  <div class="collection_container_item container_last_child newhome_collection_container" style="height: 24.84em;">
+                    <div class="casa_post_header">
+                    <div class="casa_post_header_img"><img src="imagens\Utilizadores\gabriel.jpg"></div>
+                    <div class="casa_post_header_info">
+                      <div class="casa_post_header_info_name">Fabio Santos</div>
+                      <div class="casa_post_header_info_username">fabinhoxisdeh</div>
+                    </div>
+                  </div>';
 
 
-            echo '<div class="collection_container_name" style="background-image: url(/ProjetoFinal/imagens/posts/'.$InfoFoto["CaminhoFoto"].'); background-size: cover; background-position: center;" onclick="getGallery('.$InfoPosts["PostID"].')" id="'.$InfoPosts["PostID"].'">
+            echo '<div class="newhome_collection_img" style="background-image: url(/ProjetoFinal/imagens/posts/'.$InfoFoto["CaminhoFoto"].'); background-size: cover; background-position: center;" onclick="getGallery('.$InfoPosts["PostID"].')" id="'.$InfoPosts["PostID"].'">
                 <!--MODAL SLIDER DE IMAGENS-->
 
-                    <div class="text_gallery">
+                    <div class="text_gallery_home text_gallery">
                         <div class="collection_container_name_info2 collection_container_name_info">'.$InfoPosts["UtilPNome"].' '.$InfoPosts["UtilUNome"].'</div>
                     </div>
                 </div>
