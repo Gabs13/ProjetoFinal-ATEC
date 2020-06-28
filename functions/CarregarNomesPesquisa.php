@@ -22,7 +22,7 @@
               echo   '<div class="chat_resultados_pesquisa_output_img"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>';
             }
 
-            echo' <div class="chat_resultados_pesquisa_output_nome"><div>'.$ResultadoNome["Nome"].'</div><div class="chat_search_user_username">Gabs69</div></div>
+            echo' <div class="chat_resultados_pesquisa_output_nome"><div>'.$ResultadoNome["Nome"].'</div><div class="chat_search_user_username">@'.$ResultadoNome["UtilUser"].'</div></div>
                 <span class="chat_resultados_pesquisa_output_add" onclick="criarConversa('.$ResultadoNome["UtilID"].');"><i class="fa fa-plus-circle" aria-hidden="true"></i></span>
             </div>
         </li>';
