@@ -2,17 +2,14 @@ $(document).ready(function(){
   //pesquisa de utilizadores no chat
   var clickSearchUser = document.getElementById('PesquisaNome');
   var dropdownResultados = document.getElementsByClassName('chat_resultados_pesquisa')[0];
-  
+
+  var deletemodal = document.getElementById('chat_users_display_settings_modal2');
   //abrir modal de eliminar conversas
   var eliminateChat = document.getElementsByClassName('chat_users_display_settings_modal');
   //modal de eliminar conversas
   var modaleliminateChat = document.getElementById('chat_eliminatemodal');
 
   //funcao para abrir modal de eliminar os posts
-  
-  $(".chat_users_display_settings_modal").click(function(){
-    console.log('adfdfs');
-  });
 
   $(".chat_user_settings_search").on('input', function(){
 
@@ -37,6 +34,10 @@ $(document).ready(function(){
   });
 });
 
+function eliminarModal(id)
+{
+  $("#chat_eliminatemodal").css('display', 'block');
+}
 
 
 function todasMensagens()

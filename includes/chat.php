@@ -17,9 +17,9 @@
         </div>
       </div>
     </div>
-  
+
 <div class="chat_body">
-    
+
       <div class="chat_users">
 
         <!--SEARCHBOX-->
