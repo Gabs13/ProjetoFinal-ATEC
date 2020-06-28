@@ -11,6 +11,5 @@
 
   echo $TodasConversas["PrimeiroNome"].' '.$TodasConversas["SegundoNome"];
 
-
   include 'deconn.php';
 ?>

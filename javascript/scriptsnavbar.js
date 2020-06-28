@@ -19,6 +19,7 @@ $(document).ready(function(){
     if(modaladdpost.style.display=="none")
     {
       modaladdpost.style.display="block";
+      document.getElementById('home_post_example').style.display = "none";
     }
     else
     {

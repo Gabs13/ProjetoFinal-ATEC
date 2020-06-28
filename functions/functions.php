@@ -325,9 +325,47 @@
 
     session_start();
 
-    mysqli_query($conn, "INSERT INTO Conversas(UserUm, UserDois) VALUES($_SESSION[UtilID], $UserDois)");
+    $Existe = mysqli_query($conn, "SELECT ConversaID FROM Conversas WHERE UserUm = $_SESSION[UtilID] && UserDois = $UserDois || UserUm = $UserDois && UserDois = $_SESSION[UtilID]");
+
+    $Data = array();
+
+
+    if (mysqli_num_rows($Existe) == 0)
+    {
+      mysqli_query($conn, "INSERT INTO Conversas(UserUm, UserDois) VALUES($_SESSION[UtilID], $UserDois)");
+
+      $ConversaID = mysqli_insert_id($conn);
+      $Data['Info'] = $ConversaID;
+    }
+    else
+    {
+      $ResultadoExiste = mysqli_fetch_array($Existe);
+      $Data['Info'] = $ResultadoExiste["ConversaID"];
+    }
+
 
     include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
+  if(@$_POST['action'] == 'carregarInfoEditPHP')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    $Util = mysqli_query($conn, "SELECT UtilID, UtilUser, UtilPNome, UtilUNome, UtilDesc, UtilGenero, Telemovel FROM Utilizadores LEFT JOIN Conta ON Utilizadores.ContaID = Conta.ContaID WHERE UtilID = $_SESSION[UtilID]");
+
+    $InfoUtil = mysqli_fetch_array($Util);
+
+    $Data = array();
+
+    $Data['Info'] = $InfoUtil;
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
   }
 
   if(isset($_POST["bt_postarfoto_perfil"]))

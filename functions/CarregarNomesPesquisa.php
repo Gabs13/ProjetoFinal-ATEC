@@ -6,17 +6,26 @@
 
   $Nome = $_POST['nome'];
 
-  $PesquisaNome = mysqli_query($conn, "SELECT UtilID, CONCAT(UtilPNome, ' ', UtilUNome) as Nome FROM Utilizadores WHERE CONCAT(UtilPNome, ' ', UtilUNome) LIKE '%$Nome%' AND UtilID != $_SESSION[UtilID]  LIMIT 5");
+  $PesquisaNome = mysqli_query($conn, "SELECT UtilID, CONCAT(UtilPNome, ' ', UtilUNome) as Nome, UtilFoto FROM Utilizadores WHERE CONCAT(UtilPNome, ' ', UtilUNome) LIKE '%$Nome%' AND UtilID != $_SESSION[UtilID]  LIMIT 5");
+
 
   while($ResultadoNome = mysqli_fetch_array($PesquisaNome))
   {
-    echo '<li>
-        <div class="chat_resultados_pesquisa_output">
-            <div class="chat_resultados_pesquisa_output_img"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>
-            <div class="chat_resultados_pesquisa_output_nome">'.$ResultadoNome["Nome"].'</div>
-            <span class="chat_resultados_pesquisa_output_add" onclick="criarConversa('.$ResultadoNome["UtilID"].');"><i class="fa fa-plus-circle" aria-hidden="true"></i></span>
-        </div>
-    </li>';
+        echo '<li>
+            <div class="chat_resultados_pesquisa_output">';
+            if ($ResultadoNome['UtilFoto'] != null)
+            {
+              echo   '<div class="chat_resultados_pesquisa_output_img"><a><img src="imagens/Utilizadores/'.$ResultadoNome['UtilFoto'].'"></a></div>';
+            }
+            else
+            {
+              echo   '<div class="chat_resultados_pesquisa_output_img"><a><img src="imagens/Icones/icons8-male-user-26.png"></a></div>';
+            }
+
+            echo' <div class="chat_resultados_pesquisa_output_nome">'.$ResultadoNome["Nome"].'</div>
+                <span class="chat_resultados_pesquisa_output_add" onclick="criarConversa('.$ResultadoNome["UtilID"].');"><i class="fa fa-plus-circle" aria-hidden="true"></i></span>
+            </div>
+        </li>';
   }
 
   include 'deconn.php';
