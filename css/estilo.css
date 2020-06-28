@@ -3858,9 +3858,9 @@ footer
 /**/
 .newhome_container
 {
-    width: 60%;
-    margin-right: 22%;
-    margin-left: 20%;
+    width: 50%;
+    margin-right: 25%;
+    margin-left: 25%;
     margin-top: 50px;
     margin-bottom: 5%;
     /* border-radius: 8px; */
@@ -4094,4 +4094,102 @@ footer
 {
     display: block;
     transition: 2s;
+}
+
+/*NOTIFICAÇOES------------*/
+.notification_creation_button
+{
+    height: 100%;
+    width: 15%;
+    float: right;
+    
+}
+
+.notificacao_container
+{
+    width: 11em;
+    background-color: white;
+    z-index: 5;
+    position: absolute;
+    left: 20px;
+    transform: translate(-50%);
+    top: 52px;
+    display:none;
+}
+.notification_item_img
+{
+    padding-top: 5px;
+    padding-left: 10px;
+    width:15%;
+}
+
+.notification_item_img img
+{
+    height: 40px;
+    width:40px;
+    border-radius: 50%;
+}
+
+.notification_item
+{
+    display: flex;
+    line-height: 1!important;
+    height: 2.2em;
+    border-bottom: 1px solid #ccc;
+    float: none;
+}
+.notification_item:hover
+{
+    cursor: pointer;
+    background-color:rgba(0,0,0,0.3);
+}
+
+.notification_item_info
+{
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 5px;
+    width:80%;
+}
+
+.notification_item_info_username
+{
+    font-size: 0.5em !important;
+    padding-bottom: 10px;
+    color:#D24D57;
+    font-weight:none !important;
+}
+
+.notification_item_info_text
+{
+    font-size: 0.5em !important;
+    width: 100%;
+    height: 2em;
+    font-weight:none !important; 
+}
+
+/*notificaçao vista*/
+.notification_item_notice_vista{
+    width: 10%;
+    padding-top: 0.4em;
+}
+
+.notification_item_notice_vista i{
+    font-size: 0.4em;
+    text-align: center ;
+}
+
+.notification_item_info_text_vista
+{
+    font-weight:bold;
+}
+
+.notification_item_info_username_vista
+{
+    font-weight:bold;
+}
+
+.notification_item_vista
+{
+    background-color:#ccc;
 }

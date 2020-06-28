@@ -12,6 +12,40 @@ var addbtn = document.getElementById('add_posts_nav');
 var modaladdpost = document.getElementById('modal_criar_post');
 var closepostcreate = document.getElementById('modal_criar_post_close');
 
+//botao abrir notficações
+var notificationbtn= document.getElementById('notification_bar_btn');
+//lista de notificações
+var notificationbar = document.getElementById('notificacao_container');
+//balao de texto notificaçao
+var notificationNotice = document.getElementsByClassName('post_creation_text')[0];
+
+//funcao para abrir barra de notificações
+notificationbtn.onclick=function()
+{
+  if(notificationbar.style.display=="none")
+  {
+    notificationbar.style.display="block";
+    notificationNotice.style.display="none"
+  }
+  else
+  {
+    notificationbar.style.display="none";
+    notificationNotice.style.display="block"
+  }
+}
+
+
+//fechar notificaçoes
+  $(document).mouseup(function(e) 
+  {
+    var container = $("#notificacao_container");
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) 
+    {
+      container.hide();
+    }
+  });
+
 getFoto();
 
 $(document).ready(function(){
