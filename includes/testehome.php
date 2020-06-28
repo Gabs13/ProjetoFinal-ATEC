@@ -1,12 +1,12 @@
 <body>
- 
+
 <!-- <div>
     <div class="casa_post_container" style="height: 24.84em;">
-   
+
     <div class="casa_post_container_post" style="background-color: white">
-            
+
     </div>
-    
+
 </div> -->
 
     <!--MODAL SLIDER DE IMAGENS-->
@@ -30,7 +30,7 @@
     <div class="modal_direita" id="modal_direita">
       <div class="autor_modal_user">
         <div class="autor_modal_user_img">
-          <img src="">
+          <img id="autor_modal_user_img" src="">
         </div>
         <div class="autor_modal_user_nome" id="modal_username">
           <img src="" alt="">

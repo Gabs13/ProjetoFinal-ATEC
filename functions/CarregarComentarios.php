@@ -82,6 +82,10 @@
         {
           $detailsUserReply = mysqli_fetch_array(mysqli_query($conn, "SELECT UtilID, UtilPNome, UtilUNome, UtilUser, UtilFoto FROM Utilizadores WHERE UtilID = $ReplyComment[UtilID]"));
 
+          $LikeReplyComment = mysqli_query($conn, "SELECT LikeReplyComentarioID, ReplyComentarioID, UtilID FROM LikesReplyComentarios WHERE ReplyComentarioID = $ReplyComment[ReplyComentarioID] AND UtilID = $_SESSION[UtilID]" );
+
+          $TotalReplyLikes = mysqli_query($conn, "SELECT LikeReplyComentarioID FROM LikesReplyComentarios WHERE ReplyComentarioID = $ReplyComment[ReplyComentarioID]");
+
           echo '<!--REPOSTA AO COMENTARIO/ONCLICK DO BOTAO COMENTARIO-->
           <div class="modal_comentario_reply">';
           if ($detailsUserReply['UtilFoto'] != null)
@@ -103,9 +107,17 @@
                 </div>
               </div>
               <div class="modal_comentario_reply_btns">
-                <div><i class="fas fa-heart"></i>
+                <div>';
+                if (mysqli_num_rows($LikeReplyComment) == 1)
+                {
+                  echo '         <i class="fas fa-heart" style="color: #D24D57;" id="ReplyComment'.$ReplyComment["ReplyComentarioID"].'" onclick="likeReplyComment('.$ReplyComment["ReplyComentarioID"].')"></i>';
+                }
+                else
+                {
+                  echo '          <i class="fas fa-heart" id="ReplyComment'.$ReplyComment["ReplyComentarioID"].'" onclick="likeReplyComment('.$ReplyComment["ReplyComentarioID"].')"></i>';
+                }
 
-                </div>
+           echo'</div>
                 <div id="btn_options"><i id ="optionsbuttonI" class="fas fa-ellipsis-h optionsbuttonI"></i>
                   <div class="modal_hidden_options" id="modal_hidden_options_id" style="display: none;">';
 
@@ -116,7 +128,7 @@
                     echo '<div>Reportar</div>
                   </div>
                 </div>
-                <div class="modal_comentario_reply_btns_likes">20 Likes</div>
+                <div class="modal_comentario_reply_btns_likes" id="modal_comentario_reply_btns_likes'.$ReplyComment["ReplyComentarioID"].'"> <p onclick="totalUsersReplyLikes('.$ReplyComment["ReplyComentarioID"].')">'.mysqli_num_rows($TotalReplyLikes).' Likes</p> </div>
               </div>
             </div>
           </div>';
