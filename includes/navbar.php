@@ -107,7 +107,7 @@
         <li><div class="post_creation_button"><i class="fas fa-plus-square" id="add_posts_nav"></i><span class="post_creation_text">Crie o seu post!</span></div></li>
         <li><div class="post_creation_button notification_creation_button" id="notification_bar_btn"><i class="far fa-bell" ></i><span class="post_creation_text">Notificações!</span>
               <!--NOTIFICAÇÕES DA NAVBAR-->
-              <div class="notificacao_container" id="notificacao_container" style="display:none;" >
+              <div class="notificacao_container" id="notificacao_container" style="display:none;">
                 <div class="notification_item">
                   <div class="notification_item_img"><img src="imagens/Utilizadores/gabriel.jpg"></div>
                   <div class="notification_item_info">

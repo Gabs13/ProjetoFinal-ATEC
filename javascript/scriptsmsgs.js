@@ -12,6 +12,19 @@ $(document).ready(function(){
   var btnnoEliminate = document.getElementById('chat_eleminatemodal_btns_no');
   var btnfecharEliminate = document.getElementById('closemodalEliminar');//X para fechar modal de eliminar
   var btneliminamsg = document.getElementsByClassName('chat_users_display_settings_modal');//abrir eliminar nas mensagens
+  //chat pesquisa resultados
+  var chatpesquisaBox = document.getElementById('chat_resultados_pesquisa');
+
+  //fechar caixa de pesquisas
+  $(document).mouseup(function(e) 
+  {
+    var container2 = $("#chat_resultados_pesquisa");
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container2.is(e.target) && container2.has(e.target).length === 0) 
+    {
+      container2.hide();
+    }
+  });
 
   //funcao para fechar modal de eliminar
   window.onclick = function(event)

@@ -2306,7 +2306,7 @@ footer
 {
     position: absolute;
     width: calc(18% + 8px);
-    z-index: 2;
+    z-index: 1;
     background-color: #f2f2f2;
     top: 9.5%;
     left: calc(15% + 24px);
@@ -3076,7 +3076,7 @@ footer
 
 #modal_criar_post_close
 {
-    font-size: 2em;
+    font-size: 3em;
 }
 
 .home_post_example_border_text
@@ -3799,10 +3799,12 @@ footer
 .casa_post_header
 {
     background-color: white;
-    height: 17%;
+    height: 15%;
     border-bottom: 1px solid #ccc;
     display: flex;
     width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 .casa_post_container_post
 {
@@ -3870,7 +3872,7 @@ footer
     float: left;
     border-radius: 8px;
     border: 1px solid #ccc;
-    margin-bottom: 8em;
+    margin-bottom: 4em;
     height: 39.84em !important;
 }
 
@@ -3879,6 +3881,15 @@ footer
     width: 100%;
     height: 84%;
     background-size: 100% 100%;
+}
+.home_welcome_notice
+{
+    width: 100%;
+    text-align:center;
+    color:#aaa;
+    font-size:1.2em;
+    padding-bottom:3em;
+
 }
 
 .text_gallery_home
