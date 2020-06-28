@@ -12,6 +12,7 @@ var addbtn = document.getElementById('add_posts_nav');
 var modaladdpost = document.getElementById('modal_criar_post');
 var closepostcreate = document.getElementById('modal_criar_post_close');
 
+getFoto();
 
 $(document).ready(function(){
   addbtn.onclick=function()
@@ -80,4 +81,28 @@ btnuser.onclick = function()
     //Animação empurrar body para baixo
     $('html, body').animate({paddingTop: 50}, 250);
   }
+}
+
+function getFoto()
+{
+  $.ajax({
+    type: "POST",
+    url:"functions/functions.php",
+    data:{
+      action: "getFotoPHP",
+    },
+    success:function(result)
+    {
+      var finalResult = JSON.parse(result);
+
+      if(finalResult.info['UtilFoto'] != null)
+      {
+        $("#img_navbar").attr("src", "imagens/Utilizadores/" + finalResult.info['UtilFoto']);
+      }
+      else
+      {
+        $("#img_navbar").attr("src", "imagens/Icones/icons8-male-user-26.png");
+      }
+    }
+  });
 }

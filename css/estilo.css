@@ -1116,6 +1116,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
     text-decoration: underline;
 }
 
+
+
 .userlikeComments_nocomments
 {
     height: 5%;
@@ -1214,6 +1216,12 @@ input[type=date]::-webkit-calendar-picker-indicator {
     text-align: right;
 }
 
+.modal_comentario_reply_btns_likes:hover
+{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .modal_comentario_reply_btns i:hover
 {
     color: #D24D57;
@@ -1271,13 +1279,10 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .modal_comentario_reply_imagem img
 {
-   
-    display: inline;
-    margin: 0 auto;
-    height: 100%;
-    width: auto;
-    transition: transform .5s ease;
-
+    height: 26px;
+    width: 26px;
+    margin-top: 7px;
+    border-radius: 50%;
 }
 
 .modal_comentario_reply_content_like
@@ -2185,6 +2190,7 @@ footer
 {
     height: 60px;
     width: 60px;
+    border-radius: 50%;
 }
 
 .chat_display_user_name
@@ -2387,6 +2393,7 @@ footer
 {
     height: 30px;
     width: 30px;
+    border-radius: 50%;
 }
 
 /*chat modal de eliminar conversas----*/
@@ -2980,7 +2987,6 @@ footer
 .modalpostimg
 {
     display: block;
-    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -3852,7 +3858,7 @@ footer
 }
 .casa_post_header_img img
 {
-   
+
     display: inline;
     margin: 0 auto;
     height: 100%;
@@ -3910,7 +3916,189 @@ footer
 {
     width: 100%;
     height: 98%;
-    border-radius: 0px !important; 
+    border-radius: 0px !important;
     padding-top: 5px;
 }
 
+.margens
+{
+  right: 32.42em !important;
+}
+
+.links
+{
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    display: flex;
+    top: 25%;
+    left: 5%;
+    font-size: 25px;
+}
+
+.links label
+{
+    padding: 10px 0;
+    flex-grow: 1;
+    cursor: pointer;
+    transition: all .4s;
+    text-align: center;
+    font-family: ''Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    color: #D24D57;
+}
+
+.links label:hover
+{
+    background-color: #f2f2f2;
+
+}
+
+.scroll input
+{
+    display: none;
+}
+
+
+.bloco
+{
+    width: 100vw;
+    height: 100vh;
+}
+#privacidade
+{
+    background-color: #f2f2f2;
+    color: #D24D57;
+}
+
+#segurança
+{
+    background-color: #414950;
+    color: #D24D57;
+}
+
+#cookies
+{
+    background-color:  #f2f2f2;
+    color: #D24D57;
+}
+#direitos
+{
+    background-color: #414950;
+    color: #D24D57;
+}
+#about
+{
+    background-color: #f2f2f2;
+    color: #D24D57;
+}
+
+.scroll
+{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sections
+{
+    transition: all .4s;
+}
+
+#rd_security:checked ~ .sections
+{
+    margin-top: -100vh;
+    content: d;
+}
+
+#rd_cookies:checked ~ .sections
+{
+    margin-top: -200vh;
+}
+
+#rd_direitos:checked ~ .sections
+{
+    margin-top: -300vh;
+}
+
+#rd_about:checked ~ .sections
+{
+    margin-top: -400vh;
+}
+
+
+#privt
+{
+    padding-top: 5%;
+    margin-left: 36%;
+    font-size: 90px;
+}
+
+#segut
+{
+    padding-top: 5%;
+    margin-left: 36%;
+    font-size: 90px;
+}
+
+#cookt
+{
+    padding-top: 5%;
+    margin-left: 36%;
+    font-size: 90px;
+}
+
+#diret
+{
+    padding-top: 5%;
+    margin-left: 36%;
+    font-size: 90px;
+}
+
+#abot
+{
+    padding-top: 5%;
+    margin-left: 36%;
+    font-size: 90px;
+}
+
+
+.priv_cont
+{
+    color:#414950;
+    font-size: 25px;
+    width: 60vw;
+    height: 50vh;
+    margin-top: 2%;
+    margin-left:25%;
+}
+
+.segu_cont
+{
+    color:#f2f2f2;
+    font-size: 25px;
+    width: 60vw;
+    height: 50vh;
+    margin-top: 5%;
+    margin-left:25%;
+}
+
+.cook_cont
+{
+    color:#414950;
+    font-size: 25px;
+    width: 60vw;
+    height: 50vh;
+    margin-top: 5%;
+    margin-left:25%;
+}
+.dire_cont
+{
+    color:#f2f2f2;
+    font-size: 25px;
+    width: 60vw;
+    height: 50vh;
+    margin-top: 5%;
+    margin-left:25%;
+}

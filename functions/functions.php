@@ -186,6 +186,38 @@
     echo json_encode($Data);
   }
 
+  if(@$_POST['action'] == 'likeReplyCommentPHP')
+  {
+    include 'conn.php';
+
+    $ReplyComentID = $_POST['id'];
+
+    session_start();
+
+    $CommentReplyID = $_POST['id'];
+
+    $LikeComment = mysqli_query($conn, "SELECT LikeReplyComentarioID, ReplyComentarioID, UtilID FROM LikesReplyComentarios WHERE ReplyComentarioID = $CommentReplyID AND UtilID = $_SESSION[UtilID]");
+
+    $Data = array();
+
+    $Data['Comentario'] = $CommentReplyID;
+
+    if(mysqli_num_rows($LikeComment) == 0)
+    {
+      mysqli_query($conn, "INSERT INTO LikesReplyComentarios(ReplyComentarioID, UtilID) VALUES ($CommentReplyID, $_SESSION[UtilID])");
+      $Data['Like'] = true;
+    }
+    else
+    {
+      mysqli_query($conn, "DELETE FROM LikesReplyComentarios WHERE ReplyComentarioID = $CommentReplyID AND UtilID = $_SESSION[UtilID]");
+      $Data['Like'] = false;
+    }
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
   if(@$_POST['action'] == 'checkUserName')
   {
     include 'conn.php';
@@ -458,6 +490,25 @@
     include 'deconn.php';
   }
 
+  if(@$_POST['action'] == 'getFotoPHP')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    $Foto = mysqli_query($conn, "SELECT UtilFoto FROM Utilizadores WHERE UtilID = $_SESSION[UtilID]");
+
+    $InfoFoto = mysqli_fetch_array($Foto);
+
+    $Data = array();
+
+    $Data['info'] = $InfoFoto;
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
   if(isset($_POST["bt_postarfoto_perfil"]))
   {
     $file = $_FILES['bt_carregarfoto'];
@@ -485,15 +536,17 @@
 
           move_uploaded_file($fileTmpName, $fileDestination);
 
+          chmod($fileDestination, 0666);
+
           include 'conn.php';
 
           session_start();
 
-          mysqli_query($conn, "UPDATE Utilizadores SET UtilFoto = '$fileNameNew' WHERE UtilID = $_SESSION[UtilID]");
-
           $Util = mysqli_query($conn, "SELECT UtilUser, UtilID FROM Utilizadores WHERE UtilID = $_SESSION[UtilID]");
 
           $DadosUtil = mysqli_fetch_array($Util);
+
+          mysqli_query($conn, "UPDATE Utilizadores SET UtilFoto = '$fileNameNew' WHERE UtilID = $_SESSION[UtilID]");
 
           $link = $_POST['link'];
 
@@ -543,6 +596,7 @@
 
           move_uploaded_file($fileTmpName, $fileDestination);
 
+          chmod($fileDestination, 0666);
 
           include 'conn.php';
 
@@ -557,7 +611,6 @@
           $link = $_POST['link'];
 
           header("Location: $link");
-
 
           include 'deconn.php';
         }
@@ -596,10 +649,20 @@
 
             echo '  <div class="collection_container_item container_last_child newhome_collection_container" style="height: 24.84em;">
                     <div class="casa_post_header">
-                    <div class="casa_post_header_img"><img src="imagens\Utilizadores\gabriel.jpg"></div>
+                    <div class="casa_post_header_img">';
+                    if($InfoPosts['UtilFoto'] != null)
+                    {
+                      echo '<img src="imagens/Utilizadores/'.$InfoPosts['UtilFoto'].'">';
+                    }
+                    else
+                    {
+                      echo '<img src="imagens/Icones/icons8-male-user-26.png">';
+                    }
+
+               echo'</div>
                     <div class="casa_post_header_info">
-                      <div class="casa_post_header_info_name">Fabio Santos</div>
-                      <div class="casa_post_header_info_username">fabinhoxisdeh</div>
+                      <div class="casa_post_header_info_name">'.$InfoPosts['UtilPNome'].' '.$InfoPosts['UtilUNome'].'</div>
+                      <div class="casa_post_header_info_username">@'.$InfoPosts['UtilUser'].'</div>
                     </div>
                   </div>';
 

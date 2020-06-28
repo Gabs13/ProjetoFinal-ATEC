@@ -94,6 +94,7 @@
 
       <div class="modal_edicao_foto_container_btns">
         <form action="functions/functions.php" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="link" value="<?php $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; echo $actual_link; ?>">
           <input type="file" name="bt_carregarfoto" id="post_img_file" style="display:none;">
           <input type="submit" name="bt_postarfoto_perfil" id="post_send_file" style="display:none;">
         </form>

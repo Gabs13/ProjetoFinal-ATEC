@@ -1,7 +1,7 @@
 <body>
   <div class='menu'>
     <span class='toggle' id='toggle'>
-      <img src="imagens/Utilizadores/gabriel.jpg" alt="teste" width="65" height="65">
+      <img id="img_navbar" width="65" height="65">
     </span>
 
     <!------------------------------------INICIO DO MODAL DE CRIAR POST--------------------------------------->
@@ -109,7 +109,7 @@
         <label id="dropdownlistNavbar"> <?php echo $_SESSION["CPNome"].' '.$_SESSION["CUNome"]; ?> </label>
         <div class="navbar_menu_dropdown" id="navbar_menu_dropdown">
           <div> <a href="<?php echo "edit.php?&uname=".$_SESSION['UtilUser']."&uid=".$_SESSION['UtilID']; ?>"> Editar perfil </a></div>
-          <div>Definições e Privacidade</div>
+          <div> <a href="privacidade.php"> Definições e Privacidade </a> </div>
           <div>Ajuda e Support</div>
           <div>
             <form method="post">

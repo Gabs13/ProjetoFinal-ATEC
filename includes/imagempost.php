@@ -6,10 +6,10 @@
 <!--MODAL SLIDER DE IMAGENS-->
 <body>
   <!--MODAL SLIDER DE IMAGENS-->
-  <div class="modalpostimg"> 
+  <div class="modalpostimg">
 
     <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
-    <div class="display_like_background" id="display_like_background" style='display:none;'>
+    <div class="display_like_background margens" id="display_like_background" style='display:none;'>
       <div class="display_like_post">
         <div class="display_like_close_container">
           <span id="display_like_post_close">&times;</span>
@@ -19,7 +19,7 @@
       <div class="display_post_finisher"></div>
     </div>
   <!--FINAL DIV DISPLAY LIKES-->
-  
+
   <div class="modal_content" id="modal_content">
 
       <div class="modal_esquerda" id="modal_esquerda">
@@ -29,7 +29,7 @@
       <div class="modal_direita" id="modal_direita">
         <div class="autor_modal_user">
           <div class="autor_modal_user_img">
-            <img src="">
+            <img id="autor_modal_user_img" src="">
           </div>
           <div class="autor_modal_user_nome" id="modal_username">
 

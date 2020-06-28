@@ -1,6 +1,11 @@
 <?php
   require 'functions/functions.php';
   session_start();
+
+  if (!isset($_SESSION["UtilID"]))
+   {
+      header("location: index.php");
+   }
 ?>
 
 <!DOCTYPE html>
@@ -41,13 +46,7 @@
 
       if(@!$_GET['pid'] && @!$_GET['uid'])
       {
-        if (!isset($_SESSION["UtilID"]))
-         {
-            header("location: index.php");
-         }
-         else {
-           include 'includes/galeria.php';
-         }
+        include 'includes/galeria.php';
       }
       else
       {

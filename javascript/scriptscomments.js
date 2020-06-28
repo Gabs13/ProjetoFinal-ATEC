@@ -7,6 +7,8 @@ $(document).ready(function()
   var indexSettingsID = document.getElementsByClassName('modal_hidden_options');
   //botao numero de likes comentarios modal
   var likenumberButton = document.getElementsByClassName('modal_comentario_buttons_likes');
+  //botao numero de Likes reply comentarios modal
+  var likereplynumberButton = document.getElementsByClassName('modal_comentario_reply_btns_likes');
   //botao de like modal
   var btnLikeModal = document.getElementById('btn_like');
   //
@@ -132,6 +134,22 @@ $(document).ready(function()
   }
 
   for(var e of likenumberButton)
+  {
+    e.onclick = function(event)
+    {
+      event.preventDefault();
+      if(modallikesdisplay.style.display == "none")
+      {
+        modallikesdisplay.style.display = "block";
+      }
+      else
+      {
+        modallikesdisplay.style.display ="none";
+      }
+    }
+  }
+
+  for(var e of likereplynumberButton)
   {
     e.onclick = function(event)
     {
@@ -386,6 +404,31 @@ function likeReplyComment(id)
     success:function(result)
     {
       var finalResult = JSON.parse(result);
+
+      if(finalResult.Like == true)
+      {
+        var replycomentarioID = "#ReplyComment" + finalResult.Comentario;
+
+        $(replycomentarioID).css('color', '#D24D57');
+
+        $(replycomentarioID).unbind('mouseenter mouseleave')
+
+        var likeCount = "#modal_comentario_reply_btns_likes" + finalResult.Comentario;
+
+        $(likeCount).load("functions/ContarReplyLikesComments.php", {ComentarioID: finalResult.Comentario});
+      }
+      else
+      {
+        var replycomentarioID = "#ReplyComment" + finalResult.Comentario;
+
+        $(replycomentarioID).css('color', '#000');
+
+        $(replycomentarioID).hover(function(){$(replycomentarioID).css('color', '#D24D57');}, function(){$(replycomentarioID).css('color', '#000');})
+
+        var likeCount = "#modal_comentario_reply_btns_likes" + finalResult.Comentario;
+
+        $(likeCount).load("functions/ContarReplyLikesComments.php", {ComentarioID: finalResult.Comentario});
+      }
     }
   });
 }
@@ -395,6 +438,13 @@ function totalUsersLikes(id)
   $("#display_like_post_scroll").empty();
 
   $("#display_like_post_scroll").load("functions/UsersLikesComments.php", {ComentarioID: id});
+}
+
+function totalUsersReplyLikes(id)
+{
+  $("#display_like_post_scroll").empty();
+
+  $("#display_like_post_scroll").load("functions/UsersLikesReplyComments.php", {ComentarioID: id});
 }
 
 function totalUsersLikesPosts(id)
