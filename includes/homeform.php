@@ -2,15 +2,7 @@
 <body>
     <div class="resultadoPesquisa_back"><i><img src="imagens/logotipo/artifex2.png"></i></div><!--SIMBOLO ARTIFEX -->
     <!-- Aparecer criacao de post(includes) -->
-  
-    <div class="casa_create_include" id="casa_create_include">
-        <?php 
-            include 'criaposts.php';
-        ?>
-    </div>
-
    
-    
     <div class="casa_main" id="casa_main">
         <div class="casa_create_post" id="casa_create_post">
             <p>Crie o seu post aqui</p>

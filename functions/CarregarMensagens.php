@@ -41,6 +41,11 @@
             }
             echo'</div>
         </div>
+        <div class="chat_users_display_settings"><i class="fas fa-ellipsis-h"></i>
+            <div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal">
+              <div>Eliminar</div>
+            </div>
+        </div>
     </div>';
   }
 
