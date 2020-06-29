@@ -123,12 +123,7 @@
         <div class="navbar_menu_dropdown" id="navbar_menu_dropdown">
           <div> <a href="<?php echo "edit.php?&uname=".$_SESSION['UtilUser']."&uid=".$_SESSION['UtilID']; ?>"> Editar perfil </a></div>
           <div> <a href="privacidade.php"> Definições e Privacidade </a> </div>
-          <div>Ajuda e Support</div>
-          <div>
-            <form method="post">
-              <input type="submit" value="Log Out" name="Destruir">
-            </form>
-          </div>
+          <div> <form method="post"> <input type="submit" value="Log Out" name="Destruir"> </form> </div>
         </div>
       </div>
     </div>
