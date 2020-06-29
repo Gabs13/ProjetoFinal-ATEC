@@ -105,9 +105,23 @@
         <li> <a href="mensagens.php">Mensagens</a> </li>
         <li> <a href="login.php"> Galeria</a> </li>
         <li><div class="post_creation_button"><i class="fas fa-plus-square" id="add_posts_nav"></i><span class="post_creation_text">Crie o seu post!</span></div></li>
+<<<<<<< HEAD
         <li><div class="post_creation_button notification_creation_button" id="notification_bar_btn"><i class="far fa-bell" onclick="getNotificacoes()"></i><span class="post_creation_text">Notificações!</span>
               <!--NOTIFICAÇÕES DA NAVBAR-->
               <div class="notificacao_container" id="notificacao_container" style="display:none;" >
+=======
+        <li><div class="post_creation_button notification_creation_button" id="notification_bar_btn"><i class="far fa-bell" style="position:relative;"><div class="notification_nr">2</div></i><span class="post_creation_text">Notificações!</span>
+              <!--NOTIFICAÇÕES DA NAVBAR-->
+              <div class="notificacao_container" id="notificacao_container" style="display:none;">
+                <div class="notification_item">
+                  <div class="notification_item_img"><img src="imagens/Utilizadores/gabriel.jpg"></div>
+                  <div class="notification_item_info">
+                    <div class="notification_item_info_username">@fabinho69</div>
+                    <div class="notification_item_info_text">Gostou do seu commentário</div>
+                  </div>
+                  <div class="notification_item_notice"></div>
+                </div>
+>>>>>>> 555822e78fbf1f46c07289e71982561c3c068041
 
               </div>
               <!--Final da navbar-->

@@ -612,9 +612,9 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .galery_title
 {
     text-align: center;
-    padding-top:30px;
-    font-size: 4em;
-    font-family: 'Cinzel', serif;
+    padding-top: 4em;
+    font-size: 1.2em;
+    color: #aaa;
 }
 
 .collection_container_item
@@ -2313,7 +2313,7 @@ footer
 {
     position: absolute;
     width: calc(18% + 8px);
-    z-index: 2;
+    z-index: 1;
     background-color: #f2f2f2;
     top: 9.5%;
     left: calc(15% + 24px);
@@ -2804,7 +2804,13 @@ footer
     font-size: 1.3em;
     font-weight: bold;
     padding-top: 1.5em;
-    width: 14em;
+    width: 25%;
+}
+
+.editar_perfil_input
+{
+    width: 55%;
+    display:flex;
 }
 
 .editarPerfil_body_display_full input
@@ -2819,12 +2825,12 @@ footer
 
 .editar_perfil_edicao_buttons
 {
-    margin-left: 29em;
+    width: 20%;
     margin-top: 2em;
 }
 .editar_perfil_edicao_buttons:last-of-type
 {
-    margin-left: 20em;
+    
     margin-top: 2em;
 }
 
@@ -3083,7 +3089,7 @@ footer
 
 #modal_criar_post_close
 {
-    font-size: 2em;
+    font-size: 3em;
 }
 
 .home_post_example_border_text
@@ -3806,10 +3812,12 @@ footer
 .casa_post_header
 {
     background-color: white;
-    height: 17%;
+    height: 15%;
     border-bottom: 1px solid #ccc;
     display: flex;
     width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 .casa_post_container_post
 {
@@ -3877,7 +3885,7 @@ footer
     float: left;
     border-radius: 8px;
     border: 1px solid #ccc;
-    margin-bottom: 8em;
+    margin-bottom: 4em;
     height: 39.84em !important;
 }
 
@@ -3886,6 +3894,15 @@ footer
     width: 100%;
     height: 84%;
     background-size: 100% 100%;
+}
+.home_welcome_notice
+{
+    width: 100%;
+    text-align:center;
+    color:#aaa;
+    font-size:1.2em;
+    padding-bottom:3em;
+
 }
 
 .text_gallery_home
@@ -4186,17 +4203,27 @@ footer
     text-align: center ;
 }
 
-.notification_item_info_text_vista
-{
-    font-weight:bold;
-}
-
-.notification_item_info_username_vista
-{
-    font-weight:bold;
-}
-
 .notification_item_vista
 {
     background-color:#ccc;
 }
+
+.notification_nr
+{
+<<<<<<< HEAD
+    background-color:#ccc;
+}
+=======
+    height: 15px;
+    width: 15px;
+    background-color: #D24D57;
+    border-radius: 50%;
+    position: absolute;
+    top: -3px;
+    right: -2px;
+    font-size: 0.5em;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+>>>>>>> 555822e78fbf1f46c07289e71982561c3c068041

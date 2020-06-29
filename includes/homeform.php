@@ -1,16 +1,10 @@
 <body>
 
-<!-- <div>
-    <div class="casa_post_container" style="height: 24.84em;">
 
-    <div class="casa_post_container_post" style="background-color: white">
-
-    </div>
-
-</div> -->
 
     <!--MODAL SLIDER DE IMAGENS-->
   <div class="modalGallery" id="modalperfilpost">
+    
     <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
     <div class="display_like_background" id="display_like_background" style='display:none;'>
       <div class="display_like_post">
@@ -63,6 +57,7 @@
 
     <!--CRIACAO DE UM POST NA GALERIA-->
     <div class="newhome_container" id = "Container_Posts"><!--INICIO DA GALERIA-->
+    <div class="home_welcome_notice">Veja o que os seus amigos estão a postar...</div>
     <?php
       getHome($_SESSION['UtilID']);
     ?>

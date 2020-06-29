@@ -3,7 +3,7 @@
   console.log(myvar);
 </script>
 <body>
-  <div class="galery_title">GALERIAS</div>
+  <div class="galery_title">Conecta-te com outras pessoas...</div>
     <!--MODAL SLIDER DE IMAGENS-->
   <div class="modalGallery" id="modalperfilpost">
     <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
