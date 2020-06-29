@@ -2488,9 +2488,13 @@ footer
   background-color: white;
   width: 40%;
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 6%;
   border-radius: 8px;
   border: 3px solid #f2f2f2;
+}
+.resultadosPesquisa_list
+{
+    width: 100%;
 }
 
 .resultadosPesquisa_container
@@ -2522,17 +2526,17 @@ footer
 
 .resultadosPesquisa_container_nome
 {
-  font-size: 2em;
-  margin-left: 19px;
-  margin-top: 2px;
-  width: 70%;
+    font-size: 1.5em;
+    margin-left: 19px;
+    margin-top: 18px;
+    width: 70%;
+    font-weight: bold;
 }
 
 .resultadosPesquisa_container_nome:hover
 {
   cursor: pointer;
-  color: #D24D57;
-  transition: 0.1s;
+ 
 }
 
 .resultadosPesquisa_container_nomearroba
@@ -2686,6 +2690,8 @@ footer
 .resultadosPesquisa_container_chat i:hover
 {
     cursor: pointer;
+    color:#be0000;
+    transition:1s;
 }
 
 .resultadoPesquisa_body_label
