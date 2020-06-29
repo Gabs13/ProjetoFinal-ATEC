@@ -4102,7 +4102,7 @@ footer
     height: 100%;
     width: 15%;
     float: right;
-    
+
 }
 
 .notificacao_container
@@ -4115,6 +4115,13 @@ footer
     transform: translate(-50%);
     top: 52px;
     display:none;
+    max-height: 312px;
+    overflow-y: scroll;
+
+}
+
+.notificacao_container::-webkit-scrollbar {
+  display: none;
 }
 .notification_item_img
 {
@@ -4165,7 +4172,7 @@ footer
     font-size: 0.5em !important;
     width: 100%;
     height: 2em;
-    font-weight:none !important; 
+    font-weight:none !important;
 }
 
 /*notificaçao vista*/
