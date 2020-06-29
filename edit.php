@@ -27,12 +27,6 @@
   </head>
   <body>
     <?php
-      if (isset($_POST["Destruir"]))
-      {
-        destruir_sessao();
-        echo '<meta http-equiv="refresh" content="0;url=index.php">';
-      }
-
       if(!$_GET['uname'] && !$_GET['uid'])
       {
         header("Location: http://localhost/ProjetoFinal/login.php");

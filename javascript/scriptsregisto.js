@@ -15,7 +15,7 @@ document.querySelector("#regUNome").addEventListener("keypress", function (evt) 
 document.querySelector("#regPass").addEventListener("keypress", function (evt) {
   if (evt.which != 46 && evt.which < 48 || evt.which > 57 && evt.which < 65 || evt.which > 90 && evt.which != 95 && evt.which < 97 || evt.which > 122)
   {
-      evt.preventDefault(); 
+      evt.preventDefault();
   }
 });
 
@@ -40,6 +40,8 @@ document.querySelector("#regTlmv").addEventListener("keypress", function (evt) {
       evt.preventDefault();
   }
 });
+
+document.getElementById("regData").max = "2002-01-01";
 
 
 //BOTAO DE REGISTO

@@ -29,7 +29,7 @@
     include 'includes/registoform.php';
 
 
-    //include 'includes/footerPrincipal.php';
+    include 'includes/footerPrincipal.php';
     ?>
     <!-- teste -->
   </body>

@@ -130,6 +130,16 @@
   </div>
 </div>
 
+<?php
+
+  if (isset($_POST["Destruir"]))
+  {
+    destruir_sessao();
+    echo '<meta http-equiv="refresh" content="0;url=index.php">';
+  }
+  
+ ?>
+
 <script src="https://code.jquery.com/jquery-3.3.1.js">
 </script>
 <script>
