@@ -1454,16 +1454,17 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .display_like_user_img img
 {
-    height: 24px;
-    width: 24px;
-    padding: 25%;
+    height: 35px;
+    width: 35px;
+    padding: 16%;
+    border-radius: 50%;
 }
 
 .display_like_user_name
 {
     width: 85%;
     text-align: left;
-    padding-top: 1em;
+    padding-top: 0.7em;
     padding-left: 0.5em;
 }
 .display_like_close_container
@@ -2536,7 +2537,7 @@ footer
 .resultadosPesquisa_container_nome:hover
 {
   cursor: pointer;
- 
+
 }
 
 .resultadosPesquisa_container_nomearroba

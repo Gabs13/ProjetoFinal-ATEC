@@ -4,7 +4,7 @@
 
     <!--MODAL SLIDER DE IMAGENS-->
   <div class="modalGallery" id="modalperfilpost">
-    
+
     <!--DIV DE DISPLAY DOS GOSTOS DO POST-->
     <div class="display_like_background" id="display_like_background" style='display:none;'>
       <div class="display_like_post">
@@ -17,7 +17,6 @@
     <div class="display_post_finisher"></div>
   </div>
   <!--FINAL DIV DISPLAY LIKES-->
-  <div class="arrow_1"></div>
 
   <div class="modal_content" id="modal_content">
     <div class="modal_esquerda" id="modal_esquerda"></div>
@@ -28,6 +27,7 @@
         </div>
         <div class="autor_modal_user_nome" id="modal_username">
         <div id="modal_username_text"></div>
+        <div class="modal_user_username" id="modal_user_username"></div>
         <div class="modal_user_desc" id="modal_user_desc"></div>
       </div>
     </div>
@@ -49,8 +49,6 @@
   <div class="close" id="closePerfil">&times;</div>
 
         </div>
-
-<div class="arrow_2"></div>
 
 </div>
 <!--FINAL DA MODAL---------------------------------------------------------------------------------------------->

@@ -28,6 +28,8 @@ function getGallery(id)
 
       document.getElementById("modal_username_text").innerHTML = finalResult.User[1] + " " + finalResult.User[2]; //Preencher primeiro e ultimo nome no Post
 
+      $("#modal_user_username").html("@" + finalResult.User['UtilUser']);
+
       if(finalResult.User['UtilFoto'] != null)
       {
         $("#autor_modal_user_img").attr("src", "imagens/Utilizadores/" + finalResult.User['UtilFoto']);
