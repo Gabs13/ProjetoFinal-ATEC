@@ -1819,6 +1819,7 @@ footer
     width: 15%;
     float: right;
     font-size: 20px;
+    margin-right:2em;
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
     -moz-user-select: none; /* Old versions of Firefox */
@@ -2142,6 +2143,7 @@ footer
     background-color: #D24D57;
     width: 8%;
     border: 1px solid #f2f2f2;
+    outline:none;
 }
 
 .chat_display_text_msg
@@ -2162,7 +2164,7 @@ footer
 /*user que ta a mandar mensagem*/
 .chat_display_user
 {
-    height: 10%;
+    height: 12%;
     width: 100%;
     background-color: white;
     border-bottom: 1px solid #f2f2f2;
@@ -2224,7 +2226,7 @@ footer
 .chat_display_messages
 {
     width: 92%;
-    height: 73.3%;
+    height: 71.3%;
     background-color: white;
     padding: 4%;
     overflow-x: hidden;
@@ -2866,6 +2868,11 @@ footer
 {
     width: 55%;
     display:flex;
+}
+
+.editar_perfil_input input
+{
+    outline:none;
 }
 
 .editarPerfil_body_display_full input
