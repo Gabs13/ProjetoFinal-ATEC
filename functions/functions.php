@@ -29,6 +29,7 @@
     $Data['User'] = $Info;
     $Data['Like'] = $LikePost;
     $Data['Foto'] = $InfoFoto;
+    $Data['Sessao'] = $_SESSION['UtilID'];
 
     echo json_encode($Data);
 
@@ -607,6 +608,37 @@
     $Data = array();
 
     $Data['Notificacao'] = $Notificacoes;
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
+  if(@$_POST['action'] == 'apagarPostPHP')
+  {
+    include 'conn.php';
+
+    $PostID = $_POST['id'];
+
+    $UtilInfo = mysqli_fetch_array(mysqli_query($conn, "SELECT Utilizadores.UtilID, UtilUser FROM Posts LEFT JOIN Utilizadores ON Posts.UtilID = Utilizadores.UtilID WHERE PostID = $PostID"));
+
+    mysqli_query($conn, "DELETE FROM Posts WHERE PostID = $PostID");
+
+    mysqli_query($conn, "DELETE FROM Fotos WHERE PostID = $PostID");
+
+    mysqli_query($conn, "DELETE FROM LikesPosts WHERE PostID = $PostID");
+
+    mysqli_query($conn, "DELETE FROM Comentarios WHERE PostID = $PostID");
+
+    $Posts = mysqli_query($conn, "SELECT PostID FROM Posts WHERE UtilID = $UtilInfo[UtilID]");
+
+    $TotalPosts = mysqli_num_rows($Posts);
+
+    $Data = array();
+
+    $Data['User'] = $UtilInfo;
+
+    $Data['TPosts'] = $TotalPosts;
 
     include 'deconn.php';
 
