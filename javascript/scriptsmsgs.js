@@ -76,9 +76,11 @@ function removerMsg(id)
       action: "removerMsgPHP",
       id: id,
     },
-    success:function(result)
+    success:function()
     {
+      $("#chat_eliminatemodal").css('display', 'none');
 
+      start = 0;
     }
   });
 }
@@ -186,32 +188,66 @@ function renderMessage(item)
   let diamsg = new Date(item.DataMsg);
   let time = new Date(item.DataMsg);
 
-  if (time.getMinutes() < 10){
-    time = time.getHours() + ':0' + time.getMinutes();
-  }
-  else {
-    time = time.getHours() + ':' + time.getMinutes();
-  }
-  if (item.UtilID == IDSessao)
+  if (time.getMinutes() < 10)
   {
-    if (diamsg.getDay() != today.getDay())
-    {
-      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display"><div class="chat_msgs_settings"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_msgs_settings_btn"><i class="fas fa-ellipsis-h"></i><div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal" onclick="eliminarModal(' + item.MensagemConversaID + ')">Eliminar</div></div></div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + (diamsg.getMonth() + 1) + '/' + diamsg.getDate() + ' ' + time + '</div> </div> </div>';
-    }
-    else
-    {
-      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display"> <div class="chat_msgs_settings"><div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_msgs_settings_btn"><i class="fas fa-ellipsis-h"></i><div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal" onclick="eliminarModal(' + item.MensagemConversaID + ')">Eliminar</div></div></div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + time + '</div> </div> </div>';
-    }
+    time = time.getHours() + ':0' + time.getMinutes();
   }
   else
   {
-    if (diamsg.getDay() != today.getDay())
+    time = time.getHours() + ':' + time.getMinutes();
+  }
+
+  console.log(item);
+
+  if (item.UtilID == IDSessao)
+  {
+    if(item.isDeleted == 0)
     {
-      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display_left"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div><div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + (diamsg.getMonth() + 1) + '/' + diamsg.getDate() + ' ' + time + '</div> </div> </div>' ;
+      if (diamsg.getDay() != today.getDay())
+      {
+        return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display"><div class="chat_msgs_settings"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_msgs_settings_btn"><i class="fas fa-ellipsis-h"></i><div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal" onclick="eliminarModal(' + item.MensagemConversaID + ')">Eliminar</div></div></div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + (diamsg.getMonth() + 1) + '/' + diamsg.getDate() + ' ' + time + '</div> </div> </div>';
+      }
+      else
+      {
+        return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display"> <div class="chat_msgs_settings"><div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_msgs_settings_btn"><i class="fas fa-ellipsis-h"></i><div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal" onclick="eliminarModal(' + item.MensagemConversaID + ')">Eliminar</div></div></div> <div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + time + '</div> </div> </div>';
+      }
     }
     else
     {
-      return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display_left"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div><div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">'+ time + '</div> </div> </div>' ;
+      if (diamsg.getDay() != today.getDay())
+      {
+        return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display"><div class="chat_msgs_settings"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_msgs_settings_btn"></div></div> <div class="chat_display_messages_texto">Esta mensagem foi apagada</div> <div class="chat_display_messages_hora">' + (diamsg.getMonth() + 1) + '/' + diamsg.getDate() + ' ' + time + '</div> </div> </div>';
+      }
+      else
+      {
+        return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display"> <div class="chat_msgs_settings"><div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div> <div class="chat_msgs_settings_btn"> </div></div> <div class="chat_display_messages_texto">Esta mensagem foi apagada</div> <div class="chat_display_messages_hora">' + time + '</div> </div> </div>';
+      }
+    }
+
+  }
+  else
+  {
+    if(item.isDeleted == 0)
+    {
+      if (diamsg.getDay() != today.getDay())
+      {
+        return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display_left"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div><div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">' + (diamsg.getMonth() + 1) + '/' + diamsg.getDate() + ' ' + time + '</div> </div> </div>' ;
+      }
+      else
+      {
+        return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display_left"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div><div class="chat_display_messages_texto">' + item.Mensagem + '</div> <div class="chat_display_messages_hora">'+ time + '</div> </div> </div>' ;
+      }
+    }
+    else
+    {
+      if (diamsg.getDay() != today.getDay())
+      {
+        return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display_left"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div><div class="chat_display_messages_texto">Esta mensagem foi apagada</div> <div class="chat_display_messages_hora">' + (diamsg.getMonth() + 1) + '/' + diamsg.getDate() + ' ' + time + '</div> </div> </div>' ;
+      }
+      else
+      {
+        return '<div class="chat_display_messages_ocupy"> <div class="chat_display_messages_display_left"> <div class="chat_display_messages_nome">' + item.UtilPNome + ' ' + item.UtilUNome + '</div><div class="chat_display_messages_texto">Esta mensagem foi apagada</div> <div class="chat_display_messages_hora">'+ time + '</div> </div> </div>' ;
+      }
     }
   }
 }
