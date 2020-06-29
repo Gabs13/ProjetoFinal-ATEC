@@ -7,6 +7,16 @@
     </div>
   </a>
 
+  <div class="registo_main_container">
+
+  <div class="registo_information">
+  <div class="registo_info_texto"><div class="registo_info_texto_span"><span class="dot"></span></div>Os campos não podem ter caracteres especiais</div>
+    <div class="registo_info_texto"><div class="registo_info_texto_span"><span class="dot"></span></div>O nome de utilizador tem que ter mais de seis letras</div>
+    <div class="registo_info_texto"><div class="registo_info_texto_span"><span class="dot"></span></div>A password tem que ter no minimo oito caracteres</div>
+  </div>
+  
+    
+
   <div class="pai">
       <div class="filho">
           <form method="post">
@@ -89,4 +99,5 @@
           </script>
       </div>
   </div>
+  </div><!--final do container principal-->
 </body>
