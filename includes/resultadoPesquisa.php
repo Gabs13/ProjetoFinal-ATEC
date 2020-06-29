@@ -4,28 +4,46 @@
     <div class="resultadoPesquisa_body">
       <div class="resultadoPesquisa_body_label">Pesquisa </div>
       <div class="resultadosPesquisa_list">
-        <div class="resultadosPesquisa_container">
-          <div class="resultadosPesquisa_container_img"><img src="imagens/Icones/icons8-male-user-26.png"></div>
-          <div class="resultadosPesquisa_container_nome">S1mple
-            <div class="resultadosPesquisa_container_nomearroba">@S1mple</div>
-          </div>
-          <div class="resultadosPesquisa_container_chat"><i class="fas fa-plus"></i></div>
-        </div>
-        <div class="resultadosPesquisa_container">
-          <div class="resultadosPesquisa_container_img"><img src="imagens/Icones/icons8-male-user-26.png"></div>
-          <div class="resultadosPesquisa_container_nome">S1mple
-            <div class="resultadosPesquisa_container_nomearroba">@S1mple</div>
-          </div>
-          <div class="resultadosPesquisa_container_chat"><i class="fas fa-plus"></i></div>
-        </div>
-        <div class="resultadosPesquisa_container">
-          <div class="resultadosPesquisa_container_img"><img src="imagens/Icones/icons8-male-user-26.png"></div>
-          <div class="resultadosPesquisa_container_nome">S1mple
-            <div class="resultadosPesquisa_container_nomearroba">@S1mple</div>
-          </div>
-          <div class="resultadosPesquisa_container_chat"><i class="fas fa-plus"></i></div>
-        </div>
-      </div>
+
+        <?php
+          $nomepesquisa = $_GET['pesq'];
+
+
+          include 'functions/conn.php';
+
+          $Util = mysqli_query($conn, "SELECT UtilID, UtilUser, UtilPNome, UtilUNome, UtilFoto FROM Utilizadores WHERE CONCAT(UtilPNome, ' ', UtilUNome) LIKE '%$nomepesquisa%' OR UtilUser LIKE '%$nomepesquisa%'");
+
+          if(mysqli_num_rows($Util) > 0)
+          {
+            while($Dados = mysqli_fetch_array($Util))
+            {
+              echo '<div class="resultadosPesquisa_container">
+                <div class="resultadosPesquisa_container_img">';
+                if($Dados['UtilFoto'] != null)
+                {
+                  echo '<img src="imagens/Utilizadores/'.$Dados['UtilFoto'].'">';
+                }
+                else
+                {
+                  echo '<img src="imagens/Icones/icons8-male-user-26.png">';
+                }
+                echo'</div>
+                <div class="resultadosPesquisa_container_nome">'.$Dados['UtilPNome'].' '.$Dados['UtilUNome'].'
+                  <div class="resultadosPesquisa_container_nomearroba">@'.$Dados['UtilUser'].'</div>
+                </div>
+                <div class="resultadosPesquisa_container_chat"></div>
+              </div>';
+            }
+          }
+          else
+          {
+            echo 'Não existe.';
+          }
+
+          include 'functions/deconn.php';
+        ?>
+
+
       <div class="resultadoPesquisa_body_end"></div>
 
 

@@ -84,7 +84,11 @@
         <div class="abo">
           <div id="abot">About Artifex <i class="fas fa-info-circle"></i></div>
           <div class="abo_cont">
-
+            Bem-vindo ao Artifex. A equipa por detrás da Artifex dá-lhe as boas vindas à sua nova rede social, estamos dedicados a dar-lhe a melhor experiência possível.
+            <br/><br/>
+            Fundada em 2020 por André Castro, Fábio Santos & Gabriel Cosme, Artifex é fruto de um sonho que passou a ideia que passou a realidade e aqui estamos. A nossa missão principal é dar um espaço de crescimento e ajudar as várias áreas ligadas artes e os vários artistas que a se juntarem Artifex.
+            <br/><br/>
+            Esperemos que goste da experiência, se tiver com questões ou algum comentário contacte artifex@gmail.com
           </div>
         </div>
 

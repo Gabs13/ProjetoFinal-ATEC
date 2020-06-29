@@ -83,6 +83,17 @@ $(document).ready(function(){
     $(".buscar-txt").css("width", "0px");
     $(".buscar-txt").css("padding", "0 0px");
   });
+
+  $("#tb_procura").bind("keypress", {}, keypressInBox);
+
+  function keypressInBox(e) {
+      var code = (e.keyCode ? e.keyCode : e.which);
+      if (code == 13) {
+          e.preventDefault();
+
+          window.location = "pesquisa.php?&pesq=" + $("#tb_procura").val();
+      }
+  };
 });
 
 /*Funcao para mostrar dropdownlist nav bar*/

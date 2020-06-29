@@ -720,7 +720,7 @@
     {
       while($TotalFollowers = mysqli_fetch_array($Followers))
       {
-        $Posts = mysqli_query($conn, "SELECT PostID, PubDesc, DataPublicacao, Posts.UtilID, UtilUser, UtilPNome, UtilUNome, UtilFoto FROM Posts LEFT JOIN Utilizadores ON Posts.UtilID = Utilizadores.UtilID WHERE Posts.UtilID = $TotalFollowers[FollowID]");
+        $Posts = mysqli_query($conn, "SELECT PostID, PubDesc, DataPublicacao, Posts.UtilID, UtilUser, UtilPNome, UtilUNome, UtilFoto FROM Posts LEFT JOIN Utilizadores ON Posts.UtilID = Utilizadores.UtilID WHERE Posts.UtilID = $TotalFollowers[FollowID] LIMIT 20");
         if(mysqli_num_rows($Posts) > 0)
         {
           while($InfoPosts = mysqli_fetch_array($Posts))
@@ -767,7 +767,7 @@
 
     global $Mult;
 
-    $Posts = mysqli_query($conn, "SELECT PostID, PubDesc, DataPublicacao, UtilID FROM Posts LIMIT 12");
+    $Posts = mysqli_query($conn, "SELECT PostID, PubDesc, DataPublicacao, UtilID FROM Posts LIMIT 20");
 
     while($Post = mysqli_fetch_array($Posts))
     {

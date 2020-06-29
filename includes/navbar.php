@@ -95,10 +95,13 @@
     <div class='menuContent'>
       <ul>
         <div class="procura" id="procura">
-          <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
-          <a class="buscar-btn">
-            <i class="fas fa-search"></i>
-          </a>
+          <form id="formprocura">
+            <input type="text" autocomplete="off" id="tb_procura" class="buscar-txt" placeholder="Buscar..."/>
+
+            <a class="buscar-btn">
+              <i class="fas fa-search"></i>
+            </a>
+          </form>
         </div>
         <li> <a href="home.php"> Home </a> </li>
         <li> <a href="<?php echo "perfil.php?&uname=".$_SESSION['UtilUser']."&uid=".$_SESSION['UtilID']; ?>">Perfil</a></li>
@@ -120,12 +123,7 @@
         <div class="navbar_menu_dropdown" id="navbar_menu_dropdown">
           <div> <a href="<?php echo "edit.php?&uname=".$_SESSION['UtilUser']."&uid=".$_SESSION['UtilID']; ?>"> Editar perfil </a></div>
           <div> <a href="privacidade.php"> Definições e Privacidade </a> </div>
-          <div>Ajuda e Support</div>
-          <div>
-            <form method="post">
-              <input type="submit" value="Log Out" name="Destruir">
-            </form>
-          </div>
+          <div> <form method="post"> <input type="submit" value="Log Out" name="Destruir"> </form> </div>
         </div>
       </div>
     </div>
