@@ -31,13 +31,13 @@
                 <div class="resultadosPesquisa_container_nome">'.$Dados['UtilPNome'].' '.$Dados['UtilUNome'].'
                   <div class="resultadosPesquisa_container_nomearroba">@'.$Dados['UtilUser'].'</div>
                 </div>
-                <div class="resultadosPesquisa_container_chat"></div>
+                
               </div>';
             }
           }
           else
           {
-            echo 'Não existe.';
+            echo '<div class="resultados_pesquisa_empty">Não existem resultados na pesquisa.</div>';
           }
 
           include 'functions/deconn.php';
