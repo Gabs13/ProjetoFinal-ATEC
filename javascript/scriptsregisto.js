@@ -34,13 +34,6 @@ document.querySelector('[name="regUsername"]').addEventListener("keypress", func
   }
 });
 
-document.querySelector("#regTlmv").addEventListener("keypress", function (evt) {
-  if (this.value.length == 9)
-  {
-      evt.preventDefault();
-  }
-});
-
 document.getElementById("regData").max = "2002-01-01";
 
 

@@ -45,12 +45,19 @@ $(document).ready(function()
     $(".editarPerfil_body_display_full").on('input', function(){
       if ($("#tb_tlmv").val().length != 9)
       {
-        $("#tb_tlmv").css("border-color", "red");
+        $("#tb_tlmv").css("border", "2px solid red");
         $("#tb_tlmv").css("outline", "none");
       }
       else {
-        $("#tb_tlmv").css("border-color", "green");
+        $("#tb_tlmv").css("border", "2px solid green");
         $("#tb_tlmv").css("outline", "none");
+      }
+    });
+
+    document.querySelector("#tb_tlmv").addEventListener("keypress", function (evt) {
+      if (this.value.length == 9)
+      {
+          evt.preventDefault();
       }
     });
 });

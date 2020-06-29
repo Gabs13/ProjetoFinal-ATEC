@@ -16,7 +16,6 @@
             <div class="borders"> <input type="text" id="regUNome" name="regUNome" placeholder="Ultimo Nome" required> </div>
             <div class="borders"> <input type="password" id="regPass" name="regPass" placeholder="Password" required> </div>
             <div class="borders"> <input type="password" id="regRPass" name="regRPass" placeholder="Confirmar Password" required> </div>
-            <div class="borders"> <input type="number" id="regTlmv" name="regTlmv" placeholder="Telemovel"> </div>
             <div class="regcheck">
               <input type="radio" name="regGenero" value = "1" required> <label>Masculino</label>
               <input type="radio" name="regGenero" value = "2"> <label>Feminino</label>
@@ -34,7 +33,7 @@
           <?php
             if(isset($_POST["bt_registar"]))
             {
-              registo($_POST["regEmail"], $_POST["regPass"], $_POST["regRPass"], $_POST["regNome"], $_POST["regUNome"], $_POST["regTlmv"], $_POST["regGenero"], $_POST["regData"], $_POST["regUsername"]);
+              registo($_POST["regEmail"], $_POST["regPass"], $_POST["regRPass"], $_POST["regNome"], $_POST["regUNome"], $_POST["regGenero"], $_POST["regData"], $_POST["regUsername"]);
             }
           ?>
 
