@@ -60,8 +60,6 @@
                   {
                     var finalResult = JSON.parse(result);
 
-                    console.log(finalResult);
-
                     if(finalResult.user == false)
                     {
                       $("#loader").html('<i class="fas fa-check" style="color: green;"> </i>');

@@ -109,6 +109,15 @@ dropdownnav.onclick = function()
   }
 }
 
+function tirarNome()
+{
+  $('#dropdownlistNavbar').css('display', 'none');
+}
+
+function porNome()
+{
+ $('#dropdownlistNavbar').css('display', 'block');
+}
 
 /*Empurrar body para baixo quando se abre navbar ---------------------------*/
 btnuser.onclick = function()
@@ -120,11 +129,13 @@ btnuser.onclick = function()
   {
     //Animação puxar body para cima
     $('html, body').animate({paddingTop: 0}, 750);
+    tirarNome();
   }
   else
   {
     //Animação empurrar body para baixo
     $('html, body').animate({paddingTop: 50}, 250);
+    setTimeout(porNome, 500);
   }
 }
 
