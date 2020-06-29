@@ -1,7 +1,3 @@
-<script>
-  var myvar = "<?php echo $_SESSION['UtilID'] ?>";
-  console.log(myvar);
-</script>
 <body>
  
 

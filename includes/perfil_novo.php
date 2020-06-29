@@ -65,7 +65,7 @@
           </div>
           <div class="autor_modal_user_nome" id="modal_username">
             <div id="modal_username_text"></div>
-
+            <div class="modal_user_username" id="modal_user_username"></div>
             <div class="modal_user_desc" id="modal_user_desc">
 
             </div>
