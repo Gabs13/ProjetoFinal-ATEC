@@ -1,4 +1,4 @@
-<body class="anularScroll">
+<body class="anularscroll">
   <a href="login.php">
   <!--SIMBOLO ARTIFEX -->
     <div class="resultadoPesquisa_back" >
@@ -22,7 +22,7 @@
               <input type="radio" name="regGenero" value = "2"> <label>Feminino</label>
             </div>
             <div class="borders"> <input type="email" id="regEmail" name="regEmail" placeholder="E-mail" required> </div>
-            <div class="borders"> <input type="date" name="regData" placeholder="Data de Nascimento" required> </div>
+            <div class="borders"> <input type="date" onkeydown="return false" id="regData" min='1899-01-01' max='2000-13-13' name="regData" placeholder="Data de Nascimento" required> </div>
             <div>
                 <input type="submit" name="bt_registar" value="Resgistar" id="registobtn1" style="display:none;">
                 <div class="col-md-3 col-sm-3 col-xs-6">
