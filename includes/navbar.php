@@ -105,7 +105,7 @@
         <li> <a href="mensagens.php">Mensagens</a> </li>
         <li> <a href="login.php"> Galeria</a> </li>
         <li><div class="post_creation_button"><i class="fas fa-plus-square" id="add_posts_nav"></i><span class="post_creation_text">Crie o seu post!</span></div></li>
-        <li><div class="post_creation_button notification_creation_button" id="notification_bar_btn"><i class="far fa-bell" ></i><span class="post_creation_text">Notificações!</span>
+        <li><div class="post_creation_button notification_creation_button" id="notification_bar_btn"><i class="far fa-bell" style="position:relative;"><div class="notification_nr">2</div></i><span class="post_creation_text">Notificações!</span>
               <!--NOTIFICAÇÕES DA NAVBAR-->
               <div class="notificacao_container" id="notificacao_container" style="display:none;">
                 <div class="notification_item">

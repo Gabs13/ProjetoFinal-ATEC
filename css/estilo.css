@@ -612,9 +612,9 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .galery_title
 {
     text-align: center;
-    padding-top:30px;
-    font-size: 4em;
-    font-family: 'Cinzel', serif;
+    padding-top: 4em;
+    font-size: 1.2em;
+    color: #aaa;
 }
 
 .collection_container_item
@@ -2797,7 +2797,13 @@ footer
     font-size: 1.3em;
     font-weight: bold;
     padding-top: 1.5em;
-    width: 14em;
+    width: 25%;
+}
+
+.editar_perfil_input
+{
+    width: 55%;
+    display:flex;
 }
 
 .editarPerfil_body_display_full input
@@ -2812,12 +2818,12 @@ footer
 
 .editar_perfil_edicao_buttons
 {
-    margin-left: 29em;
+    width: 20%;
     margin-top: 2em;
 }
 .editar_perfil_edicao_buttons:last-of-type
 {
-    margin-left: 20em;
+    
     margin-top: 2em;
 }
 
@@ -4183,17 +4189,22 @@ footer
     text-align: center ;
 }
 
-.notification_item_info_text_vista
-{
-    font-weight:bold;
-}
-
-.notification_item_info_username_vista
-{
-    font-weight:bold;
-}
-
 .notification_item_vista
 {
     background-color:#ccc;
+}
+
+.notification_nr
+{
+    height: 15px;
+    width: 15px;
+    background-color: #D24D57;
+    border-radius: 50%;
+    position: absolute;
+    top: -3px;
+    right: -2px;
+    font-size: 0.5em;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
 }
