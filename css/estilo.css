@@ -2514,7 +2514,7 @@ footer
 
 .resultadosPesquisa_container_img
 {
-  width: 20%;
+  width: 12%;
   height: 70px;
   padding-top: 12px;
 }
@@ -2523,6 +2523,7 @@ footer
 {
     width: 70px;
     height: 70px;
+    border-radius:50%;
 }
 
 .resultadosPesquisa_container_img img:hover
@@ -2537,6 +2538,18 @@ footer
     margin-top: 18px;
     width: 70%;
     font-weight: bold;
+}
+.resultados_pesquisa_empty
+{
+    height: 7em;
+    width: 100%;
+    background-color: rgba(0,0,0,0.1);
+    text-align: center;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 7em;
+    font-size: 1.3em;
+    border-bottom: 1px solid #ccc;
 }
 
 .resultadosPesquisa_container_nome:hover
