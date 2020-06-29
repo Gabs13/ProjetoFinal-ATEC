@@ -574,6 +574,23 @@
     include 'deconn.php';
   }
 
+  if(@$_POST['action'] == 'contarNotificacoesPHP')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    $Notificacoes = mysqli_num_rows(mysqli_query($conn, "SELECT UtilID, TipoNotificacaoID, UtilIDdois, DataNotificacao, isViewed, PostID FROM Notificacoes WHERE isViewed = 0 AND UtilIDdois = $_SESSION[UtilID]"));
+
+    $Data = array();
+
+    $Data['Notificacao'] = $Notificacoes;
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
   if(isset($_POST["bt_postarfoto_perfil"]))
   {
     $file = $_FILES['bt_carregarfoto'];

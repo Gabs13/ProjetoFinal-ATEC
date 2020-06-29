@@ -117,24 +117,54 @@ btnuser.onclick = function()
   }
 }
 
+function contarNotificacoes()
+{
+  $.ajax({
+    type: "POST",
+    url: "functions/functions.php",
+    data: {
+      action: "contarNotificacoesPHP",
+    },
+    success:function(result)
+    {
+      var finalResult = JSON.parse(result);
+
+      if (finalResult.Notificacao > 9)
+      {
+        $("#notification_nr").html("9+");
+      }
+      else
+      {
+        $("#notification_nr").html(finalResult.Notificacao);
+      }
+
+      setTimeout(contarNotificacoes, 2000);
+    }
+  });
+}
+
+contarNotificacoes();
+
 function getNotificacoes()
 {
   $("#notificacao_container").load("functions/CarregarNotificacoes.php");
 
-  setTimeout(
-    $.ajax({
-      type: "POST",
-      url: "functions/functions.php",
-      data: {
-        action: "NotificacaoLida",
-      },
-      success:function()
-      {
+  setTimeout(lerNotificacao, 500);
+}
 
-      }
-    })
+function lerNotificacao()
+{
+  $.ajax({
+    type: "POST",
+    url: "functions/functions.php",
+    data: {
+      action: "NotificacaoLida",
+    },
+    success:function()
+    {
 
-  ,3000);
+    }
+  });
 }
 
 function getFoto()

@@ -3,14 +3,14 @@
 
   session_start();
 
-  $Notificacoes = mysqli_query($conn, "SELECT UtilID, Notificacoes.TipoNotificacaoID, TipoNotificacao, DataNotificacao, isViewed, PostID FROM Notificacoes LEFT JOIN TipoNotificacao ON Notificacoes.TipoNotificacaoID = TipoNotificacao.TipoNotificacaoID WHERE UtilIDdois = $_SESSION[UtilID] ORDER BY DataNotificacao DESC LIMIT 10");
+  $Notificacoes = mysqli_query($conn, "SELECT UtilID, Notificacoes.TipoNotificacaoID, TipoNotificacao, DataNotificacao, isViewed, PostID FROM Notificacoes LEFT JOIN TipoNotificacao ON Notificacoes.TipoNotificacaoID = TipoNotificacao.TipoNotificacaoID WHERE UtilIDdois = $_SESSION[UtilID] ORDER BY DataNotificacao DESC LIMIT 20");
 
   if(mysqli_num_rows($Notificacoes) != 0)
   {
     while($TodasNotificacoes = mysqli_fetch_array($Notificacoes))
     {
       $InfoUtil = mysqli_fetch_array(mysqli_query($conn, "SELECT UtilUser, UtilFoto FROM Utilizadores WHERE UtilID = $TodasNotificacoes[UtilID]"));
-      if($TodasNotificacoes['isViewed'] == false)
+      if($TodasNotificacoes['isViewed'] == 0)
       {
         if($TodasNotificacoes['PostID'] == 0)
         {
