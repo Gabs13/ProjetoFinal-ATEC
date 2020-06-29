@@ -68,3 +68,14 @@ function getGallery(id)
     }
   });
 }
+
+var fotoCountHome = 20;
+
+$(window).scroll(function() {
+  if($(window).scrollTop() == ($(document).height() - $(window).height()) * 1) // Scrollbar a 100%
+  {
+    fotoCountHome = fotoCountHome + 20;
+
+    $("#Container_Posts").load("functions/CarregarHomeScroll.php", {fotoCount: fotoCountHome});
+  }
+});

@@ -95,10 +95,13 @@
     <div class='menuContent'>
       <ul>
         <div class="procura" id="procura">
-          <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
-          <a class="buscar-btn">
-            <i class="fas fa-search"></i>
-          </a>
+          <form id="formprocura">
+            <input type="text" autocomplete="off" id="tb_procura" class="buscar-txt" placeholder="Buscar..."/>
+
+            <a class="buscar-btn">
+              <i class="fas fa-search"></i>
+            </a>
+          </form>
         </div>
         <li> <a href="home.php"> Home </a> </li>
         <li> <a href="<?php echo "perfil.php?&uname=".$_SESSION['UtilUser']."&uid=".$_SESSION['UtilID']; ?>">Perfil</a></li>

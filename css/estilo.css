@@ -4227,9 +4227,19 @@ footer
     border-radius: 50%;
     position: absolute;
     top: -5px;
-    right: -2px;
+    right: -11px;
     font-size: 0.5em;
     color: white;
     text-align: center;
     vertical-align: middle;
+}
+
+.abo_cont
+{
+    color:#414950;
+    font-size: 25px;
+    width: 60vw;
+    height: 50vh;
+    margin-top: 5%;
+    margin-left:25%;
 }
