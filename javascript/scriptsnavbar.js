@@ -36,11 +36,11 @@ notificationbtn.onclick=function()
 
 
 //fechar notificaçoes
-  $(document).mouseup(function(e) 
+  $(document).mouseup(function(e)
   {
     var container = $("#notificacao_container");
     // if the target of the click isn't the container nor a descendant of the container
-    if (!container.is(e.target) && container.has(e.target).length === 0) 
+    if (!container.is(e.target) && container.has(e.target).length === 0)
     {
       container.hide();
     }
@@ -115,6 +115,56 @@ btnuser.onclick = function()
     //Animação empurrar body para baixo
     $('html, body').animate({paddingTop: 50}, 250);
   }
+}
+
+function contarNotificacoes()
+{
+  $.ajax({
+    type: "POST",
+    url: "functions/functions.php",
+    data: {
+      action: "contarNotificacoesPHP",
+    },
+    success:function(result)
+    {
+      var finalResult = JSON.parse(result);
+
+      if (finalResult.Notificacao > 9)
+      {
+        $("#notification_nr").html("9+");
+      }
+      else
+      {
+        $("#notification_nr").html(finalResult.Notificacao);
+      }
+
+      setTimeout(contarNotificacoes, 2000);
+    }
+  });
+}
+
+contarNotificacoes();
+
+function getNotificacoes()
+{
+  $("#notificacao_container").load("functions/CarregarNotificacoes.php");
+
+  setTimeout(lerNotificacao, 500);
+}
+
+function lerNotificacao()
+{
+  $.ajax({
+    type: "POST",
+    url: "functions/functions.php",
+    data: {
+      action: "NotificacaoLida",
+    },
+    success:function()
+    {
+
+    }
+  });
 }
 
 function getFoto()

@@ -54,6 +54,12 @@
 
     $Gal = mysqli_fetch_array($Galeria);
 
+    if($Gal['UtilID'] != $_SESSION['UtilID'])
+    {
+      $horaatual = date("Y/m/d H:i:s");
+      mysqli_query($conn, "INSERT INTO Notificacoes(UtilID, TipoNotificacaoID, UtilIDdois, DataNotificacao, isViewed, PostID) VALUES ($_SESSION[UtilID], 4, $Gal[UtilID], '$horaatual', 0, $PostID)");
+    }
+
     $Data = array();
     $Data['Post'] = $Gal;
 
@@ -98,10 +104,14 @@
 
     $Data['Post'] = $PostID;
 
+    $InfoUtil = mysqli_fetch_array(mysqli_query($conn, "SELECT UtilID FROM Posts WHERE PostID = $PostID"));
+
     if(mysqli_num_rows($LikePosts) == 0)
     {
       mysqli_query($conn, "INSERT INTO LikesPosts(PostID, UtilID) VALUES ($PostID, $_SESSION[UtilID])");
       $Data['Like'] = true;
+      $horaatual = date("Y/m/d H:i:s");
+      mysqli_query($conn, "INSERT INTO Notificacoes(UtilID, TipoNotificacaoID, UtilIDdois, DataNotificacao, isViewed, PostID) VALUES ($_SESSION[UtilID], 1, $InfoUtil[UtilID], '$horaatual', 0, $PostID)");
     }
     else
     {
@@ -132,6 +142,15 @@
     {
       mysqli_query($conn, "INSERT INTO LikesComentarios(ComentarioID, UtilID) VALUES ($CommentID, $_SESSION[UtilID])");
       $Data['Like'] = true;
+
+      $Post = mysqli_fetch_array(mysqli_query($conn, "SELECT ComentarioID, UtilID, PostID FROM Comentarios WHERE ComentarioID = $CommentID"));
+
+      if($Post['UtilID'] != $_SESSION['UtilID'])
+      {
+        $horaatual = date("Y/m/d H:i:s");
+
+        mysqli_query($conn, "INSERT INTO Notificacoes(UtilID, TipoNotificacaoID, UtilIDdois, DataNotificacao, isViewed, PostID) VALUES ($_SESSION[UtilID], 2, $Post[UtilID], '$horaatual', 0, $Post[PostID])");
+      }
     }
     else
     {
@@ -179,6 +198,19 @@
 
     mysqli_query($conn, "INSERT INTO ReplyComentarios(UtilID, ComentarioID, Mensagem) VALUES ('$_SESSION[UtilID]', '$ComentarioID', '$ContentComment')");
 
+    $ReplyID = mysqli_insert_id($conn);
+
+    $ReplyComment = mysqli_fetch_array(mysqli_query($conn, "SELECT ReplyComentarioID, UtilID, ComentarioID FROM ReplyComentarios WHERE ReplyComentarioID = $ReplyID"));
+
+    $InfoComment = mysqli_fetch_array(mysqli_query($conn, "SELECT UtilID, ComentarioID, PostID FROM Comentarios WHERE ComentarioID = $ReplyComment[ComentarioID]"));
+
+    if($InfoComment['UtilID'] != $_SESSION['UtilID'])
+    {
+      $horaatual = date("Y/m/d H:i:s");
+      mysqli_query($conn, "INSERT INTO Notificacoes(UtilID, TipoNotificacaoID, UtilIDdois, DataNotificacao, isViewed, PostID) VALUES ($_SESSION[UtilID], 5, $InfoComment[UtilID], '$horaatual', 0, $InfoComment[PostID])");
+    }
+
+
     $Data['Post'] = $PostID;
 
     include 'deconn.php';
@@ -206,6 +238,14 @@
     {
       mysqli_query($conn, "INSERT INTO LikesReplyComentarios(ReplyComentarioID, UtilID) VALUES ($CommentReplyID, $_SESSION[UtilID])");
       $Data['Like'] = true;
+
+      $Comentario = mysqli_fetch_array(mysqli_query($conn, "SELECT Comentarios.UtilID, PostID, Comentarios.ComentarioID FROM Comentarios LEFT JOIN ReplyComentarios ON Comentarios.ComentarioID = ReplyComentarios.ComentarioID WHERE ReplyComentarioID = $CommentReplyID"));
+
+      if($_SESSION['UtilID'] != $Comentario['UtilID'])
+      {
+        $horaatual = date("Y/m/d H:i:s");
+        mysqli_query($conn, "INSERT INTO Notificacoes(UtilID, TipoNotificacaoID, UtilIDdois, DataNotificacao, isViewed, PostID) VALUES ($_SESSION[UtilID], 2, $Comentario[UtilID], '$horaatual', 0, $Comentario[PostID])");
+      }
     }
     else
     {
@@ -325,6 +365,9 @@
     {
       mysqli_query($conn, "INSERT INTO Seguidores(UtilID, FollowID) VALUES ($_SESSION[UtilID], $IDFollow)");
       $Data['Seguir'] = true;
+
+      $horaatual = date("Y/m/d H:i:s");
+      mysqli_query($conn, "INSERT INTO Notificacoes(UtilID, TipoNotificacaoID, UtilIDdois, DataNotificacao, isViewed, PostID) VALUES ($_SESSION[UtilID], 6, $IDFollow, '$horaatual', 0, 0)");
     }
     else
     {
@@ -518,6 +561,34 @@
     mysqli_query($conn, "UPDATE MensagensConversa SET isDeleted = 1 WHERE MensagemConversaID = $MsgID");
 
     include 'deconn.php';
+  }
+
+  if(@$_POST['action'] == 'NotificacaoLida')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    mysqli_query($conn, "UPDATE Notificacoes SET isViewed = 1 WHERE UtilIDdois = $_SESSION[UtilID]");
+
+    include 'deconn.php';
+  }
+
+  if(@$_POST['action'] == 'contarNotificacoesPHP')
+  {
+    include 'conn.php';
+
+    session_start();
+
+    $Notificacoes = mysqli_num_rows(mysqli_query($conn, "SELECT UtilID, TipoNotificacaoID, UtilIDdois, DataNotificacao, isViewed, PostID FROM Notificacoes WHERE isViewed = 0 AND UtilIDdois = $_SESSION[UtilID]"));
+
+    $Data = array();
+
+    $Data['Notificacao'] = $Notificacoes;
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
   }
 
   if(isset($_POST["bt_postarfoto_perfil"]))
