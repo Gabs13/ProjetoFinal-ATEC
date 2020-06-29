@@ -55,6 +55,9 @@ $(document).ready(function(){
     {
       modaladdpost.style.display="block";
       document.getElementById('home_post_example').style.display = "none";
+      $("#home_post_create_container_texto_1").val("");
+      $("#home_post_create_container_texto_1").prop( "disabled", true );
+      $("#post_send_file_2").prop( "disabled", true);
     }
     else
     {

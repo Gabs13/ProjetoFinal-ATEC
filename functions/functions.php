@@ -664,7 +664,7 @@
     {
       if ($fileError === 0)
       {
-        if ($fileSize < 1000000)
+        if ($fileSize < 10000000)
         {
           $fileNameNew = uniqid('', true).".".$fileActualExt;
 
@@ -692,13 +692,15 @@
         }
         else
         {
-          echo "O ficheiro é muito grande!";
+          header("Location: ../home.php");
+          echo '<script> alert("O ficheiro é muito grande!") </script>';
         }
       }
     }
     else
     {
-      echo "Formato de ficheiro inválido!";
+      header("Location: ../home.php");
+      echo '<script> alert("Formato de ficheiro invalido!") </script>';
     }
   }
 
@@ -722,7 +724,7 @@
     {
       if ($fileError === 0)
       {
-        if ($fileSize < 1000000)
+        if ($fileSize < 10000000)
         {
           $fileNameNew = uniqid('', true).".".$fileActualExt;
 
@@ -752,13 +754,15 @@
         }
         else
         {
-          echo "O ficheiro é muito grande!";
+          header("Location: ../home.php");
+          echo '<script> alert("O ficheiro é muito grande!") </script>';
         }
       }
     }
     else
     {
-      echo "Formato de ficheiro inválido!";
+      header("Location: ../home.php");
+      echo '<script> alert("Formato de ficheiro invalido!") </script>';
     }
   }
 
