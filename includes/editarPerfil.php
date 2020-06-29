@@ -58,7 +58,7 @@
         <div class="editarPerfil_body_display_full" id="editarPerfil_body_display_full" style="display:none;">
           <div class="editar_perfil_edicao_nome">Novo Telemovel:</div>
           <div class="editar_perfil_input">
-            <input type="text" id="tb_tlmv" placeholder="939284801">
+            <input type="number" id="tb_tlmv" placeholder="939284801">
           </div>
           <div class="editar_perfil_edicao_buttons">
             <button type="button" onclick="atualizarTlmv()">Confirmar</button>

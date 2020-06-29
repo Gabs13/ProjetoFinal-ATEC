@@ -1,11 +1,6 @@
 <?php
   require 'functions/functions.php';
   session_start();
-
-  if (!isset($_SESSION["UtilID"]))
-   {
-      header("location: index.php");
-   }
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +24,11 @@
         <body>
 
         <?php
+
+        if (isset($_SESSION["UtilID"]))
+         {
             include 'includes/navbar.php';
+         }
 
             include 'includes/privacidade.php';
 

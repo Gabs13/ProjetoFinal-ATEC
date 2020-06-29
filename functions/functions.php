@@ -856,7 +856,7 @@
 
     /* Função de registo */
 
-  function registo($regEmail, $regPass, $regRPass, $regNome, $regUNome, $regTlmv, $regGenero, $regData, $regUser)
+  function registo($regEmail, $regPass, $regRPass, $regNome, $regUNome, $regGenero, $regData, $regUser)
   {
     include 'conn.php';
 
@@ -865,7 +865,6 @@
     $regRPass = mysqli_real_escape_string($conn, $regRPass);
     $regNome = mysqli_real_escape_string($conn, $regNome);
     $regUNome = mysqli_real_escape_string($conn, $regUNome);
-    $regTlmv = mysqli_real_escape_string($conn, $regTlmv);
     $regGenero = mysqli_real_escape_string($conn, $regGenero);
     $regData = mysqli_real_escape_string($conn, $regData);
     $regUser = mysqli_real_escape_string($conn, $regUser);
@@ -884,7 +883,7 @@
         if(!$existencia)
         {
           /* Ainda não há este email - cria registo */
-          mysqli_query($conn, "INSERT INTO Conta (Email, Password, Telemovel) VALUES ('$regEmail', '$regPass', '$regTlmv')");
+          mysqli_query($conn, "INSERT INTO Conta (Email, Password) VALUES ('$regEmail', '$regPass')");
 
           /* Ultimo id criado via conn */
           $cid = mysqli_insert_id($conn);
