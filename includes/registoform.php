@@ -1,4 +1,4 @@
-<body>
+<body class="anularScroll">
   <a href="login.php">
   <!--SIMBOLO ARTIFEX -->
     <div class="resultadoPesquisa_back" >
@@ -7,7 +7,6 @@
     </div>
   </a>
 
-  <div class="registar_logotipo"><a><img src="imagens/logotipo/artifex1.png"></a></div>
   <div class="pai">
       <div class="filho">
           <form method="post">
@@ -21,7 +20,6 @@
             <div class="regcheck">
               <input type="radio" name="regGenero" value = "1" required> <label>Masculino</label>
               <input type="radio" name="regGenero" value = "2"> <label>Feminino</label>
-              <input type="radio" name="regGenero" value = "3"> <label>Outro</label>
             </div>
             <div class="borders"> <input type="email" id="regEmail" name="regEmail" placeholder="E-mail" required> </div>
             <div class="borders"> <input type="date" name="regData" placeholder="Data de Nascimento" required> </div>

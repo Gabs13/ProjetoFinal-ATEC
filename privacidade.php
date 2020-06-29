@@ -12,7 +12,7 @@
     <html lang="pt">
         <head>
         <meta charset="utf-8">
-        <title>ArtIN</title>
+        <title>Artifex</title>
         <link rel="icon" href="imagens/logotipo/browserIconCircle.png">
           <!-- Perfil -->
           <link rel="stylesheet" type="text/css" href="css/estilo.css">
@@ -37,7 +37,7 @@
 
             include 'includes/navbar.php';
 
-            include 'includes/resultadoPesquisa.php';
+            include 'includes/privacidade.php';
 
             include 'includes/footerPrincipal.php';
         ?>

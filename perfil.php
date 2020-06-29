@@ -12,7 +12,7 @@
     <html lang="pt">
         <head>
         <meta charset="utf-8">
-        <title>ArtIN</title>
+        <title>Artifex</title>
         <link rel="icon" href="imagens/logotipo/browserIconCircle.png">
           <!-- Perfil -->
           <link rel="stylesheet" type="text/css" href="css/estilo.css">
