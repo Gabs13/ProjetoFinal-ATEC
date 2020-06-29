@@ -31,7 +31,7 @@
         <?php
             if(@$_GET['pid'] && @$_GET['uid'])
             {
-              header("Location: http://localhost/ProjetoFinal/login.php?pid=".$_GET['pid']."&uid=".$_GET['uid']);
+              header("Location: ../ProjetoFinal/login.php?pid=".$_GET['pid']."&uid=".$_GET['uid']);
             }
 
             if (isset($_SESSION['UtilID'])) {

@@ -692,15 +692,17 @@
         }
         else
         {
-          header("Location: ../home.php");
-          echo '<script> alert("O ficheiro é muito grande!") </script>';
+          $link = $_POST['link'];
+
+          header("Location: $link");
         }
       }
     }
     else
     {
-      header("Location: ../home.php");
-      echo '<script> alert("Formato de ficheiro invalido!") </script>';
+      $link = $_POST['link'];
+
+      header("Location: $link");
     }
   }
 
@@ -754,15 +756,17 @@
         }
         else
         {
-          header("Location: ../home.php");
-          echo '<script> alert("O ficheiro é muito grande!") </script>';
+          $link = $_POST['link'];
+
+          header("Location: $link");
         }
       }
     }
     else
     {
-      header("Location: ../home.php");
-      echo '<script> alert("Formato de ficheiro invalido!") </script>';
+      $link = $_POST['link'];
+
+      header("Location: $link");
     }
   }
 
@@ -772,13 +776,13 @@
   {
     include 'conn.php';
 
-    $Followers = mysqli_query($conn, "SELECT UtilID, FollowID FROM Seguidores WHERE UtilID = $id");
+    $Followers = mysqli_query($conn, "SELECT UtilID, FollowID, (SELECT DataPublicacao FROM Posts WHERE UtilID = FollowID ORDER BY DataPublicacao DESC LIMIT 1) as DataPub FROM Seguidores WHERE UtilID = $id ORDER BY DataPub DESC LIMIT 20");
 
     if(mysqli_num_rows($Followers) > 0)
     {
       while($TotalFollowers = mysqli_fetch_array($Followers))
       {
-        $Posts = mysqli_query($conn, "SELECT PostID, PubDesc, DataPublicacao, Posts.UtilID, UtilUser, UtilPNome, UtilUNome, UtilFoto FROM Posts LEFT JOIN Utilizadores ON Posts.UtilID = Utilizadores.UtilID WHERE Posts.UtilID = $TotalFollowers[FollowID] LIMIT 20");
+        $Posts = mysqli_query($conn, "SELECT PostID, PubDesc, DataPublicacao, Posts.UtilID, UtilUser, UtilPNome, UtilUNome, UtilFoto FROM Posts LEFT JOIN Utilizadores ON Posts.UtilID = Utilizadores.UtilID WHERE Posts.UtilID = $TotalFollowers[FollowID] ORDER BY DataPublicacao DESC");
         if(mysqli_num_rows($Posts) > 0)
         {
           while($InfoPosts = mysqli_fetch_array($Posts))
@@ -825,7 +829,7 @@
 
     global $Mult;
 
-    $Posts = mysqli_query($conn, "SELECT PostID, PubDesc, DataPublicacao, UtilID FROM Posts LIMIT 20");
+    $Posts = mysqli_query($conn, "SELECT PostID, PubDesc, DataPublicacao, UtilID FROM Posts LIMIT 40");
 
     while($Post = mysqli_fetch_array($Posts))
     {
@@ -933,6 +937,8 @@
     }
     else
     {
+      if(strlen($regPass) >= 8)
+      {
         /* Encriptar a password */
         $regPass = base64_encode($regPass);
         /* Evitar duplicados */
@@ -958,6 +964,11 @@
         {
           echo '<div class="registar_erro_mail">O email indicado já se encontra registado</div>';
         }
+      }
+      else
+      {
+        echo '<div class="registar_erro_mail">A sua password é demasiado curta</div>';
+      }
     }
 
     include 'deconn.php';
@@ -977,17 +988,5 @@
     }
 
     include 'deconn.php';
-  }
-
-  function utilizador()
-  {
-    if(@!$_SESSION["uid"])
-    {
-      echo '<li> <a href="login.php"> <i class="fas fa-user"></i> </a> </li>';
-    }
-    else
-    {
-      echo '<li> <a href="logout.php"> <i class="fas fa-user-cog"></i> </a> </li>';
-    }
   }
 ?>

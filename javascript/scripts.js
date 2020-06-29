@@ -74,12 +74,12 @@ function getGallery(id)
   });
 }
 
-var fotoCount = 12;
+var fotoCount = 40;
 
 $(window).scroll(function() {
   if($(window).scrollTop() == ($(document).height() - $(window).height()) * 1) // Scrollbar a 100%
   {
-    fotoCount = fotoCount + 4;
+    fotoCount = fotoCount + 40;
 
     $("#Container_Posts").load("functions/CarregarGaleriaScroll.php", {fotoCount: fotoCount});
   }

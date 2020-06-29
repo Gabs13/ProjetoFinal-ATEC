@@ -96,7 +96,7 @@ var cid = 0, abc = 0;
 
 $(document).ready(function(){
 
-  $('form').submit(function (e){
+  $('#form_msg').submit(function (e){
     $.post('functions/CarregarConversa.php', {
       message: $('#tb_messagem').val(),
       id: cid,

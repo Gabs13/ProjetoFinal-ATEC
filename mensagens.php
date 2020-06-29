@@ -40,6 +40,5 @@
       include 'includes/chat.php';
 
       include 'includes/footerPrincipal.php';
-
     ?>
   </body>

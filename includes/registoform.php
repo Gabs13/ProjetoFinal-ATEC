@@ -23,7 +23,7 @@
             <div class="borders"> <input type="email" id="regEmail" name="regEmail" placeholder="E-mail" required> </div>
             <div class="borders"> <input type="date" onkeydown="return false" id="regData" min='1899-01-01' max='2000-13-13' name="regData" placeholder="Data de Nascimento" required> </div>
             <div>
-                <input type="submit" name="bt_registar" value="Resgistar" id="registobtn1" style="display:none;">
+                <input type="submit" disabled name="bt_registar" value="Resgistar" id="registobtn1" style="display:none;">
                 <div class="col-md-3 col-sm-3 col-xs-6">
                    <a href="" id="registobtn2" class="btn btn-sm animated-button victoria-two">Registar</a>
                 </div>
@@ -63,10 +63,12 @@
                     if(finalResult.user == false)
                     {
                       $("#loader").html('<i class="fas fa-check" style="color: green;"> </i>');
+                      $("#registobtn1").prop('disabled', false);
                     }
                     else
                     {
                       $("#loader").html('<i class="fas fa-times" style="color: red;"> </i>');
+                      $("#registobtn1").prop('disabled', true);
                     }
                   }
                 })
@@ -78,6 +80,7 @@
               else
               {
                 $("#loader").html('<i class="fas fa-times" style="color: red;"> </i>');
+                $("#registobtn1").prop('disabled', true);
               }
 
             });

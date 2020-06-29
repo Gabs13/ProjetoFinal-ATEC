@@ -5,13 +5,13 @@
 
   $Limite1 = $_POST['fotoCount'];
 
-  $Followers = mysqli_query($conn, "SELECT UtilID, FollowID FROM Seguidores WHERE UtilID = $_SESSION[UtilID]");
+  $Followers = mysqli_query($conn, "SELECT UtilID, FollowID, (SELECT DataPublicacao FROM Posts WHERE UtilID = FollowID ORDER BY DataPublicacao DESC LIMIT 1) as DataPub FROM Seguidores WHERE UtilID = $_SESSION[UtilID] ORDER BY DataPub DESC LIMIT $Limite1");
 
   if(mysqli_num_rows($Followers) > 0)
   {
     while($TotalFollowers = mysqli_fetch_array($Followers))
     {
-      $Posts = mysqli_query($conn, "SELECT PostID, PubDesc, DataPublicacao, Posts.UtilID, UtilUser, UtilPNome, UtilUNome, UtilFoto FROM Posts LEFT JOIN Utilizadores ON Posts.UtilID = Utilizadores.UtilID WHERE Posts.UtilID = $TotalFollowers[FollowID] LIMIT $Limite1");
+      $Posts = mysqli_query($conn, "SELECT PostID, PubDesc, DataPublicacao, Posts.UtilID, UtilUser, UtilPNome, UtilUNome, UtilFoto FROM Posts LEFT JOIN Utilizadores ON Posts.UtilID = Utilizadores.UtilID WHERE Posts.UtilID = $TotalFollowers[FollowID] ORDER BY DataPublicacao DESC");
       if(mysqli_num_rows($Posts) > 0)
       {
         while($InfoPosts = mysqli_fetch_array($Posts))
