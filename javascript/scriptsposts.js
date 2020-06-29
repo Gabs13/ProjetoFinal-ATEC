@@ -20,6 +20,8 @@ $(document).ready(function()
     $(document).on('click', '#post_img', function(event) {
       event.preventDefault();
       $("#post_img_file_1").click();
+
+      $("#post_send_file_2").prop( "disabled", false);
     });
 
     $(document).on('click', '#post_send', function(event) {

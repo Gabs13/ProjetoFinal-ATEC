@@ -29,6 +29,7 @@
     $Data['User'] = $Info;
     $Data['Like'] = $LikePost;
     $Data['Foto'] = $InfoFoto;
+    $Data['Sessao'] = $_SESSION['UtilID'];
 
     echo json_encode($Data);
 
@@ -613,6 +614,37 @@
     echo json_encode($Data);
   }
 
+  if(@$_POST['action'] == 'apagarPostPHP')
+  {
+    include 'conn.php';
+
+    $PostID = $_POST['id'];
+
+    $UtilInfo = mysqli_fetch_array(mysqli_query($conn, "SELECT Utilizadores.UtilID, UtilUser FROM Posts LEFT JOIN Utilizadores ON Posts.UtilID = Utilizadores.UtilID WHERE PostID = $PostID"));
+
+    mysqli_query($conn, "DELETE FROM Posts WHERE PostID = $PostID");
+
+    mysqli_query($conn, "DELETE FROM Fotos WHERE PostID = $PostID");
+
+    mysqli_query($conn, "DELETE FROM LikesPosts WHERE PostID = $PostID");
+
+    mysqli_query($conn, "DELETE FROM Comentarios WHERE PostID = $PostID");
+
+    $Posts = mysqli_query($conn, "SELECT PostID FROM Posts WHERE UtilID = $UtilInfo[UtilID]");
+
+    $TotalPosts = mysqli_num_rows($Posts);
+
+    $Data = array();
+
+    $Data['User'] = $UtilInfo;
+
+    $Data['TPosts'] = $TotalPosts;
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
   if(isset($_POST["bt_postarfoto_perfil"]))
   {
     $file = $_FILES['bt_carregarfoto'];
@@ -632,7 +664,7 @@
     {
       if ($fileError === 0)
       {
-        if ($fileSize < 1000000)
+        if ($fileSize < 10000000)
         {
           $fileNameNew = uniqid('', true).".".$fileActualExt;
 
@@ -660,13 +692,15 @@
         }
         else
         {
-          echo "O ficheiro é muito grande!";
+          header("Location: ../home.php");
+          echo '<script> alert("O ficheiro é muito grande!") </script>';
         }
       }
     }
     else
     {
-      echo "Formato de ficheiro inválido!";
+      header("Location: ../home.php");
+      echo '<script> alert("Formato de ficheiro invalido!") </script>';
     }
   }
 
@@ -690,7 +724,7 @@
     {
       if ($fileError === 0)
       {
-        if ($fileSize < 1000000)
+        if ($fileSize < 10000000)
         {
           $fileNameNew = uniqid('', true).".".$fileActualExt;
 
@@ -720,13 +754,15 @@
         }
         else
         {
-          echo "O ficheiro é muito grande!";
+          header("Location: ../home.php");
+          echo '<script> alert("O ficheiro é muito grande!") </script>';
         }
       }
     }
     else
     {
-      echo "Formato de ficheiro inválido!";
+      header("Location: ../home.php");
+      echo '<script> alert("Formato de ficheiro invalido!") </script>';
     }
   }
 

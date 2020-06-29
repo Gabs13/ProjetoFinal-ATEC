@@ -117,14 +117,14 @@ $(document).ready(function()
     var eliminatebtn = document.getElementById('closemodalEliminar');
     var eliminatebtnNO = document.getElementById('chat_eleminatemodal_btns_no');
     //fechar modal de eliminar posts
-    
+
     $(window).click(function(event){
       if ( event.target == eliminatemodal ||event.target == eliminatebtn || event.target == eliminatebtnNO)
       {
         $("#chat_eliminatemodal").css('display', 'none');
       }
     });
-    
+
 
     carregarPerfil(getuser);
 
@@ -134,7 +134,7 @@ $(document).ready(function()
 function eliminatePost() {
   console.log("entrou func");
   $("#chat_eliminatemodal").css('display', 'block');
-   
+
 }
 
 
@@ -292,6 +292,34 @@ function carregarPerfil(nome)
   })
 }
 
+function apagarPost(id)
+{
+  $.ajax({
+    type: "POST",
+    url: "functions/functions.php",
+    data: {
+      action: "apagarPostPHP",
+      id: id,
+    },
+    success:function(result)
+    {
+      var finalResult = JSON.parse(result);
+
+      history.replaceState('', document.title, "perfil.php?&uname=" + getuser + "&uid=" + getid);
+
+      $("#total_posts").html(finalResult.TPosts);
+
+      $("#modalperfilpost").css('display', 'none');
+
+      $("#chat_eliminatemodal").css('display', 'none');
+
+      $("#perfil_galeria").html('<div class="loading_perfil"> <img src="imagens/Icones/loadingperfil.gif"> </div>');
+
+      $("#perfil_galeria").load("functions/CarregarFotosPerfil.php", {UserID: finalResult.User['UtilID']});
+    }
+  });
+}
+
 /*Funcao para seguir*/
 function getSeguir(id)
 {
@@ -387,6 +415,13 @@ function getGallery(id)
       else
       {
         document.getElementById("autor_modal_info_btn").innerHTML = '<i class="fas fa-heart" id="likePostModal" onclick="likePost(' + finalResult.Post[0] + ');">';
+      }
+
+      $("#chat_eleminatemodal_btns_yes").attr('onclick', 'apagarPost('+ finalResult.Post[0] +')');
+
+      if(finalResult.User['UtilID'] == finalResult.Sessao)
+      {
+        $("#settings").html('<div class="chat_msgs_settings_btn"><i class="fas fa-ellipsis-h"></i><div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal" onclick="eliminatePost()">Eliminar</div></div>');
       }
     }
   });

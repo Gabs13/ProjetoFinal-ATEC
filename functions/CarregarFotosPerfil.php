@@ -15,7 +15,7 @@ while($Post = mysqli_fetch_array($Posts))
 
   echo '<!--CRIACAO DE UM POST NA GALERIA-->';
 
-  echo '<div class="collection_container_item container_last_child" style="height: 24.84em;" onclick="getGallery('.$Post["PostID"].');">
+  echo '<div class="collection_container_item container_last_child" style="height: 24.84em;">
           <div class="collection_container_name" style="background-image: url(/ProjetoFinal/imagens/posts/'.$fotoPost["CaminhoFoto"].');background-size: cover; background-position: center;" onclick="getGallery('.$Post["PostID"].')" id="'.$Post["PostID"].'">
           <!--MODAL SLIDER DE IMAGENS-->
           </div>

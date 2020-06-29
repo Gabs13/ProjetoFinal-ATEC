@@ -14,12 +14,12 @@
           <div class="home_post_create">
             <div class="home_post_create_titulo">Insira o seu post...</div>
             <div class="home_post_create_container">
-              <input class="home_post_create_container_texto" id="home_post_create_container_texto_1" name="tb_desc_1" placeholder="Escreva a sua descrição..." disabled>
+              <input class="home_post_create_container_texto" id="home_post_create_container_texto_1" maxlength="30" name="tb_desc_1" placeholder="Escreva a sua descrição..." disabled>
               <div class="home_post_create_container_btns">
 
                 <input type="hidden" name="link" value="<?php $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; echo $actual_link; ?>">
                 <input type="file" name="bt_carregarfoto_1" id="post_img_file_1" style="display:none;">
-                <input type="submit" name="bt_postarfoto" id="post_send_file_2" style="display:none;">
+                <input type="submit" disabled name="bt_postarfoto" id="post_send_file_2" style="display:none;">
                 <div class="home_post_create_container_send" id="post_img"><i class="far fa-image"></i></div>
                 <div class="home_post_create_container_send" id="post_send"><i class="fas fa-paper-plane"></i></div>
               </div>
@@ -137,7 +137,7 @@
     destruir_sessao();
     echo '<meta http-equiv="refresh" content="0;url=index.php">';
   }
-  
+
  ?>
 
 <script src="https://code.jquery.com/jquery-3.3.1.js">

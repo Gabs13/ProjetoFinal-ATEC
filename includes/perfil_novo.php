@@ -59,7 +59,7 @@
       </div>
 
       <div class="modal_direita" id="modal_direita">
-        <div class="autor_modal_user">
+        <div class="autor_modal_user" id="autor_modal_user_id">
           <div class="autor_modal_user_img">
             <img id="autor_modal_user_img" src="">
           </div>
@@ -67,14 +67,14 @@
             <div id="modal_username_text"></div>
             <div class="modal_user_username" id="modal_user_username"></div>
             <div class="modal_user_desc" id="modal_user_desc">
-
             </div>
-            
+
           </div>
-          <div class="chat_msgs_settings_btn">
-          <i class="fas fa-ellipsis-h"></i>
-          <div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal" onclick="eliminatePost()">Eliminar</div>
-        </div>
+
+          <div id="settings">
+
+          </div>
+
         </div>
         <hr class="modal_comentarios_separador"></hr>
         <div class="modal_direita_comentarios" id="modal_direita_comentarios">
@@ -142,7 +142,7 @@
             <div class="perfil_utilizador_info_nome" id="perfil_utilizador_info_nome"></div>
             <div class="perfil_utilizador_info_username" id="perfil_utilizador_info_username"></div>
             <div class="perfil_utilizador_info_descricao" id="perfil_utilizador_info_descricao"></div>
-            
+
           </div>
           <div class="perfil_utilizador_edit">
             <?php
