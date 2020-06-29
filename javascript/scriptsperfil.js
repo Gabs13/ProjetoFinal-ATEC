@@ -147,8 +147,6 @@ function carregarPerfil(nome)
     {
       var finalResult = JSON.parse(result);
 
-      console.log(finalResult);
-
       if(finalResult.User['UtilFoto'] == null)
       {
         $("#perfil_utilizador_imagem_img").attr("src", 'imagens/Icones/icons8-male-user-26.png');

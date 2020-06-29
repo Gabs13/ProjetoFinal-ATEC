@@ -16,11 +16,11 @@ $(document).ready(function(){
   var chatpesquisaBox = document.getElementById('chat_resultados_pesquisa');
 
   //fechar caixa de pesquisas
-  $(document).mouseup(function(e) 
+  $(document).mouseup(function(e)
   {
     var container2 = $("#chat_resultados_pesquisa");
     // if the target of the click isn't the container nor a descendant of the container
-    if (!container2.is(e.target) && container2.has(e.target).length === 0) 
+    if (!container2.is(e.target) && container2.has(e.target).length === 0)
     {
       container2.hide();
     }
@@ -196,8 +196,6 @@ function renderMessage(item)
   {
     time = time.getHours() + ':' + time.getMinutes();
   }
-
-  console.log(item);
 
   if (item.UtilID == IDSessao)
   {

@@ -121,9 +121,9 @@
                 <div id="btn_options"><i id ="optionsbuttonI" class="fas fa-ellipsis-h optionsbuttonI"></i>
                   <div class="modal_hidden_options" id="modal_hidden_options_id" style="display: none;">';
 
-                    if ($Comment["UtilID"] == $_SESSION["UtilID"] || $PostInfo["UtilID"] == $_SESSION["UtilID"])
+                    if ($detailsUserReply["UtilID"] == $_SESSION["UtilID"] || $PostInfo["UtilID"] == $_SESSION["UtilID"])
                     {
-                      echo '<div onclick="removeComment('.$Comment["ComentarioID"].');"> Remover </div>';
+                      echo '<div onclick="removeReplyComment('.$ReplyComment["ReplyComentarioID"].');"> Remover </div>';
                     }
                     echo '<div>Reportar</div>
                   </div>

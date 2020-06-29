@@ -445,6 +445,25 @@ function likeReplyComment(id)
   });
 }
 
+function removeReplyComment(id)
+{
+  $.ajax({
+    type: "POST",
+    url: "functions/functions.php",
+    data: {
+      action: "removeReplyCommentPHP",
+      id: id,
+    },
+
+    success:function(result)
+    {
+      var finalResult = JSON.parse(result);
+
+      $("#modal_direita_comentarios").load("functions/CarregarComentarios.php", {PostID: finalResult.Post[1]});
+    }
+  });
+}
+
 function totalUsersLikes(id)
 {
   $("#display_like_post_scroll").empty();

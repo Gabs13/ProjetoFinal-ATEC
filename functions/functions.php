@@ -90,6 +90,28 @@
     echo json_encode($Data);
   }
 
+  if(@$_POST['action'] == 'removeReplyCommentPHP')
+  {
+    include 'conn.php';
+
+    $CommentID = $_POST['id'];
+
+    $Galeria = mysqli_query($conn, "SELECT Comentarios.ComentarioID, PostID, Comentarios.UtilID, Comentarios.Mensagem, Comentarios.DataMsg FROM Comentarios LEFT JOIN ReplyComentarios ON Comentarios.ComentarioID = ReplyComentarios.ComentarioID WHERE ReplyComentarioID = $CommentID");
+
+    $Gal = mysqli_fetch_array($Galeria);
+
+    $Data = array();
+    $Data['Post'] = $Gal;
+
+    mysqli_query($conn, "DELETE FROM ReplyComentarios WHERE ReplyComentarioID = $CommentID");
+
+    mysqli_query($conn, "DELETE FROM LikesReplyComentarios WHERE ReplyComentarioID = $CommentID");
+
+    include 'deconn.php';
+
+    echo json_encode($Data);
+  }
+
   if(@$_POST['action'] == 'likePostPHP')
   {
     include 'conn.php';

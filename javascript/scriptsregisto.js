@@ -1,6 +1,6 @@
 document.querySelector("#regNome").addEventListener("keypress", function (evt) {
   if (evt.which < 65 || evt.which > 90 && evt.which < 97 || evt.which > 122 && evt.which < 192 || evt.which > 255 )
-  {console.log("entrou username");
+  {
       evt.preventDefault();
   }
 });
@@ -27,8 +27,7 @@ document.querySelector("#regRPass").addEventListener("keypress", function (evt) 
 });
 
 document.querySelector('[name="regUsername"]').addEventListener("keypress", function (evt) {
-//name="regUsername"
-  if (evt.which != 46 && evt.which < 48 || evt.which > 57 && evt.which < 65 || evt.which > 90 && evt.which != 95 && evt.which < 97 || evt.which > 122)
+  if (evt.which < 48 || evt.which > 57 && evt.which < 65 || evt.which > 90 && evt.which != 95 && evt.which < 97 || evt.which > 122)
   {
       evt.preventDefault();
   }

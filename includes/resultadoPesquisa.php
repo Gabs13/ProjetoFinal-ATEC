@@ -11,13 +11,13 @@
 
           include 'functions/conn.php';
 
-          $Util = mysqli_query($conn, "SELECT UtilID, UtilUser, UtilPNome, UtilUNome, UtilFoto FROM Utilizadores WHERE CONCAT(UtilPNome, ' ', UtilUNome) LIKE '%$nomepesquisa%' OR UtilUser LIKE '%$nomepesquisa%'");
+          $Util = mysqli_query($conn, "SELECT UtilID, UtilUser, UtilPNome, UtilUNome, UtilFoto FROM Utilizadores WHERE UtilID != $_SESSION[UtilID] AND (CONCAT(UtilPNome, ' ', UtilUNome) LIKE '%$nomepesquisa%' OR UtilUser LIKE '%$nomepesquisa%')");
 
           if(mysqli_num_rows($Util) > 0)
           {
             while($Dados = mysqli_fetch_array($Util))
             {
-              echo '<div class="resultadosPesquisa_container">
+              echo '<a style="text-decoration: none; color: black;" href="perfil.php?&uname='.$Dados['UtilUser'].'&uid='.$Dados['UtilID'].'"><div class="resultadosPesquisa_container">
                 <div class="resultadosPesquisa_container_img">';
                 if($Dados['UtilFoto'] != null)
                 {
@@ -31,8 +31,8 @@
                 <div class="resultadosPesquisa_container_nome">'.$Dados['UtilPNome'].' '.$Dados['UtilUNome'].'
                   <div class="resultadosPesquisa_container_nomearroba">@'.$Dados['UtilUser'].'</div>
                 </div>
-                
-              </div>';
+
+              </div></a>';
             }
           }
           else
