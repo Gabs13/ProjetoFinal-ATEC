@@ -341,6 +341,8 @@ function getGallery(id)
 
       document.getElementById("modal_username_text").innerHTML = finalResult.User[1] + " " + finalResult.User[2]; //Preencher primeiro e ultimo nome no Post
 
+      $("#modal_user_username").html('<a style="text-decoration: none; color: #D24D57;" href="perfil.php?&uname=' + finalResult.User['UtilUser'] + '&uid=' + finalResult.User['UtilID'] +'"> @' + finalResult.User['UtilUser'] + '</a>');
+
       document.getElementById("modal_user_desc").innerHTML = finalResult.Post[1]; //Preencher descrição foto
 
       if (document.getElementsByClassName("modalGallery")[0] != null)
