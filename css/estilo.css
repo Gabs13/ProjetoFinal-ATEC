@@ -3261,6 +3261,7 @@ footer
     overflow: hidden;
     position: relative;
     border-radius: 50%;
+    border: 1px solid #D24D57;
 }
 
 .perfil_utilizador_imagem_img
