@@ -872,7 +872,7 @@
 
     if($regPass != $regRPass)
     {
-      echo 'As senhas não correspondem';
+      echo '<div class="registar_erro_mail">As senhas não correspondem</div>';
     }
     else
     {
@@ -899,7 +899,7 @@
         }
         else
         {
-          echo 'O email indicado já se encontra registado';
+          echo '<div class="registar_erro_mail">O email indicado já se encontra registado</div>';
         }
     }
 
