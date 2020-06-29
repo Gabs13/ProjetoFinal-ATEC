@@ -10,6 +10,10 @@ $(document).ready(function()
   var btnModalPostClose = document.getElementById('closePerfil');
 });
 
+//abrir modal de eliminar posts
+
+
+
 function getGallery(id)
 {
   $.ajax({

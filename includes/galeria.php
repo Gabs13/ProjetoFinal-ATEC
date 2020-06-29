@@ -3,6 +3,8 @@
   console.log(myvar);
 </script>
 <body>
+ 
+
   <div class="galery_title">Conecta-te com outras pessoas...</div>
     <!--MODAL SLIDER DE IMAGENS-->
   <div class="modalGallery" id="modalperfilpost">

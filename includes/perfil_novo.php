@@ -1,5 +1,21 @@
 <script src="javascript/scriptsperfil.js"></script>
 <body>
+   <!--MODAL DE ELIMINAR POSTS-->
+   <div class="chat_eliminatemodal" id="chat_eliminatemodal">
+      <div class="chat_eliminatemodal_container">
+        <div class="chat_eliminatemodal_top">
+          <div class="chat_eliminatemodal_titulo">Eliminar</div>
+          <div class="chat_eliminatemodal_top_close" id="closemodalEliminar">&times;</div>
+        </div>
+        <div class="chat_eliminatemodal_texto">Deseja eliminar o post?</div>
+        <div class="chat_eliminatemodal_btns">
+          <div class="chat_eleminatemodal_btns_yes" id="chat_eleminatemodal_btns_yes">Sim</div>
+          <div class="chat_eleminatemodal_btns_no" id="chat_eleminatemodal_btns_no">Não</div>
+        </div>
+      </div>
+    </div>
+
+
   <!--Modal de seguidores-->
   <div class="modal_perfil" id="modal_perfil" style="display:none;">
     <div class="modal_perfil_container">
@@ -53,8 +69,12 @@
             <div class="modal_user_desc" id="modal_user_desc">
 
             </div>
-
+            
           </div>
+          <div class="chat_msgs_settings_btn">
+          <i class="fas fa-ellipsis-h"></i>
+          <div class="chat_users_display_settings_modal" id="chat_users_display_settings_modal" onclick="eliminatePost()">Eliminar</div>
+        </div>
         </div>
         <hr class="modal_comentarios_separador"></hr>
         <div class="modal_direita_comentarios" id="modal_direita_comentarios">
@@ -122,6 +142,7 @@
             <div class="perfil_utilizador_info_nome" id="perfil_utilizador_info_nome"></div>
             <div class="perfil_utilizador_info_username" id="perfil_utilizador_info_username"></div>
             <div class="perfil_utilizador_info_descricao" id="perfil_utilizador_info_descricao"></div>
+            
           </div>
           <div class="perfil_utilizador_edit">
             <?php

@@ -113,12 +113,29 @@ $(document).ready(function()
         }
     });
 
-
+    var eliminatemodal = document.getElementById('chat_eliminatemodal');
+    var eliminatebtn = document.getElementById('closemodalEliminar');
+    var eliminatebtnNO = document.getElementById('chat_eleminatemodal_btns_no');
+    //fechar modal de eliminar posts
+    
+    $(window).click(function(event){
+      if ( event.target == eliminatemodal ||event.target == eliminatebtn || event.target == eliminatebtnNO)
+      {
+        $("#chat_eliminatemodal").css('display', 'none');
+      }
+    });
+    
 
     carregarPerfil(getuser);
 
 });
 
+//abrir modal de eliminar posts
+function eliminatePost() {
+  console.log("entrou func");
+  $("#chat_eliminatemodal").css('display', 'block');
+   
+}
 
 
 function totalFollowers(id)

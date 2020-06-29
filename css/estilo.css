@@ -926,6 +926,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     padding-bottom: 2%;
     float:left;
     padding-left: 10px;
+    width:62%;
 }
 
 .modal_user_desc
@@ -2405,7 +2406,7 @@ footer
 {
     display:none;
     position:fixed;
-    z-index: 2;/*Ficar por cima dos elementos no eixo Z*/
+    z-index: 3;/*Ficar por cima dos elementos no eixo Z*/
     left: 0;
     top: 0;
     width: 100%;

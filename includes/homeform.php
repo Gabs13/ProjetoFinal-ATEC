@@ -1,5 +1,5 @@
 <body>
-
+  
 
 
     <!--MODAL SLIDER DE IMAGENS-->
@@ -29,7 +29,9 @@
         <div id="modal_username_text"></div>
         <div class="modal_user_username" id="modal_user_username"></div>
         <div class="modal_user_desc" id="modal_user_desc"></div>
+        
       </div>
+      
     </div>
     <hr class="modal_comentarios_separador"></hr>
     <div class="modal_direita_comentarios" id="modal_direita_comentarios"></div>

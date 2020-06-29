@@ -10,6 +10,8 @@ $(document).ready(function(){
 
 });
 
+
+
 function getGallery(id)
 {
   $.ajax({
