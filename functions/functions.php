@@ -899,7 +899,7 @@
       $_SESSION["CUNome"] = $validadoUtil["UtilUNome"];
       $_SESSION["UtilUser"] = $validadoUtil["UtilUser"];
 
-      echo '<meta http-equiv="refresh" content="0;url=login.php">';
+      echo '<meta http-equiv="refresh" content="0;url=home.php">';
     }
     include 'deconn.php';
   }
